@@ -1,1 +1,1 @@
-# language_recognition
+# language_detection
