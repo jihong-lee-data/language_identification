@@ -1,2 +1,5 @@
 .venv
 *.ipynb
+__pycache__/
+papluca/
+workspace.py
