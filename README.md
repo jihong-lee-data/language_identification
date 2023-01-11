@@ -30,7 +30,6 @@
         * labels: a string indicating the language label.
         * text: a string consisting of one or more sentences in one of the 20 languages listed above.
    * Data Splits
-   
         The Language Identification dataset has 3 splits: train, valid, and test. The train set contains 70k samples, while the validation and test sets 10k each. All splits are perfectly balanced: the train set contains 3500 samples per language, while the validation and test sets 500.
 
 * multinomial Naïve Bayes
@@ -38,5 +37,13 @@
     * valid acc. : 0.928
     * test acc. : 0.923
 
--> 베이스 모델 생성, 다른 모델 적용, 데이터 셋 확장, 과제 데이터에 적용 테스트.
+### 2021.01.11
+
+* 베이스 모델 생성
+    모델 학습 pipeline 구축
+        vectorizor -> classfier
+* 다른 모델 테스트
+    - LSTM-LID
+* 데이터 셋 확장
+* 과제 데이터에 적용 테스트.
 
