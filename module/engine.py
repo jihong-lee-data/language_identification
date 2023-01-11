@@ -11,6 +11,7 @@ from sklearn.preprocessing import FunctionTransformer
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.pipeline import Pipeline
 from sklearn.naive_bayes import MultinomialNB
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 
 

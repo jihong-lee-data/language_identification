@@ -4,12 +4,12 @@ from pprint import pprint
 # config
 dataset_dir = 'papluca/language-identification/'
 
-model_name = "mnnb"
+model_name = "dt"
 model_pkl_path = f"model/obj/{model_name}.pkl"
 result_json_path = f"model/result/{model_name}.json"
 
 vectorizer = CountVectorizer()
-classifier = MultinomialNB()
+classifier = DecisionTreeClassifier()
 
 
 # load dataset

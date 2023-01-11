@@ -25,7 +25,7 @@
     * 2분 30초 소요 (79.78 it/s)
 
 * 모델 학습용 데이터셋
-    > https://huggingface.co/datasets/papluca/language-identification#source-data
+    > https://huggingface.co/datasets/papluca/language-identification
     * Data Fields
         * labels: a string indicating the language label.
         * text: a string consisting of one or more sentences in one of the 20 languages listed above.
@@ -37,13 +37,36 @@
     * valid acc. : 0.928
     * test acc. : 0.923
 
+---
 ### 2021.01.11
 
 * 베이스 모델 생성
-    모델 학습 pipeline 구축
-        vectorizor -> classfier
+    * 모델 학습 pipeline 구축 (`scikit-learn`-based)
+        
+         `loading dataset -> preprocessing -> vectorizing -> fitting -> saving model & results (accuracy)`
+        
 * 다른 모델 테스트
-    - LSTM-LID
+    * (기본)
+
+        `mnnb`: Multinomial Naïve Bayes
+
+        `dt`: Decision Tree
+
+    * (hyperparameter tuning)
+    
 * 데이터 셋 확장
-* 과제 데이터에 적용 테스트.
+    * 현재 데이터 셋 기준으로
+        - 언어
+        
+            기존(20종)
+            
+            `['pt', 'bg', 'zh', 'th', 'ru', 'pl', 'ur', 'sw', 'tr', 'es', 'ar',
+       'it', 'hi', 'de', 'el', 'nl', 'fr', 'vi', 'en', 'ja']`
+
+            추가(?종)
+
+            `['kr']`
+        
+
+* 과제 데이터에 적용 테스트
 
