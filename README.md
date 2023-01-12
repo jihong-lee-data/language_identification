@@ -33,9 +33,7 @@
         The Language Identification dataset has 3 splits: train, valid, and test. The train set contains 70k samples, while the validation and test sets 10k each. All splits are perfectly balanced: the train set contains 3500 samples per language, while the validation and test sets 500.
 
 * multinomial Naïve Bayes
-    * train acc. : 0.994
-    * valid acc. : 0.928
-    * test acc. : 0.923
+
 
 ---
 ### 2021.01.11
@@ -49,13 +47,22 @@
     * (기본)
 
         `mnnb`: Multinomial Naïve Bayes
+            
+            * train acc. : 0.994
+            * valid acc. : 0.928
+            * test acc. : 0.923
 
         `dt`: Decision Tree
 
+            * train acc. : 0.999
+            * valid acc. : 0.844
+            * test acc. : 0.840
+
     * (hyperparameter tuning)
+
     
 * 데이터 셋 확장
-    * 현재 데이터 셋 기준으로
+    * 현재 데이터 셋 기준으로?
         - 언어
         
             기존(20종)
@@ -66,7 +73,12 @@
             추가(?종)
 
             `['kr']`
-        
+
+    * 새로운 데이터 셋?
+         * OpenSubtitles(https://opus.nlpl.eu/OpenSubtitles.php)
+            
+            - 언어(62종)
+
 
 * 과제 데이터에 적용 테스트
 
