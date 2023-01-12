@@ -94,6 +94,6 @@
 
         -> 학습용 데이터 정리 중...(`data/open_subtitles/*.parquet` -> 업로드 x)
             
-        데이터 샘플 `data/data_sample.tsv`
+        데이터 샘플 `data/os_data_sample.tsv`
 * 과제 데이터에 적용 테스트
 
