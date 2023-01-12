@@ -1,6 +1,8 @@
 .venv
 *.ipynb
 __pycache__/
-papluca/
 workspace.py
 .DS_store
+*.parquet
+local_only/
+

@@ -26,10 +26,10 @@ def get_time(func):
 
 
 @get_time
-def load_hf_dataset(dataset_path:str, save_to_disk: bool = False):
+def load_hf_dataset(dataset_path:str, save_to_disk: bool = False, **kwargs):
     if not os.path.isdir(dataset_path):
         print('Downloading dataset...')
-        dataset = load_dataset(dataset_path)
+        dataset = load_dataset(dataset_path, kwargs)
         if save_to_disk:
             dataset.save_to_disk(dataset_path)
         print('The dataset is saved and loaded.')
@@ -48,7 +48,7 @@ def _rm_spcl_char(text):
     return text
 
 
-def preprocessor(dataset: datasets.dataset_dict.DatasetDict) -> (dict, dict):
+def preprocessor(dataset: datasets.dataset_dict.DatasetDict) -> tuple[dict, dict]:
     x = dict()
     y = dict()
     for key in dataset.keys():

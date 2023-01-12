@@ -74,11 +74,26 @@
 
             `['kr']`
 
-    * 새로운 데이터 셋?
-         * OpenSubtitles(https://opus.nlpl.eu/OpenSubtitles.php)
+---
+### 2023.01.12
+
+* 새로운 데이터 셋?
+    * OpenSubtitles(https://opus.nlpl.eu/OpenSubtitles.php)
+    
+    - 데이터셋 포함 언어(62종)
+        
+        `['af', 'ar', 'bg', 'bn', 'br', 'bs', 'ca', 'cs', 'da', 'de', 'el', 'en', 'eo', 'es', 'et', 'eu', 'fa', 'fi', 'fr', 'gl', 'he', 'hi', 'hr', 'hu', 'hy', 'id', 'is', 'it', 'ja', 'ka', 'kk', 'ko', 'lt', 'lv', 'mk', 'ml', 'ms', 'nl', 'no', 'pl', 'pt', 'pt_br', 'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv', 'ta', 'te', 'th', 'tl', 'tr', 'uk', 'ur', 'vi', ('ze_en', 'ze_zh'), 'zh_cn', 'zh_tw']`
+        
+        기존 Flitto 지원(20종)
+        
+        `['ar', 'zh_cn', 'zh_tw', 'cs', 'nl', 'en', 'fi', 'fr', 'de', 'hi', 'id', 'it', 'ja', 'ko', 'ms', 'pl', 'pt', 'ru', 'es', ('sw'), 'sv', 'tl', 'th', 'tr', 'vi']`
+
+    - 목표 학습 언어(60종)
+    
+        `['af', 'ar', 'bg', 'bn', 'br', 'bs', 'ca', 'cs', 'da', 'de', 'el', 'en', 'eo', 'es', 'et', 'eu', 'fa', 'fi', 'fr', 'gl', 'he', 'hi', 'hr', 'hu', 'hy', 'id', 'is', 'it', 'ja', 'ka', 'kk', 'ko', 'lt', 'lv', 'mk', 'ml', 'ms', 'nl', 'no', 'pl', 'pt', 'pt_br', 'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv', 'ta', 'te', 'th', 'tl', 'tr', 'uk', 'ur', 'vi', 'zh_cn', 'zh_tw']`
+
+        -> 학습용 데이터 정리 중...(`data/open_subtitles/*.parquet` -> 업로드 x)
             
-            - 언어(62종)
-
-
+        데이터 샘플 `data/data_sample.tsv`
 * 과제 데이터에 적용 테스트
 
