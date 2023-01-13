@@ -15,6 +15,10 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 
 
+with open('resource/iso_639_1.json', 'r') as f:
+    iso_dict = json.load(f)
+
+
 def get_time(func):
     def wrapper(*args):
         start = time.time()
