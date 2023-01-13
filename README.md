@@ -120,4 +120,37 @@
 
     --> 언어 당 90000개씩 포함하는 데이터 생성 (`data/os_data_51.tsv`)
 
+* `mnnb`모델 학습 결과
+    * accuracy
+
+        ```python
+        
+            {
+            "train": {
+                "acc": 0.8830803921568627
+            },
+            "validation": {
+                "acc": 0.8203254901960785
+            },
+            "test": {
+                "acc": 0.8207098039215687
+            }
+            }
+        
+        ```
+
+    * confusion matrix
+    
+        <img src = "https://user-images.githubusercontent.com/122244462/212296402-03d23012-5c18-41cd-bddb-8d94ddbe052f.png" width = 400>
+
+
+
+    - 포르투갈어(pt)와 브라질리언 포르투갈어(pt_br)를 헷갈리는 경우 -> 포르투갈어만 학습
+    - 우크라이나어(uk)를 러시아어로 헷갈리는 경우 -> 학습데이터 오류 가능성, 새 데이터셋으로 학습(https://wortschatz.uni-leipzig.de/en/download/Ukrainian))
+
+
+
+
+---
+
 * 과제 데이터에 적용 테스트

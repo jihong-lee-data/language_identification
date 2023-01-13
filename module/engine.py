@@ -13,6 +13,8 @@ from sklearn.pipeline import Pipeline
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
+import warnings
+warnings.filterwarnings(action='ignore')
 
 
 with open('resource/iso_639_1.json', 'r') as f:
@@ -29,19 +31,19 @@ def get_time(func):
     return wrapper
 
 
-@get_time
-def load_hf_dataset(dataset_path:str, save_to_disk: bool = False, **kwargs):
-    if not os.path.isdir(dataset_path):
-        print('Downloading dataset...')
-        dataset = load_dataset(dataset_path, kwargs)
-        if save_to_disk:
-            dataset.save_to_disk(dataset_path)
-        print('The dataset is saved and loaded.')
-    else: 
-        print('The dataset already exists.')
-        dataset = load_from_disk(dataset_path)
-        print('The dataset is loaded.')
-    return dataset
+# @get_time
+# def load_hf_dataset(dataset_path:str, save_to_disk: bool = False, **kwargs):
+#     if not os.path.isdir(dataset_path):
+#         print('Downloading dataset...')
+#         dataset = load_dataset(dataset_path, kwargs)
+#         if save_to_disk:
+#             dataset.save_to_disk(dataset_path)
+#         print('The dataset is saved and loaded.')
+#     else: 
+#         print('The dataset already exists.')
+#         dataset = load_from_disk(dataset_path)
+#         print('The dataset is loaded from disk.')
+#     return dataset
 
 
 @np.vectorize
@@ -52,13 +54,9 @@ def _rm_spcl_char(text):
     return text
 
 
-def preprocessor(dataset: datasets.dataset_dict.DatasetDict) -> tuple[dict, dict]:
-    x = dict()
-    y = dict()
-    for key in dataset.keys():
-        x[key] = Pipeline([('rm_spcl_char', FunctionTransformer(_rm_spcl_char))]).transform(dataset[key]['text'])
-        y[key] = dataset[key]['labels']
-    return x, y
+def preprocessor(text:iter):
+    return Pipeline([('rm_spcl_char', FunctionTransformer(_rm_spcl_char))]).transform(text)
+    
 
 
 def save_model(model, model_path):

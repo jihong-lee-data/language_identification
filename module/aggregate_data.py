@@ -8,13 +8,12 @@ data_parquet_dir = "data/open_subtitles/"
 # data_parquet_paths = glob(os.path.join("data/open_subtitles", "*.parquet"))
 
 target_langs = ['en', 'es', 'pt_br', 'ro', 'tr', 'hu', 'sr', 'cs', 'pl', 'fr', 'el', 'bg', 'nl', 'it', 'hr', 'pt', 'he', 'ar', 'fi', 'ru', 'de', 'sl', 'sv', 'da', 'bs', 'et', 'zh_cn', 'id', 'sk', 'no', 'fa', 'zh_tw', 'vi', 'mk', 'th', 'ja', 'ms', 'sq', 'is', 'lt', 'ko', 'uk', 'eu', 'si', 'lv', 'ca', 'bn', 'ml', 'gl', 'ka', 'hi']
+n_langs = len(target_langs)
 target_langs.remove('en')
 
 n_each = 90000
 
-agg_data_tsv_path = os.path.join(data_dir, f"os_data_{len(target_langs)}.tsv")
-
-
+agg_data_tsv_path = os.path.join(data_dir, f"os_data_{n_langs}.tsv")
 
 
 if agg_data_tsv_path in glob(os.path.join(data_dir, "*.tsv")):

@@ -7,3 +7,4 @@ workspace.py
 local_only/
 data/os_data_51
 model/
+data/os_data_51.tsv
