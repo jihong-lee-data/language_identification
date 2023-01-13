@@ -43,7 +43,7 @@
         
          `loading dataset -> preprocessing -> vectorizing -> fitting -> saving model & results (accuracy)`
         
-* 다른 모델 테스트
+* 다른 모델 테스트 (on `papluca dataset`)
     * (기본)
 
         `mnnb`: Multinomial Naïve Bayes
@@ -77,7 +77,7 @@
 ---
 ### 2023.01.12
 
-* 새로운 데이터 셋?
+* 새로운 데이터 셋
     * OpenSubtitles(https://opus.nlpl.eu/OpenSubtitles.php)
     
     - 데이터셋 포함 언어(62종)
@@ -95,5 +95,29 @@
         -> 학습용 데이터 정리 중...(`data/open_subtitles/*.parquet` -> 업로드 x)
             
         데이터 샘플 `data/os_data_sample.tsv`
-* 과제 데이터에 적용 테스트
+---
+### 2023.01.13
+*  OpenSubtitles
+    ```python
+        # lang_os: languages in fetchted open_subtitle dataset (60), n_data_each >= 3390
+        lang_os = ['hu', 'sl', 'af', 'ko', 'hi', 'sq', 'ca', 'gl', 'it', 'ml', 'ar', 'et', 'da', 'ro', 'fr', 'tl', 'pt', 'eu', 'te', 'sr', 'ms', 'lv', 'ja', 'ka', 'bg', 'de', 'br', 'nl', 'el', 'hr', 'sk', 'pt_br', 'bn', 'mk', 'is', 'th', 'pl', 'sv', 'ta', 'bs', 'cs', 'kk', 'id', 'eo', 'fi', 'no', 'es', 'lt', 'hy', 'ru', 'fa', 'he', 'si', 'en', 'ur', 'uk', 'tr', 'vi', 'zh_cn', 'zh_tw']
 
+        # lang_os_51: n_data_each >= 93016
+        lang_os_51 = ['en', 'es', 'pt_br', 'ro', 'tr', 'hu', 'sr', 'cs', 'pl', 'fr', 'el', 'bg', 'nl', 'it', 'hr', 'pt', 'he', 'ar', 'fi', 'ru', 'de', 'sl', 'sv', 'da', 'bs', 'et', 'zh_cn', 'id', 'sk', 'no', 'fa', 'zh_tw', 'vi', 'mk', 'th', 'ja', 'ms', 'sq', 'is', 'lt', 'ko', 'uk', 'eu', 'si', 'lv', 'ca', 'bn', 'ml', 'gl', 'ka', 'hi']
+
+        # lang_flitto: service language in flitto (20)
+        lang_flitto = ['ar', 'zh_cn', 'zh_tw', 'cs', 'nl', 'en', 'fi', 'fr', 'de', 'hi', 'id', 'it', 'ja', 'ko', 'ms', 'pl', 'pt', 'ru', 'es', 'sw', 'sv', 'tl', 'th', 'tr', 'vi']
+
+        {'ro', 'kk', 'hy', 'te', 'he', 'ka', 'ur', 'lv', 'sk', 'uk', 'bs', 'is', 'sl', 'lt', 'fa', 'da', 'eo', 'ta', 'br', 'bg', 'si', 'et', 'pt_br', 'no', 'ca', 'gl', 'el', 'sq', 'af', 'mk', 'bn', 'eu', 'ml', 'hu', 'sr', 'hr'}
+
+        # 기존 flitto 서비스 기준에서 제외 되는 언어
+        print(set(lang_flitto) - set(lang_os))
+        >>> {'sw'}
+
+        print(set(lang_flitto) - set(lang_os_51))
+        >>> {'sw', 'tl'}
+    ```
+
+    --> 언어 당 90000개씩 포함하는 데이터 생성 (`data/os_data_51.tsv`)
+
+* 과제 데이터에 적용 테스트
