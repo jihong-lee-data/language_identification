@@ -5,4 +5,5 @@ workspace.py
 .DS_store
 *.parquet
 local_only/
-
+data/os_data_51
+model/
