@@ -4,23 +4,25 @@ from datasets import load_dataset
 from datasets import Features, Value, ClassLabel
 import numpy as np
 
-raw_data_path = "data/os_data_51.tsv"
-output_dir = raw_data_path.split('.')
+raw_data_path = "data/lang_data_50.tsv"
+output_dir = raw_data_path.split('.tsv')
+
+mk_path(output_dir)
 
 raw = pd.read_csv(raw_data_path)
-
+num_classes = raw['labels'].nunique()
 data = raw.copy()
 
 label_list = sorted(data['labels'].unique().tolist())
 
-valid_size = 51 * 10000
-test_size = 51 * 10000
+valid_size = num_classes * 10000
+test_size = num_classes * 10000
 
 
 
 
-ft = Features({'text': Value('string'), 'labels': ClassLabel(num_classes=51, names=label_list, id = label_list)})
-raw_dataset = load_dataset("csv", data_files = "data/os_data_51.tsv", split = 'all', features = ft)
+ft = Features({'text': Value('string'), 'labels': ClassLabel(num_classes=num_classes, names=label_list, id = label_list)})
+raw_dataset = load_dataset("csv", data_files = raw_data_path, split = 'all', features = ft)
 
 trainvalid_test = raw_dataset.train_test_split(test_size=test_size, shuffle= True, stratify_by_column= 'labels', generator = np.random.seed(42))
 train_valid = trainvalid_test['train'].train_test_split(test_size=valid_size, shuffle=True, stratify_by_column= 'labels', generator = np.random.seed(42))

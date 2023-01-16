@@ -7,4 +7,8 @@ workspace.py
 local_only/
 data/os_data_51
 model/
+data/lang_data_50/
 data/os_data_51.tsv
+data/*.tsv
+data/ukr_wikipedia/
+data_source.json

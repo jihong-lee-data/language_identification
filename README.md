@@ -108,7 +108,6 @@
         # lang_flitto: service language in flitto (20)
         lang_flitto = ['ar', 'zh_cn', 'zh_tw', 'cs', 'nl', 'en', 'fi', 'fr', 'de', 'hi', 'id', 'it', 'ja', 'ko', 'ms', 'pl', 'pt', 'ru', 'es', 'sw', 'sv', 'tl', 'th', 'tr', 'vi']
 
-        {'ro', 'kk', 'hy', 'te', 'he', 'ka', 'ur', 'lv', 'sk', 'uk', 'bs', 'is', 'sl', 'lt', 'fa', 'da', 'eo', 'ta', 'br', 'bg', 'si', 'et', 'pt_br', 'no', 'ca', 'gl', 'el', 'sq', 'af', 'mk', 'bn', 'eu', 'ml', 'hu', 'sr', 'hr'}
 
         # 기존 flitto 서비스 기준에서 제외 되는 언어
         print(set(lang_flitto) - set(lang_os))
@@ -146,11 +145,19 @@
 
 
     - 포르투갈어(pt)와 브라질리언 포르투갈어(pt_br)를 헷갈리는 경우 -> 포르투갈어만 학습
-    - 우크라이나어(uk)를 러시아어로 헷갈리는 경우 -> 학습데이터 오류 가능성, 새 데이터셋으로 학습(https://wortschatz.uni-leipzig.de/en/download/Ukrainian))
-
-
-
+    - 우크라이나어(uk)를 러시아어로 헷갈리는 경우 -> 학습데이터 오류 가능성, 새 데이터셋으로 학습(https://wortschatz.uni-leipzig.de/en/download/Ukrainian)
 
 ---
+### 2023.01.16
+
+* `lang_data_50`
+
+    기존 `os_data_51`에서 `uk`를 교체하고, `pt_br`을 제외함
+
+    -> 학습 결과 `uk`의 정확도가 상승, 그러나 전반적인 데이터셋의 무결성에 대한 의심으로 다른 데이터들도 모두 교체
+
+* `wortschartz-30`
+    
+    `https://wortschatz.uni-leipzig.de/en/download` 사이트 내 corpus 중 30개 언어 뉴스(없을 시 wiki 혹은 web) 데이터를 각 10K씩 다운로드.
 
 * 과제 데이터에 적용 테스트

@@ -8,8 +8,6 @@ import numpy as np
 from sklearn.metrics import confusion_matrix
 
 
-
-
 # load model object
 model_dir = "model/obj"
 
@@ -29,6 +27,7 @@ dataset_name = 'os_data_51'
 dataset_dir = os.path.join('data', dataset_name)
 dataset = load_from_disk(dataset_dir)['test']
 
+results_name = f'{model_name}_{dataset_name}'
 
 # feature preprocessing
 x = preprocessor(dataset['text'])
@@ -54,9 +53,11 @@ ax.set_title('Confusion Matrix')
 ax.xaxis.set_ticklabels(dataset.features['labels'].names)
 ax.yaxis.set_ticklabels(dataset.features['labels'].names)
 
+plt.savefig(f'cm_{results_name}.png')
 
 df_results = pd.DataFrame(np.column_stack([dataset['text'], y, y_pred]), columns = ['text', 'label_true', 'label_pred'])
+df_results.to_csv(f"{results_name}_inference.csv", index = False)
 
 df_ic = df_results.loc[df_results['label_true'] != df_results['label_pred']]
 
-df_ic.to_csv(f"{model_name}_{dataset_name}_incorrect.csv", index = False)
+df_ic.to_csv(f"{results_name}_incorrect.csv", index = False)
