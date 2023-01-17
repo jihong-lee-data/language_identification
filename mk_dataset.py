@@ -4,8 +4,8 @@ from datasets import load_dataset
 from datasets import Features, Value, ClassLabel
 import numpy as np
 
-raw_data_path = "data/lang_data_50.tsv"
-output_dir = raw_data_path.split('.tsv')
+raw_data_path = "data/wortschartz_30.tsv"
+output_dir = raw_data_path.split('.tsv')[0]
 
 mk_path(output_dir)
 
@@ -18,6 +18,8 @@ label_list = sorted(data['labels'].unique().tolist())
 valid_size = num_classes * 10000
 test_size = num_classes * 10000
 
+print('size')
+pprint(dict(train = raw.shape[0] - valid_size - test_size, valid = valid_size, test = test_size))
 
 
 

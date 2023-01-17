@@ -156,8 +156,43 @@
 
     -> 학습 결과 `uk`의 정확도가 상승, 그러나 전반적인 데이터셋의 무결성에 대한 의심으로 다른 데이터들도 모두 교체
 
-* `wortschartz-30`
+* `wortschartz_30`
     
     `https://wortschatz.uni-leipzig.de/en/download` 사이트 내 corpus 중 30개 언어 뉴스(없을 시 wiki 혹은 web) 데이터를 각 10K씩 다운로드.
+   
+     ```python
+     # 데이터 출처
+     {
+        "ar": "news_2020",
+        "zh_cn": "newscrawl_2011",
+        "zh_tw": "web_2014",
+        "cs": "news_2020",
+        "nl": "news_2020",
+        "en": "news_2020",
+        "fi": "news_2020",
+        "fr": "news_2020",
+        "de": "news_2021",
+        "hi": "news_2020",
+        "id": "news_2020",
+        "it": "news_2020",
+        "ja": "news_2020",
+        "ko": "news_2020",
+        "ms": "news_2019",
+        "pl": "news_2020",
+        "pt": "news_2020",
+        "ru": "news_2021",
+        "es": "news_2020",
+        "sw": "wiki_2021",
+        "sv": "news_2020",
+        "tl": "newscrawl_2011",
+        "th": "newscrawl_2011",
+        "tr": "news_2020",
+        "vi": "news_2020",
+        "uk": "news_2020",
+        "hu": "news_2020",
+        "da": "news_2020",
+        "he": "news_2020",
+        "el": "news_2020"
+        }`
 
 * 과제 데이터에 적용 테스트
