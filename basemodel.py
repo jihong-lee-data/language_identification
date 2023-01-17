@@ -7,14 +7,14 @@ warnings.filterwarnings(action='ignore')
 def main():
     # config
     dataset_dir = 'data'
-    dataset_name = "lang_data_50"
+    dataset_name = "wortschartz_30"
     dataset_path = os.path.join(dataset_dir, dataset_name)
 
-    vectorizer = TfidfVectorizer()
-    classifier = AdaBoostClassifier(DecisionTreeClassifier(max_depth=2), n_estimators=300, learning_rate=1)
+    vectorizer = HashingVectorizer(analyzer='char_wb', ngram_range = (2, 5), alternate_sign=False)
+    classifier = MultinomialNB()
 
-    model_version = 'v2'
-    model_name= f"ab_{dataset_name}_{model_version}"
+    model_version = 'v8'
+    model_name= f"mnnb_{dataset_name}_{model_version}"
 
     model_dir = os.path.join("model", model_name)
     result_dir = os.path.join(model_dir, "result")
@@ -61,6 +61,7 @@ def main():
     
     
     # calc model score & save result
+    print('Evaluating model...')
     configs['results'] = dict(acc = dict())
     y_pred = dict()
     for key in dataset.keys():
@@ -74,7 +75,7 @@ def main():
     save_model(model, model_path)
     save_configs(configs, config_path)
     save_inference(result_path, dataset['test']['text'], y['test'], y_pred['test'])
-    save_confusion_matrix(cm_path, y['test'], y_pred['test'], labels = dataset['test'].features['labels'].names)
+    mk_confusion_matrix(cm_path, y['test'], y_pred['test'], labels = dataset['test'].features['labels'].names)
 
 
 

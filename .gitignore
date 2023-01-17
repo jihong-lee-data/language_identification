@@ -6,7 +6,7 @@ workspace.py
 *.parquet
 local_only/
 data/os_data_51
-model/
+*pkl
 data/lang_data_50/
 data/os_data_51.tsv
 data/*.tsv

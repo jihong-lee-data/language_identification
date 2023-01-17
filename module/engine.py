@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import datasets
 from datasets import load_dataset, load_from_disk
 from sklearn.preprocessing import FunctionTransformer
-from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer, HashingVectorizer
 from sklearn.pipeline import Pipeline
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.tree import DecisionTreeClassifier
@@ -19,6 +19,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
 from sklearn.ensemble import AdaBoostClassifier
 from pprint import pprint
+import gzip
 
 import warnings
 warnings.filterwarnings(action='ignore')
@@ -51,9 +52,11 @@ def get_time(func):
 
 @np.vectorize
 def _rm_spcl_char(text):
-    text = re.sub(r'[!@#$(),n"%^*?:;~`0-9\[\]]', ' ', text)
+    text = re.sub(r'[!@#$(),n"%^*?:;~`0-9&\[\]]', ' ', text)
+    text = re.sub(r'[\u3000]', ' ', text.strip())
     text = re.sub(r'[\s]{2,}', ' ', text.strip())
-    text = text.lower()
+    
+    text = text.lower().strip()
     return text
 
 
@@ -85,11 +88,11 @@ def mk_path(path):
 
 
 
-def save_confusion_matrix(save_path, y_true, y_pred, labels):
+def mk_confusion_matrix(save_path=None, y_true=None, y_pred=None, labels=None, figsize = (35, 30)):
     # confusion matrix
     cm = confusion_matrix(y_true, y_pred, labels = labels)
 
-    plt.figure(figsize = (35, 30))
+    plt.figure(figsize = figsize)
     ax= plt.subplot()
     sns.heatmap(cm, annot=True, fmt='g', ax=ax, cmap = "OrRd", cbar = False)  #annot=True to annotate cells, ftm='g' to disable scientific notation
 
@@ -100,7 +103,10 @@ def save_confusion_matrix(save_path, y_true, y_pred, labels):
     ax.xaxis.set_ticklabels(labels)
     ax.yaxis.set_ticklabels(labels)
 
-    plt.savefig(save_path)
+    if save_path:
+        plt.savefig(save_path)
+    else:
+        plt.show()
 
 
 
@@ -131,3 +137,25 @@ class ISO():
             return test.lower() in [target.lower()]
         elif tol == 2:
             return test.lower() in target.lower()
+
+class Model():
+    def __init__(self, model_name):
+        model_dir = "model"
+        self.model_path = os.path.join(model_dir, model_name, "model.pkl")
+        self.model = self.load_model()
+        self.labels = self.model.classes_
+
+    def save_model(self):
+        with gzip.open(self.model_path, 'wb') as f:
+            joblib.dump(pickle.dumps(self.model), f)
+            print(f"This model is saved at {self.model_path}.")
+
+    def load_model(self):
+        print(f"This model is loaded from {self.model_path}.")
+        with gzip.open(self.model_path, 'rb') as f:
+            model = pickle.loads(joblib.load(self.model_path))
+        return model
+
+    def inference(self, text):
+        result = self.model.predict(text)
+        return result

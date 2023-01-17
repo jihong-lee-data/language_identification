@@ -195,4 +195,48 @@
         "el": "news_2020"
         }`
 
-* 과제 데이터에 적용 테스트
+---
+### 2023.01.17
+
+* `wortschartz_30` 데이터셋에 대한 학습
+
+    `model/*_wortschartz_30_v*/` 폴더에 기록
+
+    현재까지 best model:
+
+    `mnnb_wortschartz_30_v8`
+    
+    [config file](model/mnnb_wortschartz_30_v8/result/config.json)
+    
+    ```python
+    "acc": {
+      "train": 0.9939166666666667,
+      "validation": 0.9932466666666667,
+      "test": 0.99316
+    }
+    ```
+
+    * confusion_matrix
+     
+        <img src = "model/mnnb_wortschartz_30_v8/result/cm.png" width = 400>
+    
+
+    * insight
+    1) 전체 언어(30종)에 대해 `91% 이상`의 분류 정확도
+    2) 말레이어(`ms`) <-> 인도네시아어(`id`) 간의 상호 오분류 발생
+
+* 과제 샘플 데이터에 적용 테스트 (`data/test_data/lang_detect_test.xlsx`)
+    * test 언어(18종):
+    `['vi', 'pt', 'th', 'de', 'zhcn'(->'zh_cn'), 'pl', 'ms', 'fr', 'it', 'ar',
+       'tl', 'id', 'tr', 'ru', 'ko', 'es', 'en', 'ja']`
+
+    * 사용 모델: `mnnb_wortschartz_30_v8`
+
+    * confusion_matrix
+
+        <img src = "data/test_data/mnnb_wortschartz_30_v8_test_cm.png" width = 400>
+    
+
+    1) `89.52%`의 분류 정확도
+    2) 말레이어(`ms`) <-> 인도네시아어(`id`) 간의 높은 오분류 발생 -> 모델 특성
+

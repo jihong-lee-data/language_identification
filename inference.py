@@ -5,11 +5,10 @@ import seaborn as sns
 import matplotlib.pyplot as plt     
 import pandas as pd
 import numpy as np
-from sklearn.metrics import confusion_matrix
 
 
 # load model object
-model_dir = "model/obj"
+model_dir = "model"
 
 model_list = [p.split('.')[0].split('/')[-1] for p in glob(os.path.join(model_dir, "*pkl"))]
 
