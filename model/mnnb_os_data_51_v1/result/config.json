@@ -1,0 +1,21 @@
+{
+  "dataset": {
+    "name": "os_data_51",
+    "path": "data/os_data_51"
+  },
+  "model": {
+    "name": "mnnb_os_data_51_v1",
+    "path": "model/mnnb_os_data_51_v1/model.pkl",
+    "result_path": "model/mnnb_os_data_51_v1/result/results.csv",
+    "cm_result_path": "model/mnnb_os_data_51_v1/result/cm.png"
+  },
+  "vect": "CountVectorizer()",
+  "clf": "MultinomialNB()",
+  "results": {
+    "acc": {
+      "train": 0.8830803921568627,
+      "validation": 0.8203254901960785,
+      "test": 0.8207098039215687
+    }
+  }
+}

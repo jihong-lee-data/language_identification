@@ -1,0 +1,21 @@
+{
+  "dataset": {
+    "name": "lang_data_50",
+    "path": "data/lang_data_50"
+  },
+  "model": {
+    "name": "mnnb_lang_data_50_v4",
+    "path": "model/mnnb_lang_data_50_v4/model.pkl",
+    "result_path": "model/mnnb_lang_data_50_v4/result/results.csv",
+    "cm_result_path": "model/mnnb_lang_data_50_v4/result/cm.png"
+  },
+  "vect": "TfidfVectorizer(ngram_range=(2, 4))",
+  "clf": "MultinomialNB()",
+  "results": {
+    "acc": {
+      "train": 0.8271645714285715,
+      "validation": 0.647384,
+      "test": 0.647186
+    }
+  }
+}

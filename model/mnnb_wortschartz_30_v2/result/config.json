@@ -1,0 +1,21 @@
+{
+  "dataset": {
+    "name": "wortschartz_30",
+    "path": "data/wortschartz_30"
+  },
+  "model": {
+    "name": "mnnb_wortschartz_30_v2",
+    "path": "model/mnnb_wortschartz_30_v2/model.pkl",
+    "result_path": "model/mnnb_wortschartz_30_v2/result/results.csv",
+    "cm_result_path": "model/mnnb_wortschartz_30_v2/result/cm.png"
+  },
+  "vect": "CountVectorizer()",
+  "clf": "MultinomialNB()",
+  "results": {
+    "acc": {
+      "train": 0.9957725,
+      "validation": 0.93392,
+      "test": 0.9339133333333334
+    }
+  }
+}
