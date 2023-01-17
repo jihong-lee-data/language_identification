@@ -12,3 +12,4 @@ data/os_data_51.tsv
 data/*.tsv
 data/ukr_wikipedia/
 data_source.json
+data/wortschartz_30
