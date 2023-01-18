@@ -158,7 +158,7 @@
 
 * `wortschartz_30`
     
-    `https://wortschatz.uni-leipzig.de/en/download` 사이트 내 corpus 중 30개 언어 뉴스(없을 시 wiki 혹은 web) 데이터를 각 10K씩 다운로드.
+    `https://wortschatz.uni-leipzig.de/en/download` 사이트 내 corpus 중 30개 언어 뉴스(없을 시 wiki 혹은 web) 데이터를 각 100K씩 다운로드.
    
      ```python
      # 데이터 출처
@@ -250,6 +250,7 @@
     3) 전체 언어(30종)에 대해 `91% 이상`의 분류 정확도
     4) 말레이어(`ms`) <-> 인도네시아어(`id`) 간의 상호 오분류 발생
 
+
 * 과제 샘플 데이터에 적용 테스트 (`data/test_data/lang_detect_test.xlsx`)
     * test 언어(18종):
     `['vi', 'pt', 'th', 'de', 'zhcn'(->'zh_cn'), 'pl', 'ms', 'fr', 'it', 'ar',
@@ -264,4 +265,10 @@
 
     1) `89.52%`의 분류 정확도
     2) 말레이어(`ms`) <-> 인도네시아어(`id`) 간의 높은 오분류 발생 -> 모델 특성
+
+
+---
+### 2023.01.18
+
+* 
 
