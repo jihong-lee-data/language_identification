@@ -202,9 +202,32 @@
 
     `model/*_wortschartz_30_v*/` 폴더에 기록
 
-    현재까지 best model:
+* `mnnb_wortschartz_30_v1`
 
-    `mnnb_wortschartz_30_v8`
+    [config file](model/mnnb_wortschartz_30_v1/result/config.json)
+
+    ```python
+    {
+    "acc": {
+      "train": 0.995735,
+      "validation": 0.93386,
+      "test": 0.9339033333333333
+    }
+  }
+  ```
+    * confusion_matrix
+     
+        <img src = "model/mnnb_wortschartz_30_v1/result/cm.png" width = 400>
+
+    * insight
+    1) 중국어, 일본어 계통의 아랍어로의 오분류 빈번
+        -> 중국어, 일본어의 경우 한자어 사용으로 겹치는 단어가 많음. 그러나 아랍어로 오분류되는 원인은 발견하지 못함(이전의 데이터셋에서도 비슷한 결과)
+    2) 다른 언어들에 대한 학습은 매우 뛰어남
+    
+    
+
+* `mnnb_wortschartz_30_v8` (현재까지 best model)
+
     
     [config file](model/mnnb_wortschartz_30_v8/result/config.json)
     
@@ -222,8 +245,10 @@
     
 
     * insight
-    1) 전체 언어(30종)에 대해 `91% 이상`의 분류 정확도
-    2) 말레이어(`ms`) <-> 인도네시아어(`id`) 간의 상호 오분류 발생
+    1) token 기준을 단어내 철자(`char_wb` / `v4`에서 적용) n_gram = (2, 5)(`v7`에서 적용)로 설정(Token을 단어 내 철자와 어근으로 targeting)하여 기존 모델의 아랍어로의 오분류 문제 사라짐
+    2) `CountVectorizor`, `TfidfVectorizer`를 사용했던 이전 모델(vectorizer 종류는 성능에 큰 영향 미치지 않음) 대신 `HashingVectorizer를` 사용하여, 늘어난 모델 용량을 축소시킴
+    3) 전체 언어(30종)에 대해 `91% 이상`의 분류 정확도
+    4) 말레이어(`ms`) <-> 인도네시아어(`id`) 간의 상호 오분류 발생
 
 * 과제 샘플 데이터에 적용 테스트 (`data/test_data/lang_detect_test.xlsx`)
     * test 언어(18종):
