@@ -10,7 +10,7 @@ import numpy as np
 # load model object
 model_dir = "model"
 
-model_list = [p.split('.')[0].split('/')[-1] for p in glob(os.path.join(model_dir, "*pkl"))]
+
 
 
 model_name = input(f'''Please input model name \n (model list: {model_list}): \n''')
