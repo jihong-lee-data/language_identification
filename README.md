@@ -245,11 +245,10 @@
     
 
     * insight
-    1) token 기준을 단어내 철자(`char_wb` / `v4`에서 적용) n_gram = (2, 5)(`v7`에서 적용)로 설정(Token을 단어 내 철자와 어근으로 targeting)하여 기존 모델의 아랍어로의 오분류 문제 사라짐
+    1) token 기준을 단어내 철자(`char_wb` / `v4`에서 적용) ngram_range = (2, 5)(`v7`에서 적용)로 설정(Token을 단어 내 철자와 어근으로 targeting)하여 기존 모델의 아랍어로의 오분류 문제 사라짐
     2) `CountVectorizor`, `TfidfVectorizer`를 사용했던 이전 모델(vectorizer 종류는 성능에 큰 영향 미치지 않음) 대신 `HashingVectorizer를` 사용하여, 늘어난 모델 용량을 축소시킴
     3) 전체 언어(30종)에 대해 `91% 이상`의 분류 정확도
     4) 말레이어(`ms`) <-> 인도네시아어(`id`) 간의 상호 오분류 발생
-
 
 * 과제 샘플 데이터에 적용 테스트 (`data/test_data/lang_detect_test.xlsx`)
     * test 언어(18종):
@@ -266,9 +265,43 @@
     1) `89.52%`의 분류 정확도
     2) 말레이어(`ms`) <-> 인도네시아어(`id`) 간의 높은 오분류 발생 -> 모델 특성
 
-
 ---
 ### 2023.01.18
+* `mnnb_wortschartz_30_v12`
+      [config file](model/mnnb_wortschartz_30_v12/result/config.json)
+    
+    * `ngram_range` = (2, 13)으로 확장 (n_features = 4194304) -> word Token을 전체 단어셋의 절반 수준까지 포함할 수 있게 설정
+    
+    -> 특별한 성능 향상 없음
 
-* 
+    ```python
+    {
+    "acc": {
+      "train": 0.9942825,
+      "validation": 0.9932566666666667,
+      "test": 0.9931233333333334
+    }
+    ```
 
+    * confusion_matrix
+     
+        <img src = "model/mnnb_wortschartz_30_v12/result/cm.png" width = 400>
+        
+* `wortschartz_30` 오류 수정
+    
+    * 데이터에 중국어 간체와 번체가 반대로 레이블 되어 있어서 수정.
+    
+    * 이전에  학습한 모델 성능에 이상 없음(우선적으로 `mnnb_wortschartz_30_v12`만 output label 수정)
+
+
+* 과제 샘플 데이터에 적용 테스트 (`data/test_data/lang_detect_test.xlsx`)
+
+    * 사용 모델: `mnnb_wortschartz_30_v12`
+
+    * confusion_matrix
+
+        <img src = "data/test_data/mnnb_wortschartz_30_v12_test_cm.png" width = 400>
+    
+
+    1) `94.99%`의 분류 정확도 (중국어 번-간체 오류 수정으로 인한 향상)
+    2) 말레이어(`ms`) <-> 인도네시아어(`id`) 간 여전히 높은 오분류 발생 -> 해결 필요
