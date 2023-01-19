@@ -1,0 +1,21 @@
+{
+  "dataset": {
+    "name": "wortschartz_30",
+    "path": "data/wortschartz_30"
+  },
+  "model": {
+    "name": "mnnb_wortschartz_30_v9",
+    "path": "model/mnnb_wortschartz_30_v9/model.pkl",
+    "result_path": "model/mnnb_wortschartz_30_v9/result/results.csv",
+    "cm_result_path": "model/mnnb_wortschartz_30_v9/result/cm.png"
+  },
+  "vect": "CountVectorizer(vocabulary=['krigsfångar', 'růže', '그정도는', \"d'élargir\", '來的謝文',\n                            'εισαγωγέα', 'textielvormgeefster', 'laid bare',\n                            'biết đâu đó', 'drankenfabrikant', 'Sapienza',\n                            'إسماعيل', 'טאץ', 'Propesor', 'Børneulykkesfonden',\n                            'leszívása', 'Odotettu', '유재환은', '羈押獄',\n                            'เกณฑ์บาเซิล3', '内輪', '並べれ',\n                            'ชี้เป็นเรื่องจิตวิทยาช่วยได้ระดับหนึ่ง', '39-36',\n                            'застрягло', 'back-t0-back', 'לייו', 'والشكاوى',\n                            'qua đời', '氣壓驟', ...])",
+  "clf": "MultinomialNB()",
+  "results": {
+    "acc": {
+      "train": 0.92203375,
+      "validation": 0.9164433333333334,
+      "test": 0.91659
+    }
+  }
+}
