@@ -321,3 +321,8 @@
     -> `wortschartz`에서 `id`(news)와 `ms`(newcrawl) 300K개로 `wortschartz_idms` 구축 후 학습
     
     -> test accuracy 92~97% (눈에 띄는 향상 없음)
+
+---
+
+* xgboost 모델 test 예정
+* 기존 flitto 언어 분류 모델(fasttext) 검증 예정
