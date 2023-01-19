@@ -7,16 +7,15 @@ warnings.filterwarnings(action='ignore')
 def main():
     # config
     dataset_dir = 'data'
-    dataset_name = "wortschartz_30"
+    dataset_name = "wortschartz_idms"
     dataset_path = os.path.join(dataset_dir, dataset_name)
+   
 
-    with open('resource/wortschartz_30_vocab.json', 'r') as f:
-        vocab = json.load(f)
-    
-    vectorizer = HashingVectorizer(analyzer='char_wb', ngram_range = (2, 13), alternate_sign=False, n_features = 2 ** 22)
+    vectorizer = TfidfVectorizer(analyzer='char_wb', ngram_range = (2, 13))
     classifier = MultinomialNB()
 
-    model_version = 'v12'
+
+    model_version = 'v2'
     model_name= f"mnnb_{dataset_name}_{model_version}"
 
     model_dir = os.path.join("model", model_name)

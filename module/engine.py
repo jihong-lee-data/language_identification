@@ -13,7 +13,7 @@ from datasets import load_dataset, load_from_disk
 from sklearn.preprocessing import FunctionTransformer
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer, HashingVectorizer, FeatureHasher
 from sklearn.pipeline import Pipeline
-from sklearn.naive_bayes import MultinomialNB
+from sklearn.naive_bayes import MultinomialNB, GaussianNB
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
@@ -52,7 +52,8 @@ def get_time(func):
 
 @np.vectorize
 def _rm_spcl_char(text):
-    text = re.sub(r'[!@#$(),n"%^*?:;~`0-9&\[\]]', ' ', text)
+    text = str(text)
+    text = re.sub(r'[!@#$(),\n"%^*?:;~`0-9&\[\]]', ' ', text)
     text = re.sub(r'[\u3000]', ' ', text.strip())
     text = re.sub(r'[\s]{2,}', ' ', text.strip())
     

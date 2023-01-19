@@ -13,5 +13,7 @@ data/*.tsv
 data/ukr_wikipedia/
 data_source.json
 data/wortschartz_30
+data/wortschartz_os_30
+data/wortschartz_idms
 resource/wortschartz_30_vocab.json
 resource/wortschartz_30_word_freq.json

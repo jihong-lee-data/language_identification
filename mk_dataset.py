@@ -4,7 +4,7 @@ from datasets import load_dataset
 from datasets import Features, Value, ClassLabel
 import numpy as np
 
-raw_data_path = "data/wortschartz_30.tsv"
+raw_data_path = "data/wortschartz_idms.tsv"
 output_dir = raw_data_path.split('.tsv')[0]
 
 mk_path(output_dir)
