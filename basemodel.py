@@ -10,10 +10,13 @@ def main():
     dataset_name = "wortschartz_30"
     dataset_path = os.path.join(dataset_dir, dataset_name)
 
-    vectorizer = HashingVectorizer(analyzer='char_wb', ngram_range = (2, 5), alternate_sign=False)
+    with open('resource/wortschartz_30_vocab.json', 'r') as f:
+        vocab = json.load(f)
+    
+    vectorizer = HashingVectorizer(analyzer='char_wb', ngram_range = (2, 13), alternate_sign=False, n_features = 2 ** 22)
     classifier = MultinomialNB()
 
-    model_version = 'v8'
+    model_version = 'v12'
     model_name= f"mnnb_{dataset_name}_{model_version}"
 
     model_dir = os.path.join("model", model_name)
@@ -53,10 +56,14 @@ def main():
 
     # pipeline: feature vectorizing & model fitting
     print('Fitting model...')
-    model = Pipeline([('vect', vectorizer),
+    
+    pipeline = Pipeline([('vect', vectorizer),
                         ('clf', classifier)])
+    
+    model = Model(model_name, model = pipeline)
 
     model.fit(x['train'], y['train'])
+
     print('Done.')
     
     
@@ -65,14 +72,16 @@ def main():
     configs['results'] = dict(acc = dict())
     y_pred = dict()
     for key in dataset.keys():
-        y_pred[key] = model.predict(x[key])
+        y_pred[key] = model.inference(x[key])
         configs['results']['acc'][key] = accuracy_score(y[key], y_pred[key])
 
     pprint(configs['results'])
 
 
     print('Saving results...')
-    save_model(model, model_path)
+    # save_model(model, model_path)
+    model.save_model()
+
     save_configs(configs, config_path)
     save_inference(result_path, dataset['test']['text'], y['test'], y_pred['test'])
     mk_confusion_matrix(cm_path, y['test'], y_pred['test'], labels = dataset['test'].features['labels'].names)

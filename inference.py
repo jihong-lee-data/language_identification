@@ -11,8 +11,6 @@ import numpy as np
 model_dir = "model"
 
 
-
-
 model_name = input(f'''Please input model name \n (model list: {model_list}): \n''')
 # model_name = 'mnnb_os_data_51'
 

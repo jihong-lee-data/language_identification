@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import datasets
 from datasets import load_dataset, load_from_disk
 from sklearn.preprocessing import FunctionTransformer
-from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer, HashingVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer, HashingVectorizer, FeatureHasher
 from sklearn.pipeline import Pipeline
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.tree import DecisionTreeClassifier
@@ -91,7 +91,7 @@ def mk_path(path):
 def mk_confusion_matrix(save_path=None, y_true=None, y_pred=None, labels=None, figsize = (35, 30)):
     # confusion matrix
     cm = confusion_matrix(y_true, y_pred, labels = labels)
-
+    
     plt.figure(figsize = figsize)
     ax= plt.subplot()
     sns.heatmap(cm, annot=True, fmt='g', ax=ax, cmap = "OrRd", cbar = False)  #annot=True to annotate cells, ftm='g' to disable scientific notation
@@ -139,22 +139,36 @@ class ISO():
             return test.lower() in target.lower()
 
 class Model():
-    def __init__(self, model_name):
+    def __init__(self, model_name, model = None):
         model_dir = "model"
         self.model_path = os.path.join(model_dir, model_name, "model.pkl")
-        self.model = self.load_model()
+        if os.path.exists(self.model_path):
+            try:
+                self.model = self.load_model()
+                self.labels = self.model.classes_
+            except:
+                self.model = model
+        else:
+            self.model = model            
+    
+    def fit(self, X, y):
+        self.model.fit(X, y)
         self.labels = self.model.classes_
+
 
     def save_model(self):
         with gzip.open(self.model_path, 'wb') as f:
             joblib.dump(pickle.dumps(self.model), f)
             print(f"This model is saved at {self.model_path}.")
 
+
     def load_model(self):
-        print(f"This model is loaded from {self.model_path}.")
         with gzip.open(self.model_path, 'rb') as f:
             model = pickle.loads(joblib.load(self.model_path))
+
+        print(f"This model is loaded from {self.model_path}.")
         return model
+
 
     def inference(self, text):
         result = self.model.predict(text)
