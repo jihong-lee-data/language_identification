@@ -305,3 +305,19 @@
 
     1) `94.99%`의 분류 정확도 (중국어 번-간체 오류 수정으로 인한 향상)
     2) 말레이어(`ms`) <-> 인도네시아어(`id`) 간 여전히 높은 오분류 발생 -> 해결 필요
+
+
+
+---
+### 2023.01.19
+
+* 추가 모델 테스트
+    `model/*_wortschartz_os_30`
+        -> `wortschartz_30` 데이터의 `id`와 `ms`를 `opensubtitles`의 데이터로 교체
+        -> 같은 종류의 오분류 발생
+
+    `model/*_wortschartz_idms`
+
+    -> `wortschartz`에서 `id`(news)와 `ms`(newcrawl) 300K개로 `wortschartz_idms` 구축 후 학습
+    
+    -> test accuracy 92~97% (눈에 띄는 향상 없음)
