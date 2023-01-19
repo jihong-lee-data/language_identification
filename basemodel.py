@@ -11,12 +11,13 @@ def main():
     dataset_path = os.path.join(dataset_dir, dataset_name)
    
 
-    vectorizer = TfidfVectorizer(analyzer='char_wb', ngram_range = (2, 13))
-    classifier = MultinomialNB()
+    # vectorizer = TfidfVectorizer(analyzer='char_wb', ngram_range = (2, 13))
+    vectorizer = Pipeline([('vect', HashingVectorizer(alternate_sign=False, analyzer='char_wb', n_features= 2**22, ngram_range=(2, 10))), ('trans', TfidfTransformer())])
+    classifier = RandomForestClassifier(n_jobs = -1)
 
 
-    model_version = 'v2'
-    model_name= f"mnnb_{dataset_name}_{model_version}"
+    model_version = 'v1'
+    model_name= f"rf_{dataset_name}_{model_version}"
 
     model_dir = os.path.join("model", model_name)
     result_dir = os.path.join(model_dir, "result")

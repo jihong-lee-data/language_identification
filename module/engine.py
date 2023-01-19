@@ -11,7 +11,8 @@ import matplotlib.pyplot as plt
 import datasets
 from datasets import load_dataset, load_from_disk
 from sklearn.preprocessing import FunctionTransformer
-from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer, HashingVectorizer, FeatureHasher
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer, HashingVectorizer, FeatureHasher, TfidfTransformer
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.naive_bayes import MultinomialNB, GaussianNB
 from sklearn.tree import DecisionTreeClassifier
@@ -66,15 +67,15 @@ def preprocessor(text:iter):
     
 
 
-def save_model(model, model_path):
-    with open(model_path, 'wb') as f:
-        joblib.dump(pickle.dumps(model), f)
-        print(f"This model is saved at {model_path}.")
+# def save_model(model, model_path):
+#     with open(model_path, 'wb') as f:
+#         joblib.dump(pickle.dumps(model), f)
+#         print(f"This model is saved at {model_path}.")
 
 
-def load_model(model_path):
-    print(f"This model is loaded from {model_path}.")
-    return pickle.loads(joblib.load(model_path))
+# def load_model(model_path):
+#     print(f"This model is loaded from {model_path}.")
+#     return pickle.loads(joblib.load(model_path))
 
 
 def save_configs(result, result_path):

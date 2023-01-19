@@ -1,1 +1,21 @@
-{"dataset": {"name": "wortschartz_idms", "path": "data/wortschartz_idms"}, "model": {"name": "mnnb_wortschartz_idms_v2", "path": "model/mnnb_wortschartz_idms_v2/model.pkl", "result_path": "model/mnnb_wortschartz_idms_v2/result/results.csv", "cm_result_path": "model/mnnb_wortschartz_idms_v2/result/cm.png"}, "vect": "TfidfVectorizer(analyzer='char_wb', ngram_range=(2, 13))", "clf": "MultinomialNB()", "results": {"acc": {"train": 0.9737928571428571, "validation": 0.97115, "test": 0.97155}}}
+{
+  "dataset": {
+    "name": "wortschartz_idms",
+    "path": "data/wortschartz_idms"
+  },
+  "model": {
+    "name": "mnnb_wortschartz_idms_v2",
+    "path": "model/mnnb_wortschartz_idms_v2/model.pkl",
+    "result_path": "model/mnnb_wortschartz_idms_v2/result/results.csv",
+    "cm_result_path": "model/mnnb_wortschartz_idms_v2/result/cm.png"
+  },
+  "vect": "TfidfVectorizer(analyzer='char_wb', ngram_range=(2, 13))",
+  "clf": "MultinomialNB()",
+  "results": {
+    "acc": {
+      "train": 0.9737928571428571,
+      "validation": 0.97115,
+      "test": 0.97155
+    }
+  }
+}
