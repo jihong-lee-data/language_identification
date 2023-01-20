@@ -1,6 +1,13 @@
 from module.engine import *
 from scipy.special import softmax
 
+print('Loading models...')
+model_for_all = Model("mnnb_wortschartz_30_v13/")
+model_for_idms = Model("mnnb_wortschartz_idms_v2/")
+print('Done')
+iso_dict = ISO().iso_dict
+
+
 def soft_voting(probs:list, weight:list=None):
     n_list = len(probs)
     if not weight:
@@ -11,28 +18,32 @@ def soft_voting(probs:list, weight:list=None):
     return averaging.argmax(axis = 1)
 
 
+def detecting_language(text, iso = True):
+    X = [text]
+    global model_for_all
+    global model_for_idms
+    global iso_dict
+    pred_id, prob = model_for_all.predict(X, prob = True)
+    pred_lang = model_for_all.labels[pred_id]
+
+    if not pred_lang in ['id', 'ms']:
+        response_id = pred_lang[0]
+    else:
+        _, prob_id_idms = model_for_idms.predict(X, prob = True)
+        response_id = model_for_idms.labels[soft_voting([prob[:, [12, 16]], prob_id_idms], weight = [95, 97])][0]
+    
+    if iso:
+        return response_id    
+    
+    return iso_dict['id'][response_id].split(';')[0]
+    
+    
+
+    print(iso_dict['id'][response_id].split(';')[0])
+
 def main():
-    print('Loading models...')
-    model_for_all = Model("mnnb_wortschartz_30_v13/")
-    model_for_idms = Model("mnnb_wortschartz_idms_v2/")
-    print('Done')
-    iso_dict = ISO().iso_dict
     while True:
-        X = [input("input text: ")]
-
-        
-        pred_id, prob = model_for_all.predict(X, prob = True)
-        pred_lang = model_for_all.labels[pred_id]
-        pred_lang
-
-        if not pred_lang in ['id', 'ms']:
-            response_id = pred_lang[0]
-        else:
-        
-            _, prob_id_idms = model_for_idms.predict(X, prob = True)
-            response_id = model_for_idms.labels[soft_voting([prob[:, [12, 16]], prob_id_idms], weight = [95, 97])][0]
-        
-        print(iso_dict['id'][response_id].split(';')[0])
+        print(detecting_language(input("input text: "), iso = False))
 
 
 if __name__ == '__main__':
