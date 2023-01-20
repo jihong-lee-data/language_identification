@@ -1,60 +1,39 @@
-import os
 from module.engine import *
-from glob import glob
-import seaborn as sns
-import matplotlib.pyplot as plt     
-import pandas as pd
-import numpy as np
+from scipy.special import softmax
+
+def soft_voting(probs:list, weight:list=None):
+    n_list = len(probs)
+    if not weight:
+        weight = [1] * n_list
+    
+    averaging = np.sum([softmax(prob, axis= 1) * w/np.sum(weight) for prob, w in zip(probs, weight)], axis = 0)
+    
+    return averaging.argmax(axis = 1)
 
 
-# load model object
-model_dir = "model"
+def main():
+    print('Loading models...')
+    model_for_all = Model("mnnb_wortschartz_30_v13/")
+    model_for_idms = Model("mnnb_wortschartz_idms_v2/")
+    print('Done')
+    iso_dict = ISO().iso_dict
+    while True:
+        X = [input("input text: ")]
+
+        
+        pred_id, prob = model_for_all.predict(X, prob = True)
+        pred_lang = model_for_all.labels[pred_id]
+        pred_lang
+
+        if not pred_lang in ['id', 'ms']:
+            response_id = pred_lang[0]
+        else:
+        
+            _, prob_id_idms = model_for_idms.predict(X, prob = True)
+            response_id = model_for_idms.labels[soft_voting([prob[:, [12, 16]], prob_id_idms], weight = [95, 97])][0]
+        
+        print(iso_dict['id'][response_id].split(';')[0])
 
 
-model_name = input(f'''Please input model name \n (model list: {model_list}): \n''')
-# model_name = 'mnnb_os_data_51'
-
-model_path = os.path.join(model_dir, f"{model_name}.pkl")
-
-model = load_model(model_path)
-
-
-# load dataset
-dataset_name = 'os_data_51'
-dataset_dir = os.path.join('data', dataset_name)
-dataset = load_from_disk(dataset_dir)['test']
-
-results_name = f'{model_name}_{dataset_name}'
-
-# feature preprocessing
-x = preprocessor(dataset['text'])
-y = dataset.features['labels'].int2str(dataset['labels'])
-
-
-
-# calc model score & save result
-results = dict()
-y_pred = model.predict(x)
-
-# confusion matrix
-cm = confusion_matrix(y, y_pred, labels = dataset.features['labels'].names)
-
-plt.figure(figsize = (35, 30))
-ax= plt.subplot()
-sns.heatmap(cm, annot=True, fmt='g', ax=ax, cmap = "OrRd", cbar = False)  #annot=True to annotate cells, ftm='g' to disable scientific notation
-
-# labels, title and ticks
-ax.set_xlabel('Predicted labels')
-ax.set_ylabel('True labels')
-ax.set_title('Confusion Matrix')
-ax.xaxis.set_ticklabels(dataset.features['labels'].names)
-ax.yaxis.set_ticklabels(dataset.features['labels'].names)
-
-plt.savefig(f'cm_{results_name}.png')
-
-df_results = pd.DataFrame(np.column_stack([dataset['text'], y, y_pred]), columns = ['text', 'label_true', 'label_pred'])
-df_results.to_csv(f"{results_name}_inference.csv", index = False)
-
-df_ic = df_results.loc[df_results['label_true'] != df_results['label_pred']]
-
-df_ic.to_csv(f"{results_name}_incorrect.csv", index = False)
+if __name__ == '__main__':
+    main()

@@ -13,7 +13,8 @@ def main():
 
     # vectorizer = TfidfVectorizer(analyzer='char_wb', ngram_range = (2, 13))
     vectorizer = Pipeline([('vect', HashingVectorizer(alternate_sign=False, analyzer='char_wb', n_features= 2**22, ngram_range=(2, 10))), ('trans', TfidfTransformer())])
-    classifier = RandomForestClassifier(n_jobs = -1)
+    classifier = XGBClassifier(n_estimators = 100, objective = 'multi:softprob',
+                           max_depth = 3, learning_rate = 0.1, n_jobs = -1)
 
 
     model_version = 'v1'
@@ -72,7 +73,7 @@ def main():
     configs['results'] = dict(acc = dict())
     y_pred = dict()
     for key in dataset.keys():
-        y_pred[key] = model.inference(x[key])
+        y_pred[key] = model.predict(x[key])
         configs['results']['acc'][key] = accuracy_score(y[key], y_pred[key])
 
     pprint(configs['results'])

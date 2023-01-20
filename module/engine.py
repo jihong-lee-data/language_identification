@@ -19,6 +19,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
 from sklearn.ensemble import AdaBoostClassifier
+from xgboost import XGBClassifier 
 from pprint import pprint
 import gzip
 
@@ -172,6 +173,12 @@ class Model():
         return model
 
 
-    def inference(self, text):
-        result = self.model.predict(text)
-        return result
+    def predict(self, text, prob = False):
+        if prob:
+            probs = self.model.predict_proba(text)    
+            preds= probs.argmax(-1)
+            return (preds, probs)
+        return self.model.predict(text)
+         
+
+    
