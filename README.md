@@ -323,6 +323,9 @@
     -> test accuracy 92~97% (눈에 띄는 향상 없음)
 
 ---
-
+### 2023.01.20
 * xgboost 모델 test 예정
-* 기존 flitto 언어 분류 모델(fasttext) 검증 예정
+* 기존 flitto 언어 분류 모델(fasttext) 검증 예정(`data/test_data/lang_detect_test.xlsx`)
+
+ --> 둘다 실행 중...
+
