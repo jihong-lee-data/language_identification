@@ -358,17 +358,26 @@
     3) 모델은 가볍고, inference 속도도 빠른 편
     4) 짧은 단어에 대한 정확도 의문
 
-* fasttext vs. mnnb(all-idms voting model) vs. xgb
+##
+
+* fasttext vs. mnnb(v13) vs. xgb(v1)
 
     * 대상 데이터: `data/test_data/lang_detect_test.csv`
     * 결과: [csv](data/test_data/lang_detect_comparison.csv)
         * accuracy
         ```python
-            {'fast_pred': 0.9574444444444444,
-            'mnnb_voting_pred': 0.9572777777777778,
-            'xgb_pred': 0.9503888888888888
+            {'fasttext':  0.9574444444444444,
+             'mnnb':  0.9532777777777778,
+             'xgb':  0.9503888888888888
             }
         ```
 
-
-
+    * 대상 데이터: `data/test_data/lang_detection_short_texts.csv`
+    * 결과: [csv](data/test_data/lang_detection_short_comparison.csv)
+        * accuracy
+        ```python
+            {'fasttext':  0.922625,
+             'mnnb':  0.95625,
+             'xgb':  0.8825
+            }
+        ```

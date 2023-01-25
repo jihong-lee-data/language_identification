@@ -2,7 +2,7 @@ from module.engine import *
 from scipy.special import softmax
 
 print('Loading models...')
-model_for_all = Model("xgb_wortschartz_30_v1/")
+model_for_all = Model("mnnb_wortschartz_30_v13/")
 model_for_idms = Model("mnnb_wortschartz_idms_v2/")
 print('Done')
 iso_dict = ISO().iso_dict
@@ -12,12 +12,12 @@ def soft_voting(probs:list, weight:list=None):
     n_list = len(probs)
     if not weight:
         weight = [1] * n_list
+    weight = np.array(weight) / np.sum(weight)
+    averaging = np.sum([softmax(prob, axis= 1) * w for prob, w in zip(probs, weight)], axis = 0)
     
-    averaging = np.sum([softmax(prob, axis= 1) * w/np.sum(weight) for prob, w in zip(probs, weight)], axis = 0)
-    
-    return averaging.argmax(axis = 1)
+    return np.argmax(averaging, axis = 1)
 
-
+@np.vectorize
 def detecting_language(text, iso = True):
     X = [text]
     global model_for_all
