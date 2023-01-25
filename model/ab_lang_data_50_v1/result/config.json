@@ -1,1 +1,14 @@
-{"dataset": {"name": "lang_data_50", "path": "data/lang_data_50"}, "model": {"name": "ab_lang_data_50_v1", "path": "model/ab_lang_data_50_v1/model.pkl", "result_path": "model/ab_lang_data_50_v1/result/results.csv", "cm_result_path": "model/ab_lang_data_50_v1/result/cm.png"}, "vect": "TfidfVectorizer()", "clf": "AdaBoostClassifier()", "results": {"acc": {"train": 0.17144571428571428, "validation": 0.17177, "test": 0.171396}}}
+{
+  "dataset": {
+    "name": "lang_data_50",
+    "path": "data/lang_data_50"
+  },
+  "model": {
+    "name": "ab_lang_data_50_v1",
+    "path": "model/ab_lang_data_50_v1/model.pkl",
+    "result_path": "model/ab_lang_data_50_v1/result/results.csv",
+    "cm_result_path": "model/ab_lang_data_50_v1/result/cm.png"
+  },
+  "vect": "TfidfVectorizer()",
+  "clf": "AdaBoostClassifier()"
+}
