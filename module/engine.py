@@ -79,7 +79,7 @@ def preprocessor(text:iter):
 #     return pickle.loads(joblib.load(model_path))
 
 
-def save_configs(result, result_path):
+def save_results(result, result_path):
     with open(result_path, 'w') as f:
         json.dump(result, f)
     print(f"Model results are saved at {result_path}.")
@@ -110,14 +110,11 @@ def mk_confusion_matrix(save_path=None, y_true=None, y_pred=None, labels=None, f
         plt.savefig(save_path)
     else:
         plt.show()
-
-
+     
 
 def save_inference(save_path, x, y_true, y_pred):
     df_results = pd.DataFrame(np.column_stack([x, y_true, y_pred]), columns = ['text', 'label_true', 'label_pred'])
     df_results.to_csv(save_path, index = False)
-
-
 
 class ISO():
     def __init__(self):

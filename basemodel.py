@@ -28,6 +28,7 @@ def main():
 
     model_path = os.path.join(model_dir, f"model.pkl")
     config_path = os.path.join(result_dir, f"config.json")
+    metric_path = os.path.join(result_dir, f"metrics.json")
     result_path = os.path.join(result_dir, f"results.csv")
     cm_path = os.path.join(result_dir, f"cm.png")
 
@@ -68,22 +69,24 @@ def main():
     print('Done.')
     
     
-    # calc model score & save result
+    # calc model metric & save result
     print('Evaluating model...')
-    configs['results'] = dict(acc = dict())
+    metric = dict(acc = dict())
     y_pred = dict()
     for key in dataset.keys():
         y_pred[key] = model.predict(x[key])
-        configs['results']['acc'][key] = accuracy_score(y[key], y_pred[key])
+        metric['acc'][key] = accuracy_score(y[key], y_pred[key])
 
-    pprint(configs['results'])
+    pprint(metric)
 
 
     print('Saving results...')
     # save_model(model, model_path)
     model.save_model()
 
-    save_configs(configs, config_path)
+    save_results(configs, config_path)
+    save_results(metric, metric_path)
+    
     save_inference(result_path, dataset['test']['text'], y['test'], y_pred['test'])
     mk_confusion_matrix(cm_path, y['test'], y_pred['test'], labels = dataset['test'].features['labels'].names)
 

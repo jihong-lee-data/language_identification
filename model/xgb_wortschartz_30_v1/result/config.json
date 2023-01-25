@@ -1,0 +1,21 @@
+{
+  "dataset": {
+    "name": "wortschartz_30",
+    "path": "data/wortschartz_30"
+  },
+  "model": {
+    "name": "xgb_wortschartz_30_v1",
+    "path": "model/xgb_wortschartz_30_v1/model.pkl",
+    "result_path": "model/xgb_wortschartz_30_v1/result/results.csv",
+    "cm_result_path": "model/xgb_wortschartz_30_v1/result/cm.png"
+  },
+  "vect": "Pipeline(steps=[('vect',\n                 HashingVectorizer(alternate_sign=False, analyzer='char_wb',\n                                   n_features=4194304, ngram_range=(2, 5))),\n                ('trans', TfidfTransformer())])",
+  "clf": "XGBClassifier(base_score=None, booster=None, callbacks=None,\n              colsample_bylevel=None, colsample_bynode=None,\n              colsample_bytree=None, early_stopping_rounds=None,\n              enable_categorical=False, eval_metric=None, feature_types=None,\n              gamma=None, gpu_id=None, grow_policy=None, importance_type=None,\n              interaction_constraints=None, learning_rate=0.5, max_bin=None,\n              max_cat_threshold=None, max_cat_to_onehot=None,\n              max_delta_step=None, max_depth=10, max_leaves=None,\n              min_child_weight=None, missing=nan, monotone_constraints=None,\n              n_estimators=300, n_jobs=-1, num_parallel_tree=None,\n              objective='multi:softprob', predictor=None, ...)",
+  "results": {
+    "acc": {
+      "train": 0.9993975,
+      "validation": 0.9945666666666667,
+      "test": 0.9945
+    }
+  }
+}
