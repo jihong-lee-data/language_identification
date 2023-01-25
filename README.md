@@ -360,4 +360,15 @@
 
 * fasttext vs. mnnb(all-idms voting model) vs. xgb
 
-    `data/test_data/lang_detect_test.xlsx`
+    * 대상 데이터: `data/test_data/lang_detect_test.csv`
+    * 결과: [csv](data/test_data/lang_detect_comparison.csv)
+        * accuracy
+        ```python
+            {'fast_pred': 0.9574444444444444,
+            'mnnb_voting_pred': 0.9572777777777778,
+            'xgb_pred': 0.9503888888888888
+            }
+        ```
+
+
+
