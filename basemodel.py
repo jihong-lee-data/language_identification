@@ -28,7 +28,7 @@ def main():
 
     model_path = os.path.join(model_dir, f"model.pkl")
     config_path = os.path.join(result_dir, f"config.json")
-    metric_path = os.path.join(result_dir, f"metrics.json")
+    metric_path = os.path.join(result_dir, f"metric.json")
     result_path = os.path.join(result_dir, f"results.csv")
     cm_path = os.path.join(result_dir, f"cm.png")
 
@@ -86,7 +86,7 @@ def main():
 
     save_results(configs, config_path)
     save_results(metric, metric_path)
-    
+
     save_inference(result_path, dataset['test']['text'], y['test'], y_pred['test'])
     mk_confusion_matrix(cm_path, y['test'], y_pred['test'], labels = dataset['test'].features['labels'].names)
 

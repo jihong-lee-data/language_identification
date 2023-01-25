@@ -90,7 +90,6 @@ def mk_path(path):
         os.makedirs (path)
 
 
-
 def mk_confusion_matrix(save_path=None, y_true=None, y_pred=None, labels=None, figsize = (35, 30)):
     # confusion matrix
     cm = confusion_matrix(y_true, y_pred, labels = labels)
@@ -176,6 +175,14 @@ class Model():
             preds= probs.argmax(-1)
             return (preds, probs)
         return self.model.predict(text)
+
+
+    def int2label(self, ints):
+        return list(map(lambda x: dict(zip(range(len(self.labels)), self.labels))[x], ints))
+  
+  
+    def label2int(self, labels):
+        return list(map(lambda x: dict(zip(self.labels, range(len(self.labels))))[x], labels))
          
 
     

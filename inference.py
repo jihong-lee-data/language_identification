@@ -2,7 +2,7 @@ from module.engine import *
 from scipy.special import softmax
 
 print('Loading models...')
-model_for_all = Model("mnnb_wortschartz_30_v13/")
+model_for_all = Model("xgb_wortschartz_30_v1/")
 model_for_idms = Model("mnnb_wortschartz_idms_v2/")
 print('Done')
 iso_dict = ISO().iso_dict
@@ -36,10 +36,7 @@ def detecting_language(text, iso = True):
         return response_id    
     
     return iso_dict['id'][response_id].split(';')[0]
-    
-    
 
-    print(iso_dict['id'][response_id].split(';')[0])
 
 def main():
     while True:

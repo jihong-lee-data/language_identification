@@ -329,3 +329,35 @@
 
  --> 둘다 실행 중...
 
+### 2023.01.25
+* xgboost 모델 결과 (`xgb_wortschartz_30_v1`)
+
+    [config file](model/xgb_wortschartz_30_v1/result/config.json)
+    
+    * `ngram_range` = (2, 13)으로 확장 (n_features = 4194304) -> word Token을 전체 단어셋의 절반 수준까지 포함할 수 있게 설정
+    
+    -> 특별한 성능 향상 없음
+
+    ```python
+    {
+    "acc": {
+        "train": 0.9993975,
+        "validation": 0.9945666666666667,
+        "test": 0.9945
+        }
+    }
+    ```
+
+    * confusion_matrix
+     
+        <img src = "model/xgb_wortschartz_30_v1/result/cm.png" width = 400>
+
+    * insight
+    1) 성능은 이전 모델들과 유사
+    2) 학습시간이 오래걸림 (약 3일) -> 개선 가능
+    3) 모델은 가볍고, inference 속도도 빠른 편
+    4) 짧은 단어에 대한 정확도 의문
+
+* fasttext vs. mnnb(all-idms voting model) vs. xgb
+
+    `data/test_data/lang_detect_test.xlsx`
