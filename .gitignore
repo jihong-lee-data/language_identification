@@ -18,3 +18,4 @@ data/wortschartz_idms
 resource/wortschartz_30_vocab.json
 resource/wortschartz_30_word_freq.json
 fastText_results.csv
+ted_30.tsv

@@ -382,5 +382,25 @@
             }
         ```
 ---
-    * 구어체 데이터 추가 학습
-    * rule-based filtering 고안
+### 2023.01.26
+* 모델 간소화
+    * mnnb(v14)
+        custom tokenizer: Word + character
+        * accuracy
+            ```python
+            {
+                "acc": {
+                    "train": 0.9985279166666666,
+                    "validation": 0.9980566666666667,
+                    "test": 0.99793
+                }
+            }
+            ```
+
+* 구어체 데이터 추가 학습
+    
+    * Ted2020 데이터 -> 개수 문제
+
+* rule-based filtering 고안
+    
+    * 전처리 시 일본어와 중국어 계통 tokenizing 전략 다르게 적용

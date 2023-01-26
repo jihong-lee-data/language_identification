@@ -52,19 +52,34 @@ def get_time(func):
 #     return dataset
 
 
-@np.vectorize
-def _rm_spcl_char(text):
+# @np.vectorize
+# def rm_spcl_char(text):
+#     text = str(text)
+#     text = re.sub(r'[!@#$(),\n"%^*?:;~`0-9&\[\]]', ' ', text)
+#     text = re.sub(r'[\u3000]', ' ', text.strip())
+#     text = re.sub(r'[\s]{2,}', ' ', text.strip())
+    
+#     text = text.lower().strip()
+#     return text
+
+def tokenizer(text):
     text = str(text)
-    text = re.sub(r'[!@#$(),\n"%^*?:;~`0-9&\[\]]', ' ', text)
-    text = re.sub(r'[\u3000]', ' ', text.strip())
+    text = re.sub(r'[!@#$(),\n"%^*?:;~`0-9&\[\]\。]', ' ', text)
     text = re.sub(r'[\s]{2,}', ' ', text.strip())
     
     text = text.lower().strip()
-    return text
+    tokenized = text.split()
+    chars = []
+    for token in tokenized:
+        chars.extend(list(token))
+    tokenized += chars
+
+    return tokenized
 
 
-def preprocessor(text:iter):
-    return Pipeline([('rm_spcl_char', FunctionTransformer(_rm_spcl_char))]).transform(text)
+
+# def preprocessor(text:iter):
+#     return Pipeline([('rm_spcl_char', FunctionTransformer(_rm_spcl_char))]).transform(text)
     
 
 
