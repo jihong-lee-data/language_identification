@@ -64,17 +64,39 @@ def get_time(func):
 
 def tokenizer(text):
     text = str(text)
-    text = re.sub(r'[!@#$(),\n"%^*?:;~`0-9&\[\]\。]', ' ', text)
+    # remove special characters
+    text = re.sub(r'[!@#$(),，\n"%^*?？:;~`0-9&\[\]\。\/\.]', ' ', text)
     text = re.sub(r'[\s]{2,}', ' ', text.strip())
-    
-    text = text.lower().strip()
-    tokenized = text.split()
-    chars = []
-    for token in tokenized:
-        chars.extend(list(token))
-    tokenized += chars
 
-    return tokenized
+    text = text.lower().strip()
+    
+    hira_chars = ("\u3040-\u309f")
+    kata_chars = ("\u30a0-\u30ff")
+    zh_chars = ("\u2e80-\u2fff\u31c0-\u31ef\u3200-\u32ff\u3300-\u3370"           
+               "\u33e0-\u33fe\uf900-\ufaff\u4e00-\u9fff") 
+    
+    tokenized = text.split()
+    
+    ja_exist = re.findall(f'[{hira_chars}{kata_chars}]+', text)
+    zh_exist = re.findall(f'[{zh_chars}]+', text)
+    
+    if ja_exist:
+        ja_tokens = []
+        for token in tokenized:
+            ja_tokens.extend(re.findall(f'[{zh_chars}]+|[{hira_chars}]+|[{kata_chars}]+', token))
+            ja_tokens.extend(re.findall(f'[^{zh_chars}{hira_chars}{kata_chars}]+', token))
+        return ja_tokens
+    elif zh_exist:
+        zh_tokens = []
+        for token in tokenized:
+            zh_tokens.extend(re.findall(f'[{zh_chars}]', token))
+            zh_tokens.extend(re.findall(f'[^{zh_chars}]+', token))
+        return zh_tokens
+    else:
+        char_tokens = []
+        for token in tokenized:
+            char_tokens.extend(re.findall('.', token))
+        return tokenized + char_tokens    
 
 
 

@@ -400,7 +400,42 @@
 * 구어체 데이터 추가 학습
     
     * Ted2020 데이터 -> 개수 문제
-
+---
+### 2023.01.27
 * rule-based filtering 고안
     
     * 전처리 시 일본어와 중국어 계통 tokenizing 전략 다르게 적용
+        1) 일본어 포함 시 히라가나, 가타카나, 한자어, 그외 언어 단어 단위 분리
+        2) 중국어 포함시, 중국어 철자 단위 분리, 그외 언어 단어 단위 분리
+        3) 그밖의 언어는 어절 단위 및 철자 단위 분리
+* mnnb(v16)
+    custom tokenizer & ngram_range(1, 10)
+    * accuracy
+        ```python
+        {
+        "acc": {
+            "train": 0.9984416666666667,
+            "validation": 0.99815,
+            "test": 0.99797
+        }
+        }
+        ```
+    * test dataset
+        * `data/test_data/lang_detect_test.csv`
+        
+            * accuracy = 0.9551111111111111
+
+        * `data/test_data/lang_detection_short_texts.csv`
+
+            * accuracy = 0.9576875
+
+        1) 특별한 성능 개선은 없음
+        2) 이전 모델에 비해 용량 감소
+            ```
+            v13: 338.2MB
+            v14: 89MB
+            v15: 96.4MB
+            v16: 78.9MB
+            ```
+
+    * 추가 학습 데이터 필요

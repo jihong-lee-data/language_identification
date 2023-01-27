@@ -13,15 +13,19 @@ def main():
 
 
     vectorizer = Pipeline([('vect', HashingVectorizer(alternate_sign=False, decode_error='ignore', 
-                         n_features=2**22,
+                         n_features=2**30,
                          preprocessor=None, 
-                         tokenizer=tokenizer)),
-                         ('trans', TfidfTransformer())])
+                         tokenizer=tokenizer,
+                         ngram_range= (1, 10),
+                         )
+                         ),
+                         ('trans', TfidfTransformer())
+                         ])
     classifier = MultinomialNB()
 
 
 
-    model_version = 'v14'
+    model_version = 'v16'
     model_name= f"mnnb_{dataset_name}_{model_version}"
 
     model_dir = os.path.join("model", model_name)
