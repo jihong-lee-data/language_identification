@@ -1,4 +1,4 @@
-# language_detection
+# language_identification
 ### 2023.01.09
 * `googletrans` 모듈을 활용해서 1000개의 문장 샘플에 대해 language detect -> (lang, confidence)
 * 107개의 언어로 분류
@@ -438,5 +438,12 @@
             v16: 78.9MB
             ```
 --- 
-    * 추가 학습 데이터 필요
-    * 모델 serving 준비
+### 2023.01.30
+* 모델 serving 준비
+    
+    `model_development` 와 `deploy` 폴더 구분
+
+    * Flask
+        
+        `deploy/app.py`
+        
