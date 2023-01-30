@@ -1,1 +1,0 @@
-{"dataset": {"name": "lang_data_50", "path": "data/lang_data_50"}, "model": {"name": "mnnb_lang_data_50_v1", "path": "model/mnnb_lang_data_50_v1/model.pkl", "result_path": "model/mnnb_lang_data_50_v1/result/results.csv", "cm_result_path": "model/mnnb_lang_data_50_v1/result/cm.png"}, "vect": "CountVectorizer()", "clf": "MultinomialNB()"}

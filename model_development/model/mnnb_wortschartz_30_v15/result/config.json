@@ -1,0 +1,14 @@
+{
+  "dataset": {
+    "name": "wortschartz_30",
+    "path": "data/wortschartz_30"
+  },
+  "model": {
+    "name": "mnnb_wortschartz_30_v15",
+    "path": "model/mnnb_wortschartz_30_v15/model.pkl",
+    "result_path": "model/mnnb_wortschartz_30_v15/result/results.csv",
+    "cm_result_path": "model/mnnb_wortschartz_30_v15/result/cm.png"
+  },
+  "vect": "Pipeline(steps=[('vect',\n                 HashingVectorizer(alternate_sign=False, decode_error='ignore',\n                                   n_features=4194304,\n                                   tokenizer=<function tokenizer at 0x28a99eee0>)),\n                ('trans', TfidfTransformer())])",
+  "clf": "MultinomialNB()"
+}

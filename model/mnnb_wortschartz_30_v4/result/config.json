@@ -1,1 +1,0 @@
-{"dataset": {"name": "wortschartz_30", "path": "data/wortschartz_30"}, "model": {"name": "mnnb_wortschartz_30_v4", "path": "model/mnnb_wortschartz_30_v4/model.pkl", "result_path": "model/mnnb_wortschartz_30_v4/result/results.csv", "cm_result_path": "model/mnnb_wortschartz_30_v4/result/cm.png"}, "vect": "CountVectorizer(analyzer='char_wb')", "clf": "MultinomialNB()"}

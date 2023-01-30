@@ -1,21 +1,17 @@
-.venv
+## common
 *.ipynb
-__pycache__/
-workspace.py
 .DS_store
-*.parquet
-local_only/
-data/os_data_51
-*pkl
-data/lang_data_50/
-data/os_data_51.tsv
-data/*.tsv
-data/ukr_wikipedia/
-data_source.json
-data/wortschartz_30
-data/wortschartz_os_30
-data/wortschartz_idms
-resource/wortschartz_30_vocab.json
-resource/wortschartz_30_word_freq.json
-fastText_results.csv
-ted_30.tsv
+__pycache__/
+
+## model_development
+model_development/.develop
+model_development/local_only/
+model_development/data/
+*parquet
+model_development/model/*/*pkl
+model_development/resource/wortschartz_30_vocab.json
+model_development/workspace.py
+
+
+## deploy
+deploy/.deploy/
