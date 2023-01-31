@@ -217,7 +217,7 @@
   ```
     * confusion_matrix
      
-        <img src = "model/mnnb_wortschartz_30_v1/result/cm.png" width = 400>
+        <img src = "model_development/model/mnnb_wortschartz_30_v1/result/cm.png" width = 400>
 
     * insight
     1) 중국어, 일본어 계통의 아랍어로의 오분류 빈번
@@ -241,7 +241,7 @@
 
     * confusion_matrix
      
-        <img src = "model/mnnb_wortschartz_30_v8/result/cm.png" width = 400>
+        <img src = "model_development/model/mnnb_wortschartz_30_v8/result/cm.png" width = 400>
     
 
     * insight
@@ -259,7 +259,7 @@
 
     * confusion_matrix
 
-        <img src = "data/test_data/mnnb_wortschartz_30_v8_test_cm.png" width = 400>
+        <img src = "model_development/data/test_data/mnnb_wortschartz_30_v8_test_cm.png" width = 400>
     
 
     1) `89.52%`의 분류 정확도
@@ -285,7 +285,7 @@
 
     * confusion_matrix
      
-        <img src = "model/mnnb_wortschartz_30_v12/result/cm.png" width = 400>
+        <img src = "model_development/model/mnnb_wortschartz_30_v12/result/cm.png" width = 400>
         
 * `wortschartz_30` 오류 수정
     
@@ -300,7 +300,7 @@
 
     * confusion_matrix
 
-        <img src = "data/test_data/mnnb_wortschartz_30_v12_test_cm.png" width = 400>
+        <img src = "model_development/data/test_data/mnnb_wortschartz_30_v12_test_cm.png" width = 400>
     
 
     1) `94.99%`의 분류 정확도 (중국어 번-간체 오류 수정으로 인한 향상)
@@ -350,7 +350,7 @@
 
     * confusion_matrix
      
-        <img src = "model/xgb_wortschartz_30_v1/result/cm.png" width = 400>
+        <img src = "model_development/model/xgb_wortschartz_30_v1/result/cm.png" width = 400>
 
     * insight
     1) 성능은 이전 모델들과 유사
@@ -446,4 +446,14 @@
     * Flask
         
         `deploy/app.py`
-        
+### 2023.01.31        
+* 예외처리
+    1) 문자입력 X
+        -> `{}`
+    2) tokenizing 대상이 없을 때('-10293-@3')
+        -> `{}`
+    3) 한단어 처리
+        -> `nltk.corpus`의 `wordnet.words()`(147306개) 에 포함되는 영단어 -> `{"en": 1.0}`
+
+---
+* model inference time 단축을 위해 quantization ...
