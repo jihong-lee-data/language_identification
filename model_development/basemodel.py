@@ -8,6 +8,8 @@ def main():
     # config
     dataset_dir = 'data'
     dataset_name = "wortschartz_30"
+    clf_type = "mnnb"
+    model_version = 'v17'
     dataset_path = os.path.join(dataset_dir, dataset_name)
    
 
@@ -25,8 +27,7 @@ def main():
 
 
 
-    model_version = 'v16'
-    model_name= f"mnnb_{dataset_name}_{model_version}"
+    model_name= f"{clf_type}_{dataset_name}_{model_version}"
 
     model_dir = os.path.join("model", model_name)
     result_dir = os.path.join(model_dir, "result")
@@ -60,7 +61,8 @@ def main():
     y = dict()
     for key in dataset.keys():
         x[key] = dataset[key]['text']
-        y[key] = dataset[key].features['labels'].int2str(dataset[key]['labels'])
+        y[key] = dataset[key]['labels']
+        # y[key] = dataset[key].features['labels'].int2str(dataset[key]['labels'])
     print('Done.')
 
     # pipeline: feature vectorizing & model fitting
@@ -79,26 +81,26 @@ def main():
     print('Done.')
     
     
-    # calc model metric & save result
-    print('Evaluating model...')
-    metric = dict(acc = dict())
-    y_pred = dict()
-    for key in dataset.keys():
-        y_pred[key] = model.predict(x[key])
-        metric['acc'][key] = accuracy_score(y[key], y_pred[key])
+    # # calc model metric & save result
+    # print('Evaluating model...')
+    # metric = dict(acc = dict())
+    # y_pred = dict()
+    # for key in dataset.keys():
+    #     y_pred[key] = model.predict(x[key], )
+    #     metric['acc'][key] = accuracy_score(y[key], y_pred[key])
 
-    pprint(metric)
+    # pprint(metric)
 
 
-    print('Saving results...')
+    # print('Saving results...')
     
     
 
-    save_results(configs, config_path)
-    save_results(metric, metric_path)
+    # save_results(configs, config_path)
+    # save_results(metric, metric_path)
 
-    save_inference(result_path, dataset['test']['text'], y['test'], y_pred['test'])
-    mk_confusion_matrix(cm_path, y['test'], y_pred['test'], labels = dataset['test'].features['labels'].names)
+    # save_inference(result_path, dataset['test']['text'], y['test'], y_pred['test'])
+    # mk_confusion_matrix(cm_path, y['test'], y_pred['test'], labels = dataset['test'].features['labels'].names)
 
 
 
