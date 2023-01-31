@@ -1,13 +1,25 @@
 from module.engine import *
+from nltk.corpus import words
 
 model = Model("best_estimator")
 
+while True:
+    try:
+        text= input('text: ')
+        if not tokenizer(text):
+            lang_pred_dict = {}
+        elif text.strip() in words.words():
+            lang_pred_dict = {'en': 1.00}
+        else:    
+            preds_id, probs = model.predict(text, n = 3)
 
-preds_id, probs = model.predict(["안녕하세요", 'greatest love of all'], n = 3)
+            preds = model.int2label(preds_id)
 
-preds = model.int2label(preds_id)
+            lang_pred_dict = dict(zip(preds, probs.round(4)))
 
-print([dict(zip(pred, prob.round(4))) for pred, prob in zip(preds, probs)])
-
-
-
+        if lang_pred_dict is not None:
+            json_str = json.dumps(lang_pred_dict)
+            print(json_str)
+    except EOFError:
+        print("End!")
+        break

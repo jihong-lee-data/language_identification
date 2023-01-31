@@ -39,7 +39,7 @@ def get_time(func):
 def tokenizer(text):
     text = str(text)
     # remove special characters
-    text = re.sub(r'[!@#$(),，\n"%^*?？:;~`0-9&\[\]\。\/\.]', ' ', text)
+    text = re.sub(r'[!@#$(),，\n"%^*?？:;~`0-9&\[\]\。\/\.\=\-]', ' ', text)
     text = re.sub(r'[\s]{2,}', ' ', text.strip())
 
     text = text.lower().strip()
@@ -70,7 +70,7 @@ def tokenizer(text):
         char_tokens = []
         for token in tokenized:
             char_tokens.extend(re.findall('.', token))
-        return tokenized + char_tokens    
+        return tokenized + char_tokens   
 
 
 
@@ -161,15 +161,15 @@ class Model():
         else:
             self.model = model            
     
-    def fit(self, X, y):
-        self.model.fit(X, y)
-        self.labels = self.model.classes_
+    # def fit(self, X, y):
+    #     self.model.fit(X, y)
+    #     self.labels = self.model.classes_
 
 
-    def save_model(self):
-        with gzip.open(self.model_path, 'wb') as f:
-            joblib.dump(pickle.dumps(self.model), f)
-            # print(f"This model is saved at {self.model_path}.")
+    # def save_model(self):
+    #     with gzip.open(self.model_path, 'wb') as f:
+    #         joblib.dump(pickle.dumps(self.model), f)
+    #         # print(f"This model is saved at {self.model_path}.")
 
 
     def load_model(self):
@@ -181,24 +181,20 @@ class Model():
 
 
     def predict(self, text, n = 3):
-        if isinstance(text, str):
-            text = [text] 
-        n_text= len(text)
-        probs = self.model.predict_proba(text) #(n_text, n)
-        preds = probs.argsort()[:, ::-1][:, :n] #(n_text, n)
-        indice = np.repeat(np.arange(n_text), n).reshape(n_text, n) #(n_text, n)
-        return preds, probs[indice, preds]
+        probs = self.model.predict_proba([text])
+        preds = probs.argsort()[0, ::-1][:n]
+        return preds, probs[0, preds]
 
 
-    def int2label(self, int_array):
+    def int2label(self, int_vect):
         conv_dict= dict(zip(range(len(self.labels)), self.labels))
-        return np.array([[conv_dict[int] for int in int_vect] for int_vect in int_array])
-  
-    
-    def label2int(self, label_array):
-        conv_dict= dict(zip(range(self.labels, len(self.labels))))
-        return np.array([[conv_dict[label] for label in label_vect] for label_vect in label_array])
-        
-         
+        return np.array([conv_dict[int] for int in int_vect])
 
-    
+
+    def label2int(self, label_vect):
+        conv_dict= dict(zip(range(self.labels, len(self.labels))))
+        return np.array([conv_dict[label] for label in label_vect])
+            
+            
+
+        
