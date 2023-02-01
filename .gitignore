@@ -15,3 +15,7 @@ model_development/workspace.py
 
 ## deploy
 deploy/.deploy/
+
+## fine_tuning
+fine_tuning/.finetune
+fine_tuning/data/

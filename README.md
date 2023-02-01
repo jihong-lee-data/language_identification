@@ -456,4 +456,9 @@
         -> `nltk.corpus`의 `wordnet.words()`(147306개) 에 포함되는 영단어 -> `{"en": 1.0}`
 
 ---
-* model inference time 단축을 위해 quantization ...
+### 2023.02.01
+* model inference time 단축을 위해 quantization\
+    -> 실패
+
+* `xlm-roberta-base` -> fine-tuning하기 (`fine_tuning` 폴더)
+    

@@ -18,7 +18,9 @@ from sklearn.naive_bayes import MultinomialNB, GaussianNB
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
 from sklearn.ensemble import AdaBoostClassifier
+from sklearn.decomposition import TruncatedSVD, NMF
 from xgboost import XGBClassifier 
 from pprint import pprint
 import gzip

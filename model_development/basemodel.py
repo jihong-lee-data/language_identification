@@ -3,26 +3,27 @@ from pprint import pprint
 import warnings
 warnings.filterwarnings(action='ignore')
 
+
 @get_time
 def main():
     # config
     dataset_dir = 'data'
     dataset_name = "wortschartz_30"
     clf_type = "mnnb"
-    model_version = 'v17'
+    model_version = 'v19'
     dataset_path = os.path.join(dataset_dir, dataset_name)
    
 
+    vectorizer = Pipeline(steps=[('vect', HashingVectorizer(alternate_sign=False, decode_error='ignore',
+                                       n_features=2**30,
+                                   preprocessor=None,
+                                   tokenizer=tokenizer,
+                                    ngram_range=(1, 10)
+                                    )
+                                    ),
+                ('trans', TfidfTransformer()),
+                ])
 
-    vectorizer = Pipeline([('vect', HashingVectorizer(alternate_sign=False, decode_error='ignore', 
-                         n_features=2**30,
-                         preprocessor=None, 
-                         tokenizer=tokenizer,
-                         ngram_range= (1, 10),
-                         )
-                         ),
-                         ('trans', TfidfTransformer())
-                         ])
     classifier = MultinomialNB()
 
 
@@ -61,8 +62,8 @@ def main():
     y = dict()
     for key in dataset.keys():
         x[key] = dataset[key]['text']
-        y[key] = dataset[key]['labels']
-        # y[key] = dataset[key].features['labels'].int2str(dataset[key]['labels'])
+        # y[key] = dataset[key]['labels']
+        y[key] = dataset[key].features['labels'].int2str(dataset[key]['labels'])
     print('Done.')
 
     # pipeline: feature vectorizing & model fitting
@@ -76,31 +77,34 @@ def main():
     print('Fitting model...')
     model.fit(x['train'], y['train'])
 
+    
+
     model.save_model()
-    
+
     print('Done.')
+
+
+    # calc model metric & save result
+    print('Evaluating model...')
+    metric = dict(acc = dict(), report = dict())
+    y_pred = dict()
+    for key in dataset.keys():
+        y_pred[key] = model.model.predict(x[key])
+        metric['acc'][key] = accuracy_score(y[key], y_pred[key])
+        metric['report'][key] = classification_report(y[key], y_pred[key])
     
-    
-    # # calc model metric & save result
-    # print('Evaluating model...')
-    # metric = dict(acc = dict())
-    # y_pred = dict()
-    # for key in dataset.keys():
-    #     y_pred[key] = model.predict(x[key], )
-    #     metric['acc'][key] = accuracy_score(y[key], y_pred[key])
+    pprint(metric['acc'])
 
-    # pprint(metric)
+    print('Saving results...')
 
 
-    # print('Saving results...')
-    
-    
 
-    # save_results(configs, config_path)
-    # save_results(metric, metric_path)
+    save_results(configs, config_path)
+    save_results(metric, metric_path)
 
-    # save_inference(result_path, dataset['test']['text'], y['test'], y_pred['test'])
-    # mk_confusion_matrix(cm_path, y['test'], y_pred['test'], labels = dataset['test'].features['labels'].names)
+    save_inference(result_path, dataset['test']['text'], y['test'], y_pred['test'])
+    mk_confusion_matrix(cm_path, y['test'], y_pred['test'], labels = dataset['test'].features['labels'].names)
+
 
 
 
