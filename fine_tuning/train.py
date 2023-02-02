@@ -15,7 +15,7 @@ import os
 
 
 def main():
-    device = torch.device('mps:0' if torch.backends.mps.is_available() else 'cuda:1' if torch.cuda.is_available() else 'cpu')
+    device = torch.device('mps' if torch.backends.mps.is_available() else 'cuda' if torch.cuda.is_available() else 'cpu')
     print("device: ", device)
 
     # loading dataset
