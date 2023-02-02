@@ -20,3 +20,4 @@ deploy/.deploy/
 fine_tuning/.finetune
 fine_tuning/data/
 fine_tuning/test_trainer/
+fine_tuning/calc_batchsize.py
