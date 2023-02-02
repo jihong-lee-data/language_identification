@@ -10,7 +10,7 @@ import os
 def main():
     device = torch.device('mps' if torch.backends.mps.is_available() else 'cuda' if torch.cuda.is_available() else 'cpu')
     print("device: ", device)
-
+    torch.cuda.empty_cache()
     # loading dataset
     print("Loading dataset...")
 
@@ -45,9 +45,9 @@ def main():
         "output_dir": "test_trainer",
         "num_train_epochs": 1,
         "log_level": "error",
-        "per_device_train_batch_size":64,
-        "per_device_eval_batch_size":64,
-        "logging_steps": 200,
+        "per_device_train_batch_size":25,
+        "per_device_eval_batch_size":5,
+        "logging_steps": 1000,
         "do_train": True,
         "do_eval": True,
         "evaluation_strategy": "steps",
@@ -68,6 +68,7 @@ def main():
     )
 
     trainer.train()
-
+    
+    torch.cuda.empty_cache()	
 if __name__ == "__main__":
     main()
