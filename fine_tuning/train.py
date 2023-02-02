@@ -7,13 +7,6 @@ from transformers import AutoModelForSequenceClassification
 from transformers import TrainingArguments, Trainer
 import os
 
-
-
-
-
-
-
-
 def main():
     device = torch.device('mps' if torch.backends.mps.is_available() else 'cuda' if torch.cuda.is_available() else 'cpu')
     print("device: ", device)
@@ -52,8 +45,8 @@ def main():
         "output_dir": "test_trainer",
         "num_train_epochs": 1,
         "log_level": "error",
-        "per_device_train_batch_size":8,
-        "per_device_eval_batch_size":8,
+        "per_device_train_batch_size":64,
+        "per_device_eval_batch_size":64,
         "logging_steps": 200,
         "do_train": True,
         "do_eval": True,
@@ -61,7 +54,7 @@ def main():
         "seed": 42
     }
     
-    if device == 'mps:0':
+    if device == 'mps':
         default_args['use_mps_device'] = True
 
     training_args = TrainingArguments(**default_args)
