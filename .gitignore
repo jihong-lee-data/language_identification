@@ -19,3 +19,4 @@ deploy/.deploy/
 ## fine_tuning
 fine_tuning/.finetune
 fine_tuning/data/
+fine_tuning/test_trainer/
