@@ -12,8 +12,8 @@ import os
 
 def main():
     device = torch.device('mps:0' if torch.backends.mps.is_available() else 'cuda:1' if torch.cuda.is_available() else 'cpu')
-    print("device: ", model.device)
-    
+    print("Device: ", device)
+
     # loading dataset
     print("Loading dataset...")
     
@@ -22,6 +22,7 @@ def main():
     else:
         datasets = load_from_disk("../model_development/data/wortschartz_30/")
         tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base").to(device)
+        print("tokenizer device: ", tokenizer.device)
 
         def tokenize_function(examples):
             return tokenizer(examples['text'], padding="max_length", truncation= True)
@@ -42,6 +43,7 @@ def main():
     
     # loading base model
     model = AutoModelForSequenceClassification.from_pretrained("xlm-roberta-base", num_labels=30).to(device)
+    print("model device: ", model.device)
 
     default_args = {
         "output_dir": "test_trainer",
