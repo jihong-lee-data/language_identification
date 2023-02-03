@@ -465,8 +465,9 @@
 ---
 ### 2023.02.02
 * fine-tuning 서버에서 돌아가는 중
-* mnnb 모델 replication -> 로컬에서 돌아가는 중
+* mnnb 모델 replication -> 로컬에서 돌아가는 중 -> 안됨
 
 ---
 ### 2023.02.02
-
+* fine-tuning 서버에서 돌아가는 중2
+* mnnb 모델 -> mini-batch learning으로 메모리 문제 해결 시도 중
