@@ -11,7 +11,7 @@ device = torch.device('mps:0' if torch.backends.mps.is_available() else 'cpu')
 
 label_dict = dict(zip(range(len(LABELS)), LABELS))
 
-LOCAL_PATH = "test_trainer/checkpoint-5500"
+LOCAL_PATH = "test_trainer/checkpoint-500"
 FILE_NAME = "pytorch_model.bin"
 LOCAL_DATA_PATH = os.path.join(LOCAL_PATH, FILE_NAME)
 

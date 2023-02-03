@@ -462,3 +462,11 @@
 
 * `xlm-roberta-base` -> fine-tuning하기 (`fine_tuning` 폴더)
     
+---
+### 2023.02.02
+* fine-tuning 서버에서 돌아가는 중
+* mnnb 모델 replication -> 로컬에서 돌아가는 중
+
+---
+### 2023.02.02
+
