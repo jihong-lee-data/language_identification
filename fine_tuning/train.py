@@ -55,7 +55,11 @@ def main():
         "log_level": "error",
         "per_device_train_batch_size":25,
         "per_device_eval_batch_size":25,
+<<<<<<< HEAD
         "label_names": tokenized_datasets['train'].features['labels'].names,
+=======
+        "label_names": tokenized_datasets['train'].features['label'].names,
+>>>>>>> dc109d3067af5fc654d5e4894d9d483d9e5fd7a6
         "logging_steps": 1000,
         "do_train": True,
         "do_eval": True,
@@ -78,8 +82,8 @@ def main():
     trainer = Trainer(
         model=model,
         args=training_args,
-        train_dataset=tokenized_datasets['train'],
-        eval_dataset=tokenized_datasets['validation'],
+        train_dataset=tokenized_datasets['train'].shuffle(seed=42).select(range(100)),
+        eval_dataset=tokenized_datasets['validation'].shuffle(seed=42).select(range(100)),
         compute_metrics=compute_metrics,
     )
 
