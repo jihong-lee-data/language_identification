@@ -28,3 +28,5 @@ fine_tuning/data/
 fine_tuning/test_trainer/
 fine_tuning/calc_batchsize.py
 fine_tuning/traced_model.pt
+fine_tuning/tf
+fine_tuning/onnx
