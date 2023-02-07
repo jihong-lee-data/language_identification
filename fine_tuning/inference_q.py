@@ -49,6 +49,7 @@ class load_model(pl.LightningModule):
     def __init__(self):
         super().__init__()
         self.model = torch.jit.load(MODEL_PATH, map_location=device)
+        self.model.eval()
         self.tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base")
             
     
