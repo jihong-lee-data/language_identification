@@ -8,19 +8,14 @@ import time
 
 LABELS = ['ar', 'cs', 'da', 'de', 'el', 'en', 'es', 'fi', 'fr', 'he', 'hi', 'hu', 'id', 'it', 'ja', 'ko', 'ms', 'nl', 'pl', 'pt', 'ru', 'sv', 'sw', 'th', 'tl', 'tr', 'uk', 'vi', 'zh_cn', 'zh_tw']
 
-device = torch.device('mps' if torch.backends.mps.is_available() else 'cuda' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 # device = torch.device('cpu')
 torch.cuda.empty_cache()
 
 label_dict = dict(zip(range(len(LABELS)), LABELS))
 
-LOCAL_PATH = "test_trainer/checkpoint-76800"
-FILE_NAME = "pytorch_model.bin"
-LOCAL_W_PATH = os.path.join(LOCAL_PATH, FILE_NAME)
+MODEL_PATH = 'traced_model.pt'
 
-# print(LOCAL_DATA_PATH)
-
-config = RobertaConfig.from_json_file(os.path.join(LOCAL_PATH, "config.json"))
 
 class Classifier:
     def __init__(self, label_dict = label_dict):
@@ -45,8 +40,7 @@ class Classifier:
 class load_model(pl.LightningModule):
     def __init__(self):
         super().__init__()
-        self.model = RobertaForSequenceClassification(config).to(device)
-        self.model.load_state_dict(torch.load(LOCAL_W_PATH, map_location=device))
+        self.model = torch.jit.load(MODEL_PATH, map_location=device)
         self.tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base")
             
     
