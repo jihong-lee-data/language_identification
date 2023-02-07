@@ -8,8 +8,15 @@ import time
 
 LABELS = ['ar', 'cs', 'da', 'de', 'el', 'en', 'es', 'fi', 'fr', 'he', 'hi', 'hu', 'id', 'it', 'ja', 'ko', 'ms', 'nl', 'pl', 'pt', 'ru', 'sv', 'sw', 'th', 'tl', 'tr', 'uk', 'vi', 'zh_cn', 'zh_tw']
 
-device = torch.device('mps' if torch.backends.mps.is_available() else 'cuda' if torch.cuda.is_available() else 'cpu')
-# device = torch.device('cpu')
+device_available = dict(cuda= torch.cuda.is_available(), mps= torch.backends.mps.is_available(), cpu= True)
+
+chosen_device = input(f"Enter device (available: {[key for key in device_available.keys() if device_available[key]]}, default: cpu)\n")
+if not chosen_device:
+    chosen_device = 'cpu'
+
+device = torch.device(chosen_device)
+print("Device: ", device)
+
 torch.cuda.empty_cache()
 
 label_dict = dict(zip(range(len(LABELS)), LABELS))
@@ -80,9 +87,8 @@ def main():
             probs, logits = clf.classify(text)
             preds_n, probs_n = clf.get_max_n(probs, n = 3)
             end = time.time()
-            print(f"time: ({end - start:.5f} sec)", end = '\n'*2)
             print(dict(zip(preds_n, probs_n)))
-
+            print(f"Inference time: ({end - start:.5f} sec)", end = '\n'*2)
             torch.cuda.empty_cache()
         except EOFError:
             print('Bye!')
