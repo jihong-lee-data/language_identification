@@ -6,7 +6,6 @@ from transformers import AutoTokenizer, RobertaForSequenceClassification, Robert
 import torch
 import time
 
-
 LABELS = ['ar', 'cs', 'da', 'de', 'el', 'en', 'es', 'fi', 'fr', 'he', 'hi', 'hu', 'id', 'it', 'ja', 'ko', 'ms', 'nl', 'pl', 'pt', 'ru', 'sv', 'sw', 'th', 'tl', 'tr', 'uk', 'vi', 'zh_cn', 'zh_tw']
 
 # device = torch.device('mps' if torch.backends.mps.is_available() else 'cuda' if torch.cuda.is_available() else 'cpu')
@@ -62,14 +61,17 @@ class load_model(pl.LightningModule):
             return_attention_mask=True,
             return_tensors='pt',
         ).to(device)
-        output = self.model(encoding["input_ids"], attention_mask=encoding["attention_mask"])
-        logits = output['logits']
+        # output = self.model(encoding["input_ids"], attention_mask=encoding["attention_mask"])
+        # logits = output['logits']
+        logits = self.model(encoding["input_ids"], attention_mask=encoding["attention_mask"])[0]
         probs = torch.softmax(logits, -1)
         torch.cuda.empty_cache()
         return probs.detach().cpu().numpy(), logits.detach().cpu().numpy()
 
 
 def main():
+    
+
     clf = Classifier(label_dict)
     
     while True:
@@ -77,7 +79,6 @@ def main():
             text= input('Enter text: ')
             start = time.time()
             probs, logits = clf.classify(text)
-
             preds_n, probs_n = clf.get_max_n(probs, n = 3)
             end = time.time()
             print(f"time: ({end - start:.5f} sec)", end = '\n'*2)

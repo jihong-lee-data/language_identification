@@ -2,6 +2,12 @@
 *.ipynb
 .DS_store
 __pycache__/
+bin/
+include/
+lib/
+pyvenv.cfg
+share/
+etc/
 
 ## model_development
 model_development/.develop
@@ -21,3 +27,4 @@ fine_tuning/.finetune
 fine_tuning/data/
 fine_tuning/test_trainer/
 fine_tuning/calc_batchsize.py
+fine_tuning/traced_model.pt
