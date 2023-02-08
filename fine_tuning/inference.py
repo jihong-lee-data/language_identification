@@ -54,6 +54,7 @@ class load_model(pl.LightningModule):
         super().__init__()
         self.model = RobertaForSequenceClassification(config).to(device)
         self.model.load_state_dict(torch.load(LOCAL_W_PATH, map_location=device))
+        self.model.eval()
         self.tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base")
             
     

@@ -484,7 +484,7 @@
     ```
 * fine-tuning 모델 양자화 시도
     
-    `torch -> onnx -> tf(완료) -> tflite`
+    `torch -> onnx -> tensorflow(완료) -> tensorflow-lite`
 
 ---
 ### 2023.02.08
@@ -494,3 +494,17 @@
 * confusion matrix
     
     <img src = "fine_tuning/cm_roberta.png" width = 400>
+
+
+* 양자화 완료
+    - `onnx_inference.py` (용량 감소 / 속도 개선)
+    - `tf_inference.py` (용량 감소)
+    - `tflite_inference.py` (용량 감소)
+    
+* 속도(체감)
+
+    - gpu > cpu
+
+        - gpu: torch > torchscript
+
+        - cpu: torchscript > onnx > torch > tf > tflite
