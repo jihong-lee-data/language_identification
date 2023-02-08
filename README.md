@@ -456,4 +456,20 @@
         -> `nltk.corpus`의 `wordnet.words()`(147306개) 에 포함되는 영단어 -> `{"en": 1.0}`
 
 ---
-* model inference time 단축을 위해 quantization ...
+### 2023.02.01
+* model inference time 단축을 위해 quantization\
+    -> 실패
+
+* `xlm-roberta-base` -> fine-tuning하기 (`fine_tuning` 폴더)
+    
+---
+### 2023.02.02
+* fine-tuning 서버에서 돌아가는 중
+* mnnb 모델 replication -> 로컬에서 돌아가는 중
+
+---
+### 2023.02.02
+
+{'loss': 0.0096, 'learning_rate': 0.0, 'epoch': 1.0}
+{'eval_runtime': 2942.7061, 'eval_samples_per_second': 101.947, 'eval_steps_per_second': 4.078, 'epoch': 1.0}
+{'train_runtime': 355208.9394, 'train_samples_per_second': 6.757, 'train_steps_per_second': 0.27, 'train_loss': 0.01836228708922863, 'epoch': 1.0}
