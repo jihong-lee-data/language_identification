@@ -31,3 +31,4 @@ fine_tuning/traced_model.pt
 fine_tuning/tf
 fine_tuning/onnx
 fine_tuning/local-pt-checkpoint/
+fine_tuning/workspace.py
