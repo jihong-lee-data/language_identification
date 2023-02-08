@@ -18,7 +18,7 @@ def get_max_n(values, n = 3):
     return max_n_labels, max_n_values
 
 
-ort_session = ort.InferenceSession("onnx/model2.onnx")
+ort_session = ort.InferenceSession("onnx/quant_model.onnx")
 tokenizer=  AutoTokenizer.from_pretrained("xlm-roberta-base", use_fast=True)
 
 def main():
