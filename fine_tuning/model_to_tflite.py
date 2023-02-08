@@ -11,15 +11,14 @@ tflite_model_path = 'tflite/model.tflite'
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+# # Load tokenizer and PyTorch weights
+# tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base", use_fast = True)
+# pt_model = RobertaForSequenceClassification.from_pretrained("xlm-roberta-base", num_labels=30).to(device)
+# pt_model.load_state_dict(torch.load('test_trainer/checkpoint-96000/pytorch_model.bin', map_location=device))
 
-# Load tokenizer and PyTorch weights
-tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base", use_fast = True)
-pt_model = RobertaForSequenceClassification.from_pretrained("xlm-roberta-base", num_labels=30).to(device)
-pt_model.load_state_dict(torch.load('test_trainer/checkpoint-96000/pytorch_model.bin', map_location=device))
-
-# Save to disk
-tokenizer.save_pretrained("local-pt-checkpoint")
-pt_model.save_pretrained("local-pt-checkpoint")
+# # Save to disk
+# tokenizer.save_pretrained("local-pt-checkpoint")
+# pt_model.save_pretrained("local-pt-checkpoint")
 
 os.system('sh cvt2onnx.sh')
 
@@ -43,7 +42,7 @@ converter.target_spec.supported_ops = [
 tflite_model = converter.convert()
 
 # Save the model
-with open('tflite/model.tflite', 'wb') as f:
+with open(tflite_model_path, 'wb') as f:
     f.write(tflite_model)
 
 print('done')
