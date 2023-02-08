@@ -84,6 +84,8 @@ def main():
     )
 
     trainer.train()
-
+    
+    torch.cuda.empty_cache()	
 if __name__ == "__main__":
     main()
+
