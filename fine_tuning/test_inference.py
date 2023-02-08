@@ -16,5 +16,5 @@ print('running inference...')
 result = []
 for data in tqdm(train_gen):
     result.append(dict(text = data['text'][0], labels= label_dict[data['labels'][0].detach().cpu().numpy().tolist()], pred = label_dict[clf.classify(data['text'][0])[0].argmax()]))
-pd.DataFrame(result).to_csv("test_preds.csv")
+pd.DataFrame(result).to_csv("test_preds.csv", index = False)
 print('Saved')

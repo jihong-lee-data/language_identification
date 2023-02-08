@@ -473,3 +473,13 @@
 {'loss': 0.0096, 'learning_rate': 0.0, 'epoch': 1.0}
 {'eval_runtime': 2942.7061, 'eval_samples_per_second': 101.947, 'eval_steps_per_second': 4.078, 'epoch': 1.0}
 {'train_runtime': 355208.9394, 'train_samples_per_second': 6.757, 'train_steps_per_second': 0.27, 'train_loss': 0.01836228708922863, 'epoch': 1.0}
+
+
+---
+### 2023.02.08
+
+* test accuray: `0.99764`
+
+* confusion matrix
+    
+    <img src = "fine_tuning/cm_roberta.png" width = 400>
