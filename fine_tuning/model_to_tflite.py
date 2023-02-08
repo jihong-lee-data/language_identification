@@ -4,6 +4,8 @@ import tensorflow as tf
 import os
 from transformers import AutoTokenizer, RobertaForSequenceClassification
 import torch
+import warnings
+warnings.filterwarnings("ignore")
 
 onnx_model_path = "onnx/model.onnx"
 tf_model_path = 'tf'
@@ -12,13 +14,13 @@ tflite_model_path = 'tflite/model.tflite'
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # # Load tokenizer and PyTorch weights
-# tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base", use_fast = True)
-# pt_model = RobertaForSequenceClassification.from_pretrained("xlm-roberta-base", num_labels=30).to(device)
-# pt_model.load_state_dict(torch.load('test_trainer/checkpoint-96000/pytorch_model.bin', map_location=device))
+tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base", use_fast = True)
+pt_model = RobertaForSequenceClassification.from_pretrained("xlm-roberta-base", num_labels=30).to(device)
+pt_model.load_state_dict(torch.load('test_trainer/checkpoint-96000/pytorch_model.bin', map_location=device))
 
-# # Save to disk
-# tokenizer.save_pretrained("local-pt-checkpoint")
-# pt_model.save_pretrained("local-pt-checkpoint")
+# Save to disk
+tokenizer.save_pretrained("local-pt-checkpoint")
+pt_model.save_pretrained("local-pt-checkpoint")
 
 os.system('sh cvt2onnx.sh')
 
