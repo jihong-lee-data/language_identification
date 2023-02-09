@@ -21,6 +21,8 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.decomposition import TruncatedSVD, NMF
+from sklearn.random_projection import SparseRandomProjection
+
 from xgboost import XGBClassifier 
 from pprint import pprint
 import gzip
@@ -183,11 +185,11 @@ class Model():
         if os.path.exists(self.model_path):
             try:
                 self.model = self.load_model()
-                self.labels = self.model.classes_
             except:
                 self.model = model
         else:
             self.model = model            
+
     
     def fit(self, X, y):
         self.model.fit(X, y)

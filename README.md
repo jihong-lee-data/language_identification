@@ -506,3 +506,13 @@
         - gpu: torch > torchscript
 
         - cpu: torchscript > onnx > torch > tf > tflite
+
+---
+### 2023.02.09
+
+* ml 모델 경량화
+    1) hashing vectorizer -> `mnnb_wortschartz_30_v16` 모델의 학습 분 사용
+    2) dimensionality reduction -> train data에 대한 dtm에 대해 `Sparse random projection` 사용 
+    3) Classifier -> 실수 영역에 대응하기 위해 `Gaussian Naive Bayes` 모델로 교체
+
+    -> `gnb_wortschartz_30_v1`

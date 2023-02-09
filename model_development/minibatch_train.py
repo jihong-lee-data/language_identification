@@ -10,18 +10,19 @@ def main():
     # config
     dataset_dir = 'data'
     dataset_name = "wortschartz_30"
-    clf_type = "mnnb"
-    model_version = 'v20'
+    clf_type = "gnb"
+    model_version = 'v1'
     dataset_path = os.path.join(dataset_dir, dataset_name)
-   
 
-    vectorizer = HashingVectorizer(alternate_sign=False, decode_error='ignore',
-                                       n_features=2**22,
-                                   preprocessor=None,
-                                   tokenizer=tokenizer,
-                                    ngram_range=(1, 1)
-                                    )
-    classifier = MultinomialNB()
+    preprocessor = Pipeline(steps=[('vect', HashingVectorizer(alternate_sign=False, decode_error='ignore',
+                                                            n_features=2**22,
+                                                            preprocessor=None,
+                                                            tokenizer=tokenizer,
+                                                            ngram_range=(1, 10)
+                                                            )),
+                                 ('dimrdc', SparseRandomProjection(n_components='auto', eps= 0.1, random_state=42, dense_output = True))])
+                                    
+    classifier = GaussianNB()
 
     model_name= f"{clf_type}_{dataset_name}_{model_version}"
 
@@ -40,9 +41,10 @@ def main():
 
     configs = dict(dataset = dict(name = dataset_name, path = dataset_path),
             model = dict(name = model_name, path = model_path, result_path = result_path, cm_result_path = cm_path),
-            vect = str(vectorizer),
+            prep = str(preprocessor),
             clf = str(classifier)
     )
+
     dataset = load_from_disk(dataset_path)
 
     print('model configuration:')
@@ -61,49 +63,51 @@ def main():
     train_sampler = BatchSampler(RandomSampler(dataset['train'], generator = np.random.seed(42)), batch_size = configs['train_info']['n_train_batch'], drop_last = False)
     valid_sampler = BatchSampler(RandomSampler(dataset['validation'], generator = np.random.seed(42)), batch_size = configs['train_info']['n_valid_batch'], drop_last = False)
 
-    train_dataloader = DataLoader(dataset['train'], batch_sampler = train_sampler, num_workers = 4)
-    valid_dataloader = DataLoader(dataset['validation'], batch_sampler = valid_sampler, num_workers = 4)
+    train_dataloader = DataLoader(dataset['train'], batch_sampler = train_sampler, num_workers = 20)
+    valid_dataloader = DataLoader(dataset['validation'], batch_sampler = valid_sampler, num_workers = 20)
 
     train_gen = iter(train_dataloader)
     valid_gen = iter(valid_dataloader)
 
     
     ### mini batch 방식으로 모델 학습
-    pipeline = Pipeline([('vect', vectorizer),
+    pipeline = Pipeline([('prep', preprocessor),
                         ('clf', classifier)])
-    model = Model(model_name)
-
+    
+    
     # model = Model(model_name, model = pipeline)
-    # model.labels = dataset['train'].features['labels'].names
+    model = Model(model_name)
+    model.model['prep']['']
+    model.labels = dataset['train'].features['labels'].names
 
     int2label = dataset['train'].features['labels'].int2str
     
-    # print('Fitting model...')
-    # pbar = pyprind.ProgBar(configs['train_info']['n_steps'], monitor = True)
-    # for _ in range(configs['train_info']['n_steps']):
-    #     crt_train_batch = next(train_gen)
-    #     crt_valid_batch = next(valid_gen)
+    print('Fitting model...')
+    pbar = pyprind.ProgBar(configs['train_info']['n_steps'], monitor = True)
+    for _ in range(configs['train_info']['n_steps']):
+        crt_train_batch = next(train_gen)
+        crt_valid_batch = next(valid_gen)
                 
-    #     X_train = model.model['vect'].transform(crt_train_batch['text'])
-    #     y_train = int2label(crt_train_batch['labels'])
+        X_train = model.model['prep'].transform(crt_train_batch['text'])
+        y_train = int2label(crt_train_batch['labels'])
         
         
-    #     X_valid = model.model['vect'].transform(crt_valid_batch['text'])
-    #     y_valid = int2label(crt_valid_batch['labels'])
+        X_valid = model.model['prep'].transform(crt_valid_batch['text'])
+        y_valid = int2label(crt_valid_batch['labels'])
         
-    #     model.model['clf'].partial_fit(X_train, y_train, classes = model.labels)
+        model.model['clf'].partial_fit(X_train, y_train, classes = model.labels)
         
-    #     print('')
-    #     print(f"train acc:{round(model.model['clf'].score(X_train, y_train), 4)}")
-    #     print(f"valid acc: {round(model.model['clf'].score(X_valid, y_valid), 4)}")
+        print('')
+        print(f"train acc:{round(model.model['clf'].score(X_train, y_train), 4)}")
+        print(f"valid acc: {round(model.model['clf'].score(X_valid, y_valid), 4)}")
 
-    #     pbar.update()
-    # print(pbar)
+        pbar.update()
+    print(pbar)
 
+    
+    model.save_model()
 
-    # model.save_model()
-
-    # print('Done.')
+    print('Done.')
 
 
     # calc model metric & save result
