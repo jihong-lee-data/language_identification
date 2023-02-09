@@ -4,6 +4,7 @@ import numpy as np
 import re
 from module.engine import *
 import pyprind
+from tqdm import tqdm
 
 
 def main():
@@ -14,11 +15,11 @@ def main():
     model_version = 'v1'
     dataset_path = os.path.join(dataset_dir, dataset_name)
 
-    preprocessor = Pipeline(steps=[('vect', HashingVectorizer(alternate_sign=False, decode_error='ignore',
+    preprocessor = Pipeline(steps=[('vect', HashingVectorizer(alternate_sign=True, decode_error='ignore',
                                                             n_features=2**22,
                                                             preprocessor=None,
                                                             tokenizer=tokenizer,
-                                                            ngram_range=(1, 5)
+                                                            ngram_range=(1, 1)
                                                             )),
                                  ('dimrdc', SparseRandomProjection(n_components='auto', eps= 0.1, random_state=42, dense_output = True))])
                                     
@@ -45,11 +46,9 @@ def main():
             clf = str(classifier)
     )
 
+    # load dataset
     dataset = load_from_disk(dataset_path)
 
-    print('model configuration:')
-    pprint(configs)
-    
     configs['train_info'] = dict(
     n_steps = 10,
     n_train_data = len(dataset['train']),
@@ -59,6 +58,10 @@ def main():
     n_train_batch = int(configs['train_info']['n_train_data'] / configs['train_info']['n_steps']),
     n_valid_batch = int(configs['train_info']['n_valid_data'] / configs['train_info']['n_steps'])
     ))
+    
+    print('model configuration:')
+    pprint(configs)
+
     
     train_sampler = BatchSampler(RandomSampler(dataset['train'], generator = np.random.seed(42)), batch_size = configs['train_info']['n_train_batch'], drop_last = False)
     valid_sampler = BatchSampler(RandomSampler(dataset['validation'], generator = np.random.seed(42)), batch_size = configs['train_info']['n_valid_batch'], drop_last = False)
@@ -87,8 +90,8 @@ def main():
     int2label = dataset['train'].features['labels'].int2str
     
     print('Fitting model...')
-    pbar = pyprind.ProgBar(configs['train_info']['n_steps'], monitor = True)
-    for _ in range(configs['train_info']['n_steps']):
+    
+    for _ in tqdm(range(configs['train_info']['n_steps'])):
         crt_train_batch = next(train_gen)
         crt_valid_batch = next(valid_gen)
                 
@@ -104,11 +107,7 @@ def main():
         print('')
         print(f"train acc:{round(model.model['clf'].score(X_train, y_train), 4)}")
         print(f"valid acc: {round(model.model['clf'].score(X_valid, y_valid), 4)}")
-
-        pbar.update()
-    print(pbar)
-
-    
+        
     model.save_model()
 
     print('Done.')
