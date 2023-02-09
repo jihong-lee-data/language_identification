@@ -18,7 +18,7 @@ def main():
                                                             n_features=2**22,
                                                             preprocessor=None,
                                                             tokenizer=tokenizer,
-                                                            ngram_range=(1, 10)
+                                                            ngram_range=(1, 5)
                                                             )),
                                  ('dimrdc', SparseRandomProjection(n_components='auto', eps= 0.1, random_state=42, dense_output = True))])
                                     
@@ -63,8 +63,8 @@ def main():
     train_sampler = BatchSampler(RandomSampler(dataset['train'], generator = np.random.seed(42)), batch_size = configs['train_info']['n_train_batch'], drop_last = False)
     valid_sampler = BatchSampler(RandomSampler(dataset['validation'], generator = np.random.seed(42)), batch_size = configs['train_info']['n_valid_batch'], drop_last = False)
 
-    train_dataloader = DataLoader(dataset['train'], batch_sampler = train_sampler, num_workers = 20)
-    valid_dataloader = DataLoader(dataset['validation'], batch_sampler = valid_sampler, num_workers = 20)
+    train_dataloader = DataLoader(dataset['train'], batch_sampler = train_sampler, num_workers = 4)
+    valid_dataloader = DataLoader(dataset['validation'], batch_sampler = valid_sampler, num_workers = 4)
 
     train_gen = iter(train_dataloader)
     valid_gen = iter(valid_dataloader)
@@ -75,9 +75,13 @@ def main():
                         ('clf', classifier)])
     
     
-    # model = Model(model_name, model = pipeline)
-    model = Model(model_name)
-    model.model['prep']['']
+    model = Model(model_name, model = pipeline)
+    
+
+    print('fitting vectorizer & dimension reducer') 
+    model.model['prep'].fit(dataset['train']['text'])
+    print('done')
+
     model.labels = dataset['train'].features['labels'].names
 
     int2label = dataset['train'].features['labels'].int2str
