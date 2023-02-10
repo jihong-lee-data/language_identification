@@ -1,0 +1,1 @@
+{"preprocessor": "Pipeline(steps=[('vect',\n                 HashingVectorizer(decode_error='ignore', n_features=32768,\n                                   ngram_range=(1, 10),\n                                   tokenizer=<function tokenizer at 0x169ca0430>)),\n                ('trans', TfidfTransformer())])"}

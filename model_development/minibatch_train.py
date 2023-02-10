@@ -12,29 +12,17 @@ def main():
     dataset_dir = 'data'
     dataset_name = "wortschartz_30"
     clf_type = "gnb"
-    model_version = 'v2'
+    model_version = 'v4'
     dataset_path = os.path.join(dataset_dir, dataset_name)
-
-    # preprocessor = Pipeline(steps=[('vect', HashingVectorizer(alternate_sign=True, decode_error='ignore',
-    #                                                         n_features=2**22,
-    #                                                         preprocessor=None,
-    #                                                         tokenizer=tokenizer,
-    #                                                         ngram_range=(1, 5)
-    #                                                         )),
-    #                              ('dimrdc', SparseRandomProjection(n_components='auto', eps= 0.1, random_state=42, dense_output = True))])
-                                    
-    preprocessor = Pipeline(steps=[('vect', HashingVectorizer(alternate_sign=True, decode_error='ignore',
-                                                        n_features=2**22,
-                                                        preprocessor=None,
-                                                        tokenizer=tokenizer,
-                                                        ngram_range=(1, 5)
-                                                        )),
-                                ])
-
+    
+    prep_name = 'vect_wortschartz_30_v3'
+    
+    preprocessor = Model(prep_name).model
     classifier = GaussianNB()
 
     model_name= f"{clf_type}_{dataset_name}_{model_version}"
-
+    model = Model(model_name)
+    
     model_dir = os.path.join("model", model_name)
     result_dir = os.path.join(model_dir, "result")
 
@@ -49,24 +37,24 @@ def main():
 
 
     configs = dict(dataset = dict(name = dataset_name, path = dataset_path),
-            model = dict(name = model_name, path = model_path, result_path = result_path, cm_result_path = cm_path),
-            prep = str(preprocessor),
-            clf = str(classifier)
-    )
+                    model = dict(name = model_name, path = model_path, result_path = result_path, cm_result_path = cm_path, prep_name = prep_name),
+                    prep = str(preprocessor),
+                    clf = str(classifier)
+                    )
 
     # load dataset
     dataset = load_from_disk(dataset_path)
 
     configs['train_info'] = dict(
-    n_steps = 10000,
-    n_logs = 10,
-    n_train_data = len(dataset['train']),
-    n_valid_data = len(dataset['validation']),)
+                                n_steps = 50,
+                                n_logs = 10,
+                                n_train_data = len(dataset['train']),
+                                n_valid_data = len(dataset['validation']),)
     configs['train_info'].update(dict(
-    n_train_batch = int(configs['train_info']['n_train_data'] / configs['train_info']['n_steps']),
-    n_valid_batch = int(configs['train_info']['n_valid_data'] / configs['train_info']['n_steps'])
-    ))
-    
+                                n_train_batch = int(configs['train_info']['n_train_data'] / configs['train_info']['n_steps']),
+                                n_valid_batch = int(configs['train_info']['n_valid_data'] / configs['train_info']['n_steps'])
+                                ))
+                                
     print('model configuration:')
     pprint(configs)
 
@@ -74,8 +62,8 @@ def main():
     train_sampler = BatchSampler(RandomSampler(dataset['train'], generator = np.random.seed(42)), batch_size = configs['train_info']['n_train_batch'], drop_last = False)
     valid_sampler = BatchSampler(RandomSampler(dataset['validation'], generator = np.random.seed(42)), batch_size = configs['train_info']['n_valid_batch'], drop_last = False)
 
-    train_dataloader = DataLoader(dataset['train'], batch_sampler = train_sampler, num_workers = 8)
-    valid_dataloader = DataLoader(dataset['validation'], batch_sampler = valid_sampler, num_workers = 8)
+    train_dataloader = DataLoader(dataset['train'], batch_sampler = train_sampler, num_workers = 4)
+    valid_dataloader = DataLoader(dataset['validation'], batch_sampler = valid_sampler, num_workers = 4)
 
     train_gen = iter(train_dataloader)
     valid_gen = iter(valid_dataloader)
@@ -89,9 +77,6 @@ def main():
     model = Model(model_name, model = pipeline)
     # model = Model(model_name)
 
-    # print('fitting vectorizer') 
-    # model.model['prep'].fit(dataset['train']['text'])
-    # print('done')
 
     model.labels = dataset['train'].features['labels'].names
 
@@ -108,17 +93,18 @@ def main():
         y_train = int2label(crt_train_batch['labels'])
         
         
-        X_valid = model.model['prep'].transform(crt_valid_batch['text']).toarray()
-        y_valid = int2label(crt_valid_batch['labels'])
-        
         model.model['clf'].partial_fit(X_train, y_train, classes = model.labels)
         
-        if (step % configs['train_info']['n_logs']) == 0:
+        if (step % (configs['train_info']['n_steps'] // configs['train_info']['n_logs'])) == 0:
+            X_valid = model.model['prep'].transform(crt_valid_batch['text']).toarray()
+            y_valid = int2label(crt_valid_batch['labels'])
+            
             configs['train_info'][f'step_{step}'] = dict(train_acc = model.model['clf'].score(X_train, y_train), 
                                                         valid_acc = model.model['clf'].score(X_valid, y_valid))
             print('')
-            print(f"train acc:{round(configs['train_info'][f'step_{step}'], 4)}")
-            print(f"valid acc: {round(configs['train_info'][f'step_{step}'], 4)}")
+            print(f"train acc:{round(configs['train_info'][f'step_{step}']['train_acc'], 4)}")
+            print(f"valid acc: {round(configs['train_info'][f'step_{step}']['valid_acc'], 4)}")
+        
             
     model.save_model()
 
