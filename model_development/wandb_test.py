@@ -57,6 +57,11 @@ configs = dict(dataset = dict(name = dataset_name, path = dataset_path),
 
 run = wandb.init(project="lang_id", config = configs)
 
+
+
+
+
+
 run.finish()
 # def main():
 #     # config

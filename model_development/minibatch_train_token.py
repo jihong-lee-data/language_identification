@@ -5,6 +5,7 @@ import re
 from module.engine import *
 import pyprind
 from tqdm import tqdm
+from transformers import AutoTokenizer
 
 
 def main():
@@ -13,15 +14,12 @@ def main():
     dataset_name = "wortschartz_30"
     clf_type = "gnb"
     model_version = 'v5'
-    dataset_path = os.path.join(dataset_dir, dataset_name)
+    dataset_path = "../fine_tuning/data/tokenized/wortschartz_30"
     
-    prep_name = 'vect_wortschartz_30_v4'
-    
-    preprocessor = Model(prep_name).model
     classifier = GaussianNB()
 
     model_name= f"{clf_type}_{dataset_name}_{model_version}"
-    model = Model(model_name)
+    # model = Model(model_name, classifier)
     
     model_dir = os.path.join("model", model_name)
     result_dir = os.path.join(model_dir, "result")
@@ -37,8 +35,8 @@ def main():
 
 
     configs = dict(dataset = dict(name = dataset_name, path = dataset_path),
-                    model = dict(name = model_name, path = model_path, result_path = result_path, cm_result_path = cm_path, prep_name = prep_name),
-                    prep = str(preprocessor),
+                    model = dict(name = model_name, path = model_path, result_path = result_path, cm_result_path = cm_path),
+                    
                     clf = str(classifier)
                     )
 
@@ -70,8 +68,7 @@ def main():
 
     
     ### mini batch 방식으로 모델 학습
-    pipeline = Pipeline([('prep', preprocessor),
-                        ('clf', classifier)])
+    pipeline = Pipeline([('clf', classifier)])
     
     
     model = Model(model_name, model = pipeline)
@@ -85,11 +82,14 @@ def main():
     print('Fitting model...')
     
     for step in tqdm(range(1, configs['train_info']['n_steps']+1)):
+        tokenizer()
+        
+        
         
         crt_train_batch = next(train_gen)
         crt_valid_batch = next(valid_gen)
                 
-        X_train = model.model['prep'].transform(crt_train_batch['text']).toarray()
+        X_train = model.model['prep'].transform(crt_train_batch['input_ids'])
         y_train = int2label(crt_train_batch['labels'])
         
         

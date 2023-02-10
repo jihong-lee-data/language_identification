@@ -516,3 +516,11 @@
     3) Classifier -> 실수 영역에 대응하기 위해 `Gaussian Naive Bayes` 모델로 교체
 
     -> `gnb_wortschartz_30_v1`
+
+---
+### 2023.02.10
+
+* input feature dimension 줄이기 시도 중
+ -> `gnb_wortschartz_30_v4` 성능 테스트 해보기
+
+* `xlm-roberta-base` tokenizer로 모델 학습 시켜보기

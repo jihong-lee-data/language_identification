@@ -3,13 +3,13 @@ from sklearn.random_projection import SparseRandomProjection
 
 datasets = load_from_disk("data/wortschartz_30/")
 
-model_name = 'vect_wortschartz_30_v3'
+model_name = 'vect_wortschartz_30_v5'
 
 preprocessor = Pipeline(steps=[('vect', HashingVectorizer(alternate_sign=True, decode_error='ignore',
-                                                        n_features=2**15,
+                                                        n_features=2**19,
                                                         preprocessor=None,
                                                         tokenizer=tokenizer,
-                                                        ngram_range=(1, 10)
+                                                        ngram_range=(1, 7)
                                                         )),
                                 ('trans', TfidfTransformer())])
 
@@ -39,13 +39,12 @@ end = time.time()
 print(f'dtm shape = {dtm.shape}')
 print(f"took ({end - start:.5f} sec)", end = '\n'*2)
 
-start = time.time()
-rdc_dtm = model.model['dimrdc'].transform(dtm)
-end = time.time()
-print(f'reduced shape = {rdc_dtm.shape}')
-print(f"took ({end - start:.5f} sec)", end = '\n'*2)
-
-
-
+# start = time.time()
+# rdc_dtm = model.model['dimrdc'].transform(dtm)
+# end = time.time()
+# print(f'reduced shape = {rdc_dtm.shape}')
+# print(f"took ({end - start:.5f} sec)", end = '\n'*2)
 
 print('done')
+
+

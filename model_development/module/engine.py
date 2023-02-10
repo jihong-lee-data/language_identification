@@ -182,14 +182,14 @@ class Model():
     def __init__(self, model_name, model = None):
         model_dir = "model"
         self.model_path = os.path.join(model_dir, model_name, "model.pkl")
+        
         if os.path.exists(self.model_path):
             try:
                 self.model = self.load_model()
             except:
                 self.model = model
-        else:
-            self.model = model            
-
+        if model:
+            self.model = model
     
     def fit(self, X, y):
         self.model.fit(X, y)
