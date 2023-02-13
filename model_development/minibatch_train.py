@@ -72,8 +72,8 @@ def main():
                         ('clf', classifier)])
     
     
-    # model = Model(model_name, model = pipeline)
-    model = Model(model_name)
+    model = Model(model_name, model = pipeline)
+    # model = Model(model_name)
 
 
     model.labels = dataset['train'].features['labels'].names

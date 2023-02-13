@@ -38,11 +38,13 @@ class Net(nn.Module):
 
 def train_loop(dataloader, model, loss_fn, optimizer):
     size = len(dataloader.dataset)
-    for batch, (X, y) in enumerate(dataloader):
+    for batch, data in enumerate(dataloader):
+        X = data['input_ids']
+        y = data['labels']
         # 예측(prediction)과 손실(loss) 계산
         pred = model(X)
         loss = loss_fn(pred, y)
-
+    
         # 역전파
         optimizer.zero_grad()
         loss.backward()
@@ -59,7 +61,9 @@ def test_loop(dataloader, model, loss_fn):
     test_loss, correct = 0, 0
 
     with torch.no_grad():
-        for X, y in dataloader:
+        for data in dataloader:
+            X = data['input_ids']
+            y = data['labels']
             pred = model(X)
             test_loss += loss_fn(pred, y).item()
             correct += (pred.argmax(1) == y).type(torch.float).sum().item()
