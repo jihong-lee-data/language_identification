@@ -22,6 +22,7 @@ from sklearn.metrics import classification_report
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.decomposition import TruncatedSVD, NMF
 from sklearn.random_projection import SparseRandomProjection
+from mlxtend.preprocessing import DenseTransformer
 
 from xgboost import XGBClassifier 
 from pprint import pprint

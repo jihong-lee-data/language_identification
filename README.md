@@ -524,3 +524,12 @@
  -> `gnb_wortschartz_30_v4` 성능 테스트 해보기
 
 * `xlm-roberta-base` tokenizer로 모델 학습 시켜보기
+
+---
+### 2023.02.13
+* test data
+    * accuracy = `0.9287`
+    
+    * confusion matrix
+
+        <img src = "model_development/data/test_data/gnb_wortschartz_30_v4_test_cm.png" width = 400>

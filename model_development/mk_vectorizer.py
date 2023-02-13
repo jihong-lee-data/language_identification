@@ -11,7 +11,8 @@ preprocessor = Pipeline(steps=[('vect', HashingVectorizer(alternate_sign=True, d
                                                         tokenizer=tokenizer,
                                                         ngram_range=(1, 7)
                                                         )),
-                                ('trans', TfidfTransformer())])
+                                ('trans', TfidfTransformer()),
+                                ('dense', DenseTransformer())])
 
 configs= dict(preprocessor = str(preprocessor))
 

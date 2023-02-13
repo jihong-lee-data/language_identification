@@ -7,7 +7,6 @@ import pyprind
 from tqdm import tqdm
 from transformers import AutoTokenizer
 
-
 def main():
     # config
     dataset_dir = 'data'
@@ -36,7 +35,7 @@ def main():
 
     configs = dict(dataset = dict(name = dataset_name, path = dataset_path),
                     model = dict(name = model_name, path = model_path, result_path = result_path, cm_result_path = cm_path),
-                    
+                    tok = 'xlm-roberta-base',
                     clf = str(classifier)
                     )
 
@@ -56,15 +55,12 @@ def main():
     print('model configuration:')
     pprint(configs)
 
-    
     train_sampler = BatchSampler(RandomSampler(dataset['train'], generator = np.random.seed(42)), batch_size = configs['train_info']['n_train_batch'], drop_last = False)
     valid_sampler = BatchSampler(RandomSampler(dataset['validation'], generator = np.random.seed(42)), batch_size = configs['train_info']['n_valid_batch'], drop_last = False)
 
-    train_dataloader = DataLoader(dataset['train'], batch_sampler = train_sampler, num_workers = 4)
-    valid_dataloader = DataLoader(dataset['validation'], batch_sampler = valid_sampler, num_workers = 4)
 
-    train_gen = iter(train_dataloader)
-    valid_gen = iter(valid_dataloader)
+    train_gen = iter(train_sampler)
+    valid_gen = iter(valid_sampler)
 
     
     ### mini batch 방식으로 모델 학습
@@ -82,28 +78,25 @@ def main():
     print('Fitting model...')
     
     for step in tqdm(range(1, configs['train_info']['n_steps']+1)):
-        tokenizer()
         
-        
-        
-        crt_train_batch = next(train_gen)
-        crt_valid_batch = next(valid_gen)
+        crt_train_batch = dataset['train'][next(train_gen)]
+        crt_valid_batch = dataset['validation'][next(train_gen)]
                 
-        X_train = model.model['prep'].transform(crt_train_batch['input_ids'])
+        X_train = crt_train_batch['input_ids']
         y_train = int2label(crt_train_batch['labels'])
         
         
         model.model['clf'].partial_fit(X_train, y_train, classes = model.labels)
         
-        # if (step % (configs['train_info']['n_steps'] // configs['train_info']['n_logs'])) == 0:
-        #     X_valid = model.model['prep'].transform(crt_valid_batch['text']).toarray()
-        #     y_valid = int2label(crt_valid_batch['labels'])
+        if (step % (configs['train_info']['n_steps'] // configs['train_info']['n_logs'])) == 0:
+            X_valid = model.model['prep'].transform(crt_valid_batch['text']).toarray()
+            y_valid = int2label(crt_valid_batch['labels'])
             
-        #     configs['train_info'][f'step_{step}'] = dict(train_acc = model.model['clf'].score(X_train, y_train), 
-        #                                                 valid_acc = model.model['clf'].score(X_valid, y_valid))
-        #     print('')
-        #     print(f"train acc:{round(configs['train_info'][f'step_{step}']['train_acc'], 4)}")
-        #     print(f"valid acc: {round(configs['train_info'][f'step_{step}']['valid_acc'], 4)}")
+            configs['train_info'][f'step_{step}'] = dict(train_acc = model.model['clf'].score(X_train, y_train), 
+                                                        valid_acc = model.model['clf'].score(X_valid, y_valid))
+            print('')
+            print(f"train acc:{round(configs['train_info'][f'step_{step}']['train_acc'], 4)}")
+            print(f"valid acc: {round(configs['train_info'][f'step_{step}']['valid_acc'], 4)}")
         
             
     model.save_model()

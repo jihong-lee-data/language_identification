@@ -12,7 +12,7 @@ def main():
     dataset_dir = 'data'
     dataset_name = "wortschartz_30"
     clf_type = "gnb"
-    model_version = 'v5'
+    model_version = 'v4'
     dataset_path = os.path.join(dataset_dir, dataset_name)
     
     prep_name = 'vect_wortschartz_30_v4'
@@ -74,26 +74,26 @@ def main():
                         ('clf', classifier)])
     
     
-    model = Model(model_name, model = pipeline)
-    # model = Model(model_name)
+    # model = Model(model_name, model = pipeline)
+    model = Model(model_name)
 
 
     model.labels = dataset['train'].features['labels'].names
 
     int2label = dataset['train'].features['labels'].int2str
     
-    print('Fitting model...')
+    # print('Fitting model...')
     
-    for step in tqdm(range(1, configs['train_info']['n_steps']+1)):
+    # for step in tqdm(range(1, configs['train_info']['n_steps']+1)):
         
-        crt_train_batch = next(train_gen)
-        crt_valid_batch = next(valid_gen)
+    #     crt_train_batch = next(train_gen)
+    #     crt_valid_batch = next(valid_gen)
                 
-        X_train = model.model['prep'].transform(crt_train_batch['text']).toarray()
-        y_train = int2label(crt_train_batch['labels'])
+    #     X_train = model.model['prep'].transform(crt_train_batch['text']).toarray()
+    #     y_train = int2label(crt_train_batch['labels'])
         
         
-        model.model['clf'].partial_fit(X_train, y_train, classes = model.labels)
+    #     model.model['clf'].partial_fit(X_train, y_train, classes = model.labels)
         
         # if (step % (configs['train_info']['n_steps'] // configs['train_info']['n_logs'])) == 0:
         #     X_valid = model.model['prep'].transform(crt_valid_batch['text']).toarray()
