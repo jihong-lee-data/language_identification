@@ -39,8 +39,8 @@ class Net(nn.Module):
 def train_loop(dataloader, model, loss_fn, optimizer):
     size = len(dataloader.dataset)
     for batch, data in enumerate(dataloader):
-        X = data['input_ids']
-        y = data['labels']
+        X = torch.tensor(data['input_ids'], dtype = torch.float32)
+        y = torch.tensor(data['labels'])
         # 예측(prediction)과 손실(loss) 계산
         pred = model(X)
         loss = loss_fn(pred, y)
@@ -62,8 +62,8 @@ def test_loop(dataloader, model, loss_fn):
 
     with torch.no_grad():
         for data in dataloader:
-            X = data['input_ids']
-            y = data['labels']
+            X = torch.tensor(data['input_ids'], dtype = torch.float32)
+            y = torch.tensor(data['labels'])
             pred = model(X)
             test_loss += loss_fn(pred, y).item()
             correct += (pred.argmax(1) == y).type(torch.float).sum().item()

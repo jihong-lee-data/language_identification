@@ -12,7 +12,7 @@ def main():
     dataset_dir = 'data'
     dataset_name = "wortschartz_30"
     clf_type = "gnb"
-    model_version = 'v4'
+    model_version = 'v6'
     dataset_path = os.path.join(dataset_dir, dataset_name)
     
     prep_name = 'vect_wortschartz_30_v5'
@@ -63,8 +63,14 @@ def main():
     valid_sampler = BatchSampler(RandomSampler(dataset['validation'], generator = np.random.seed(42)), batch_size = configs['train_info']['n_valid_batch'], drop_last = False)
 
 
-    train_gen = iter(train_sampler)
-    valid_gen = iter(valid_sampler)
+    # train_gen = iter(train_sampler)
+    # valid_gen = iter(valid_sampler)
+
+    train_dataloader = DataLoader(dataset['train'], batch_sampler = train_sampler, num_workers = 20)
+    valid_dataloader = DataLoader(dataset['validation'], batch_sampler = valid_sampler, num_workers = 20)
+
+    train_gen = iter(train_dataloader)
+    valid_gen = iter(valid_dataloader)
 
     
     ### mini batch 방식으로 모델 학습
@@ -84,8 +90,10 @@ def main():
     
     for step in tqdm(range(1, configs['train_info']['n_steps']+1)):
 
-        crt_train_batch = dataset['train'][next(train_gen)]
-        crt_valid_batch = dataset['validation'][next(valid_gen)]
+        # crt_train_batch = dataset['train'][next(train_gen)]
+        # crt_valid_batch = dataset['validation'][next(valid_gen)]
+        crt_train_batch = next(train_gen)
+        crt_valid_batch =next(valid_gen)
                 
         X_train = model.model['prep'].transform(crt_train_batch['text'])
         y_train = int2label(crt_train_batch['labels'])        
