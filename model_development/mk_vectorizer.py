@@ -6,7 +6,7 @@ datasets = load_from_disk("data/wortschartz_30/")
 model_name = 'vect_wortschartz_30_v5'
 
 preprocessor = Pipeline(steps=[('vect', HashingVectorizer(alternate_sign=True, decode_error='ignore',
-                                                        n_features=2**19,
+                                                        n_features=2**20,
                                                         preprocessor=None,
                                                         tokenizer=tokenizer,
                                                         ngram_range=(1, 7)

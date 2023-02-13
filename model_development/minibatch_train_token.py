@@ -15,6 +15,7 @@ def main():
     model_version = 'v5'
     dataset_path = "../fine_tuning/data/tokenized/wortschartz_30"
     
+    preprocessor = Pipeline([('vect', HashingVectorizer()), ('dense', DenseTransformer())])
     classifier = GaussianNB()
 
     model_name= f"{clf_type}_{dataset_name}_{model_version}"
@@ -35,7 +36,7 @@ def main():
 
     configs = dict(dataset = dict(name = dataset_name, path = dataset_path),
                     model = dict(name = model_name, path = model_path, result_path = result_path, cm_result_path = cm_path),
-                    tok = 'xlm-roberta-base',
+                    prep = str(preprocessor),
                     clf = str(classifier)
                     )
 
@@ -64,7 +65,8 @@ def main():
 
     
     ### mini batch 방식으로 모델 학습
-    pipeline = Pipeline([('clf', classifier)])
+    pipeline = Pipeline([('prep', preprocessor),
+                        ('clf', classifier)])
     
     
     model = Model(model_name, model = pipeline)
@@ -80,16 +82,16 @@ def main():
     for step in tqdm(range(1, configs['train_info']['n_steps']+1)):
         
         crt_train_batch = dataset['train'][next(train_gen)]
-        crt_valid_batch = dataset['validation'][next(train_gen)]
+        crt_valid_batch = dataset['validation'][next(valid_gen)]
                 
-        X_train = crt_train_batch['input_ids']
+        X_train = model.model['prep'].transform(crt_train_batch['input_ids'])
         y_train = int2label(crt_train_batch['labels'])
         
         
         model.model['clf'].partial_fit(X_train, y_train, classes = model.labels)
         
         if (step % (configs['train_info']['n_steps'] // configs['train_info']['n_logs'])) == 0:
-            X_valid = model.model['prep'].transform(crt_valid_batch['text']).toarray()
+            X_valid = model.model['prep'].transform(crt_valid_batch['input_ids'])
             y_valid = int2label(crt_valid_batch['labels'])
             
             configs['train_info'][f'step_{step}'] = dict(train_acc = model.model['clf'].score(X_train, y_train), 
@@ -109,7 +111,7 @@ def main():
     metric = dict(acc = dict(), report = dict())
     y_pred = dict()
     for key in dataset.keys():
-        y_pred[key] = model.model.predict(dataset[key]['text'])
+        y_pred[key] = model.model.predict(dataset[key]['input_ids'])
         metric['acc'][key] = accuracy_score(int2label(dataset[key]['labels']), y_pred[key])
         metric['report'][key] = classification_report(int2label(dataset[key]['labels']), y_pred[key])
     
