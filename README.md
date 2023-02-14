@@ -1,4 +1,6 @@
-# language_identification
+
+# Language Identification
+---
 ### 2023.01.09
 * `googletrans` 모듈을 활용해서 1000개의 문장 샘플에 대해 language detect -> (lang, confidence)
 * 107개의 언어로 분류
@@ -527,9 +529,15 @@
 
 ---
 ### 2023.02.13
+* `gnb_wortschartz_30_v4`
+
 * test data
     * accuracy = `0.9287`
     
     * confusion matrix
 
         <img src = "model_development/data/test_data/gnb_wortschartz_30_v4_test_cm.png" width = 400>
+
+---
+### 2023.02.14
+
