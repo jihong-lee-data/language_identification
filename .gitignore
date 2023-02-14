@@ -36,3 +36,5 @@ fine_tuning/local-pt-checkpoint/
 fine_tuning/workspace.py
 model_development/wandb/
 
+## linear_model
+linear_model/model
