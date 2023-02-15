@@ -1,0 +1,23 @@
+{
+  "learning_rate": 0.1,
+  "architecture": "DNN",
+  "dataset": "wortschartz_30",
+  "epochs": 10,
+  "batch_size": 128,
+  "model_name": "FC1_v2",
+  "model": {
+    "fc": {
+      "n_layers": 1,
+      "n_input": 768,
+      "n_output": 30,
+      "n_max": 768,
+      "n_inc": 0
+    },
+    "dropout": {
+      "n_layers": null,
+      "n_dropout": null,
+      "rates": null
+    },
+    "embedding_model": "xlm-roberta-base"
+  }
+}

@@ -11,7 +11,7 @@ from tqdm import tqdm
 
 warnings.filterwarnings(action='ignore')
 
-BASE_DIR = 'FC_3_v1'
+BASE_DIR = 'FC_1_v1'
 if not os.path.exists(BASE_DIR):
     os.system(f'mkdir {BASE_DIR}')
 
