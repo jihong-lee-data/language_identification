@@ -540,4 +540,6 @@
 
 ---
 ### 2023.02.14
+* `xlm-roberta-base` embedding 활용 DNN model fitting
 
+* `gnb_wortschartz_30_v6` 성능 테스트 해보기
