@@ -9,6 +9,7 @@ pyvenv.cfg
 share/
 etc/
 README.html
+wandb/
 
 ## model_development
 model_development/.develop

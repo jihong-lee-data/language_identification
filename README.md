@@ -543,3 +543,8 @@
 * `xlm-roberta-base` embedding 활용 DNN model fitting
 
 * `gnb_wortschartz_30_v6` 성능 테스트 해보기
+
+---
+### 2023.02.15
+
+* `wandb` 적용 및 code refactoring
