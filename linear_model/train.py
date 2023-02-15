@@ -11,7 +11,7 @@ from tqdm import tqdm
 
 warnings.filterwarnings(action='ignore')
 
-BASE_DIR = 'FC_50_v1'
+BASE_DIR = 'FC_3_v1'
 if not os.path.exists(BASE_DIR):
     os.system(f'mkdir {BASE_DIR}')
 
@@ -35,7 +35,7 @@ def gen_dropout(n_layers, n_dropout, rates:(float or list) = 0.2):
     
     return [layer2attach, [nn.Dropout(rates[i]) for i in range(n_dropout)]]
 
-def stack_fc(layer_io, dropouts, activ_func=nn.ReLU(), device=None):
+def stack_fc(layer_io, dropouts=None, activ_func=nn.ReLU(), device=None):
     model = nn.Sequential()
     n_layer = len(layer_io)
     for idx, io in enumerate(layer_io):
@@ -45,8 +45,9 @@ def stack_fc(layer_io, dropouts, activ_func=nn.ReLU(), device=None):
             name, module = 'ouput', nn.Linear(io[0], io[1], device = device)
         else:
             components = [('lin', nn.Linear(io[0], io[1], device = device)), ('activ', activ_func)]
-            if layer_id in dropouts[0]:
-                components.append(('dropout', dropouts[1][dropouts[0].index(layer_id)]))
+            if dropouts:
+                if layer_id in dropouts[0]:
+                    components.append(('dropout', dropouts[1][dropouts[0].index(layer_id)]))
             for c_name, c_module in components:
                 layer.add_module(c_name, c_module)
             name, module = f'fc{layer_id}', layer                
@@ -68,7 +69,7 @@ class Net(nn.Module):
           ('embedding', nn.Embedding.from_pretrained(embedding_model.embeddings.word_embeddings.weight).to(device)),
           ('pool', nn.AvgPool2d(kernel_size=(512, 1))),
           ('flat', nn.Flatten()),
-          ('fc', stack_fc(layer_io= n_unit(50, 768, 30, 3 * 2**13, 10), dropouts= gen_dropout(50, 10, 0.2), device=device))
+          ('fc', stack_fc(layer_io= n_unit(1, 768, 30, 768, 0), dropouts= gen_dropout(3, 1, 0.2), device=device))
         )
         for name, module in self.layers:
             self.model.add_module(name, module)
@@ -153,9 +154,9 @@ def main():
 
     model = Net()
     learning_rate = 1e-1
-    batch_size = 64
-    epochs = 2
-
+    batch_size = 128
+    epochs = 10
+    print(model)
 
     train_sampler = BatchSampler(RandomSampler(dataset['train'], generator = np.random.seed(42)), batch_size = batch_size, drop_last = False)
     valid_sampler = BatchSampler(RandomSampler(dataset['validation'], generator = np.random.seed(42)), batch_size = batch_size, drop_last = False)
