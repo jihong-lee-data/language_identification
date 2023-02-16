@@ -79,8 +79,7 @@ def main():
         val_loss, val_acc= test_loop(valid_dataloader, model, loss_fn, device)
         
         # check early stopping condition
-        early_stopping(model= model,
-                       score= -val_loss)
+        early_stopping(score= -val_loss)
         
         if early_stopping.early_stop:
             break
