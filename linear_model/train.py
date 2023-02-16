@@ -77,19 +77,7 @@ def main():
         train_loss= train_loop(train_dataloader, model, loss_fn, optimizer, device, crt_epoch, wandb)
         # validation
         val_loss, val_acc= test_loop(valid_dataloader, model, loss_fn, device)
-        
-        # check early stopping condition
-        early_stopping(score= -val_loss)
-        
-        if early_stopping.early_stop:
-            break
-        elif not early_stopping.counter:
-            save_checkpoint(model, CP_MODEL_PATH)
-            save_checkpoint(optimizer, CP_OPTIM_PATH)
-            save_checkpoint(scheduler, CP_SCHDLR_PATH)
-            save_json(config, MODEL_CONFIG_PATH)
-            
-        scheduler.step()
+                    
 
         log_dict= dict(train_loss= train_loss,
                         val_loss= val_loss,
@@ -103,6 +91,19 @@ def main():
             best_val_acc= val_acc
             best_epoch= crt_epoch
     
+        # check early stopping condition
+        early_stopping(score= -val_loss)
+        
+        if early_stopping.early_stop:
+            break
+        elif not early_stopping.counter:
+            save_checkpoint(model, CP_MODEL_PATH)
+            save_checkpoint(optimizer, CP_OPTIM_PATH)
+            save_checkpoint(scheduler, CP_SCHDLR_PATH)
+            save_json(config, MODEL_CONFIG_PATH)
+
+        scheduler.step()
+        
     torch.cuda.empty_cache()
     
     # wrapping up & finishing wandb
