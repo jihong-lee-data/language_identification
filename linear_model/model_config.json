@@ -5,24 +5,24 @@
     "optimizer": "AdamW",
     "learning_rate": 0.1,
     "lr_lambda": 0.95,
-    "epochs": 50,
+    "epochs": 100,
     "batch_size": 512,
     "early_stop": {
       "patience": 10,
       "delta": 0
     }
   },
-  "model_name": "FC1_v2",
+  "model_name": "FC4_v1",
   "architecture": "DNN",
   "dataset": "wortschartz_30",
   "model": {
     "embedding_model": "xlm-roberta-base",
     "fc": {
-      "n_layers": 1,
+      "n_layers": 4,
       "n_input": 768,
       "n_output": 30,
-      "n_max": 768,
-      "n_inc": 0
+      "n_tip_point": 200,
+      "tip_layer": 2
     },
     "dropout": {
       "n_layers": null,

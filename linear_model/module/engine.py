@@ -35,6 +35,7 @@ def load_model(config):
                 )
     return model
 
+
 def load_trainer(model, config):
     loss_fn, optimizer, scheduler= None, None, None
     if config['trainer']['loss_fn'] == 'CrossEntropyLoss':
@@ -47,6 +48,7 @@ def load_trainer(model, config):
                                                 last_epoch=-1,
                                                 verbose=False)
     return loss_fn, optimizer, scheduler
+
 
 def get_dataloader(dataset, batch_size, num_workers= 4, seed= 42):
         batch_sampler= BatchSampler(RandomSampler(dataset, generator= np.random.seed(seed)), batch_size= batch_size, drop_last= False)
@@ -139,16 +141,16 @@ class Net(nn.Module):
         return output
 
 
-def _n_unit(n_layers, n_input, n_output, n_max, n_inc=0):
-    n_dec= n_layers - n_inc
-    if n_inc >= n_layers:
+def _n_unit(n_layers, n_input, n_output, n_tip_point, tip_layer=0):
+    
+    if tip_layer >= n_layers:
         raise ValueError("n_inc must be less than n_layer")
     if n_layers == 1:
         return [(n_input, n_output)]
-    if n_inc == 0:
-        n_max= n_input
-    inc_layers= np.int64(np.round(np.exp2(np.linspace(np.log2(n_input), np.log2(n_max), n_inc+1))))     
-    dec_layers= np.int64(np.round(np.exp2(np.linspace(np.log2(n_max), np.log2(n_output), n_dec+1))))
+    if tip_layer == 0:
+        n_tip_point= n_input
+    inc_layers= np.int64(np.round(np.exp2(np.linspace(np.log2(n_input), np.log2(n_tip_point), tip_layer+1))))     
+    dec_layers= np.int64(np.round(np.exp2(np.linspace(np.log2(n_tip_point), np.log2(n_output), (n_layers - tip_layer)+1))))
     io_list= np.hstack([inc_layers, dec_layers[1:]])
     return [(io_list[i], io_list[i+1]) for i in range(n_layers)]
 
