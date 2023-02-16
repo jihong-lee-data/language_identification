@@ -1,11 +1,22 @@
 {
-  "learning_rate": 0.1,
+  "trainer": {
+    "loss_fn": "CrossEntropyLoss",
+    "scheduler": "LambdaLR",
+    "optimizer": "AdamW",
+    "learning_rate": 0.1,
+    "lr_lambda": 0.95,
+    "epochs": 50,
+    "batch_size": 512,
+    "early_stop": {
+      "patience": 10,
+      "delta": 0
+    }
+  },
+  "model_name": "FC1_v2",
   "architecture": "DNN",
   "dataset": "wortschartz_30",
-  "epochs": 10,
-  "batch_size": 128,
-  "model_name": "FC1_v2",
   "model": {
+    "embedding_model": "xlm-roberta-base",
     "fc": {
       "n_layers": 1,
       "n_input": 768,
@@ -17,7 +28,7 @@
       "n_layers": null,
       "n_dropout": null,
       "rates": null
-    },
-    "embedding_model": "xlm-roberta-base"
-  }
+    }
+  },
+  "device": "cpu"
 }

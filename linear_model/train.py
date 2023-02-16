@@ -1,185 +1,121 @@
-from datasets import load_from_disk
+import os
 import numpy as np
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
-from torch.utils.data import DataLoader, RandomSampler, BatchSampler
-from transformers import AutoTokenizer, pipeline, AutoModel
-import os
+from torch import nn
+from datasets import load_from_disk
+import wandb
 import warnings
-from tqdm import tqdm
-
 warnings.filterwarnings(action='ignore')
 
-BASE_DIR = 'FC_1_v1'
-if not os.path.exists(BASE_DIR):
-    os.system(f'mkdir {BASE_DIR}')
-
-def n_unit(n_layer, n_input, n_output, n_max, n_inc=0):
-    n_dec = n_layer - n_inc
-    if n_inc >= n_layer:
-        raise ValueError("n_inc must be less than n_layer")
-    if n_layer == 1:
-        return [(n_input, n_output)]
-    if n_inc == 0:
-        n_max = n_input
-    inc_layers = np.int64(np.round(np.exp2(np.linspace(np.log2(n_input), np.log2(n_max), n_inc+1))))     
-    dec_layers = np.int64(np.round(np.exp2(np.linspace(np.log2(n_max), np.log2(n_output), n_dec+1))))
-    io_list = np.hstack([inc_layers, dec_layers[1:]])
-    return [(io_list[i], io_list[i+1]) for i in range(n_layer)]
-
-def gen_dropout(n_layers, n_dropout, rates:(float or list) = 0.2):
-    layer2attach = np.linspace(1, n_layers, n_dropout+2, dtype = np.int32)[1:-1].tolist()
-    if isinstance(rates, float):
-        rates = [rates] * n_dropout
-    
-    return [layer2attach, [nn.Dropout(rates[i]) for i in range(n_dropout)]]
-
-def stack_fc(layer_io, dropouts=None, activ_func=nn.ReLU(), device=None):
-    model = nn.Sequential()
-    n_layer = len(layer_io)
-    for idx, io in enumerate(layer_io):
-        layer_id = idx + 1
-        layer= nn.Sequential()
-        if layer_id == n_layer:
-            name, module = 'ouput', nn.Linear(io[0], io[1], device = device)
-        else:
-            components = [('lin', nn.Linear(io[0], io[1], device = device)), ('activ', activ_func)]
-            if dropouts:
-                if layer_id in dropouts[0]:
-                    components.append(('dropout', dropouts[1][dropouts[0].index(layer_id)]))
-            for c_name, c_module in components:
-                layer.add_module(c_name, c_module)
-            name, module = f'fc{layer_id}', layer                
-        model.add_module(name, module)
-    return model
-
-
-
-device = torch.device('mps' if torch.backends.mps.is_available() else 'cuda' if torch.cuda.is_available() else 'cpu')
-# device = torch.device('cpu')
-
-embedding_model = AutoModel.from_pretrained("xlm-roberta-base")
-tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base", use_fast=True)
-class Net(nn.Module):
-    def __init__(self):
-        super(Net, self).__init__(),
-        self.model = nn.Sequential()
-        self.layers = (
-          ('embedding', nn.Embedding.from_pretrained(embedding_model.embeddings.word_embeddings.weight).to(device)),
-          ('pool', nn.AvgPool2d(kernel_size=(512, 1))),
-          ('flat', nn.Flatten()),
-          ('fc', stack_fc(layer_io= n_unit(1, 768, 30, 768, 0), dropouts= gen_dropout(3, 1, 0.2), device=device))
-        )
-        for name, module in self.layers:
-            self.model.add_module(name, module)
-        
-      # x는 데이터를 나타냅니다.
-    def forward(self, x):
-        x= tokenizer(x, add_special_tokens=True,
-            max_length=512,
-            return_token_type_ids=False,
-            padding="max_length",
-            truncation=True,
-            return_attention_mask=False,
-            return_tensors='pt')['input_ids'].to(device)
-        logits =self.model(x)
-        output = F.softmax(logits, dim=1)
-        return output
-
-def train_loop(dataloader, model, loss_fn, optimizer, epoch):
-    size = len(dataloader.dataset)
-    n_step = int(np.ceil(size / dataloader.batch_sampler.batch_size))
-    with tqdm(total= n_step) as pbar:
-        for batch, data in enumerate(dataloader):
-            X = data['text']
-            y = torch.tensor(data['labels']).to(device)
-            # 예측(prediction)과 손실(loss) 계산
-            pred = model(X)
-            loss = loss_fn(pred, y)
-        
-            # 역전파
-            optimizer.zero_grad()
-            loss.backward()
-            optimizer.step()
-
-            if (batch % (n_step // 2) == 0) and (batch != 0):
-                loss, current = loss.item(), batch * len(X)
-                print(f"loss: {loss:>7f}  [{current:>5d}/{size:>5d}]")
-                check_point_dir = os.path.join(BASE_DIR, f'checkpoint-{epoch}-{batch}')
-                if not os.path.exists(check_point_dir):
-                    os.system(f'mkdir {check_point_dir}')
-                torch.save(model.state_dict(), os.path.join(check_point_dir, 'model.bin'))
-                torch.save(optimizer.state_dict(), os.path.join(check_point_dir, 'optimizer.pt'))
-            
-            pbar.update(1)
-
-def test_loop(dataloader, model, loss_fn):
-    size = len(dataloader.dataset)
-    num_batches = len(dataloader)
-    test_loss, correct = 0, 0
-    with torch.no_grad():
-        with tqdm(total= num_batches) as pbar:
-            for data in dataloader:
-                X = data['text']
-                y = torch.tensor(data['labels']).to(device)
-                pred = model(X)
-                test_loss += loss_fn(pred, y).item()
-                correct += (pred.argmax(1) == y).type(torch.float).sum().item()
-                pbar.update(1)
-
-    test_loss /= num_batches
-    correct /= size
-    print(f"Test Error: \n Accuracy: {(100*correct):>0.1f}%, Avg loss: {test_loss:>8f} \n")
+from module.engine import get_dataloader, load_model, load_trainer, train_loop, test_loop, EarlyStopping, save_checkpoint
+from module.tool import load_json, save_json, mk_dir
 
 
 def main():
-
-    
-    print("device: ", device)
+    device= torch.device('mps' if torch.backends.mps.is_available() else 'cuda' if torch.cuda.is_available() else 'cpu')
     torch.cuda.empty_cache()
+    
+    # loading model configuration
+    INIT_CONFIG_PATH= "model_config.json"
+    config= load_json(INIT_CONFIG_PATH)
+    config['device']= device.type
+
+    # setting variout paths
+    MODEL_DIR= 'model'
+    SAVE_DIR= os.path.join(MODEL_DIR, config['model_name'])
+    MODEL_CONFIG_PATH= os.path.join(SAVE_DIR, "model_config.json")
+
+
+    DATA_DIR= "../model_development/data/"
+    DATA_PATH= os.path.join(DATA_DIR, config['dataset'])
+
+    CP_DIR= os.path.join(SAVE_DIR, 'checkpoint')
+    CP_MODEL_PATH= os.path.join(CP_DIR, "model.pt")
+    CP_OPTIM_PATH= os.path.join(CP_DIR, "optimizer.pt")
+    CP_SCHDLR_PATH= os.path.join(CP_DIR, "scheduler.pt")
+    
+    for path in [MODEL_DIR, SAVE_DIR, CP_DIR]:
+        mk_dir(path)
+    
+    # initiating wandb
+    wandb.init(
+        # set the wandb project where this run will be logged
+        project="lang_id",
+        entity= "jihongleejihong",
+        save_code= True,
+        group= "DNN",
+        job_type= "train",
+        notes="test",
+        tags= [config['model_name'], config['architecture'], config['dataset']],
+        id= config["model_name"],
+        sync_tensorboard= False,
+        resume= False,
+        config= config,
+        name= config["model_name"]
+    )
+
     # loading dataset
     print("Loading dataset...")
-
-    dataset = load_from_disk("../model_development/data/wortschartz_30/")
-
+    dataset= load_from_disk(DATA_PATH)
+    print("Dataset size(train): ", len(dataset["train"]))
+    print("Dataset size(validation): ", len(dataset["validation"]))
+    train_dataloader= get_dataloader(dataset['train'], batch_size= config['trainer']['batch_size'], num_workers= 4, seed= 42)
+    valid_dataloader= get_dataloader(dataset['validation'], batch_size= config['trainer']['batch_size'], num_workers= 4, seed= 42)
     print("Done")
 
-    train_size = len(dataset["train"])
-    valid_size = len(dataset["validation"])
+    # loading model and training modules
+    model= load_model(config)
+    loss_fn, optimizer, scheduler= load_trainer(model, config)
+    early_stopping= EarlyStopping(patience= config['trainer']['early_stop']['patience'], delta= config['trainer']['early_stop']['delta'])
 
-    print("Dataset size(train): ", train_size)
-    print("Dataset size(validation): ", valid_size)
+    # training
+    best_val_acc, best_epoch= 0, 0
 
-
-    model = Net()
-    learning_rate = 1e-1
-    batch_size = 128
-    epochs = 10
-    print(model)
-
-    train_sampler = BatchSampler(RandomSampler(dataset['train'], generator = np.random.seed(42)), batch_size = batch_size, drop_last = False)
-    valid_sampler = BatchSampler(RandomSampler(dataset['validation'], generator = np.random.seed(42)), batch_size = batch_size, drop_last = False)
-
-    train_dataloader = DataLoader(dataset['train'], batch_sampler= train_sampler,  num_workers = 4)
-    valid_dataloader = DataLoader(dataset['validation'], batch_sampler= valid_sampler, num_workers = 4)
-
-    loss_fn = nn.CrossEntropyLoss()
-    optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
-    
-    scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer=optimizer,
-                                        lr_lambda=lambda epoch: 0.95 ** epoch,
-                                        last_epoch=-1,
-                                        verbose=False)
-    for t in range(epochs):
-        print(f"Epoch {t+1}\n-------------------------------")
-        train_loop(train_dataloader, model, loss_fn, optimizer, t+1)
-        test_loop(valid_dataloader, model, loss_fn)
+    for crt_epoch in range(1, config['trainer']['epochs']+1):  
+        print(f"Epoch {crt_epoch}\n-------------------------------")
+        # train 
+        train_loss= train_loop(train_dataloader, model, loss_fn, optimizer, device, crt_epoch, wandb)
+        # validation
+        val_loss, val_acc= test_loop(valid_dataloader, model, loss_fn, device)
+        
+        # check early stopping condition
+        early_stopping(model= model,
+                       score= -val_loss)
+        
+        if early_stopping.early_stop:
+            break
+        elif not early_stopping.counter:
+            save_checkpoint(model, CP_MODEL_PATH)
+            save_checkpoint(optimizer, CP_OPTIM_PATH)
+            save_checkpoint(scheduler, CP_SCHDLR_PATH)
+            save_json(config, MODEL_CONFIG_PATH)
+            
         scheduler.step()
+
+        log_dict= dict(train_loss= train_loss,
+                        val_loss= val_loss,
+                        val_acc= val_acc)
+        
+        wandb.log(log_dict, step=crt_epoch)
+
+        torch.cuda.empty_cache()	
+        
+        if val_acc > best_val_acc:
+            best_val_acc= val_acc
+            best_epoch= crt_epoch
+    
+    torch.cuda.empty_cache()
+    
+    # wrapping up & finishing wandb
+    wandb.run.summary['best_epoch']= best_epoch
+    wandb.run.summary['best_val_acc']= best_val_acc
+    wandb.run.summary['stop_epoch']= crt_epoch
+    wandb.run.summary['stop_val_loss']= val_loss
+    wandb.run.summary['early_stop']= early_stopping.early_stop
+    
+    wandb.finish()
+    
     print("Done!")
 
-    
-    torch.cuda.empty_cache()	
-if __name__ == "__main__":
+if __name__== "__main__":
     main()
-
