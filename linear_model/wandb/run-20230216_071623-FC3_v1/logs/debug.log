@@ -1,0 +1,26 @@
+2023-02-16 07:16:23,931 INFO    MainThread:283916 [wandb_setup.py:_flush():68] Configure stats pid to 283916
+2023-02-16 07:16:23,932 INFO    MainThread:283916 [wandb_setup.py:_flush():68] Loading settings from /home/user/.config/wandb/settings
+2023-02-16 07:16:23,932 INFO    MainThread:283916 [wandb_setup.py:_flush():68] Loading settings from /home/user/project/language_identification/linear_model/wandb/settings
+2023-02-16 07:16:23,932 INFO    MainThread:283916 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-02-16 07:16:23,932 INFO    MainThread:283916 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'linear_model/train.py', 'program': 'train.py'}
+2023-02-16 07:16:23,932 INFO    MainThread:283916 [wandb_setup.py:_flush():68] Applying login settings: {'api_key': '***REDACTED***'}
+2023-02-16 07:16:23,932 INFO    MainThread:283916 [wandb_init.py:_log_setup():492] Logging user logs to /home/user/project/language_identification/linear_model/wandb/run-20230216_071623-FC3_v1/logs/debug.log
+2023-02-16 07:16:23,932 INFO    MainThread:283916 [wandb_init.py:_log_setup():493] Logging internal logs to /home/user/project/language_identification/linear_model/wandb/run-20230216_071623-FC3_v1/logs/debug-internal.log
+2023-02-16 07:16:23,932 INFO    MainThread:283916 [wandb_init.py:init():532] calling init triggers
+2023-02-16 07:16:23,933 INFO    MainThread:283916 [wandb_init.py:init():538] wandb.init called with sweep_config: {}
+config: {'trainer': {'loss_fn': 'CrossEntropyLoss', 'scheduler': 'LambdaLR', 'optimizer': 'AdamW', 'learning_rate': 0.1, 'lr_lambda': 0.95, 'epochs': 100, 'batch_size': 512, 'early_stop': {'patience': 10, 'delta': 0}}, 'model_name': 'FC3_v1', 'architecture': 'DNN', 'dataset': 'wortschartz_30', 'model': {'embedding_model': 'xlm-roberta-base', 'fc': {'n_layers': 3, 'n_input': 768, 'n_output': 30, 'n_max': 200, 'n_inc': 2}, 'dropout': {'n_layers': None, 'n_dropout': None, 'rates': None}}, 'device': 'cuda'}
+2023-02-16 07:16:23,933 INFO    MainThread:283916 [wandb_init.py:init():588] starting backend
+2023-02-16 07:16:23,933 INFO    MainThread:283916 [wandb_init.py:init():592] setting up manager
+2023-02-16 07:16:23,943 INFO    MainThread:283916 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-02-16 07:16:23,947 INFO    MainThread:283916 [wandb_init.py:init():599] backend started and connected
+2023-02-16 07:16:23,954 INFO    MainThread:283916 [wandb_init.py:init():687] updated telemetry
+2023-02-16 07:16:23,984 INFO    MainThread:283916 [wandb_init.py:init():727] communicating run to backend with 60.0 second timeout
+2023-02-16 07:16:24,638 INFO    MainThread:283916 [wandb_run.py:_on_init():2134] communicating current version
+2023-02-16 07:16:24,688 INFO    MainThread:283916 [wandb_run.py:_on_init():2143] got version response 
+2023-02-16 07:16:24,688 INFO    MainThread:283916 [wandb_init.py:init():775] starting run threads in backend
+2023-02-16 07:16:24,858 INFO    MainThread:283916 [wandb_run.py:_console_start():2114] atexit reg
+2023-02-16 07:16:24,858 INFO    MainThread:283916 [wandb_run.py:_redirect():1969] redirect: SettingsConsole.WRAP_RAW
+2023-02-16 07:16:24,859 INFO    MainThread:283916 [wandb_run.py:_redirect():2034] Wrapping output streams.
+2023-02-16 07:16:24,859 INFO    MainThread:283916 [wandb_run.py:_redirect():2059] Redirects installed.
+2023-02-16 07:16:24,861 INFO    MainThread:283916 [wandb_init.py:init():817] run started, returning control to user process
+2023-02-16 07:16:45,009 WARNING MsgRouterThr:283916 [router.py:message_loop():77] message_loop has been closed
