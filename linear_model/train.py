@@ -82,7 +82,7 @@ def main():
         log_dict= dict(train_loss= train_loss,
                         val_loss= val_loss,
                         val_acc= val_acc)
-        
+        print(log_dict)
         wandb.log(log_dict, step=crt_epoch)
 
         torch.cuda.empty_cache()	

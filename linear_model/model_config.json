@@ -4,15 +4,15 @@
     "scheduler": "LambdaLR",
     "optimizer": "AdamW",
     "learning_rate": 0.1,
-    "lr_lambda": 0.95,
+    "lr_lambda": 0.99,
     "epochs": 100,
-    "batch_size": 512,
+    "batch_size": 1024,
     "early_stop": {
       "patience": 10,
       "delta": 0
     }
   },
-  "model_name": "FC4_v1",
+  "model_name": "FC4_v2",
   "architecture": "DNN",
   "dataset": "wortschartz_30",
   "model": {
@@ -21,7 +21,7 @@
       "n_layers": 4,
       "n_input": 768,
       "n_output": 30,
-      "n_tip_point": 200,
+      "n_tip_point": 500,
       "tip_layer": 2
     },
     "dropout": {
@@ -30,5 +30,5 @@
       "rates": null
     }
   },
-  "device": "cpu"
+  "device": "cuda"
 }

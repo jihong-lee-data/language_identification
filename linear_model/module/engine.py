@@ -73,7 +73,7 @@ def train_loop(dataloader, model, loss_fn, optimizer, device, epoch, wandb):
             optimizer.step()
 
             loss, trained_size= loss.item(), batch * len(X)
-            log_dict= dict(batch_loss= loss, trained_size= trained_size)
+            log_dict= dict(batch_loss= loss, epoch=epoch, trained_size= trained_size)
             wandb.log(log_dict, step= batch)  
             
             pbar.update(1)
