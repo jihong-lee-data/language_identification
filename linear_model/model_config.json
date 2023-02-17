@@ -4,9 +4,9 @@
     "scheduler": "LambdaLR",
     "optimizer": "AdamW",
     "learning_rate": 0.1,
-    "lr_lambda": 0.99,
+    "lr_lambda": 0.95,
     "epochs": 100,
-    "batch_size": 1024,
+    "batch_size": 512,
     "early_stop": {
       "patience": 10,
       "delta": 0
@@ -25,9 +25,9 @@
       "tip_layer": 2
     },
     "dropout": {
-      "n_layers": null,
-      "n_dropout": null,
-      "rates": null
+      "n_layers": 4,
+      "n_dropout": 1,
+      "rates": 0.2
     }
   },
   "device": "cuda"
