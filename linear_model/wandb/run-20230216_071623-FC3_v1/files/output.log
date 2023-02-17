@@ -1,0 +1,22 @@
+
+Loading dataset...
+Traceback (most recent call last):
+  File "train.py", line 121, in <module>
+    main()
+  File "train.py", line 59, in main
+    dataset= load_from_disk(DATA_PATH)
+  File "/home/user/project/language_identification/lib/python3.8/site-packages/datasets/load.py", line 1850, in load_from_disk
+    return DatasetDict.load_from_disk(dataset_path, keep_in_memory=keep_in_memory, storage_options=storage_options)
+  File "/home/user/project/language_identification/lib/python3.8/site-packages/datasets/dataset_dict.py", line 1270, in load_from_disk
+    dataset_dict[k] = Dataset.load_from_disk(
+  File "/home/user/project/language_identification/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 1549, in load_from_disk
+    arrow_table = concat_tables(
+  File "/home/user/project/language_identification/lib/python3.8/site-packages/datasets/table.py", line 1805, in concat_tables
+    tables = list(tables)
+  File "/home/user/project/language_identification/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 1550, in <genexpr>
+    table_cls.from_file(Path(dataset_path, data_file["filename"]).as_posix())
+  File "/home/user/project/language_identification/lib/python3.8/site-packages/datasets/table.py", line 1065, in from_file
+    table = _memory_mapped_arrow_table_from_file(filename)
+  File "/home/user/project/language_identification/lib/python3.8/site-packages/datasets/table.py", line 52, in _memory_mapped_arrow_table_from_file
+    pa_table = opened_stream.read_all()
+KeyboardInterrupt

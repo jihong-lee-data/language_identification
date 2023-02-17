@@ -1,0 +1,31 @@
+2023-02-16 08:28:03,926 INFO    MainThread:284767 [wandb_setup.py:_flush():68] Configure stats pid to 284767
+2023-02-16 08:28:03,926 INFO    MainThread:284767 [wandb_setup.py:_flush():68] Loading settings from /home/user/.config/wandb/settings
+2023-02-16 08:28:03,926 INFO    MainThread:284767 [wandb_setup.py:_flush():68] Loading settings from /home/user/project/language_identification/linear_model/wandb/settings
+2023-02-16 08:28:03,926 INFO    MainThread:284767 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-02-16 08:28:03,926 INFO    MainThread:284767 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'linear_model/train.py', 'program': 'train.py'}
+2023-02-16 08:28:03,927 INFO    MainThread:284767 [wandb_init.py:_log_setup():492] Logging user logs to /home/user/project/language_identification/linear_model/wandb/run-20230216_082803-FC4_v1/logs/debug.log
+2023-02-16 08:28:03,927 INFO    MainThread:284767 [wandb_init.py:_log_setup():493] Logging internal logs to /home/user/project/language_identification/linear_model/wandb/run-20230216_082803-FC4_v1/logs/debug-internal.log
+2023-02-16 08:28:03,927 INFO    MainThread:284767 [wandb_init.py:init():532] calling init triggers
+2023-02-16 08:28:03,927 INFO    MainThread:284767 [wandb_init.py:init():538] wandb.init called with sweep_config: {}
+config: {'trainer': {'loss_fn': 'CrossEntropyLoss', 'scheduler': 'LambdaLR', 'optimizer': 'AdamW', 'learning_rate': 0.1, 'lr_lambda': 0.95, 'epochs': 100, 'batch_size': 512, 'early_stop': {'patience': 10, 'delta': 0}}, 'model_name': 'FC4_v1', 'architecture': 'DNN', 'dataset': 'wortschartz_30', 'model': {'embedding_model': 'xlm-roberta-base', 'fc': {'n_layers': 4, 'n_input': 768, 'n_output': 30, 'n_tip_point': 200, 'tip_layer': 2}, 'dropout': {'n_layers': None, 'n_dropout': None, 'rates': None}}, 'device': 'cuda'}
+2023-02-16 08:28:03,927 INFO    MainThread:284767 [wandb_init.py:init():588] starting backend
+2023-02-16 08:28:03,927 INFO    MainThread:284767 [wandb_init.py:init():592] setting up manager
+2023-02-16 08:28:03,935 INFO    MainThread:284767 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-02-16 08:28:03,938 INFO    MainThread:284767 [wandb_init.py:init():599] backend started and connected
+2023-02-16 08:28:03,944 INFO    MainThread:284767 [wandb_init.py:init():687] updated telemetry
+2023-02-16 08:28:03,972 INFO    MainThread:284767 [wandb_init.py:init():727] communicating run to backend with 60.0 second timeout
+2023-02-16 08:28:04,563 INFO    MainThread:284767 [wandb_run.py:_on_init():2134] communicating current version
+2023-02-16 08:28:04,610 INFO    MainThread:284767 [wandb_run.py:_on_init():2143] got version response 
+2023-02-16 08:28:04,610 INFO    MainThread:284767 [wandb_init.py:init():775] starting run threads in backend
+2023-02-16 08:28:04,758 INFO    MainThread:284767 [wandb_run.py:_console_start():2114] atexit reg
+2023-02-16 08:28:04,759 INFO    MainThread:284767 [wandb_run.py:_redirect():1969] redirect: SettingsConsole.WRAP_RAW
+2023-02-16 08:28:04,759 INFO    MainThread:284767 [wandb_run.py:_redirect():2034] Wrapping output streams.
+2023-02-16 08:28:04,759 INFO    MainThread:284767 [wandb_run.py:_redirect():2059] Redirects installed.
+2023-02-16 08:28:04,760 INFO    MainThread:284767 [wandb_init.py:init():817] run started, returning control to user process
+2023-02-16 11:23:23,499 INFO    MainThread:284767 [wandb_run.py:_finish():1854] finishing run jihongleejihong/lang_id/FC4_v1
+2023-02-16 11:23:23,499 INFO    MainThread:284767 [wandb_run.py:_atexit_cleanup():2083] got exitcode: 0
+2023-02-16 11:23:23,499 INFO    MainThread:284767 [wandb_run.py:_restore():2066] restore
+2023-02-16 11:23:23,499 INFO    MainThread:284767 [wandb_run.py:_restore():2072] restore done
+2023-02-16 11:23:32,877 INFO    MainThread:284767 [wandb_run.py:_footer_history_summary_info():3442] rendering history
+2023-02-16 11:23:32,878 INFO    MainThread:284767 [wandb_run.py:_footer_history_summary_info():3474] rendering summary
+2023-02-16 11:23:32,886 INFO    MainThread:284767 [wandb_run.py:_footer_sync_info():3398] logging synced files

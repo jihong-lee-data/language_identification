@@ -126,27 +126,27 @@ def tokenizer(text):
 #     df_results = pd.DataFrame(np.column_stack([x, y_true, y_pred]), columns = ['text', 'label_true', 'label_pred'])
 #     df_results.to_csv(save_path, index = False)
 
-# class ISO():
-#     def __init__(self):
-#         with open('resource/iso.json', 'r') as f:
-#             self.iso_dict = json.load(f)
-#         self.search_list = [[i[0]] + i[1] for i in self.iso_dict["en_to_iso"].items()]   
+class ISO():
+    def __init__(self):
+        with open('../model_development/resource/iso.json', 'r') as f:
+            self.iso_dict = json.load(f)
+        self.search_list = [[i[0]] + i[1] for i in self.iso_dict["en_to_iso"].items()]   
 
-#     def search(self, text, tol = 2):
-#         results = []
-#         for en_id_pair in self.search_list:
-#             if any((self._word_validation(text, target, tol) for target in en_id_pair)):
-#                 results.append(en_id_pair)
-#         return results
+    def search(self, text, tol = 2):
+        results = []
+        for en_id_pair in self.search_list:
+            if any((self._word_validation(text, target, tol) for target in en_id_pair)):
+                results.append(en_id_pair)
+        return results
 
 
-#     def _word_validation(self, test:str, target:str, tol = 2):
-#         if tol == 0:
-#             return test in [target]
-#         elif tol == 1:
-#             return test.lower() in [target.lower()]
-#         elif tol == 2:
-#             return test.lower() in target.lower()
+    def _word_validation(self, test:str, target:str, tol = 2):
+        if tol == 0:
+            return test in [target]
+        elif tol == 1:
+            return test.lower() in [target.lower()]
+        elif tol == 2:
+            return test.lower() in target.lower()
 
 class Model():
     def __init__(self, model_name, model = None):
