@@ -548,3 +548,17 @@
 ### 2023.02.15
 
 * `wandb` 적용 및 code refactoring
+
+---
+### 2023.02.16
+
+* `wandb` 적용 및 code refactoring
+
+---
+### 2023.02.17
+
+* `FC4_v1` 결과
+
+        * validation accuracy = 96%
+
+* `wandb` 적용 및 code refactoring
