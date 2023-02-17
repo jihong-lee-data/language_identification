@@ -55,7 +55,7 @@ def get_dataloader(dataset, batch_size, num_workers= 4, seed= 42):
         return DataLoader(dataset, batch_sampler= batch_sampler,  num_workers= num_workers)
 
 
-def train_loop(dataloader, model, loss_fn, optimizer, device, epoch, wandb):
+def train_loop(dataloader, model, loss_fn, optimizer, device):
     size= len(dataloader.dataset)
     n_step= int(np.ceil(size / dataloader.batch_sampler.batch_size))
     with tqdm(total= n_step) as pbar:

@@ -74,7 +74,7 @@ def main():
     for crt_epoch in range(1, config['trainer']['epochs']+1):  
         print(f"Epoch {crt_epoch}\n-------------------------------")
         # train 
-        train_loss= train_loop(train_dataloader, model, loss_fn, optimizer, device, crt_epoch, wandb)
+        train_loss= train_loop(train_dataloader, model, loss_fn, optimizer, device)
         # validation
         val_loss, val_acc= test_loop(valid_dataloader, model, loss_fn, device)
                     

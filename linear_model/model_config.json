@@ -12,7 +12,7 @@
       "delta": 0
     }
   },
-  "model_name": "FC4_v2",
+  "model_name": "FC4_v4",
   "architecture": "DNN",
   "dataset": "wortschartz_30",
   "model": {
