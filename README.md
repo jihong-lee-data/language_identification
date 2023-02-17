@@ -560,5 +560,3 @@
 * `FC4_v1` 결과
 
         * validation accuracy = 96%
-
-* `wandb` 적용 및 code refactoring
