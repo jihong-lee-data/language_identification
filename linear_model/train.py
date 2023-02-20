@@ -71,6 +71,7 @@ def main():
     if config['trainer'].get('base_model'):
         BM_PATH = os.path.join(MODEL_DIR, config['trainer']['base_model'], "checkpoint", "model.pt")
         model.load_state_dict(torch.load(BM_PATH, map_location=device))
+        print(model)
     
     loss_fn, optimizer, scheduler= load_trainer(model, config)
     early_stopping= EarlyStopping(patience= config['trainer']['early_stop']['patience'], delta= config['trainer']['early_stop']['delta'])

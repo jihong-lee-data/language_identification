@@ -10,6 +10,7 @@ share/
 etc/
 README.html
 lib64
+wandb/
 
 ## model_development
 model_development/.develop

@@ -543,3 +543,24 @@
 * `xlm-roberta-base` embedding 활용 DNN model fitting
 
 * `gnb_wortschartz_30_v6` 성능 테스트 해보기
+
+---
+### 2023.02.15
+
+* `wandb` 적용 및 code refactoring
+
+---
+### 2023.02.16
+
+* `wandb` 적용 및 code refactoring
+
+---
+### 2023.02.17
+
+* `FC4_v1` 결과
+
+        * validation accuracy = 96%
+
+* `FC4_v6` 결과
+
+        * validation accuracy = 92.5%
