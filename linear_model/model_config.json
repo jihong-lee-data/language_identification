@@ -8,11 +8,12 @@
     "epochs": 100,
     "batch_size": 512,
     "early_stop": {
-      "patience": 10,
+      "patience": 30,
       "delta": 0
-    }
+    },
+    "base_model": "FC4_v1"
   },
-  "model_name": "FC4_v4",
+  "model_name": "FC4_v13",
   "architecture": "DNN",
   "dataset": "wortschartz_30",
   "model": {
@@ -21,13 +22,13 @@
       "n_layers": 4,
       "n_input": 768,
       "n_output": 30,
-      "n_tip_point": 500,
+      "n_tip_point": 200,
       "tip_layer": 2
     },
     "dropout": {
-      "n_layers": 4,
-      "n_dropout": 1,
-      "rates": 0.2
+      "n_layers": null,
+      "n_dropout": null,
+      "rates": null
     }
   },
   "device": "cuda"

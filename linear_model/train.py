@@ -29,7 +29,7 @@ def main():
     DATA_DIR= "../model_development/data/"
     DATA_PATH= os.path.join(DATA_DIR, config['dataset'])
 
-    CP_DIR= os.path.join(SAVE_DIR, 'checkpoint')
+    CP_DIR= os.path.join(SAVE_DIR, "checkpoint")
     CP_MODEL_PATH= os.path.join(CP_DIR, "model.pt")
     CP_OPTIM_PATH= os.path.join(CP_DIR, "optimizer.pt")
     CP_SCHDLR_PATH= os.path.join(CP_DIR, "scheduler.pt")
@@ -65,6 +65,12 @@ def main():
 
     # loading model and training modules
     model= load_model(config)
+    
+    # loading pretrained weight only when base model is declared
+    if config['train'].get('base_model'):
+        BM_PATH = os.path.join(MODEL_DIR, config['train']['base_model'], "checkpoint", "model.pt")
+        model.load_state_dict(torch.load(BM_PATH, map_location=device))
+    
     loss_fn, optimizer, scheduler= load_trainer(model, config)
     early_stopping= EarlyStopping(patience= config['trainer']['early_stop']['patience'], delta= config['trainer']['early_stop']['delta'])
 
