@@ -560,3 +560,7 @@
 * `FC4_v1` 결과
 
         * validation accuracy = 96%
+
+* `FC4_v6` 결과
+
+        * validation accuracy = 92.5%
