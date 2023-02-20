@@ -156,20 +156,15 @@ class Model():
             try:
                 self.model = self.load_model()
                 self.labels = self.model.classes_
+                self._int2label_dict = dict(zip(range(len(self.labels)), self.labels))
+                self._label2int_dict = dict(zip(self.labels, range(len(self.labels))))
+                self.int2label= np.vectorize(self.int2label)
+                self.label2int= np.vectorize(self.label2int)
             except:
                 self.model = model
         else:
             self.model = model            
-    
-    # def fit(self, X, y):
-    #     self.model.fit(X, y)
-    #     self.labels = self.model.classes_
-
-
-    # def save_model(self):
-    #     with gzip.open(self.model_path, 'wb') as f:
-    #         joblib.dump(pickle.dumps(self.model), f)
-    #         # print(f"This model is saved at {self.model_path}.")
+        
 
 
     def load_model(self):
@@ -185,15 +180,13 @@ class Model():
         preds = probs.argsort()[0, ::-1][:n]
         return preds, probs[0, preds]
 
+    
+    def int2label(self, value):
+        return self._int2label_dict.get(value)
 
-    def int2label(self, int_vect):
-        conv_dict= dict(zip(range(len(self.labels)), self.labels))
-        return np.array([conv_dict[int] for int in int_vect])
-
-
-    def label2int(self, label_vect):
-        conv_dict= dict(zip(range(self.labels, len(self.labels))))
-        return np.array([conv_dict[label] for label in label_vect])
+    @np.vectorize
+    def label2int(self, value):
+        return self._label2int_dict.get(value)
             
             
 
