@@ -4,6 +4,7 @@ import torch
 from torch import nn
 from datasets import load_from_disk
 import wandb
+from datetime import datetime
 import warnings
 warnings.filterwarnings(action='ignore')
 
@@ -47,9 +48,9 @@ def main():
         job_type= "train",
         notes="test",
         tags= [config['model_name'], config['architecture'], config['dataset']],
-        id= config["model_name"],
+        id= config["model_name"] + f"_{datetime.now().strftime('%y%m%d%H%M%S')}",
         sync_tensorboard= False,
-        resume= False,
+        resume= 'allow',
         config= config,
         name= config["model_name"]
     )
