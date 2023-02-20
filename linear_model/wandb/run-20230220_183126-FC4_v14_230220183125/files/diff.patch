@@ -1,0 +1,53 @@
+diff --git a/linear_model/model_config.json b/linear_model/model_config.json
+index e5e37c7..8d1a9d8 100644
+--- a/linear_model/model_config.json
++++ b/linear_model/model_config.json
+@@ -13,7 +13,7 @@
+     },
+     "base_model": "FC4_v1"
+   },
+-  "model_name": "FC4_v13",
++  "model_name": "FC4_v14",
+   "architecture": "DNN",
+   "dataset": "wortschartz_30",
+   "model": {
+@@ -26,9 +26,9 @@
+       "tip_layer": 2
+     },
+     "dropout": {
+-      "n_layers": null,
+-      "n_dropout": null,
+-      "rates": null
++      "n_layers": 4,
++      "n_dropout": 1,
++      "rates": 0.2
+     }
+   },
+   "device": "cuda"
+diff --git a/linear_model/wandb/debug-internal.log b/linear_model/wandb/debug-internal.log
+index 4a5b44c..b57a014 120000
+--- a/linear_model/wandb/debug-internal.log
++++ b/linear_model/wandb/debug-internal.log
+@@ -1 +1 @@
+-run-20230216_082803-FC4_v1/logs/debug-internal.log
+\ No newline at end of file
++run-20230220_183126-FC4_v14_230220183125/logs/debug-internal.log
+\ No newline at end of file
+diff --git a/linear_model/wandb/debug.log b/linear_model/wandb/debug.log
+index 6947193..5720e6a 120000
+--- a/linear_model/wandb/debug.log
++++ b/linear_model/wandb/debug.log
+@@ -1 +1 @@
+-run-20230216_082803-FC4_v1/logs/debug.log
+\ No newline at end of file
++run-20230220_183126-FC4_v14_230220183125/logs/debug.log
+\ No newline at end of file
+diff --git a/linear_model/wandb/latest-run b/linear_model/wandb/latest-run
+index e74210f..a35cedd 120000
+--- a/linear_model/wandb/latest-run
++++ b/linear_model/wandb/latest-run
+@@ -1 +1 @@
+-run-20230216_082803-FC4_v1
+\ No newline at end of file
++run-20230220_183126-FC4_v14_230220183125
+\ No newline at end of file

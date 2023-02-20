@@ -1,0 +1,65 @@
+diff --git a/linear_model/model_config.json b/linear_model/model_config.json
+index e5e37c7..8d1a9d8 100644
+--- a/linear_model/model_config.json
++++ b/linear_model/model_config.json
+@@ -13,7 +13,7 @@
+     },
+     "base_model": "FC4_v1"
+   },
+-  "model_name": "FC4_v13",
++  "model_name": "FC4_v14",
+   "architecture": "DNN",
+   "dataset": "wortschartz_30",
+   "model": {
+@@ -26,9 +26,9 @@
+       "tip_layer": 2
+     },
+     "dropout": {
+-      "n_layers": null,
+-      "n_dropout": null,
+-      "rates": null
++      "n_layers": 4,
++      "n_dropout": 1,
++      "rates": 0.2
+     }
+   },
+   "device": "cuda"
+diff --git a/linear_model/train.py b/linear_model/train.py
+index 104c082..a5f4aaa 100644
+--- a/linear_model/train.py
++++ b/linear_model/train.py
+@@ -71,6 +71,7 @@ def main():
+     if config['trainer'].get('base_model'):
+         BM_PATH = os.path.join(MODEL_DIR, config['trainer']['base_model'], "checkpoint", "model.pt")
+         model.load_state_dict(torch.load(BM_PATH, map_location=device))
++        print(model)
+     
+     loss_fn, optimizer, scheduler= load_trainer(model, config)
+     early_stopping= EarlyStopping(patience= config['trainer']['early_stop']['patience'], delta= config['trainer']['early_stop']['delta'])
+diff --git a/linear_model/wandb/debug-internal.log b/linear_model/wandb/debug-internal.log
+index 4a5b44c..4d287ef 120000
+--- a/linear_model/wandb/debug-internal.log
++++ b/linear_model/wandb/debug-internal.log
+@@ -1 +1 @@
+-run-20230216_082803-FC4_v1/logs/debug-internal.log
+\ No newline at end of file
++run-20230220_183409-FC4_v14_230220183408/logs/debug-internal.log
+\ No newline at end of file
+diff --git a/linear_model/wandb/debug.log b/linear_model/wandb/debug.log
+index 6947193..2555d33 120000
+--- a/linear_model/wandb/debug.log
++++ b/linear_model/wandb/debug.log
+@@ -1 +1 @@
+-run-20230216_082803-FC4_v1/logs/debug.log
+\ No newline at end of file
++run-20230220_183409-FC4_v14_230220183408/logs/debug.log
+\ No newline at end of file
+diff --git a/linear_model/wandb/latest-run b/linear_model/wandb/latest-run
+index e74210f..1290ba1 120000
+--- a/linear_model/wandb/latest-run
++++ b/linear_model/wandb/latest-run
+@@ -1 +1 @@
+-run-20230216_082803-FC4_v1
+\ No newline at end of file
++run-20230220_183409-FC4_v14_230220183408
+\ No newline at end of file

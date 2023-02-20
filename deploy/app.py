@@ -50,5 +50,5 @@ def api_predict():
         
 
 app.debug = True    
-app.run(host='0.0.0.0', port=3000)
+app.run(host='0.0.0.0', port=8000)
 

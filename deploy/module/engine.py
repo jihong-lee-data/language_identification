@@ -126,27 +126,27 @@ def tokenizer(text):
 #     df_results = pd.DataFrame(np.column_stack([x, y_true, y_pred]), columns = ['text', 'label_true', 'label_pred'])
 #     df_results.to_csv(save_path, index = False)
 
-# class ISO():
-#     def __init__(self):
-#         with open('resource/iso.json', 'r') as f:
-#             self.iso_dict = json.load(f)
-#         self.search_list = [[i[0]] + i[1] for i in self.iso_dict["en_to_iso"].items()]   
+class ISO():
+    def __init__(self):
+        with open('../model_development/resource/iso.json', 'r') as f:
+            self.iso_dict = json.load(f)
+        self.search_list = [[i[0]] + i[1] for i in self.iso_dict["en_to_iso"].items()]   
 
-#     def search(self, text, tol = 2):
-#         results = []
-#         for en_id_pair in self.search_list:
-#             if any((self._word_validation(text, target, tol) for target in en_id_pair)):
-#                 results.append(en_id_pair)
-#         return results
+    def search(self, text, tol = 2):
+        results = []
+        for en_id_pair in self.search_list:
+            if any((self._word_validation(text, target, tol) for target in en_id_pair)):
+                results.append(en_id_pair)
+        return results
 
 
-#     def _word_validation(self, test:str, target:str, tol = 2):
-#         if tol == 0:
-#             return test in [target]
-#         elif tol == 1:
-#             return test.lower() in [target.lower()]
-#         elif tol == 2:
-#             return test.lower() in target.lower()
+    def _word_validation(self, test:str, target:str, tol = 2):
+        if tol == 0:
+            return test in [target]
+        elif tol == 1:
+            return test.lower() in [target.lower()]
+        elif tol == 2:
+            return test.lower() in target.lower()
 
 class Model():
     def __init__(self, model_name, model = None):
@@ -156,20 +156,15 @@ class Model():
             try:
                 self.model = self.load_model()
                 self.labels = self.model.classes_
+                self._int2label_dict = dict(zip(range(len(self.labels)), self.labels))
+                self._label2int_dict = dict(zip(self.labels, range(len(self.labels))))
+                self.int2label= np.vectorize(self.int2label)
+                self.label2int= np.vectorize(self.label2int)
             except:
                 self.model = model
         else:
             self.model = model            
-    
-    # def fit(self, X, y):
-    #     self.model.fit(X, y)
-    #     self.labels = self.model.classes_
-
-
-    # def save_model(self):
-    #     with gzip.open(self.model_path, 'wb') as f:
-    #         joblib.dump(pickle.dumps(self.model), f)
-    #         # print(f"This model is saved at {self.model_path}.")
+        
 
 
     def load_model(self):
@@ -185,15 +180,13 @@ class Model():
         preds = probs.argsort()[0, ::-1][:n]
         return preds, probs[0, preds]
 
+    
+    def int2label(self, value):
+        return self._int2label_dict.get(value)
 
-    def int2label(self, int_vect):
-        conv_dict= dict(zip(range(len(self.labels)), self.labels))
-        return np.array([conv_dict[int] for int in int_vect])
-
-
-    def label2int(self, label_vect):
-        conv_dict= dict(zip(range(self.labels, len(self.labels))))
-        return np.array([conv_dict[label] for label in label_vect])
+    @np.vectorize
+    def label2int(self, value):
+        return self._label2int_dict.get(value)
             
             
 

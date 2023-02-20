@@ -1,154 +1,129 @@
-from datasets import load_from_disk
+import os
 import numpy as np
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
-from torch.utils.data import DataLoader, RandomSampler, BatchSampler
-from transformers import AutoTokenizer, pipeline, AutoModel
-import os
+from torch import nn
+from datasets import load_from_disk
+import wandb
+from datetime import datetime
 import warnings
-from tqdm import tqdm
-
 warnings.filterwarnings(action='ignore')
 
-BASE_DIR = 'model'
-if not os.path.exists(BASE_DIR):
-    os.system(f'mkdir {BASE_DIR}')
-
-
-device = torch.device('mps' if torch.backends.mps.is_available() else 'cuda' if torch.cuda.is_available() else 'cpu')
-# device = torch.device('cpu')
-
-embedding_model = AutoModel.from_pretrained("xlm-roberta-base")
-tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base", use_fast=True)
-class Net(nn.Module):
-    def __init__(self):
-        super(Net, self).__init__(),
-        self.model = nn.Sequential()
-        self.layers = (
-          ('embedding', nn.Embedding.from_pretrained(embedding_model.embeddings.word_embeddings.weight).to(device)),
-          ('pool', nn.AvgPool2d(kernel_size=(512, 1))),
-          ('flat', nn.Flatten()),
-          ('fc1', nn.Linear(768, 1024, device = device)),
-          ('activ1', nn.ReLU()),
-          ('fc2', nn.Linear(1024, 2024, device = device)),
-          ('activ2', nn.ReLU()),
-          ('dropout1', nn.Dropout(0.25)),
-          ('fc3', nn.Linear(2024, 1024, device = device)),
-          ('activ3', nn.ReLU()),
-          ('fc4', nn.Linear(1024, 512, device = device)),
-          ('activ4', nn.ReLU()),
-          ('dropout2', nn.Dropout(0.5)),
-          ('fc5', nn.Linear(512, 256, device = device)),
-          ('activ5', nn.ReLU()),
-          ('fc6', nn.Linear(256, 128, device = device)),
-          ('activ6', nn.ReLU()),
-          ('ouput', nn.Linear(128, 30, device = device))
-        )
-        for name, module in self.layers:
-            self.model.add_module(name, module)
-      # x는 데이터를 나타냅니다.
-    def forward(self, x):
-        x= tokenizer(x, add_special_tokens=True,
-            max_length=512,
-            return_token_type_ids=False,
-            padding="max_length",
-            truncation=True,
-            return_attention_mask=False,
-            return_tensors='pt')['input_ids'].to(device)
-        logits =self.model(x)
-        output = F.softmax(logits, dim=1)
-        return output
-
-def train_loop(dataloader, model, loss_fn, optimizer, epoch):
-    size = len(dataloader.dataset)
-    n_step = int(np.ceil(size / dataloader.batch_sampler.batch_size))
-    with tqdm(total= n_step) as pbar:
-        for batch, data in enumerate(dataloader):
-            X = data['text']
-            y = torch.tensor(data['labels']).to(device)
-            # 예측(prediction)과 손실(loss) 계산
-            pred = model(X)
-            loss = loss_fn(pred, y)
-        
-            # 역전파
-            optimizer.zero_grad()
-            loss.backward()
-            optimizer.step()
-
-            if (batch % (n_step // 2) == 0) and (batch != 0):
-                loss, current = loss.item(), batch * len(X)
-                print(f"loss: {loss:>7f}  [{current:>5d}/{size:>5d}]")
-                check_point_dir = os.path.join(BASE_DIR, f'checkpoint-{epoch}-{batch}')
-                if not os.path.exists(check_point_dir):
-                    os.system(f'mkdir {check_point_dir}')
-                torch.save(model.state_dict(), os.path.join(check_point_dir, 'model.bin'))
-                torch.save(optimizer.state_dict(), os.path.join(check_point_dir, 'optimizer.pt'))
-            
-            pbar.update(1)
-
-def test_loop(dataloader, model, loss_fn):
-    size = len(dataloader.dataset)
-    num_batches = len(dataloader)
-    test_loss, correct = 0, 0
-    with torch.no_grad():
-        with tqdm(total= num_batches) as pbar:
-            for data in dataloader:
-                X = data['text']
-                y = torch.tensor(data['labels']).to(device)
-                pred = model(X)
-                test_loss += loss_fn(pred, y).item()
-                correct += (pred.argmax(1) == y).type(torch.float).sum().item()
-                pbar.update(1)
-
-    test_loss /= num_batches
-    correct /= size
-    print(f"Test Error: \n Accuracy: {(100*correct):>0.1f}%, Avg loss: {test_loss:>8f} \n")
+from module.engine import get_dataloader, load_model, load_trainer, train_loop, test_loop, EarlyStopping, save_checkpoint
+from module.tool import load_json, save_json, mk_dir
 
 
 def main():
-
-    
-    print("device: ", device)
+    device= torch.device('mps' if torch.backends.mps.is_available() else 'cuda' if torch.cuda.is_available() else 'cpu')
     torch.cuda.empty_cache()
+    
+    # loading model configuration
+    INIT_CONFIG_PATH= "model_config.json"
+    config= load_json(INIT_CONFIG_PATH)
+    config['device']= device.type
+
+    # setting variout paths
+    MODEL_DIR= 'model'
+    SAVE_DIR= os.path.join(MODEL_DIR, config['model_name'])
+    MODEL_CONFIG_PATH= os.path.join(SAVE_DIR, "model_config.json")
+
+
+    DATA_DIR= "../model_development/data/"
+    DATA_PATH= os.path.join(DATA_DIR, config['dataset'])
+
+    CP_DIR= os.path.join(SAVE_DIR, "checkpoint")
+    CP_MODEL_PATH= os.path.join(CP_DIR, "model.pt")
+    CP_OPTIM_PATH= os.path.join(CP_DIR, "optimizer.pt")
+    CP_SCHDLR_PATH= os.path.join(CP_DIR, "scheduler.pt")
+    
+    for path in [MODEL_DIR, SAVE_DIR, CP_DIR]:
+        mk_dir(path)
+    
+    # initiating wandb
+    wandb.init(
+        # set the wandb project where this run will be logged
+        project="lang_id",
+        entity= "jihongleejihong",
+        save_code= True,
+        group= "DNN",
+        job_type= "train",
+        notes="test",
+        tags= [config['model_name'], config['architecture'], config['dataset']],
+        id= config["model_name"] + f"_{datetime.now().strftime('%y%m%d%H%M%S')}",
+        sync_tensorboard= False,
+        resume= 'allow',
+        config= config,
+        name= config["model_name"]
+    )
+
     # loading dataset
     print("Loading dataset...")
-
-    dataset = load_from_disk("../model_development/data/wortschartz_30/")
-
+    dataset= load_from_disk(DATA_PATH)
+    print("Dataset size(train): ", len(dataset["train"]))
+    print("Dataset size(validation): ", len(dataset["validation"]))
+    train_dataloader= get_dataloader(dataset['train'], batch_size= config['trainer']['batch_size'], num_workers= 4, seed= 42)
+    valid_dataloader= get_dataloader(dataset['validation'], batch_size= config['trainer']['batch_size'], num_workers= 4, seed= 42)
     print("Done")
 
-    train_size = len(dataset["train"])
-    valid_size = len(dataset["validation"])
-
-    print("Dataset size(train): ", train_size)
-    print("Dataset size(validation): ", valid_size)
-
-
-    model = Net()
-    learning_rate = 1e-5
-    batch_size = 128
-    epochs = 5
-
-
-    train_sampler = BatchSampler(RandomSampler(dataset['train'], generator = np.random.seed(42)), batch_size = batch_size, drop_last = False)
-    valid_sampler = BatchSampler(RandomSampler(dataset['validation'], generator = np.random.seed(42)), batch_size = batch_size, drop_last = False)
-
-    train_dataloader = DataLoader(dataset['train'], batch_sampler= train_sampler,  num_workers = 4)
-    valid_dataloader = DataLoader(dataset['validation'], batch_sampler= valid_sampler, num_workers = 4)
-
-    loss_fn = nn.CrossEntropyLoss()
-    optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
+    # loading model and training modules
+    model= load_model(config)
     
-    for t in range(epochs):
-        print(f"Epoch {t+1}\n-------------------------------")
-        train_loop(train_dataloader, model, loss_fn, optimizer, t+1)
-        test_loop(valid_dataloader, model, loss_fn)
+    # loading pretrained weight only when base model is declared
+    if config['trainer'].get('base_model'):
+        BM_PATH = os.path.join(MODEL_DIR, config['trainer']['base_model'], "checkpoint", "model.pt")
+        model.load_state_dict(torch.load(BM_PATH, map_location=device))
+        print(model)
+    
+    loss_fn, optimizer, scheduler= load_trainer(model, config)
+    early_stopping= EarlyStopping(patience= config['trainer']['early_stop']['patience'], delta= config['trainer']['early_stop']['delta'])
 
+    # training
+    best_val_acc, best_epoch= 0, 0
+
+    for crt_epoch in range(1, config['trainer']['epochs']+1):  
+        print(f"Epoch {crt_epoch}\n-------------------------------")
+        # train 
+        train_loss= train_loop(train_dataloader, model, loss_fn, optimizer, device)
+        # validation
+        val_loss, val_acc= test_loop(valid_dataloader, model, loss_fn, device)
+                    
+
+        log_dict= dict(train_loss= train_loss,
+                        val_loss= val_loss,
+                        val_acc= val_acc)
+        print(log_dict)
+        wandb.log(log_dict, step=crt_epoch)
+
+        torch.cuda.empty_cache()	
+        
+        if val_acc > best_val_acc:
+            best_val_acc= val_acc
+            best_epoch= crt_epoch
+    
+        # check early stopping condition
+        early_stopping(score= -val_loss)
+        
+        if early_stopping.early_stop:
+            break
+        elif not early_stopping.counter:
+            save_checkpoint(model, CP_MODEL_PATH)
+            save_checkpoint(optimizer, CP_OPTIM_PATH)
+            save_checkpoint(scheduler, CP_SCHDLR_PATH)
+            save_json(config, MODEL_CONFIG_PATH)
+
+        scheduler.step()
+        
+    torch.cuda.empty_cache()
+    
+    # wrapping up & finishing wandb
+    wandb.run.summary['best_epoch']= best_epoch
+    wandb.run.summary['best_val_acc']= best_val_acc
+    wandb.run.summary['stop_epoch']= crt_epoch
+    wandb.run.summary['stop_val_loss']= val_loss
+    wandb.run.summary['early_stop']= early_stopping.early_stop
+    
+    wandb.finish()
+    
     print("Done!")
 
-    
-    torch.cuda.empty_cache()	
-if __name__ == "__main__":
+if __name__== "__main__":
     main()
-

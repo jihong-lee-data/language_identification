@@ -1,0 +1,24 @@
+2023-02-20 18:34:09,497 INFO    MainThread:5493 [wandb_setup.py:_flush():68] Configure stats pid to 5493
+2023-02-20 18:34:09,497 INFO    MainThread:5493 [wandb_setup.py:_flush():68] Loading settings from /Users/jihonglee/.config/wandb/settings
+2023-02-20 18:34:09,497 INFO    MainThread:5493 [wandb_setup.py:_flush():68] Loading settings from /Users/jihonglee/Project/language_identification/linear_model/wandb/settings
+2023-02-20 18:34:09,497 INFO    MainThread:5493 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-02-20 18:34:09,497 INFO    MainThread:5493 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'linear_model/train.py', 'program': '/Users/jihonglee/Project/language_identification/linear_model/train.py'}
+2023-02-20 18:34:09,497 INFO    MainThread:5493 [wandb_init.py:_log_setup():492] Logging user logs to /Users/jihonglee/Project/language_identification/linear_model/wandb/run-20230220_183409-FC4_v14_230220183408/logs/debug.log
+2023-02-20 18:34:09,497 INFO    MainThread:5493 [wandb_init.py:_log_setup():493] Logging internal logs to /Users/jihonglee/Project/language_identification/linear_model/wandb/run-20230220_183409-FC4_v14_230220183408/logs/debug-internal.log
+2023-02-20 18:34:09,497 INFO    MainThread:5493 [wandb_init.py:init():532] calling init triggers
+2023-02-20 18:34:09,497 INFO    MainThread:5493 [wandb_init.py:init():538] wandb.init called with sweep_config: {}
+config: {'trainer': {'loss_fn': 'CrossEntropyLoss', 'scheduler': 'LambdaLR', 'optimizer': 'AdamW', 'learning_rate': 0.1, 'lr_lambda': 0.95, 'epochs': 100, 'batch_size': 512, 'early_stop': {'patience': 30, 'delta': 0}, 'base_model': 'FC4_v1'}, 'model_name': 'FC4_v14', 'architecture': 'DNN', 'dataset': 'wortschartz_30', 'model': {'embedding_model': 'xlm-roberta-base', 'fc': {'n_layers': 4, 'n_input': 768, 'n_output': 30, 'n_tip_point': 200, 'tip_layer': 2}, 'dropout': {'n_layers': 4, 'n_dropout': 1, 'rates': 0.2}}, 'device': 'mps'}
+2023-02-20 18:34:09,497 INFO    MainThread:5493 [wandb_init.py:init():588] starting backend
+2023-02-20 18:34:09,498 INFO    MainThread:5493 [wandb_init.py:init():592] setting up manager
+2023-02-20 18:34:09,502 INFO    MainThread:5493 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2023-02-20 18:34:09,505 INFO    MainThread:5493 [wandb_init.py:init():599] backend started and connected
+2023-02-20 18:34:09,508 INFO    MainThread:5493 [wandb_init.py:init():687] updated telemetry
+2023-02-20 18:34:09,517 INFO    MainThread:5493 [wandb_init.py:init():727] communicating run to backend with 60.0 second timeout
+2023-02-20 18:34:12,078 INFO    MainThread:5493 [wandb_run.py:_on_init():2134] communicating current version
+2023-02-20 18:34:12,176 INFO    MainThread:5493 [wandb_run.py:_on_init():2143] got version response 
+2023-02-20 18:34:12,177 INFO    MainThread:5493 [wandb_init.py:init():775] starting run threads in backend
+2023-02-20 18:34:12,305 INFO    MainThread:5493 [wandb_run.py:_console_start():2114] atexit reg
+2023-02-20 18:34:12,305 INFO    MainThread:5493 [wandb_run.py:_redirect():1969] redirect: SettingsConsole.WRAP_RAW
+2023-02-20 18:34:12,305 INFO    MainThread:5493 [wandb_run.py:_redirect():2034] Wrapping output streams.
+2023-02-20 18:34:12,305 INFO    MainThread:5493 [wandb_run.py:_redirect():2059] Redirects installed.
+2023-02-20 18:34:12,306 INFO    MainThread:5493 [wandb_init.py:init():817] run started, returning control to user process

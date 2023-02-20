@@ -9,7 +9,7 @@ pyvenv.cfg
 share/
 etc/
 README.html
-wandb/
+lib64
 
 ## model_development
 model_development/.develop
@@ -39,3 +39,5 @@ model_development/wandb/
 
 ## linear_model
 linear_model/model
+FC*/
+linear_model/wandb/

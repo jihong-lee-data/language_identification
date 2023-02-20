@@ -1,0 +1,1 @@
+{"batch_loss": 2.470813512802124, "trained_size": 1200128, "_timestamp": 1676546570.63083, "_runtime": 10486.69169807434, "_step": 4688, "best_epoch": 35, "best_val_acc": 96.16433333333333, "stop_epoch": 36, "stop_val_loss": 2.4983706197641, "early_stop": true, "_wandb": {"runtime": 10518}}

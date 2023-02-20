@@ -1,0 +1,34 @@
+{
+    "os": "macOS-13.2-arm64-arm-64bit",
+    "python": "3.9.16",
+    "heartbeatAt": "2023-02-20T09:31:28.292775",
+    "startedAt": "2023-02-20T09:31:26.851344",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/Users/jihonglee/Project/language_identification/linear_model/train.py",
+    "codePath": "linear_model/train.py",
+    "git": {
+        "remote": "https://github.com/jihong-lee-data/language_identification.git",
+        "commit": "65bd01f5f1f8d4b447e87db5527db8e08a9e1adc"
+    },
+    "email": "jihong.lee@flitto.com",
+    "root": "/Users/jihonglee/Project/language_identification",
+    "host": "Jihongui-MacBookPro.local",
+    "username": "jihonglee",
+    "executable": "/Users/jihonglee/Project/language_identification/linear_model/bin/python",
+    "cpu_count": 10,
+    "cpu_count_logical": 10,
+    "disk": {
+        "total": 460.4317207336426,
+        "used": 8.868423461914062
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 32.0
+    }
+}

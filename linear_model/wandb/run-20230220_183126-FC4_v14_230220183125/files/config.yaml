@@ -1,0 +1,78 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.13.10
+    code_path: code/linear_model/train.py
+    framework: huggingface
+    huggingface_version: 4.26.1
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.9.16
+    start_time: 1676885486.857478
+    t:
+      1:
+      - 1
+      - 11
+      - 49
+      - 51
+      - 55
+      2:
+      - 1
+      - 11
+      - 49
+      - 51
+      - 55
+      3:
+      - 13
+      - 14
+      - 15
+      - 16
+      - 23
+      4: 3.9.16
+      5: 0.13.10
+      6: 4.26.1
+      8:
+      - 4
+      - 5
+architecture:
+  desc: null
+  value: DNN
+dataset:
+  desc: null
+  value: wortschartz_30
+device:
+  desc: null
+  value: mps
+model:
+  desc: null
+  value:
+    dropout:
+      n_dropout: 1
+      n_layers: 4
+      rates: 0.2
+    embedding_model: xlm-roberta-base
+    fc:
+      n_input: 768
+      n_layers: 4
+      n_output: 30
+      n_tip_point: 200
+      tip_layer: 2
+model_name:
+  desc: null
+  value: FC4_v14
+trainer:
+  desc: null
+  value:
+    base_model: FC4_v1
+    batch_size: 512
+    early_stop:
+      delta: 0
+      patience: 30
+    epochs: 100
+    learning_rate: 0.1
+    loss_fn: CrossEntropyLoss
+    lr_lambda: 0.95
+    optimizer: AdamW
+    scheduler: LambdaLR

@@ -1,0 +1,42 @@
+
+Loading dataset...
+Dataset size(train):  2400000
+Dataset size(validation):  300000
+Done
+Some weights of the model checkpoint at xlm-roberta-base were not used when initializing XLMRobertaModel: ['lm_head.dense.bias', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.decoder.weight', 'lm_head.dense.weight', 'lm_head.layer_norm.bias']
+- This IS expected if you are initializing XLMRobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing XLMRobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+  0%|                                                                                                                                                                                       | 0/4688 [00:00<?, ?it/s]
+Epoch 1
+
+
+
+
+
+
+
+
+  2%|████                                                                                                                                                                         | 111/4688 [00:29<10:36,  7.19it/s]Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x12998d820>
+Traceback (most recent call last):
+  File "/Users/jihonglee/Project/language_identification/linear_model/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1479, in __del__
+    self._shutdown_workers()
+  File "/Users/jihonglee/Project/language_identification/linear_model/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1443, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.16/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.16/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/opt/homebrew/Cellar/python@3.9/3.9.16/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 931, in wait
+    ready = selector.select(timeout)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.16/Frameworks/Python.framework/Versions/3.9/lib/python3.9/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt:
+  2%|████                                                                                                                                                                         | 111/4688 [00:29<20:10,  3.78it/s]
+Traceback (most recent call last):
+  File "/Users/jihonglee/Project/language_identification/linear_model/train.py", line 128, in <module>
+    main()
+  File "/Users/jihonglee/Project/language_identification/linear_model/train.py", line 84, in main
+    train_loss= train_loop(train_dataloader, model, loss_fn, optimizer, device)
+  File "/Users/jihonglee/Project/language_identification/linear_model/module/engine.py", line 75, in train_loop
+    loss, trained_size= loss.item(), batch * len(X)
+KeyboardInterrupt

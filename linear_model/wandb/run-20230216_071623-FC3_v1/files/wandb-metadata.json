@@ -1,0 +1,249 @@
+{
+    "os": "Linux-5.4.0-135-generic-x86_64-with-glibc2.29",
+    "python": "3.8.10",
+    "heartbeatAt": "2023-02-16T07:16:24.756207",
+    "startedAt": "2023-02-16T07:16:23.928159",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "train.py",
+    "codePath": "linear_model/train.py",
+    "git": {
+        "remote": "https://github.com/jihong-lee-data/language_identification.git",
+        "commit": "db41e1285cf57c096da3c205edef7dd1c159614c"
+    },
+    "email": "jihong.lee@flitto.com",
+    "root": "/home/user/project/language_identification",
+    "host": "ubuntu",
+    "username": "user",
+    "executable": "/home/user/project/language_identification/bin/python",
+    "cpu_count": 20,
+    "cpu_count_logical": 40,
+    "cpu_freq": {
+        "current": 1066.96445,
+        "min": 1000.0,
+        "max": 3200.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1000.524,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.177,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.298,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.128,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.278,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.405,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.611,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.69,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.307,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.302,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1164.903,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.527,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.318,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.515,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.396,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1584.54,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1482.064,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1237.936,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1454.651,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1245.447,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.828,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.973,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.011,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1001.105,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.653,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.327,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.445,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.048,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.728,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.634,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1032.442,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.479,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.412,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.582,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.344,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1324.805,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1294.608,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1125.014,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1414.465,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1348.961,
+            "min": 1000.0,
+            "max": 3200.0
+        }
+    ],
+    "disk": {
+        "total": 846.1398582458496,
+        "used": 246.244873046875
+    },
+    "gpu": "NVIDIA RTX A5000",
+    "gpu_count": 2,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA RTX A5000",
+            "memory_total": 23833673728
+        },
+        {
+            "name": "NVIDIA RTX A5000",
+            "memory_total": 23833673728
+        }
+    ],
+    "memory": {
+        "total": 62.568336486816406
+    }
+}

@@ -1,235 +1,183 @@
-import numpy as np
-import pandas as pd
-import seaborn as sns
 import os
-import time
-import re
-import pickle
-import joblib
-import json
-import matplotlib.pyplot as plt
-import datasets
-from datasets import load_dataset, load_from_disk
-from sklearn.preprocessing import FunctionTransformer
-from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer, HashingVectorizer, FeatureHasher, TfidfTransformer
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.pipeline import Pipeline
-from sklearn.naive_bayes import MultinomialNB, GaussianNB
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import classification_report
-from sklearn.ensemble import AdaBoostClassifier
-from sklearn.decomposition import TruncatedSVD, NMF
-from sklearn.random_projection import SparseRandomProjection
-from mlxtend.preprocessing import DenseTransformer
+import numpy as np
+from tqdm import tqdm
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torch.utils.data import DataLoader, RandomSampler, BatchSampler
+from transformers import AutoTokenizer, AutoModel
 
-from xgboost import XGBClassifier 
-from pprint import pprint
-import gzip
+class EarlyStopping:
+    def __init__(self, patience=10, delta=0.0):
+        self.patience= patience
+        self.delta= delta
+        self.counter= 0
+        self.best_score= -np.inf
+        self.early_stop= False
+    def __call__(self, score):
+        if score < self.best_score + self.delta:
+            self.counter += 1
+            print(f'EarlyStopping counter: {self.counter} out of {self.patience}')
+        else:
+            self.best_score= score
+            self.counter= 0
+        if self.counter >= self.patience:
+            self.early_stop = True            
 
-import warnings
-warnings.filterwarnings(action='ignore')
-
-
-def get_time(func):
-    def wrapper(*args):
-        start = time.time()
-        result = func(*args)
-        end = time.time()
-        print(f"Done ({end - start:.5f} sec)", end = '\n'*2)
-        return result
-    return wrapper
+def save_checkpoint(model, save_path):
+    torch.save(model.state_dict(), save_path)
 
 
-# @get_time
-# def load_hf_dataset(dataset_path:str, save_to_disk: bool = False, **kwargs):
-#     if not os.path.isdir(dataset_path):
-#         print('Downloading dataset...')
-#         dataset = load_dataset(dataset_path, kwargs)
-#         if save_to_disk:
-#             dataset.save_to_disk(dataset_path)
-#         print('The dataset is saved and loaded.')
-#     else: 
-#         print('The dataset already exists.')
-#         dataset = load_from_disk(dataset_path)
-#         print('The dataset is loaded from disk.')
-#     return dataset
+def load_model(config):
+    model= Net(embedding_model= AutoModel.from_pretrained(config['model']["embedding_model"]),
+                tokenizer= AutoTokenizer.from_pretrained(config['model']["embedding_model"], use_fast=True),
+                config= config,
+                )
+    return model
 
 
-# @np.vectorize
-# def rm_spcl_char(text):
-#     text = str(text)
-#     text = re.sub(r'[!@#$(),\n"%^*?:;~`0-9&\[\]]', ' ', text)
-#     text = re.sub(r'[\u3000]', ' ', text.strip())
-#     text = re.sub(r'[\s]{2,}', ' ', text.strip())
-    
-#     text = text.lower().strip()
-#     return text
-
-def tokenizer(text):
-    text = str(text)
-    # remove special characters
-    text = re.sub(r'[!@#$(),，\n"%^*?？:;~`0-9&\[\]\。\/\.\=\-]', ' ', text)
-    text = re.sub(r'[\s]{2,}', ' ', text.strip())
-
-    text = text.lower().strip()
-    
-    hira_chars = ("\u3040-\u309f")
-    kata_chars = ("\u30a0-\u30ff")
-    zh_chars = ("\u2e80-\u2fff\u31c0-\u31ef\u3200-\u32ff\u3300-\u3370"           
-               "\u33e0-\u33fe\uf900-\ufaff\u4e00-\u9fff") 
-    
-    tokenized = text.split()
-    
-    ja_exist = re.findall(f'[{hira_chars}{kata_chars}]+', text)
-    zh_exist = re.findall(f'[{zh_chars}]+', text)
-    
-    if ja_exist:
-        ja_tokens = []
-        for token in tokenized:
-            ja_tokens.extend(re.findall(f'[{zh_chars}]+|[{hira_chars}]+|[{kata_chars}]+', token))
-            ja_tokens.extend(re.findall(f'[^{zh_chars}{hira_chars}{kata_chars}]+', token))
-        return ja_tokens
-    elif zh_exist:
-        zh_tokens = []
-        for token in tokenized:
-            zh_tokens.extend(re.findall(f'[{zh_chars}]', token))
-            zh_tokens.extend(re.findall(f'[^{zh_chars}]+', token))
-        return zh_tokens
-    else:
-        char_tokens = []
-        for token in tokenized:
-            char_tokens.extend(re.findall('.', token))
-        return tokenized + char_tokens    
+def load_trainer(model, config):
+    loss_fn, optimizer, scheduler= None, None, None
+    if config['trainer']['loss_fn'] == 'CrossEntropyLoss':
+        loss_fn= nn.CrossEntropyLoss()
+    if config['trainer']['optimizer'] == 'AdamW':
+        optimizer= torch.optim.AdamW(model.parameters(), lr=config['trainer']['learning_rate'])
+    if config['trainer']['scheduler'] == 'LambdaLR':
+        scheduler= torch.optim.lr_scheduler.LambdaLR(optimizer=optimizer,
+                                                lr_lambda= lambda epoch: config['trainer']['lr_lambda'] ** epoch,
+                                                last_epoch=-1,
+                                                verbose=False)
+    return loss_fn, optimizer, scheduler
 
 
-
-# def preprocessor(text:iter):
-#     return Pipeline([('rm_spcl_char', FunctionTransformer(_rm_spcl_char))]).transform(text)
-    
-
-
-# def save_model(model, model_path):
-#     with open(model_path, 'wb') as f:
-#         joblib.dump(pickle.dumps(model), f)
-#         print(f"This model is saved at {model_path}.")
+def get_dataloader(dataset, batch_size, num_workers= 4, seed= 42):
+        batch_sampler= BatchSampler(RandomSampler(dataset, generator= np.random.seed(seed)), batch_size= batch_size, drop_last= False)
+        return DataLoader(dataset, batch_sampler= batch_sampler,  num_workers= num_workers)
 
 
-# def load_model(model_path):
-#     print(f"This model is loaded from {model_path}.")
-#     return pickle.loads(joblib.load(model_path))
-
-
-def save_results(result, result_path):
-    with open(result_path, 'w') as f:
-        json.dump(result, f)
-    print(f"Model results are saved at {result_path}.")
-
-
-def mk_path(path):
-    if not os.path.isdir(path):
-        os.makedirs (path)
-
-
-def mk_confusion_matrix(save_path=None, y_true=None, y_pred=None, labels=None, figsize = (35, 30)):
-    # confusion matrix
-    cm = confusion_matrix(y_true, y_pred, labels = labels)
-    
-    plt.figure(figsize = figsize)
-    ax= plt.subplot()
-    sns.heatmap(cm, annot=True, fmt='g', ax=ax, cmap = "OrRd", cbar = False)  #annot=True to annotate cells, ftm='g' to disable scientific notation
-
-    # labels, title and ticks
-    ax.set_xlabel('Predicted labels')
-    ax.set_ylabel('True labels')
-    ax.set_title('Confusion Matrix')
-    ax.xaxis.set_ticklabels(labels)
-    ax.yaxis.set_ticklabels(labels)
-
-    if save_path:
-        plt.savefig(save_path)
-    else:
-        plt.show()
-     
-
-def save_inference(save_path, x, y_true, y_pred):
-    df_results = pd.DataFrame(np.column_stack([x, y_true, y_pred]), columns = ['text', 'label_true', 'label_pred'])
-    df_results.to_csv(save_path, index = False)
-
-class ISO():
-    def __init__(self):
-        with open('resource/iso.json', 'r') as f:
-            self.iso_dict = json.load(f)
-        self.search_list = [[i[0]] + i[1] for i in self.iso_dict["en_to_iso"].items()]   
-
-    def search(self, text, tol = 2):
-        results = []
-        for en_id_pair in self.search_list:
-            if any((self._word_validation(text, target, tol) for target in en_id_pair)):
-                results.append(en_id_pair)
-        return results
-
-
-    def _word_validation(self, test:str, target:str, tol = 2):
-        if tol == 0:
-            return test in [target]
-        elif tol == 1:
-            return test.lower() in [target.lower()]
-        elif tol == 2:
-            return test.lower() in target.lower()
-
-class Model():
-    def __init__(self, model_name, model = None):
-        model_dir = "model"
-        self.model_path = os.path.join(model_dir, model_name, "model.pkl")
+def train_loop(dataloader, model, loss_fn, optimizer, device):
+    size= len(dataloader.dataset)
+    n_step= int(np.ceil(size / dataloader.batch_sampler.batch_size))
+    with tqdm(total= n_step) as pbar:
+        for idx, data in enumerate(dataloader):
+            batch= idx + 1
+            X= data['text']
+            y= torch.tensor(data['labels']).to(device)
+            # 예측(prediction)과 손실(loss) 계산
+            pred= model(X)
+            loss= loss_fn(pred, y)
         
-        if os.path.exists(self.model_path):
-            try:
-                self.model = self.load_model()
-            except:
-                self.model = model
-        if model:
-            self.model = model
+            # 역전파
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+
+            loss, trained_size= loss.item(), batch * len(X)
+            
+            pbar.update(1)
+
+    return loss
     
-    def fit(self, X, y):
-        self.model.fit(X, y)
-        self.labels = self.model.classes_
 
+def test_loop(dataloader, model, loss_fn, device):
+    size= len(dataloader.dataset)
+    num_batches= len(dataloader)
+    loss, correct= 0, 0
+    with torch.no_grad():
+        with tqdm(total= num_batches) as pbar:
+            for data in dataloader:
+                X= data['text']
+                y= torch.tensor(data['labels']).to(device)
+                pred= model(X)
+                loss += loss_fn(pred, y).item()
+                correct += (pred.argmax(1) == y).type(torch.float).sum().item()
+                pbar.update(1)
 
-    def save_model(self):
-        with gzip.open(self.model_path, 'wb') as f:
-            joblib.dump(pickle.dumps(self.model), f)
-            # print(f"This model is saved at {self.model_path}.")
+    loss /= num_batches
+    correct /= size
+    accuracy= 100*correct
+    print(f"Test Error: \n Accuracy: {accuracy:>0.1f}%, Avg loss: {loss:>8f} \n")
+    return loss, accuracy
 
-
-    def load_model(self):
-        with gzip.open(self.model_path, 'rb') as f:
-            model = pickle.loads(joblib.load(self.model_path))
-
-        # print(f"This model is loaded from {self.model_path}.")
-        return model
-
-
-    def predict(self, text, n = 3):
-        if isinstance(text, str):
-            text = [text] 
-        n_text= len(text)
-        probs = self.model.predict_proba(text) #(n_text, n)
-        preds = probs.argsort()[:, ::-1][:, :n] #(n_text, n)
-        indice = np.repeat(np.arange(n_text), n).reshape(n_text, n) #(n_text, n)
-        return preds, probs[indice, preds]
-
-
-    def int2label(self, int_array):
-        conv_dict= dict(zip(range(len(self.labels)), self.labels))
-        return np.array([[conv_dict[int] for int in int_vect] for int_vect in int_array])
-  
-    
-    def label2int(self, label_array):
-        conv_dict= dict(zip(range(self.labels, len(self.labels))))
-        return np.array([[conv_dict[label] for label in label_vect] for label_vect in label_array])
+class Net(nn.Module):
+    def __init__(self, embedding_model, tokenizer, config):
+        super(Net, self).__init__(),
+        self.embedding_layer= nn.Embedding.from_pretrained(embedding_model.embeddings.word_embeddings.weight)
+        self.tokenizer= tokenizer
+        self.device= torch.device(config['device'])
+        self.model= nn.Sequential()
+        self.layers= (
+                        ('embedding', self.embedding_layer.to(self.device)),
+                        ('pool', nn.AvgPool2d(kernel_size=(512, 1))),
+                        ('flat', nn.Flatten()),
+                        ('fc', _stack_fc(layer_io= _n_unit(config["model"]['fc']['n_layers'],
+                                                            config["model"]['fc']['n_input'],
+                                                            config["model"]['fc']['n_output'],
+                                                            config["model"]['fc']['n_tip_point'],
+                                                            config["model"]['fc']['tip_layer']),
+                                            dropouts= _gen_dropout(config["model"]['dropout']['n_layers'],
+                                                                config["model"]['dropout']['n_dropout'],
+                                                                    config["model"]['dropout']['rates']),
+                                            device=self.device))
+                        )
+        for name, module in self.layers:
+            self.model.add_module(name, module)
         
-         
+        del self.embedding_layer
+        
 
+    def forward(self, x):
+        x= self.tokenizer(x, add_special_tokens=True,
+            max_length=512,
+            return_token_type_ids=False,
+            padding="max_length",
+            truncation=True,
+            return_attention_mask=False,
+            return_tensors='pt')['input_ids'].to(self.device)
+        logits =self.model(x)
+        output= F.softmax(logits, dim=1)
+        return output
+
+
+def _n_unit(n_layers, n_input, n_output, n_tip_point, tip_layer=0):
     
+    if tip_layer >= n_layers:
+        raise ValueError("n_inc must be less than n_layer")
+    if n_layers == 1:
+        return [(n_input, n_output)]
+    if tip_layer == 0:
+        n_tip_point= n_input
+    inc_layers= np.int64(np.round(np.exp2(np.linspace(np.log2(n_input), np.log2(n_tip_point), tip_layer+1))))     
+    dec_layers= np.int64(np.round(np.exp2(np.linspace(np.log2(n_tip_point), np.log2(n_output), (n_layers - tip_layer)+1))))
+    io_list= np.hstack([inc_layers, dec_layers[1:]])
+    return [(io_list[i], io_list[i+1]) for i in range(n_layers)]
+
+
+def _gen_dropout(n_layers=1, n_dropout=0, rates:(float or list)= 0.2):
+    if not n_dropout:
+        return None
+    layer2attach= np.linspace(1, n_layers, n_dropout+2, dtype= np.int32)[1:-1].tolist()
+    if isinstance(rates, float):
+        rates= [rates] * n_dropout
+    
+    return [layer2attach, [nn.Dropout(rates[i]) for i in range(n_dropout)]]
+
+
+def _stack_fc(layer_io, dropouts=None, activ_func=nn.ReLU(), device=None):
+    model= nn.Sequential()
+    n_layer= len(layer_io)
+    for idx, io in enumerate(layer_io):
+        layer_id= idx + 1
+        layer= nn.Sequential()
+        if layer_id == n_layer:
+            name, module= 'ouput', nn.Linear(io[0], io[1], device= device)
+        else:
+            components= [('lin', nn.Linear(io[0], io[1], device= device)), ('activ', activ_func)]
+            if dropouts:
+                if layer_id in dropouts[0]:
+                    components.append(('dropout', dropouts[1][dropouts[0].index(layer_id)]))
+            for c_name, c_module in components:
+                layer.add_module(c_name, c_module)
+            name, module= f'fc{layer_id}', layer                
+        model.add_module(name, module)
+    return model

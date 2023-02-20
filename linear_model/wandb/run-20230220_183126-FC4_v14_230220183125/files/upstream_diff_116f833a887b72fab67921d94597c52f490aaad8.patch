@@ -1,0 +1,116 @@
+diff --git a/deploy/app.py b/deploy/app.py
+index ea1cd4c..61f3623 100644
+--- a/deploy/app.py
++++ b/deploy/app.py
+@@ -50,5 +50,5 @@ def api_predict():
+         
+ 
+ app.debug = True    
+-app.run(host='0.0.0.0', port=3000)
++app.run(host='0.0.0.0', port=8000)
+ 
+diff --git a/deploy/module/engine.py b/deploy/module/engine.py
+index 452a030..28163a3 100644
+--- a/deploy/module/engine.py
++++ b/deploy/module/engine.py
+@@ -156,20 +156,15 @@ class Model():
+             try:
+                 self.model = self.load_model()
+                 self.labels = self.model.classes_
++                self._int2label_dict = dict(zip(range(len(self.labels)), self.labels))
++                self._label2int_dict = dict(zip(self.labels, range(len(self.labels))))
++                self.int2label= np.vectorize(self.int2label)
++                self.label2int= np.vectorize(self.label2int)
+             except:
+                 self.model = model
+         else:
+             self.model = model            
+-    
+-    # def fit(self, X, y):
+-    #     self.model.fit(X, y)
+-    #     self.labels = self.model.classes_
+-
+-
+-    # def save_model(self):
+-    #     with gzip.open(self.model_path, 'wb') as f:
+-    #         joblib.dump(pickle.dumps(self.model), f)
+-    #         # print(f"This model is saved at {self.model_path}.")
++        
+ 
+ 
+     def load_model(self):
+@@ -185,15 +180,13 @@ class Model():
+         preds = probs.argsort()[0, ::-1][:n]
+         return preds, probs[0, preds]
+ 
++    
++    def int2label(self, value):
++        return self._int2label_dict.get(value)
+ 
+-    def int2label(self, int_vect):
+-        conv_dict= dict(zip(range(len(self.labels)), self.labels))
+-        return np.array([conv_dict[int] for int in int_vect])
+-
+-
+-    def label2int(self, label_vect):
+-        conv_dict= dict(zip(range(self.labels, len(self.labels))))
+-        return np.array([conv_dict[label] for label in label_vect])
++    @np.vectorize
++    def label2int(self, value):
++        return self._label2int_dict.get(value)
+             
+             
+ 
+diff --git a/linear_model/model_config.json b/linear_model/model_config.json
+index e5e37c7..8d1a9d8 100644
+--- a/linear_model/model_config.json
++++ b/linear_model/model_config.json
+@@ -13,7 +13,7 @@
+     },
+     "base_model": "FC4_v1"
+   },
+-  "model_name": "FC4_v13",
++  "model_name": "FC4_v14",
+   "architecture": "DNN",
+   "dataset": "wortschartz_30",
+   "model": {
+@@ -26,9 +26,9 @@
+       "tip_layer": 2
+     },
+     "dropout": {
+-      "n_layers": null,
+-      "n_dropout": null,
+-      "rates": null
++      "n_layers": 4,
++      "n_dropout": 1,
++      "rates": 0.2
+     }
+   },
+   "device": "cuda"
+diff --git a/linear_model/wandb/debug-internal.log b/linear_model/wandb/debug-internal.log
+index 4a5b44c..b57a014 120000
+--- a/linear_model/wandb/debug-internal.log
++++ b/linear_model/wandb/debug-internal.log
+@@ -1 +1 @@
+-run-20230216_082803-FC4_v1/logs/debug-internal.log
+\ No newline at end of file
++run-20230220_183126-FC4_v14_230220183125/logs/debug-internal.log
+\ No newline at end of file
+diff --git a/linear_model/wandb/debug.log b/linear_model/wandb/debug.log
+index 6947193..5720e6a 120000
+--- a/linear_model/wandb/debug.log
++++ b/linear_model/wandb/debug.log
+@@ -1 +1 @@
+-run-20230216_082803-FC4_v1/logs/debug.log
+\ No newline at end of file
++run-20230220_183126-FC4_v14_230220183125/logs/debug.log
+\ No newline at end of file
+diff --git a/linear_model/wandb/latest-run b/linear_model/wandb/latest-run
+index e74210f..a35cedd 120000
+--- a/linear_model/wandb/latest-run
++++ b/linear_model/wandb/latest-run
+@@ -1 +1 @@
+-run-20230216_082803-FC4_v1
+\ No newline at end of file
++run-20230220_183126-FC4_v14_230220183125
+\ No newline at end of file
