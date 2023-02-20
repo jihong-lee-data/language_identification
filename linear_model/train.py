@@ -67,8 +67,8 @@ def main():
     model= load_model(config)
     
     # loading pretrained weight only when base model is declared
-    if config['train'].get('base_model'):
-        BM_PATH = os.path.join(MODEL_DIR, config['train']['base_model'], "checkpoint", "model.pt")
+    if config['trainer'].get('base_model'):
+        BM_PATH = os.path.join(MODEL_DIR, config['trainer']['base_model'], "checkpoint", "model.pt")
         model.load_state_dict(torch.load(BM_PATH, map_location=device))
     
     loss_fn, optimizer, scheduler= load_trainer(model, config)
