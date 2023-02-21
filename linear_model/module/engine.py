@@ -56,6 +56,7 @@ def get_dataloader(dataset, batch_size, num_workers= 4, seed= 42):
 
 
 def train_loop(dataloader, model, loss_fn, optimizer, device):
+    model.train()
     size= len(dataloader.dataset)
     n_step= int(np.ceil(size / dataloader.batch_sampler.batch_size))
     with tqdm(total= n_step) as pbar:
@@ -83,7 +84,8 @@ def test_loop(dataloader, model, loss_fn, device):
     size= len(dataloader.dataset)
     num_batches= len(dataloader)
     loss, correct= 0, 0
-    with torch.no_grad():
+    model.eval()
+    with torch.inference_mode():
         with tqdm(total= num_batches) as pbar:
             for data in dataloader:
                 X= data['text']

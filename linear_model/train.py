@@ -6,6 +6,7 @@ from datasets import load_from_disk
 import wandb
 from datetime import datetime
 import warnings
+from pathlib import Path
 warnings.filterwarnings(action='ignore')
 
 from module.engine import get_dataloader, load_model, load_trainer, train_loop, test_loop, EarlyStopping, save_checkpoint
@@ -22,21 +23,21 @@ def main():
     config['device']= device.type
 
     # setting variout paths
-    MODEL_DIR= 'model'
-    SAVE_DIR= os.path.join(MODEL_DIR, config['model_name'])
-    MODEL_CONFIG_PATH= os.path.join(SAVE_DIR, "model_config.json")
-
-
-    DATA_DIR= "../model_development/data/"
-    DATA_PATH= os.path.join(DATA_DIR, config['dataset'])
-
-    CP_DIR= os.path.join(SAVE_DIR, "checkpoint")
-    CP_MODEL_PATH= os.path.join(CP_DIR, "model.pt")
-    CP_OPTIM_PATH= os.path.join(CP_DIR, "optimizer.pt")
-    CP_SCHDLR_PATH= os.path.join(CP_DIR, "scheduler.pt")
+    MODEL_DIR= Path('model')
+    MODEL_DIR.mkdir(parents=True, exist_ok=True)
+    SAVE_DIR= MODEL_DIR / config['model_name']
+    MODEL_CONFIG_PATH= SAVE_DIR / "model_config.json"
+    
+    DATA_DIR= Path("../model_development/data/")
+    DATA_PATH= DATA_DIR / config['dataset']
+    
+    CP_DIR= SAVE_DIR / "checkpoint"
+    CP_MODEL_PATH= CP_DIR / "model.pt"
+    CP_OPTIM_PATH= CP_DIR / "optimizer.pt"
+    CP_SCHDLR_PATH= CP_DIR / "scheduler.pt"
     
     for path in [MODEL_DIR, SAVE_DIR, CP_DIR]:
-        mk_dir(path)
+        path.mkdir(parents=True, exist_ok=True)
     
     # initiating wandb
     wandb.init(
@@ -69,7 +70,7 @@ def main():
     
     # loading pretrained weight only when base model is declared
     if config['trainer'].get('base_model'):
-        BM_PATH = os.path.join(MODEL_DIR, config['trainer']['base_model'], "checkpoint", "model.pt")
+        BM_PATH = MODEL_DIR / config['trainer']['base_model'] / "checkpoint" / "model.pt"
         model.load_state_dict(torch.load(BM_PATH, map_location=device))
         print(model)
     
