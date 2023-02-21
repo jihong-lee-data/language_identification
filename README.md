@@ -581,7 +581,8 @@
     * 데이터셋
         * `long`: `lang_detect_test.csv`
             [(결과)](model_comparison/data/lang_detect_test_comparison.csv)
-        * `short`: `lang_detection_short_texts.csv` (진행중)
+        * `short`: `lang_detection_short_texts.csv`
+            [(결과)](model_comparison/data/lang_detection_short_texts_comparison.csv)
 
 
     * accuracy
