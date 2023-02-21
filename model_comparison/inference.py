@@ -16,7 +16,7 @@ print("Device: ", device)
 
 label_dict = dict(zip(range(len(LABELS)), LABELS))
 
-LOCAL_PATH = "../fine_tuning/test_trainer/checkpoint-76800"
+LOCAL_PATH = "../fine_tuning/test_trainer/checkpoint-96000"
 FILE_NAME = "pytorch_model.bin"
 LOCAL_W_PATH = os.path.join(LOCAL_PATH, FILE_NAME)
 
