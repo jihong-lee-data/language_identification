@@ -3,7 +3,6 @@ from torch.utils.data import DataLoader, RandomSampler, BatchSampler
 import numpy as np
 import re
 from module.engine import *
-import pyprind
 from tqdm import tqdm
 
 
