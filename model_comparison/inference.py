@@ -57,7 +57,7 @@ class Classifier(pl.LightningModule):
 
 
 def main():
-    data_path = "data/model_comparison.csv"
+    data_path = "data/lang_detection_short_texts.csv"
     test_data = pd.read_csv(data_path)
 
     clf = Classifier()
@@ -73,7 +73,7 @@ def main():
 
     end = time.time()
     # test_data['xlm-roberta-finetune'] = preds
-    test_data.to_csv(data_path)
+    test_data.to_csv("data/lang_detection_short_texts_comparison.csv", index=False)
     print(f"Done! ({end - start:.5f} sec)", end = '\n'*2)
 
 if __name__ == "__main__":
