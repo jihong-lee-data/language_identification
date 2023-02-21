@@ -62,15 +62,17 @@ def main():
 
     clf = Classifier()
     start = time.time()
-    size = test_data.shape[0]
-    n_step = int(size / 100)
-    indice = np.linspace(0, size, n_step, dtype= int)
-    batch_list= [(indice[i], indice[i+1]) for i in range(len(indice)-1)]
-    preds = []
-    for lb, ub  in tqdm(batch_list):
-        preds.extend(clf.predict(test_data.loc[lb:ub, 'text'].tolist()).tolist())
+    test_data['xlm-roberta-finetune'] = [clf.predict(text)[0] for text in test_data['text']]
+    # size = test_data.shape[0]
+    # step_size = 10
+    # indice = np.linspace(0, size, step_size, dtype= int)
+    # batch_list= [(indice[i], indice[i+1]) for i in range(len(indice)-1)]
+    # preds = []
+    # for lb, ub  in tqdm(batch_list):
+    #     preds.extend(clf.predict(test_data.loc[lb:ub, 'text'].tolist()).tolist())
+
     end = time.time()
-    test_data['xlm-roberta-finetune'] = preds
+    # test_data['xlm-roberta-finetune'] = preds
     test_data.to_csv(data_path)
     print(f"Done! ({end - start:.5f} sec)", end = '\n'*2)
 
