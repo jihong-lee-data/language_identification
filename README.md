@@ -565,7 +565,7 @@
 
         * validation accuracy = 92.5%
 
-### 2023.02.18
+### 2023.02.20
 
 
 * `FC4_v1` 기반 추가 학습 중
@@ -573,3 +573,21 @@
     * `FC4_v2`
     
     * `FC4_v14`
+
+### 2023.02.21
+
+* model 비교
+
+    * 데이터셋
+        * `long`: `lang_detect_test.csv`
+            [(결과)](model_comparison/data/lang_detect_test_comparison.csv)
+        * `short`: `lang_detection_short_texts.csv` (진행중)
+
+
+    * accuracy
+
+    |데이터 \ 모델|`fastText`|`mnb_worschartz_30_v16`|`xlm-roberta-finetune`|`FC4_v1`|
+    |:---:|:---:|:---:|:---:|:---:|
+    |`long`|0.9574|0.9549|0.9553|0.94|
+    |`short`|0.9226|0.9566|0.9584|0.8266|
+
