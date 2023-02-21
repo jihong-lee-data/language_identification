@@ -7,10 +7,11 @@ import torch
 import time
 import numpy as np
 import pandas as pd
+from tqdm import tqdm
 
 LABELS = ['ar', 'cs', 'da', 'de', 'el', 'en', 'es', 'fi', 'fr', 'he', 'hi', 'hu', 'id', 'it', 'ja', 'ko', 'ms', 'nl', 'pl', 'pt', 'ru', 'sv', 'sw', 'th', 'tl', 'tr', 'uk', 'vi', 'zh_cn', 'zh_tw']
 
-device = torch.device('cpu')
+device = torch.device( 'cuda' if torch.cuda.is_available() else 'cpu')
 print("Device: ", device)
 
 label_dict = dict(zip(range(len(LABELS)), LABELS))
@@ -61,8 +62,15 @@ def main():
 
     clf = Classifier()
     start = time.time()
-    test_data['xlm-roberta-finetune']= clf.predict(test_data['text'].tolist())
+    size = test_data.shape[0]
+    n_step = int(size / 100)
+    indice = np.linspace(0, size, n_step, dtype= int)
+    batch_list= [(indice[i], indice[i+1]) for i in range(len(indice)-1)]
+    preds = []
+    for lb, ub  in tqdm(batch_list):
+        preds.extend(clf.predict(test_data.loc[lb:ub, 'text'].tolist()).tolist())
     end = time.time()
+    test_data['xlm-roberta-finetune'] = preds
     test_data.to_csv(data_path)
     print(f"Done! ({end - start:.5f} sec)", end = '\n'*2)
 
