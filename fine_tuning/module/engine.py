@@ -24,7 +24,7 @@ class EarlyStopping:
         if self.counter >= self.patience:
             self.early_stop = True            
 
-def save_checkpoint(model, save_path):
+def save_state(model, save_path):
     torch.save(model.state_dict(), save_path)
 
 
@@ -52,11 +52,12 @@ def get_dataloader(dataset, batch_size, num_workers= 4, seed= 42):
         return DataLoader(dataset, batch_sampler= batch_sampler,  num_workers= num_workers)
 
 
-def train_loop(dataloader, model, loss_fn, optimizer, device):
+def train_loop(dataloader, model, loss_fn, optimizer, device, config):
     model.train()
     size= len(dataloader.dataset)
-    n_step= int(np.ceil(size / dataloader.batch_sampler.batch_size))
-    with tqdm(total= n_step) as pbar:
+    n_steps= int(np.ceil(size / dataloader.batch_sampler.batch_size))
+    n_logs= config['trainer']['n_logs']
+    with tqdm(total= n_steps) as pbar:
         for idx, data in enumerate(dataloader):
             batch= idx + 1
             X= data['text']
@@ -72,8 +73,12 @@ def train_loop(dataloader, model, loss_fn, optimizer, device):
 
             loss, trained_size= loss.item(), batch * len(X)
             
+            if batch % (n_steps // n_logs)== 0:
+                print(f'===\nbatch {batch}\ntrained size: {trained_size}, train loss: {loss}\n===')
+                save_state(model, config['model']['path']['checkpoint']['model'])
+                save_state(optimizer, config['model']['path']['checkcpoint_dir'] / f"model_checkpoint_{trained_size}.pt")
             pbar.update(1)
-
+    
     return loss
     
 
@@ -114,6 +119,6 @@ class FineTuning(nn.Module):
             truncation=True,
             return_attention_mask=True,
             return_tensors='pt').to(self.device)
-        logits =self.model(x['input_ids'], attention_mask=x['attention_mask'])[0]
+        logits =self.model(x['input_ids'], attention_mask=x['attention_mask'])
         output= F.softmax(logits, dim=1)
         return output

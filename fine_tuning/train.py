@@ -8,7 +8,7 @@ from datetime import datetime
 import warnings
 from pathlib import Path
 warnings.filterwarnings(action='ignore')
-from module.engine import get_dataloader, load_model, load_trainer, train_loop, test_loop, EarlyStopping, save_checkpoint
+from module.engine import get_dataloader, load_model, load_trainer, train_loop, test_loop, EarlyStopping, save_state
 from module.tool import load_json, save_json
 
 
@@ -31,16 +31,27 @@ def main():
     DATA_PATH= DATA_DIR / config['dataset']
     
     CP_DIR= SAVE_DIR / "checkpoint"
-    CP_MODEL_PATH= CP_DIR / "model.pt"
-    CP_OPTIM_PATH= CP_DIR / "optimizer.pt"
-    CP_SCHDLR_PATH= CP_DIR / "scheduler.pt"
+    
+    
+    
+    BEST_DIR= SAVE_DIR / "best_epoch"
+    BEST_MODEL_PATH= BEST_DIR / "model.pt"
+    BEST_OPTIM_PATH= BEST_DIR / "optimizer.pt"
+    BEST_SCHDLR_PATH= BEST_DIR / "scheduler.pt"
+    
     
     PRE_MODEL_PATH = MODEL_DIR / config['model']['base_model'] / "config.json"
-    for path in [MODEL_DIR, SAVE_DIR, CP_DIR]:
+    for path in [MODEL_DIR, SAVE_DIR, CP_DIR, BEST_DIR]:
         path.mkdir(parents=True, exist_ok=True)
     
 
     config['model']['config'] = load_json(PRE_MODEL_PATH)
+    config['model']['path'] = dict(checkcpoint_dir=CP_DIR,                                                
+                                    best_epoch=dict(model=BEST_MODEL_PATH,
+                                    optimizer=BEST_OPTIM_PATH,
+                                    scheduler=BEST_SCHDLR_PATH
+                                                )
+    )
 
     # initiating wandb
     wandb.init(
@@ -81,7 +92,7 @@ def main():
     for crt_epoch in range(1, config['trainer']['epochs']+1):  
         print(f"Epoch {crt_epoch}\n-------------------------------")
         # train 
-        train_loss= train_loop(train_dataloader, model, loss_fn, optimizer, device)
+        train_loss= train_loop(train_dataloader, model, loss_fn, optimizer, device, config)
         # validation
         val_loss, val_acc= test_loop(valid_dataloader, model, loss_fn, device)
                     
@@ -104,11 +115,14 @@ def main():
         if early_stopping.early_stop:
             break
         elif not early_stopping.counter:
-            save_checkpoint(model, CP_MODEL_PATH)
-            save_checkpoint(optimizer, CP_OPTIM_PATH)
-            save_checkpoint(scheduler, CP_SCHDLR_PATH)
+            save_state(model, BEST_MODEL_PATH)
+            save_state(optimizer, BEST_MODEL_PATH)
+            save_state(scheduler, BEST_MODEL_PATH)
             save_json(config, MODEL_CONFIG_PATH)
-
+            # remove checkpoints generated during an epoch
+            for path in CP_DIR.glob('*.pt'):
+                path.unlink()
+        
         scheduler.step()
         
     torch.cuda.empty_cache()
