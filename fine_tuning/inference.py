@@ -8,7 +8,6 @@ import time
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
-from optimum.bettertransformer import BetterTransformer
 
 LABELS = ['ar', 'cs', 'da', 'de', 'el', 'en', 'es', 'fi', 'fr', 'he', 'hi', 'hu', 'id', 'it', 'ja', 'ko', 'ms', 'nl', 'pl', 'pt', 'ru', 'sv', 'sw', 'th', 'tl', 'tr', 'uk', 'vi', 'zh_cn', 'zh_tw']
 
@@ -29,8 +28,8 @@ class Classifier(pl.LightningModule):
     def __init__(self):
         super().__init__()
         self.model = RobertaForSequenceClassification(config).to(device)
-        self.model=BetterTransformer.transform(self.model)
         self.model.load_state_dict(torch.load(LOCAL_W_PATH, map_location=device))
+        self.model=BetterTransformer.transform(self.model)
         self.model.eval()
         self.tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base", use_fast=True)
     
