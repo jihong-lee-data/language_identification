@@ -10,6 +10,7 @@ share/
 etc/
 README.html
 lib64
+*/wandb/
 
 ## model_development
 model_development/.develop
@@ -27,15 +28,11 @@ deploy/.deploy/
 ## fine_tuning
 fine_tuning/.finetune
 fine_tuning/data/
-fine_tuning/test_trainer/
 fine_tuning/calc_batchsize.py
-fine_tuning/traced_model.pt
-fine_tuning/tf
-fine_tuning/tflite
-fine_tuning/onnx
 fine_tuning/local-pt-checkpoint/
 fine_tuning/workspace.py
-model_development/wandb/
+fine_tuning/model
+fine_tuning/cvt_inference
 
 ## linear_model
 linear_model/model
