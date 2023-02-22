@@ -1,0 +1,23 @@
+{
+  "trainer": {
+    "loss_fn": "CrossEntropyLoss",
+    "scheduler": "LambdaLR",
+    "optimizer": "AdamW",
+    "learning_rate": 0.1,
+    "lr_lambda": 0.95,
+    "epochs": 100,
+    "batch_size": 512,
+    "early_stop": {
+      "patience": 30,
+      "delta": 0
+    }
+  },
+  "model_name": "xlm-roberta-finetune_v2",
+  "architecture": "DNN",
+  "dataset": "wortschartz_31",
+  "model": {
+    "base_model": "xlm-roberta-base",
+    "config": null
+  },
+  "device": "cuda"
+}

@@ -1,91 +1,128 @@
-from datasets import load_from_disk
+import os
 import numpy as np
 import torch
-import evaluate
-from transformers import AutoTokenizer
-from transformers import AutoModelForSequenceClassification
-from transformers import TrainingArguments, Trainer
-import os
+from torch import nn
+from datasets import load_from_disk
+import wandb
+from datetime import datetime
 import warnings
+from pathlib import Path
 warnings.filterwarnings(action='ignore')
+from module.engine import get_dataloader, load_model, load_trainer, train_loop, test_loop, EarlyStopping, save_checkpoint
+from module.tool import load_json, save_json
 
 
 def main():
-    device = torch.device('mps' if torch.backends.mps.is_available() else 'cuda' if torch.cuda.is_available() else 'cpu')
-    print("device: ", device)
+    device= torch.device('mps' if torch.backends.mps.is_available() else 'cuda' if torch.cuda.is_available() else 'cpu')
     torch.cuda.empty_cache()
-    # loading dataset
-    print("Loading dataset...")
-
-    if os.path.exists("data/tokenized/wortschartz_30/"):
-        tokenized_datasets = load_from_disk("data/tokenized/wortschartz_30/")
-    else:
-        print("tokenizing dataset...")
-        datasets = load_from_disk("../model_development/data/wortschartz_30/")
-        tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base")
-
-        def tokenize_function(examples):
-            return tokenizer(examples['text'], padding="max_length", truncation= True)
-
-        tokenized_datasets = datasets.map(tokenize_function, batched=True)
-        tokenized_datasets.save_to_disk('data/tokenized/wortschartz_30')
-
-    print("Done")
-
-    train_size = len(tokenized_datasets["train"])
-    valid_size = len(tokenized_datasets["validation"])
-
-    print("Dataset size(train): ", train_size)
-    print("Dataset size(validation): ", valid_size)
-
-    metric = evaluate.load("accuracy")
-
-    def compute_metrics(eval_pred):
-        logits, labels = eval_pred
-        predictions = np.argmax(logits, axis=-1)
-        return metric.compute(predictions=predictions, references=labels)
-
-    # loading base model
-    model = AutoModelForSequenceClassification.from_pretrained("xlm-roberta-base", num_labels=30).to(device)
-
-
-    default_args = {
-        "output_dir": "test_trainer",
-        "num_train_epochs": 1,
-        "log_level": "error",
-        "per_device_train_batch_size":25,
-        "per_device_eval_batch_size":25,
-        "label_names": tokenized_datasets['train'].features['label'].names,
-        "logging_steps": 1000,
-        "do_train": True,
-        "do_eval": True,
-        "evaluation_strategy": "steps",
-        "dataloader_num_workers": 20,
-        "seed": 42,
-    }
-
-    train_n_step = train_size / default_args["per_device_train_batch_size"]
-    valid_n_step = valid_size / default_args["per_device_eval_batch_size"]
-
-    default_args["save_steps"]= train_n_step // 5
     
-    if device == 'mps':
-        default_args['use_mps_device']= True
-        default_args["dataloader_num_workers"]= 20
+    # loading model configuration
+    INIT_CONFIG_PATH= "model_config.json"
+    config= load_json(INIT_CONFIG_PATH)
+    config['device']= device.type
 
-    training_args = TrainingArguments(**default_args)
+    # setting variout paths
+    MODEL_DIR= Path('model')
+    MODEL_DIR.mkdir(parents=True, exist_ok=True)
+    SAVE_DIR= MODEL_DIR / config['model_name']
+    MODEL_CONFIG_PATH= SAVE_DIR / "model_config.json"
+    
+    DATA_DIR= Path("data/")
+    DATA_PATH= DATA_DIR / config['dataset']
+    
+    CP_DIR= SAVE_DIR / "checkpoint"
+    CP_MODEL_PATH= CP_DIR / "model.pt"
+    CP_OPTIM_PATH= CP_DIR / "optimizer.pt"
+    CP_SCHDLR_PATH= CP_DIR / "scheduler.pt"
+    
+    PRE_MODEL_PATH = MODEL_DIR / config['model']['base_model'] / "config.json"
+    for path in [MODEL_DIR, SAVE_DIR, CP_DIR]:
+        path.mkdir(parents=True, exist_ok=True)
+    
 
-    trainer = Trainer(
-        model=model,
-        args=training_args,
-        train_dataset=tokenized_datasets['train'].shuffle(seed=42).select(range(100)),
-        eval_dataset=tokenized_datasets['validation'].shuffle(seed=42).select(range(100)),
-        compute_metrics=compute_metrics,
+    config['model']['config'] = load_json(PRE_MODEL_PATH)
+
+    # initiating wandb
+    wandb.init(
+        # set the wandb project where this run will be logged
+        project="lang_id",
+        entity= "jihongleejihong",
+        save_code= True,
+        group= "finetune",
+        job_type= "train",
+        notes="test",
+        tags= [config['model_name'], config['architecture'], config['dataset']],
+        id= config["model_name"] + f"_{datetime.now().strftime('%y%m%d%H%M%S')}",
+        sync_tensorboard= False,
+        resume= 'allow',
+        config= config,
+        name= config["model_name"]
     )
 
-    trainer.train()
-    
-    torch.cuda.empty_cache()	
-if __name__ == "__main__":
-    main()
+    # loading dataset
+    print("Loading dataset...")
+    dataset= load_from_disk(DATA_PATH)
+    print("Dataset size(train): ", len(dataset["train"]))
+    print("Dataset size(validation): ", len(dataset["validation"]))
+    train_dataloader= get_dataloader(dataset['train'], batch_size= config['trainer']['batch_size'], num_workers= 4, seed= 42)
+    valid_dataloader= get_dataloader(dataset['validation'], batch_size= config['trainer']['batch_size'], num_workers= 4, seed= 42)
+    print("Done")
 
+    # loading model and training modules
+    model=load_model(config)
+    
+    
+    loss_fn, optimizer, scheduler= load_trainer(model, config)
+    early_stopping= EarlyStopping(patience= config['trainer']['early_stop']['patience'], delta= config['trainer']['early_stop']['delta'])
+
+    # training
+    best_val_acc, best_epoch= 0, 0
+
+    for crt_epoch in range(1, config['trainer']['epochs']+1):  
+        print(f"Epoch {crt_epoch}\n-------------------------------")
+        # train 
+        train_loss= train_loop(train_dataloader, model, loss_fn, optimizer, device)
+        # validation
+        val_loss, val_acc= test_loop(valid_dataloader, model, loss_fn, device)
+                    
+
+        log_dict= dict(train_loss= train_loss,
+                        val_loss= val_loss,
+                        val_acc= val_acc)
+        print(log_dict)
+        wandb.log(log_dict, step=crt_epoch)
+
+        torch.cuda.empty_cache()	
+        
+        if val_acc > best_val_acc:
+            best_val_acc= val_acc
+            best_epoch= crt_epoch
+    
+        # check early stopping condition
+        early_stopping(score= -val_loss)
+        
+        if early_stopping.early_stop:
+            break
+        elif not early_stopping.counter:
+            save_checkpoint(model, CP_MODEL_PATH)
+            save_checkpoint(optimizer, CP_OPTIM_PATH)
+            save_checkpoint(scheduler, CP_SCHDLR_PATH)
+            save_json(config, MODEL_CONFIG_PATH)
+
+        scheduler.step()
+        
+    torch.cuda.empty_cache()
+    
+    # wrapping up & finishing wandb
+    wandb.run.summary['best_epoch']= best_epoch
+    wandb.run.summary['best_val_acc']= best_val_acc
+    wandb.run.summary['stop_epoch']= crt_epoch
+    wandb.run.summary['stop_val_loss']= val_loss
+    wandb.run.summary['early_stop']= early_stopping.early_stop
+    
+    wandb.finish()
+    
+    print("Done!")
+
+if __name__== "__main__":
+    main()
