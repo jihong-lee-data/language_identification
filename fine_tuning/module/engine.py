@@ -119,6 +119,6 @@ class FineTuning(nn.Module):
             truncation=True,
             return_attention_mask=True,
             return_tensors='pt').to(self.device)
-        logits =self.model(x['input_ids'], attention_mask=x['attention_mask'])
+        logits =self.model(x['input_ids'], attention_mask=x['attention_mask'])[0]
         output= F.softmax(logits, dim=1)
         return output
