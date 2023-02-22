@@ -75,8 +75,7 @@ def train_loop(dataloader, model, loss_fn, optimizer, device, config):
             
             if batch % (n_steps // n_logs)== 0:
                 print(f'===\nbatch {batch}\ntrained size: {trained_size}, train loss: {loss}\n===')
-                save_state(model, config['model']['path']['checkpoint']['model'])
-                save_state(optimizer, config['model']['path']['checkcpoint_dir'] / f"model_checkpoint_{trained_size}.pt")
+                save_state(model, config['model']['path']['checkcpoint_dir'] / f"model_checkpoint_{trained_size}.pt")
             pbar.update(1)
     
     return loss
