@@ -4,7 +4,7 @@ from datasets import load_dataset
 from datasets import Features, Value, ClassLabel
 import numpy as np
 
-raw_data_path = "data/wortschartz_30.parquet"
+raw_data_path = "data/wortschartz_31.parquet"
 output_dir = raw_data_path.split('.parquet')[0]
 
 mk_path(output_dir)
