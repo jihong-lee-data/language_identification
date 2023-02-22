@@ -5,10 +5,10 @@
     "optimizer": "AdamW",
     "learning_rate": 0.1,
     "lr_lambda": 0.95,
-    "epochs": 100,
-    "batch_size": 512,
+    "epochs": 3,
+    "batch_size": 25,
     "early_stop": {
-      "patience": 30,
+      "patience": 2,
       "delta": 0
     }
   },
