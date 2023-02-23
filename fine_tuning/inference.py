@@ -1,75 +1,60 @@
 import os
-import sys
-import pytorch_lightning as pl
-import torch.nn as nn
-from transformers import AutoTokenizer, RobertaForSequenceClassification, RobertaConfig
 import torch
 import time
-import numpy as np
-import pandas as pd
-from tqdm import tqdm
+import warnings
+warnings.filterwarnings(action='ignore')
+from pathlib import Path
+from module.engine import load_model
+from module.tool import load_json
 
-LABELS = ['ar', 'cs', 'da', 'de', 'el', 'en', 'es', 'fi', 'fr', 'he', 'hi', 'hu', 'id', 'it', 'ja', 'ko', 'ms', 'nl', 'pl', 'pt', 'ru', 'sv', 'sw', 'th', 'tl', 'tr', 'uk', 'vi', 'zh_cn', 'zh_tw']
+device_available = dict(cuda= torch.cuda.is_available(), mps= torch.backends.mps.is_available(), cpu= True)
 
-device = torch.device( 'cuda' if torch.cuda.is_available() else 'cpu')
-print("Device: ", device)
+MODEL_DIR = Path('model')
+model_name = 'xlm-roberta-finetune_v2'
+MODEL_PATH = MODEL_DIR / model_name / "checkpoint" / "model_checkpoint_1488000.pt"
+MODEL_PATH = "temp.p"
+def inference(model, text):
+    model.eval()
+    with torch.no_grad():
+        probs= model(text)
 
-label_dict = dict(zip(range(len(LABELS)), LABELS))
+    if isinstance(text, str):
+        return model.model.config.id2label.get(probs.argmax().detach().cpu().numpy().tolist())
+    return [model.model.config.id2label.get(prob.argmax().detach().cpu().numpy().tolist()) for prob in probs]
 
-LOCAL_PATH = "model/v1/checkpoint-96000"
-FILE_NAME = "pytorch_model.bin"
-LOCAL_W_PATH = os.path.join(LOCAL_PATH, FILE_NAME)
 
-# print(LOCAL_DATA_PATH)
-
-config = RobertaConfig.from_json_file(os.path.join(LOCAL_PATH, "config.json"))
-
-class Classifier(pl.LightningModule):
-    def __init__(self):
-        super().__init__()
-        self.model = RobertaForSequenceClassification(config).to(device)
-        self.model.load_state_dict(torch.load(LOCAL_W_PATH, map_location=device))
-        self.model=BetterTransformer.transform(self.model)
-        self.model.eval()
-        self.tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base", use_fast=True)
     
-    def forward(self, text:str):
-        encoding = self.tokenizer(
-            text,
-            add_special_tokens=True,
-            max_length=512,
-            return_token_type_ids=False,
-            padding="max_length",
-            truncation=True,   
-            return_attention_mask=True,
-            return_tensors='pt',
-        ).to(device)
-        logits = self.model(encoding["input_ids"], attention_mask=encoding["attention_mask"])[0]
-        torch.cuda.empty_cache()
-        return logits.detach().cpu().numpy()
-        # return self.get_max_n(logits.detach().cpu().numpy())
-
-    def predict(self, texts):
-        logits = self.forward(texts)
-        return self.id2label(logits.argmax(-1))
-
-    def id2label(self, ids):
-        return np.vectorize(lambda x: label_dict.get(x))(ids)
-
-
 def main():
-    clf = Classifier()
+    chosen_device = input(f"Enter device (available: {[key for key in device_available.keys() if device_available[key]]}, default: cpu)\n")
+    if not chosen_device:
+        chosen_device = 'cpu'
+    
+    device = torch.device(chosen_device)    
+
+    print("Device: ", device)
+
+    torch.cuda.empty_cache()
+
+    # model_config= load_json(os.path.join(MODEL_DIR, 'model_config.json'))
+    model_config= load_json('model_config.json')
+    model_config['device'] = device
+    model = load_model(model_config)
+    model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
+    
     
     while True:
         try:
-            text= input("Enter text: ")
+            text= input('Enter text: ')
             start = time.time()
-            print(clf.predict(text)[0])
+            pred = inference(model, text)
             end = time.time()
-            print(f"Done! ({end - start:.5f} sec)", end = '\n'*2)
+            print(pred)
+            print(f"Inference time: ({end - start:.5f} sec)", end = '\n'*2)
+            torch.cuda.empty_cache()
         except EOFError:
-            print("Bye!")
+            print('Bye!')
             break
 
-if __name__ == "__main__":
+if __name__ == '__main__':
+    
     main()
