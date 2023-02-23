@@ -6,6 +6,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import DataLoader, RandomSampler, BatchSampler
 from transformers import AutoTokenizer, RobertaForSequenceClassification
+import wandb
 
 class EarlyStopping:
     def __init__(self, patience=10, delta=0.0):
@@ -74,8 +75,12 @@ def train_loop(dataloader, model, loss_fn, optimizer, device, config):
             loss, trained_size= loss.item(), batch * len(X)
             
             if batch % (n_steps // n_logs)== 0:
-                print(f'===\nbatch {batch}\ntrained size: {trained_size}, train loss: {loss}\n===')
-                save_state(model, config['model']['path']['checkcpoint_dir'] / f"model_checkpoint_{trained_size}.pt")
+                print(f'===\nbatch {batch}\ntrained size: {trained_size}, train loss: {loss}\n==='),
+                wandb.log(dict(batch=batch,
+                                trained_size=trained_size,
+                                train_loss = loss)
+                          , step=batch)
+                save_state(model.model, config['model']['path']['checkcpoint_dir'] / f"model_checkpoint_{trained_size}.pt")
             pbar.update(1)
     
     return loss

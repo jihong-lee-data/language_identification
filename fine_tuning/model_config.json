@@ -3,9 +3,9 @@
     "loss_fn": "CrossEntropyLoss",
     "scheduler": "LambdaLR",
     "optimizer": "AdamW",
-    "learning_rate": 0.1,
-    "lr_lambda": 0.95,
-    "epochs": 3,
+    "learning_rate": 5e-5,
+    "lr_lambda": 0.99,
+    "epochs": 1,
     "batch_size": 25,
     "n_logs": 10,
     "early_stop": {
@@ -13,8 +13,8 @@
       "delta": 0
     }
   },
-  "model_name": "xlm-roberta-finetune_v2",
-  "architecture": "DNN",
+  "model_name": "xlm-roberta-finetune_v2_ep1",
+  "architecture": "FineTune",
   "dataset": "wortschartz_31",
   "model": {
     "base_model": "xlm-roberta-base",
@@ -22,3 +22,4 @@
   },
   "device": "cuda"
 }
+
