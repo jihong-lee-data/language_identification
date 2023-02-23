@@ -13,7 +13,7 @@ device_available = dict(cuda= torch.cuda.is_available(), mps= torch.backends.mps
 
 label_dict = dict(zip(range(len(LABELS)), LABELS))
 
-model_name = 'FC4_v1'
+model_name = 'FC7_v2'
 MODEL_DIR= os.path.join('model', model_name)
 MODEL_PATH = os.path.join(MODEL_DIR, 'checkpoint', 'model.pt')
 
