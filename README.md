@@ -1,12 +1,15 @@
 
 # Language Identification
----
-### 2023.01.09
+
+## 2023.01.09
+
 * `googletrans` 모듈을 활용해서 1000개의 문장 샘플에 대해 language detect -> (lang, confidence)
 * 107개의 언어로 분류
 
---- 
-### 2023.01.10
+---
+
+## 2023.01.10
+
 * sample data 상태
     1) 대부분 영어가 많음 -> 데이터 분포 왜곡
     2) 다언어로 써있는 문장들 (e.g, 2255, 11873)
@@ -17,9 +20,9 @@
     7) 띄어쓰기가 애매함 (e.g., 5683)
     8) Unicode - Latin letter (e.g., 6577) -> 감지 에러, 번역되지 않음
 
-* googletrans 결과
-    > https://github.com/ssut/py-googletrans
-    * 103분 소요 (1.95 it/s)
+* googletrans 결과 (https://github.com/ssut/py-googletrans)
+  * 103분 소요 (1.95 it/s)
+
 * LSTM-LID 결과
     > https://machinelearning.apple.com/research/language-identification-from-very-short-strings
     > https://arxiv.org/pdf/2102.06282v1.pdf
@@ -28,56 +31,48 @@
 
 * 모델 학습용 데이터셋
     > https://huggingface.co/datasets/papluca/language-identification
-    * Data Fields
-        * labels: a string indicating the language label.
-        * text: a string consisting of one or more sentences in one of the 20 languages listed above.
-   * Data Splits
-        The Language Identification dataset has 3 splits: train, valid, and test. The train set contains 70k samples, while the validation and test sets 10k each. All splits are perfectly balanced: the train set contains 3500 samples per language, while the validation and test sets 500.
+  * Data Fields
+    * labels: a string indicating the language label.
+    * text: a string consisting of one or more sentences in one of the 20 languages listed above.
+  * Data Splits
+
+    The Language Identification dataset has 3 splits: train, valid, and test. The train set contains 70k samples, while the validation and test sets 10k each. All splits are perfectly balanced: the train set contains 3500 samples per language, while the validation and test sets 500.
 
 * multinomial Naïve Bayes
 
-
 ---
-### 2021.01.11
+
+## 2021.01.11
 
 * 베이스 모델 생성
-    * 모델 학습 pipeline 구축 (`scikit-learn`-based)
-        
-         `loading dataset -> preprocessing -> vectorizing -> fitting -> saving model & results (accuracy)`
-        
+  * 모델 학습 pipeline 구축 (`scikit-learn`-based)
+    `loading dataset -> preprocessing -> vectorizing -> fitting -> saving model & results (accuracy)`
+
 * 다른 모델 테스트 (on `papluca dataset`)
-    * (기본)
+  
+  * `mnnb`: Multinomial Naïve Bayes
+    * train acc. : 0.994
+    * valid acc. : 0.928
+    * test acc. : 0.923
 
-        `mnnb`: Multinomial Naïve Bayes
-            
-            * train acc. : 0.994
-            * valid acc. : 0.928
-            * test acc. : 0.923
-
-        `dt`: Decision Tree
-
-            * train acc. : 0.999
-            * valid acc. : 0.844
-            * test acc. : 0.840
-
-    * (hyperparameter tuning)
-
-    
+  * `dt`: Decision Tree
+    * train acc. : 0.999
+    * valid acc. : 0.844
+    * test acc. : 0.840  
 * 데이터 셋 확장
-    * 현재 데이터 셋 기준으로?
-        - 언어
-        
-            기존(20종)
-            
-            `['pt', 'bg', 'zh', 'th', 'ru', 'pl', 'ur', 'sw', 'tr', 'es', 'ar',
+  * 현재 데이터 셋 기준으로?
+    * 언어
+      * 기존(20종)
+
+        `['pt', 'bg', 'zh', 'th', 'ru', 'pl', 'ur', 'sw', 'tr', 'es', 'ar',
        'it', 'hi', 'de', 'el', 'nl', 'fr', 'vi', 'en', 'ja']`
 
-            추가(?종)
-
-            `['kr']`
+      * 추가(?종)
+        
+        `['kr']`
 
 ---
-### 2023.01.12
+## 2023.01.12
 
 * 새로운 데이터 셋
     * OpenSubtitles(https://opus.nlpl.eu/OpenSubtitles.php)
@@ -98,7 +93,7 @@
             
         데이터 샘플 `data/os_data_sample.tsv`
 ---
-### 2023.01.13
+## 2023.01.13
 *  OpenSubtitles
     ```python
         # lang_os: languages in fetchted open_subtitle dataset (60), n_data_each >= 3390
@@ -150,7 +145,7 @@
     - 우크라이나어(uk)를 러시아어로 헷갈리는 경우 -> 학습데이터 오류 가능성, 새 데이터셋으로 학습(https://wortschatz.uni-leipzig.de/en/download/Ukrainian)
 
 ---
-### 2023.01.16
+## 2023.01.16
 
 * `lang_data_50`
 
@@ -198,7 +193,7 @@
         }```
 
 ---
-### 2023.01.17
+## 2023.01.17
 
 * `wortschartz_30` 데이터셋에 대한 학습
 
@@ -268,7 +263,7 @@
     2) 말레이어(`ms`) <-> 인도네시아어(`id`) 간의 높은 오분류 발생 -> 모델 특성
 
 ---
-### 2023.01.18
+## 2023.01.18
 * `mnnb_wortschartz_30_v12`
       [config file](model/mnnb_wortschartz_30_v12/result/config.json)
     
@@ -311,7 +306,7 @@
 
 
 ---
-### 2023.01.19
+## 2023.01.19
 
 * 추가 모델 테스트
     `model/*_wortschartz_os_30`
@@ -325,13 +320,13 @@
     -> test accuracy 92~97% (눈에 띄는 향상 없음)
 
 ---
-### 2023.01.20
+## 2023.01.20
 * xgboost 모델 test 예정
 * 기존 flitto 언어 분류 모델(fasttext) 검증 예정(`data/test_data/lang_detect_test.xlsx`)
 
  --> 둘다 실행 중...
 
-### 2023.01.25
+## 2023.01.25
 * xgboost 모델 결과 (`xgb_wortschartz_30_v1`)
 
     [config file](model/xgb_wortschartz_30_v1/result/config.json)
@@ -384,7 +379,7 @@
             }
         ```
 ---
-### 2023.01.26
+## 2023.01.26
 * 모델 간소화
     * mnnb(v14)
         custom tokenizer: Word + character
@@ -403,7 +398,7 @@
     
     * Ted2020 데이터 -> 개수 문제
 ---
-### 2023.01.27
+## 2023.01.27
 * rule-based filtering 고안
     
     * 전처리 시 일본어와 중국어 계통 tokenizing 전략 다르게 적용
@@ -440,7 +435,7 @@
             v16: 78.9MB
             ```
 --- 
-### 2023.01.30
+## 2023.01.30
 * 모델 serving 준비
     
     `model_development` 와 `deploy` 폴더 구분
@@ -448,7 +443,7 @@
     * Flask
         
         `deploy/app.py`
-### 2023.01.31        
+## 2023.01.31        
 * 예외처리
     1) 문자입력 X
         -> `{}`
@@ -458,24 +453,24 @@
         -> `nltk.corpus`의 `wordnet.words()`(147306개) 에 포함되는 영단어 -> `{"en": 1.0}`
 
 ---
-### 2023.02.01
+## 2023.02.01
 * model inference time 단축을 위해 quantization\
     -> 실패
 
 * `xlm-roberta-base` -> fine-tuning하기 (`fine_tuning` 폴더)
     
 ---
-### 2023.02.02
+## 2023.02.02
 * fine-tuning 서버에서 돌아가는 중
 * mnnb 모델 replication -> 로컬에서 돌아가는 중 -> 안됨
 
 ---
-### 2023.02.03
+## 2023.02.03
 * fine-tuning 서버에서 돌아가는 중2
 * mnnb 모델 -> mini-batch learning으로 메모리 문제 해결 시도 중
 
 ---
-### 2023.02.07
+## 2023.02.07
 * fine-tuning 결과
     ```python
     {'loss': 0.0096, 'learning_rate': 0.0, 'epoch': 1.0}
@@ -487,7 +482,7 @@
     `torch -> onnx -> tensorflow(완료) -> tensorflow-lite`
 
 ---
-### 2023.02.08
+## 2023.02.08
 
 * test accuray: `0.99764`
 
@@ -510,7 +505,7 @@
         - cpu: torchscript > onnx > torch > tf > tflite
 
 ---
-### 2023.02.09
+## 2023.02.09
 
 * ml 모델 경량화
     1) hashing vectorizer -> `mnnb_wortschartz_30_v16` 모델의 학습 분 사용
@@ -520,7 +515,7 @@
     -> `gnb_wortschartz_30_v1`
 
 ---
-### 2023.02.10
+## 2023.02.10
 
 * input feature dimension 줄이기 시도 중
  -> `gnb_wortschartz_30_v4` 성능 테스트 해보기
@@ -528,7 +523,7 @@
 * `xlm-roberta-base` tokenizer로 모델 학습 시켜보기
 
 ---
-### 2023.02.13
+## 2023.02.13
 * `gnb_wortschartz_30_v4`
 
 * test data
@@ -539,23 +534,23 @@
         <img src = "model_development/data/test_data/gnb_wortschartz_30_v4_test_cm.png" width = 400>
 
 ---
-### 2023.02.14
+## 2023.02.14
 * `xlm-roberta-base` embedding 활용 DNN model fitting
 
 * `gnb_wortschartz_30_v6` 성능 테스트 해보기
 
 ---
-### 2023.02.15
+## 2023.02.15
 
 * `wandb` 적용 및 code refactoring
 
 ---
-### 2023.02.16
+## 2023.02.16
 
 * `wandb` 적용 및 code refactoring
 
 ---
-### 2023.02.17
+## 2023.02.17
 
 * `FC4_v1` 결과
 
@@ -565,7 +560,7 @@
 
         * validation accuracy = 92.5%
 
-### 2023.02.20
+## 2023.02.20
 
 
 * `FC4_v1` 기반 추가 학습 중
@@ -575,7 +570,7 @@
     * `FC4_v14`
 
 ---
-### 2023.02.21
+## 2023.02.21
 
 * model 비교
 
@@ -594,6 +589,13 @@
     |`short`|0.9226|0.9566|0.9584|0.8266|
 
 ---
-### 2023.02.22
+## 2023.02.22
    
 * `xlm-roberta-finetune`모델 추가 학습(몽골어 추가)
+
+    * dataset : `worschartz_31`
+        - 기존 `worschartz_30`에 몽골어 데이터 10K 개 (worschartz, news-2020) 추가
+
+## 2023.02.23
+
+* `fine-tune` 모델 양자화 시도
