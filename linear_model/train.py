@@ -66,7 +66,14 @@ def main():
     print("Done")
 
     # loading model and training modules
-    model= load_model(config)
+    while True:
+        try:
+            model= load_model(config)
+            break
+        except RuntimeError:
+            config['trainer']['batch_size'] //= 2
+            print('Reduced batch size: ', config['trainer']['batch_size'])
+
     
     # loading pretrained weight only when base model is declared
     if config['trainer'].get('base_model'):
@@ -105,12 +112,12 @@ def main():
         
         if early_stopping.early_stop:
             break
-        elif not early_stopping.counter:
+        elif (not early_stopping.counter) | (best_epoch == crt_epoch):
             save_checkpoint(model, CP_MODEL_PATH)
             save_checkpoint(optimizer, CP_OPTIM_PATH)
             save_checkpoint(scheduler, CP_SCHDLR_PATH)
             save_json(config, MODEL_CONFIG_PATH)
-
+            wandb.config=config
         scheduler.step()
         
     torch.cuda.empty_cache()

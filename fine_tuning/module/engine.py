@@ -7,6 +7,7 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader, RandomSampler, BatchSampler
 from transformers import AutoTokenizer, RobertaForSequenceClassification
 import wandb
+from pathlib import Path
 
 class EarlyStopping:
     def __init__(self, patience=10, delta=0.0):
@@ -80,7 +81,7 @@ def train_loop(dataloader, model, loss_fn, optimizer, device, config):
                                 trained_size=trained_size,
                                 train_loss = loss)
                           , step=batch)
-                save_state(model.model, config['model']['path']['checkcpoint_dir'] / f"model_checkpoint_{trained_size}.pt")
+                save_state(model.model, Path(config['model']['path']['checkcpoint_dir']) / f"model_checkpoint_{trained_size}.pt")
             pbar.update(1)
     
     return loss

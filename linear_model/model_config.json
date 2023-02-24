@@ -3,12 +3,12 @@
     "loss_fn": "CrossEntropyLoss",
     "scheduler": "LambdaLR",
     "optimizer": "AdamW",
-    "learning_rate": 5e-3,
-    "lr_lambda": 0.99,
+    "learning_rate": 5e-2,
+    "lr_lambda": 0.95,
     "epochs": 100,
-    "batch_size": 512,
+    "batch_size": 2048,
     "early_stop": {
-      "patience": 10,
+      "patience": 30,
       "delta": 0
     },
     "base_model": null

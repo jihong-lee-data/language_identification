@@ -46,10 +46,10 @@ def main():
     
 
     config['model']['config'] = load_json(PRE_MODEL_PATH)
-    config['model']['path'] = dict(checkcpoint_dir=CP_DIR,                                                
-                                    best_epoch=dict(model=BEST_MODEL_PATH,
-                                    optimizer=BEST_OPTIM_PATH,
-                                    scheduler=BEST_SCHDLR_PATH
+    config['model']['path'] = dict(checkcpoint_dir=str(CP_DIR),                                                
+                                    best_epoch=dict(model=str(BEST_MODEL_PATH),
+                                    optimizer=str(BEST_OPTIM_PATH),
+                                    scheduler=str(BEST_SCHDLR_PATH)
                                                 )
     )
 
@@ -114,14 +114,14 @@ def main():
         
         if early_stopping.early_stop:
             break
-        elif not early_stopping.counter:
+        elif (not early_stopping.counter)  | (best_epoch == crt_epoch):
             save_state(model, BEST_MODEL_PATH)
             save_state(optimizer, BEST_MODEL_PATH)
             save_state(scheduler, BEST_MODEL_PATH)
             save_json(config, MODEL_CONFIG_PATH)
             # remove checkpoints generated during an epoch
-            for path in CP_DIR.glob('*.pt'):
-                path.unlink()
+            # for path in CP_DIR.glob('*.pt'):
+            #     path.unlink()
         
         scheduler.step()
         
