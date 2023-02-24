@@ -606,3 +606,21 @@
 
 * `fully-connected` 학습율 낮춰서 재학습
     * `FC7_v2` -> val_acc >= 98%(학습 중)
+
+---
+## 2023.02.24
+
+* 모델 비교(현재까지)
+    * 데이터셋
+        * `long`: `lang_detect_test.csv`
+            [(결과)](model_comparison/data/lang_detect_test_comparison.csv)
+        * `short`: `lang_detection_short_texts.csv`
+            [(결과)](model_comparison/data/lang_detection_short_texts_comparison.csv)
+
+
+    * accuracy
+
+    |데이터 \ 모델|fastText|mnb_worschartz_30_v16|xlm-roberta-finetune|FC4_v1|FC7_v2|
+    |:---:|:---:|:---:|:---:|:---:|:---:|
+    |`long`|0.9574|0.9549|0.9553|0.94|0.9558|
+    |`short`|0.9226|0.9566|0.9584|0.8266|0.8911|

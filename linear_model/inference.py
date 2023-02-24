@@ -47,13 +47,15 @@ def main():
     
     while True:
         try:
-            text= input('Enter text: ')
+            text= input('Enter text\n')
             start = time.time()
             pred = inference(model, text)
             end = time.time()
             print(pred)
             print(f"Inference time: ({end - start:.5f} sec)", end = '\n'*2)
             torch.cuda.empty_cache()
+        except UnicodeDecodeError:
+            pass
         except EOFError:
             print('Bye!')
             break
