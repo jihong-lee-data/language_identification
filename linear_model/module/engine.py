@@ -12,9 +12,11 @@ class EarlyStopping:
         self.patience= patience
         self.delta= delta
         self.counter= 0
-        self.best_score= -np.inf
+        self.best_score= None
         self.early_stop= False
     def __call__(self, score):
+        if not self.best_score:
+            self.best_score= score
         if score < self.best_score + self.delta:
             self.counter += 1
             print(f'EarlyStopping counter: {self.counter} out of {self.patience}')
