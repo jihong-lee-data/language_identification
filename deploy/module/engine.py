@@ -7,19 +7,6 @@ import re
 import pickle
 import joblib
 import json
-# import matplotlib.pyplot as plt
-# import datasets
-# from datasets import load_dataset, load_from_disk
-# from sklearn.preprocessing import FunctionTransformer
-# from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer, HashingVectorizer, FeatureHasher, TfidfTransformer
-# from sklearn.ensemble import RandomForestClassifier
-# from sklearn.pipeline import Pipeline
-# from sklearn.naive_bayes import MultinomialNB, GaussianNB
-# from sklearn.tree import DecisionTreeClassifier
-# from sklearn.metrics import accuracy_score
-# from sklearn.metrics import confusion_matrix
-# from sklearn.ensemble import AdaBoostClassifier
-# from xgboost import XGBClassifier 
 from pprint import pprint
 import gzip
 
@@ -71,60 +58,6 @@ def tokenizer(text):
         for token in tokenized:
             char_tokens.extend(re.findall('.', token))
         return tokenized + char_tokens   
-
-
-
-# # def preprocessor(text:iter):
-# #     return Pipeline([('rm_spcl_char', FunctionTransformer(_rm_spcl_char))]).transform(text)
-    
-
-
-# # def save_model(model, model_path):
-# #     with open(model_path, 'wb') as f:
-# #         joblib.dump(pickle.dumps(model), f)
-# #         print(f"This model is saved at {model_path}.")
-
-
-# # def load_model(model_path):
-# #     print(f"This model is loaded from {model_path}.")
-# #     return pickle.loads(joblib.load(model_path))
-
-
-# def save_results(result, result_path):
-#     with open(result_path, 'w') as f:
-#         json.dump(result, f)
-#     print(f"Model results are saved at {result_path}.")
-
-
-# def mk_path(path):
-#     if not os.path.isdir(path):
-#         os.makedirs (path)
-
-
-# def mk_confusion_matrix(save_path=None, y_true=None, y_pred=None, labels=None, figsize = (35, 30)):
-#     # confusion matrix
-#     cm = confusion_matrix(y_true, y_pred, labels = labels)
-    
-#     plt.figure(figsize = figsize)
-#     ax= plt.subplot()
-#     sns.heatmap(cm, annot=True, fmt='g', ax=ax, cmap = "OrRd", cbar = False)  #annot=True to annotate cells, ftm='g' to disable scientific notation
-
-#     # labels, title and ticks
-#     ax.set_xlabel('Predicted labels')
-#     ax.set_ylabel('True labels')
-#     ax.set_title('Confusion Matrix')
-#     ax.xaxis.set_ticklabels(labels)
-#     ax.yaxis.set_ticklabels(labels)
-
-#     if save_path:
-#         plt.savefig(save_path)
-#     else:
-#         plt.show()
-     
-
-# def save_inference(save_path, x, y_true, y_pred):
-#     df_results = pd.DataFrame(np.column_stack([x, y_true, y_pred]), columns = ['text', 'label_true', 'label_pred'])
-#     df_results.to_csv(save_path, index = False)
 
 class ISO():
     def __init__(self):

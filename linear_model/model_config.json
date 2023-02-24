@@ -23,7 +23,7 @@
       "n_input": 768,
       "n_output": 31,
       "n_tip_point": 768,
-      "tip_layer": 7
+      "tip_layer": 3
     },
     "dropout": {
       "n_layers": null,
