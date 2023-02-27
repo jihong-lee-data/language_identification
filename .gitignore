@@ -10,7 +10,7 @@ share/
 etc/
 README.html
 lib64
-*/wandb/
+wandb/
 
 ## model_development
 model_development/.develop
@@ -38,3 +38,4 @@ fine_tuning/cvt_inference
 linear_model/model
 FC*/
 linear_model/wandb/
+linear/wandb/

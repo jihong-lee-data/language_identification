@@ -41,20 +41,26 @@ def load_trainer(model, config):
         loss_fn= nn.CrossEntropyLoss()
     if config['trainer']['optimizer'] == 'AdamW':
         optimizer= torch.optim.AdamW(model.parameters(), lr=config['trainer']['learning_rate'])
+
     if config['trainer']['scheduler'] == 'LambdaLR':
         scheduler= torch.optim.lr_scheduler.LambdaLR(optimizer=optimizer,
                                                 lr_lambda= lambda epoch: config['trainer']['lr_lambda'] ** epoch,
                                                 last_epoch=-1,
                                                 verbose=False)
+    elif config['trainer']['scheduler'] == 'LinearLR':
+        scheduler = torch.optim.lr_scheduler.LinearLR(optimizer,
+                                                       start_factor = 1,
+                                                         end_factor= 0, total_iters= 100)
     return loss_fn, optimizer, scheduler
-
+    
+    
 
 def get_dataloader(dataset, batch_size, num_workers= 4, seed= 42):
         batch_sampler= BatchSampler(RandomSampler(dataset, generator= np.random.seed(seed)), batch_size= batch_size, drop_last= False)
         return DataLoader(dataset, batch_sampler= batch_sampler,  num_workers= num_workers)
 
 
-def train_loop(dataloader, model, loss_fn, optimizer, device, config):
+def train_loop(dataloader, model, loss_fn, optimizer, scheduler, device, config):
     model.train()
     size= len(dataloader.dataset)
     n_steps= int(np.ceil(size / dataloader.batch_sampler.batch_size))
@@ -73,17 +79,22 @@ def train_loop(dataloader, model, loss_fn, optimizer, device, config):
             loss.backward()
             optimizer.step()
 
+            pbar.update(1)
+            
             loss, trained_size= loss.item(), batch * len(X)
             
             if batch % (n_steps // n_logs)== 0:
                 print(f'===\nbatch {batch}\ntrained size: {trained_size}, train loss: {loss}\n==='),
                 wandb.log(dict(batch=batch,
                                 trained_size=trained_size,
-                                train_loss = loss)
+                                train_loss = loss, lr_rate = optimizer.param_groups[0]['lr'])
                           , step=batch)
                 save_state(model.model, Path(config['model']['path']['checkcpoint_dir']) / f"model_checkpoint_{trained_size}.pt")
-            pbar.update(1)
-    
+            
+            if batch % (n_steps // 100)== 0:
+                scheduler.step()
+                
+                
     return loss
     
 

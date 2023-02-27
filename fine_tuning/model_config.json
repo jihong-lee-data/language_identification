@@ -1,10 +1,10 @@
 {
   "trainer": {
     "loss_fn": "CrossEntropyLoss",
-    "scheduler": "LambdaLR",
+    "scheduler": "LinearLR",
     "optimizer": "AdamW",
-    "learning_rate": 1e-3,
-    "lr_lambda": 0.99,
+    "learning_rate": 5e-5,
+    "lr_lambda": null,
     "epochs": 1,
     "batch_size": 25,
     "n_logs": 10,
@@ -13,7 +13,7 @@
       "delta": 0
     }
   },
-  "model_name": "xlm-roberta-finetune_v3_ep1",
+  "model_name": "xlm-roberta-finetune_v4_ep1",
   "architecture": "FineTune",
   "dataset": "wortschartz_31",
   "model": {

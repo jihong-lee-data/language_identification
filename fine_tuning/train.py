@@ -81,7 +81,7 @@ def main():
     
     
     loss_fn, optimizer, scheduler= load_trainer(model, config)
-    early_stopping= EarlyStopping(patience= config['trainer']['early_stop']['patience'], delta= config['trainer']['early_stop']['delta'])
+    # early_stopping= EarlyStopping(patience= config['trainer']['early_stop']['patience'], delta= config['trainer']['early_stop']['delta'])
 
     # training
     best_val_acc, best_epoch= 0, 0
@@ -89,7 +89,7 @@ def main():
     for crt_epoch in range(1, config['trainer']['epochs']+1):  
         print(f"Epoch {crt_epoch}\n-------------------------------")
         # train 
-        train_loss= train_loop(train_dataloader, model, loss_fn, optimizer, device, config)
+        train_loss= train_loop(train_dataloader, model, loss_fn, optimizer, scheduler, device, config)
         # validation
         val_loss, val_acc= test_loop(valid_dataloader, model, loss_fn, device)
                     
@@ -107,15 +107,15 @@ def main():
             best_epoch= crt_epoch
     
         # check early stopping condition
-        early_stopping(score= -val_loss)
+        # early_stopping(score= -val_loss)
         
-        if early_stopping.early_stop:
-            break
-        elif (not early_stopping.counter)  | (best_epoch == crt_epoch):
-            save_state(model, BEST_MODEL_PATH)
-            save_state(optimizer, BEST_MODEL_PATH)
-            save_state(scheduler, BEST_MODEL_PATH)
-            save_json(config, MODEL_CONFIG_PATH)
+        # if early_stopping.early_stop:
+        #     break
+        # elif (not early_stopping.counter)  | (best_epoch == crt_epoch):
+        #     save_state(model, BEST_MODEL_PATH)
+        #     save_state(optimizer, BEST_MODEL_PATH)
+        #     save_state(scheduler, BEST_MODEL_PATH)
+        #     save_json(config, MODEL_CONFIG_PATH)
             # remove checkpoints generated during an epoch
             # for path in CP_DIR.glob('*.pt'):
             #     path.unlink()
@@ -129,7 +129,7 @@ def main():
     wandb.run.summary['best_val_acc']= best_val_acc
     wandb.run.summary['stop_epoch']= crt_epoch
     wandb.run.summary['stop_val_loss']= val_loss
-    wandb.run.summary['early_stop']= early_stopping.early_stop
+    # wandb.run.summary['early_stop']= early_stopping.early_stop
     
     wandb.finish()
     
