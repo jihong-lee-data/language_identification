@@ -1,0 +1,9 @@
+service: "bento_app:svc"  # Same as the argument passed to `bentoml serve`
+labels:
+    owner: jihong.lee
+    stage: dev
+include:
+- "bento_app.py"
+- "model/"
+python:
+    requirements_txt: "requirements.txt"

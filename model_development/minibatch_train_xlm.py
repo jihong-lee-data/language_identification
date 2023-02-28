@@ -9,7 +9,7 @@ from tqdm import tqdm
 def main():
     # config
     dataset_dir = 'data'
-    dataset_name = "wortschartz_30"
+    dataset_name = "wortschartz_31"
     clf_type = "xlm_gnb"
     model_version = 'v1'
     dataset_path = os.path.join(dataset_dir, dataset_name)

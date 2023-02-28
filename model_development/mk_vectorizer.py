@@ -1,9 +1,9 @@
 from module.engine import *
 from sklearn.random_projection import SparseRandomProjection
 
-datasets = load_from_disk("data/wortschartz_30/")
+datasets = load_from_disk("data/wortschartz_31/")
 
-model_name = 'vect_wortschartz_30_v5'
+model_name = 'vect_wortschartz_31_v1'
 
 preprocessor = Pipeline(steps=[('vect', HashingVectorizer(alternate_sign=True, decode_error='ignore',
                                                         n_features=2**20,
