@@ -3,17 +3,17 @@
     "loss_fn": "CrossEntropyLoss",
     "scheduler": "LambdaLR",
     "optimizer": "AdamW",
-    "learning_rate": 1e-1,
-    "lr_lambda": 0.95,
-    "epochs": 100,
-    "batch_size": 32,
+    "learning_rate": 3e-5,
+    "lr_lambda": 0.99,
+    "epochs": 200,
+    "batch_size": 2048,
     "early_stop": {
-      "patience": 10,
+      "patience": 30,
       "delta": 0
     },
-    "base_model": "FC16_v1"
+    "base_model": "FC16_v2"
   },
-  "model_name": "FC16_v2",
+  "model_name": "FC16_v2_2",
   "architecture": "DNN",
   "dataset": "wortschartz_31",
   "model": {

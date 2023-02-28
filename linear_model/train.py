@@ -94,10 +94,11 @@ def main():
         # validation
         val_loss, val_acc= test_loop(valid_dataloader, model, loss_fn, device)
                     
-
+        
         log_dict= dict(train_loss= train_loss,
                         val_loss= val_loss,
-                        val_acc= val_acc)
+                        val_acc= val_acc,
+                        lr_rate = optimizer.param_groups[0]['lr'])
         print(log_dict)
         wandb.log(log_dict, step=crt_epoch)
 
