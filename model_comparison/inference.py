@@ -9,25 +9,22 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 
-LABELS = ['ar', 'cs', 'da', 'de', 'el', 'en', 'es', 'fi', 'fr', 'he', 'hi', 'hu', 'id', 'it', 'ja', 'ko', 'ms', 'nl', 'pl', 'pt', 'ru', 'sv', 'sw', 'th', 'tl', 'tr', 'uk', 'vi', 'zh_cn', 'zh_tw']
-
-device = torch.device( 'cuda' if torch.cuda.is_available() else 'cpu')
-print("Device: ", device)
-
+LABELS= ['ar', 'cs', 'da', 'de', 'el', 'en', 'es', 'fi', 'fr', 'he', 'hi', 'hu', 'id', 'it', 'ja', 'ko', 'mn', 'ms', 'nl', 'pl', 'pt', 'ru', 'sv', 'sw', 'th', 'tl', 'tr', 'uk', 'vi', 'zh_cn', 'zh_tw']
 label_dict = dict(zip(range(len(LABELS)), LABELS))
 
-LOCAL_PATH = "../fine_tuning/test_trainer/checkpoint-96000"
-FILE_NAME = "pytorch_model.bin"
+LOCAL_PATH = "../fine_tuning/model/xlm-roberta-finetune_v4_ep1/best_epoch/"
+FILE_NAME = "model.pt"
 LOCAL_W_PATH = os.path.join(LOCAL_PATH, FILE_NAME)
 
-# print(LOCAL_DATA_PATH)
 
-config = RobertaConfig.from_json_file(os.path.join(LOCAL_PATH, "config.json"))
+device = torch.device( 'cuda' if torch.cuda.is_available() else 'cpu')
+
+print("Device: ", device)
 
 class Classifier(pl.LightningModule):
     def __init__(self):
         super().__init__()
-        self.model = RobertaForSequenceClassification(config).to(device)
+        self.model = RobertaForSequenceClassification.from_pretrained("../fine_tuning/model/xlm-roberta-base").to(device)
         self.model.load_state_dict(torch.load(LOCAL_W_PATH, map_location=device))
         self.model.eval()
         self.tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base", use_fast=True)
@@ -57,19 +54,19 @@ class Classifier(pl.LightningModule):
 
 
 def main():
-    data_path = "data/lang_detection_short_texts.csv"
+    data_path = "data/lang_detection_short_texts_comparison.csv"
     test_data = pd.read_csv(data_path)
 
     clf = Classifier()
     start = time.time()
-    test_data['xlm-roberta-finetune'] = [clf.predict(text)[0] for text in test_data['text']]
-    # size = test_data.shape[0]
-    # step_size = 10
-    # indice = np.linspace(0, size, step_size, dtype= int)
-    # batch_list= [(indice[i], indice[i+1]) for i in range(len(indice)-1)]
-    # preds = []
-    # for lb, ub  in tqdm(batch_list):
-    #     preds.extend(clf.predict(test_data.loc[lb:ub, 'text'].tolist()).tolist())
+    test_data['xlm-roberta-finetune_v4'] = [clf.predict(text)[0] for text in test_data['text']]
+    size = test_data.shape[0]
+    step_size = 10
+    indice = np.linspace(0, size, step_size, dtype= int)
+    batch_list= [(indice[i], indice[i+1]) for i in range(len(indice)-1)]
+    preds = []
+    for lb, ub  in tqdm(batch_list):
+        preds.extend(clf.predict(test_data.loc[lb:ub, 'text'].tolist()).tolist())
 
     end = time.time()
     # test_data['xlm-roberta-finetune'] = preds

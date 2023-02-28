@@ -19,15 +19,13 @@ print("Device: ", device)
 
 torch.cuda.empty_cache()
 
-MODEL_PATH = 'traced_model.pt'
+MODEL_PATH = 'model/traced/xlm-roberta-finetune_v4.pt'
 
 class Inference(pl.LightningModule):
     def __init__(self):
         super().__init__()
         self.model = torch.jit.load(MODEL_PATH, map_location=device)
-        self.model = torch.jit.script(self.model )
-        self.model  = torch.jit.freeze(self.model )
-        self.model  = torch.jit.optimize_for_inference(self.model )
+        self.model = torch.jit.script(self.model)
         self.model.eval()
         self.tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base", use_fast=True)
 
