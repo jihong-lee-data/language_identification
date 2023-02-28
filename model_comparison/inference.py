@@ -59,19 +59,27 @@ def main():
 
     clf = Classifier()
     start = time.time()
-    test_data['xlm-roberta-finetune_v4'] = [clf.predict(text)[0] for text in test_data['text']]
+    # test_data['xlm-roberta-finetune_v4'] = [clf.predict(text)[0] for text in test_data['text']]
     size = test_data.shape[0]
     step_size = 10
-    indice = np.linspace(0, size, step_size, dtype= int)
-    batch_list= [(indice[i], indice[i+1]) for i in range(len(indice)-1)]
-    preds = []
-    for lb, ub  in tqdm(batch_list):
-        preds.extend(clf.predict(test_data.loc[lb:ub, 'text'].tolist()).tolist())
-
+    while True:
+        try:
+            print(step_size)
+            preds = []
+            indice = np.linspace(0, size, step_size, dtype= int)
+            batch_list= [(indice[i], indice[i+1]-1) for i in range(len(indice)-1)]
+            for lb, ub  in tqdm(batch_list):
+                preds.extend(clf.predict(test_data.loc[lb:ub, 'text'].tolist()).tolist())
+            break
+        except RuntimeError:
+            step_size = min(step_size * 2, size)
     end = time.time()
-    # test_data['xlm-roberta-finetune'] = preds
-    test_data.to_csv("data/lang_detection_short_texts_comparison.csv", index=False)
-    print(f"Done! ({end - start:.5f} sec)", end = '\n'*2)
+    try:
+        test_data['xlm-roberta-finetune_v4'] = preds
+        test_data.to_csv("data/lang_detection_short_texts_comparison.csv", index=False)
+        print(f"Done! ({end - start:.5f} sec)", end = '\n'*2)
+    except ValueError:
+        os.system(f'echo {preds} > error_preds.txt')
 
 if __name__ == "__main__":
     main()
