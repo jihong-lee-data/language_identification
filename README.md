@@ -630,3 +630,13 @@
     `xlm-roberta-finetune_v2` 1 epoch 후 학습 진전 없음 -> 파라미터 조정해서 추가 학습 예정
 
     `FC16_v1` 100 epoch 후 학습 진전 없음 -> 파라미터 조정 혹은 레이어 수를 줄여서 학습 예정
+
+## 2023.02.28
+
+    `xlm-roberta-finetune_v4` 1 epoch 후 추가 학습 예정
+
+    `FC16_v2` 200 epoch 후 40%대 acc -> 추가 학습예정
+
+    `bentoml 기반 모델 관리 및 배포 라인 구축`
+
+    
