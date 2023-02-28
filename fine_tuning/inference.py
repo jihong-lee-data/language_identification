@@ -10,8 +10,8 @@ from module.tool import load_json
 device_available = dict(cuda= torch.cuda.is_available(), mps= torch.backends.mps.is_available(), cpu= True)
 
 MODEL_DIR = Path('model')
-model_name = 'xlm-roberta-finetune_v2'
-MODEL_PATH = MODEL_DIR / model_name / "checkpoint" / "model_checkpoint_1488000.pt"
+model_name = 'xlm-roberta-finetune_v4_ep1'
+MODEL_PATH = MODEL_DIR / model_name / "best_epoch" / "model.pt"
 
 def inference(model, text):
     model.eval()
@@ -39,7 +39,7 @@ def main():
     model_config= load_json('model_config.json')
     model_config['device'] = device
     model = load_model(model_config)
-    model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
+    model.model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
     
     
     while True:
