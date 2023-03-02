@@ -1,7 +1,0 @@
-id,text,lang_code,old,new
-1,J'examine le programme québécois.,fr,"{'en': 0.1245, 'ca': 0.0859, 'de': 0.0803}","{'tl': 0.1564, 'fr': 0.1333, 'en': 0.0837}"
-2,Solo io tra la mia famiglia la bellezza in essa.,it,{'en': 1.0},"{'en': 0.9324, 'tl': 0.0135, 'it': 0.0097}"
-3,Analisis kopi yang Marina adukan.,ms,{'en': 1.0},"{'en': 0.3208, 'tl': 0.1926, 'pt': 0.1097}"
-4,إنها تحبك كثيرًا.,ar,"{'br': 0.4951, 'sw': 0.1128, 'en': 0.0831}","{'pt': 0.4518, 'id': 0.0741, 'es': 0.0418}"
-5,Comem-se algas no seu país?,pt,"{'en': 0.1245, 'ca': 0.0859, 'de': 0.0803}","{'id': 0.5557, 'pt': 0.1857, 'da': 0.0375}"
-6,高社长不行。,zhcn,"{'en': 0.1245, 'ca': 0.0859, 'de': 0.0803}","{'pl': 0.0743, 'de': 0.0727, 'cs': 0.0657}"

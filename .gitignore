@@ -22,8 +22,9 @@ model_development/resource/wortschartz_30_vocab.json
 model_development/workspace.py
 
 
-## deploy
-deploy/.deploy/
+## deploy_legacy
+deploy_legacy/.deploy/
+deploy_legacy
 
 ## fine_tuning
 fine_tuning/.finetune
@@ -39,3 +40,4 @@ linear_model/model
 FC*/
 linear_model/wandb/
 linear/wandb/
+
