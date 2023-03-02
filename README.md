@@ -637,5 +637,25 @@
 
     `FC16_v2` 200 epoch 후 40%대 acc -> 추가 학습예정
 
-    `bentoml 기반 모델 관리 및 배포 라인 구축`
+    
 
+
+* 모델 비교(현재까지)
+    * 데이터셋
+        * `long`: `lang_detect_test.csv`
+            [(결과)](model_comparison/data/lang_detect_test_comparison.csv)
+        * `short`: `lang_detection_short_texts.csv`
+            [(결과)](model_comparison/data/lang_detection_short_texts_comparison.csv)
+
+
+    * accuracy
+
+    |데이터 \ 모델|fastText|mnb_worschartz_30_v16|xlm-roberta-finetune|FC4_v1|FC7_v2|FC7_v3|`xlm-roberta-finetune_v4`|
+    |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+    |`long`|0.9574|0.9549|0.9553|0.94|0.9558|0.9558|`0.9534`|
+    |`short`|0.9226|0.9566|0.9584|0.8266|0.8911|0.9331|`0.9556`|
+
+
+## 2023.03.02
+
+    * `bentoml 기반 모델 관리 및 배포 라인 구축`
