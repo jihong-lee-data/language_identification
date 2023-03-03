@@ -1,10 +1,7 @@
-import pandas as pd
-import numpy as np
-import json
-import nltk
-from nltk.corpus import wordnet
+# import nltk
+# from nltk.corpus import wordnet
 import bentoml
-from bentoml.io import JSON, NumpyNdarray
+from bentoml.io import JSON
 import torch
 from module.tool import load_json, save_json
 LABEL= ["ar", "cs", "da", "de", "el", "en", "es", "fi", "fr", "he", "hi", "hu", "id", "it", "ja", "ko", "mn", "ms", "nl", "pl", "pt", "ru", "sv", "sw", "th", "tl", "tr", "uk", "vi", "zh_cn", "zh_tw"]
@@ -13,7 +10,7 @@ label_dict = {int(id):label for id, label in enumerate(LABEL)}
 
 class Classifier():
     def __init__(self, runner):
-        self.tokenizer= torch.hub.load('huggingface/pytorch-transformers', 'tokenizer', '../deploy/model/best_model/')
+        self.tokenizer= torch.hub.load('huggingface/pytorch-transformers', 'tokenizer', 'xlm-roberta-base')
         self.runner= runner
 
     async def __call__(self, text, n=5):

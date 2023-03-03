@@ -16,8 +16,8 @@ warnings.filterwarnings("ignore")
 #         max_n_labels.append(label_dict[idx])
 #     return max_n_labels, max_n_values
 
-
-ort_session = ort.InferenceSession("onnx/model.onnx")
+providers=['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+ort_session = ort.InferenceSession("onnx/model.onnx", providers=providers)
 tokenizer=  torch.hub.load('huggingface/pytorch-transformers', 'tokenizer', 'model/best_model/')
 
 def main():

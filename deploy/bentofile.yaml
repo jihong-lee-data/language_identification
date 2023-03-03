@@ -1,7 +1,17 @@
 service: "service:svc"
+labels:
+    owner: Flitto-Data-Team
+    stage: dev
 include:
 - "service.py"
-- "model/"
+- "module/tool.py"
 python:
-  requirements_txt: "requirements.txt"
- 
+  packages:
+  - torch
+  - nltk
+  extra_index_url:
+  - "https://download.pytorch.org/whl/cu113"
+docker:
+    distro: debian
+    python_version: "3.8.10"
+    cuda_version: "11.4"

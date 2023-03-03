@@ -15,4 +15,4 @@ signatures = {
     "run": {"batchable": True},
 }
 
-bentoml.onnx.save_model("language-identification", onnx_model, signatures=signatures)
+bentoml.onnx.save_model("lang_id", onnx_model, signatures=signatures)
