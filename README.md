@@ -659,3 +659,10 @@
 ## 2023.03.02
 
     * `bentoml 기반 모델 관리 및 배포 라인 구축`
+
+## 2023.03.02
+    
+    * bentoml 배포 준비
+        
+        - `xlm-roberta-finetune_vr` -> `onnx` 형태로 변환
+        

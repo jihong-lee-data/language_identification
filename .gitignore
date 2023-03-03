@@ -24,6 +24,8 @@ model_development/workspace.py
 
 ## deploy_legacy
 deploy_legacy/.deploy/
+*.onnx
+*.bin
 
 ## fine_tuning
 fine_tuning/.finetune
