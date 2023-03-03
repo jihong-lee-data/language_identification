@@ -4,16 +4,16 @@
     "scheduler": "LambdaLR",
     "optimizer": "AdamW",
     "learning_rate": 3e-5,
-    "lr_lambda": 0.99,
+    "lr_lambda": 0.95,
     "epochs": 200,
     "batch_size": 2048,
     "early_stop": {
       "patience": 30,
       "delta": 0
     },
-    "base_model": "FC16_v2"
+    "base_model": "FC16_v2_2"
   },
-  "model_name": "FC16_v2_2",
+  "model_name": "FC16_v2_3",
   "architecture": "DNN",
   "dataset": "wortschartz_31",
   "model": {

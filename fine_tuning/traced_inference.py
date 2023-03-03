@@ -6,20 +6,27 @@ from transformers import AutoTokenizer
 from module.tool import load_json
 import torch
 import time
+import platform
 
-torch.backends.quantized.engine = 'qnnpack'
+device = torch.device('cpu')
+print("Device: ", device)
+
+processor = platform.processor().lower()
+if 'x86' in  processor:
+    backend= 'fbgemm'
+elif 'arm' in  processor:
+    backend= 'qnnpack'
+
 torch._C._set_graph_executor_optimize(False)
 
 config= load_json('model/xlm-roberta-base/config.json')
 label_dict = dict(zip(config['label2id'].values(), config['label2id'].keys()))
 
-device = torch.device('cpu')
-
-print("Device: ", device)
 
 torch.cuda.empty_cache()
 
-MODEL_PATH = 'model/traced/xlm-roberta-finetune_v4.pt'
+MODEL_PATH = f'model/traced/xlm-roberta-finetune_v4_{processor}_{device.type}.pt'
+
 
 class Inference(pl.LightningModule):
     def __init__(self):
