@@ -678,7 +678,6 @@
     ```
         {
             "text" : "string" 
-            
         }
     ```
     
@@ -688,6 +687,5 @@
             "lang1" : "prob1",
             "lang2" : "prob2", 
             "lang3" : "prob3" 
-            
         }
     ```
