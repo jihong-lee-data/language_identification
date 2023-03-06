@@ -660,9 +660,34 @@
 
     * `bentoml 기반 모델 관리 및 배포 라인 구축`
 
-## 2023.03.02
+---
+## 2023.03.03
     
     * bentoml 배포 준비
         
         - `xlm-roberta-finetune_vr` -> `onnx` 형태로 변환
-        
+
+---
+## 2023.03.06
+
+* `fastapi` 기반 배포 완료
+    
+    `/api/langid`
+    
+    request form: `JSON`
+    ```
+        {
+            "text" : "string" 
+            
+        }
+    ```
+    
+    response form: `JSON`
+    ```
+        {
+            "lang1" : "prob1",
+            "lang2" : "prob2", 
+            "lang3" : "prob3" 
+            
+        }
+    ```
