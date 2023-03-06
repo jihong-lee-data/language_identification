@@ -16,25 +16,25 @@ if 'x86' in  processor:
     backend= 'fbgemm'
 elif 'arm' in  processor:
     backend= 'qnnpack'
+torch.backends.quantized.engine = backend
 
 torch._C._set_graph_executor_optimize(False)
 
-config= load_json('model/xlm-roberta-base/config.json')
+config= load_json('model/best_model/config.json')
 label_dict = dict(zip(config['label2id'].values(), config['label2id'].keys()))
 
 
 torch.cuda.empty_cache()
 
-MODEL_PATH = f'model/traced/xlm-roberta-finetune_v4_{processor}_{device.type}.pt'
-
+MODEL_PATH = f'model/traced/lang_id_{processor}_{device.type}.pt'
 
 class Inference(pl.LightningModule):
     def __init__(self):
         super().__init__()
         self.model = torch.jit.load(MODEL_PATH, map_location=device)
-        self.model = torch.jit.script(self.model)
-        self.model.eval()
-        self.tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base", use_fast=True)
+        # self.model = torch.jit.script(self.model)
+        # self.model.eval()
+        self.tokenizer = AutoTokenizer.from_pretrained("model/best_model", use_fast=True)
 
     def forward(self, x):
         x= self.tokenizer(x, add_special_tokens=True,

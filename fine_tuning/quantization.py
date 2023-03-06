@@ -5,8 +5,9 @@ import torch
 import os 
 from pathlib import Path
 import platform
+from optimum.bettertransformer import BetterTransformer
 
-device = torch.device('cuda')
+device = torch.device('cpu')
 
 processor = platform.processor().lower()
 if 'x86' in  processor:
@@ -14,7 +15,7 @@ if 'x86' in  processor:
 elif 'arm' in  processor:
     backend= 'qnnpack'
 
-MODEL_FILENAME = f"xlm-roberta-finetune_v4_{processor}_{device.type}.pt"
+MODEL_FILENAME = f"lang_id_{processor}_{device.type}.pt"
 
 print(MODEL_FILENAME)
 
@@ -23,8 +24,8 @@ def print_size_of_model(model):
     print('Size (MB):', os.path.getsize("temp.p")/1e6)
     os.remove('temp.p')
 
-model = RobertaForSequenceClassification.from_pretrained('model/xlm-roberta-base').to(device)
-model.load_state_dict(torch.load("model/xlm-roberta-finetune_v4_ep1/best_epoch/model.pt", map_location=device))
+model = RobertaForSequenceClassification.from_pretrained('model/best_model').to(device)
+model_bt = BetterTransformer.transform(model, keep_original_model=True)
 
 SAVE_PATH = Path("model/traced")
 SAVE_PATH.mkdir(parents=True, exist_ok=True)
@@ -40,17 +41,17 @@ torch.backends.quantized.engine = backend
 # quantized_model = torch.quantization.convert(model_static_quantized, inplace=False)
 
 quantized_model = torch.quantization.quantize_dynamic(
-    model, {torch.nn.Linear,}, dtype=torch.qint8
+    model_bt, {torch.nn.Linear,}, dtype=torch.qint8
 )
 quantized_model = torch.quantization.quantize_dynamic(
     quantized_model, {torch.nn.Embedding,}, dtype=torch.quint8
 )
 
-print_size_of_model(model)
+print_size_of_model(model_bt)
 print_size_of_model(quantized_model)
 
 
-tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base", use_fast=True)
+tokenizer = AutoTokenizer.from_pretrained("model/best_model", use_fast=True)
 
 example = 'Flitto is the best company in Korea'
 

@@ -42,3 +42,4 @@ FC*/
 linear_model/wandb/
 linear/wandb/
 
+*.pt
