@@ -14,9 +14,9 @@ if 'x86' in  processor:
 elif 'arm' in  processor:
     backend= 'qnnpack'
 
-MODEL_FILENAME = f"xlm-roberta-finetune_v4_{processor}_{device.type}.pt"
+# MODEL_FILENAME = f"xlm-roberta-finetune_v4.pt"
 
-print(MODEL_FILENAME)
+# print(MODEL_FILENAME)
 
 def print_size_of_model(model):
     torch.save(model.state_dict(), "temp.p")
@@ -25,5 +25,7 @@ def print_size_of_model(model):
 
 model = RobertaForSequenceClassification.from_pretrained('model/xlm-roberta-base').to(device)
 model.load_state_dict(torch.load("model/xlm-roberta-finetune_v4_ep1/best_epoch/model.pt", map_location=device))
+tokenzier = AutoTokenizer.from_pretrained('xlm-roberta-base', use_fast= True)
 
 model.save_pretrained("model/best_model")
+tokenzier.save_pretrained("model/best_model")
