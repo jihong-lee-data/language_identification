@@ -7,15 +7,16 @@ import json
 import nltk
 from nltk.corpus import wordnet
 from pydantic import BaseModel
+from typing import Union, List
 from fastapi.encoders import jsonable_encoder
 
 class JSON(BaseModel):
-    text: str
-
+    text: Union[str, List[str]]
+    n: int=1
     
 app= FastAPI()
 
-app.model= Inference()
+app.model= Inference(device='cpu')
 
 nltk.download('wordnet')
 
@@ -26,14 +27,17 @@ async def root():
 @app.post('/api/langid')
 async def predict(request:JSON):
     request_json= jsonable_encoder(request)
-    
+
     text= request_json['text']
-    if not rm_spcl_char(text):
-        lang_pred_dict= {}
-    elif text.strip() in wordnet.words():
-        lang_pred_dict= {'en': 1.00}
-    else:    
-        lang_pred_dict= app.model.predict(text, n= 3)
+    n = request_json['n']
+
+    # if not rm_spcl_char(text):
+    #     lang_pred_dict= {}
+    # elif text.strip() in wordnet.words():
+    #     lang_pred_dict= {'en': 1.00}
+    # else:    
+    lang_pred_dict= app.model.predict(text= text,
+                                          n= n)
     if lang_pred_dict is not None:
         return jsonable_encoder(lang_pred_dict)
     

@@ -30,32 +30,32 @@ model_bt = BetterTransformer.transform(model, keep_original_model=True)
 SAVE_PATH = Path("model/traced")
 SAVE_PATH.mkdir(parents=True, exist_ok=True)
 
-# backend = "qnnpack"
-torch.backends.quantized.engine = backend
-
-
-# model.qconfig = torch.quantization.get_default_qconfig(backend)
-# model.
+# # backend = "qnnpack"
 # torch.backends.quantized.engine = backend
-# model_static_quantized = torch.quantization.prepare(model, inplace=False)
-# quantized_model = torch.quantization.convert(model_static_quantized, inplace=False)
 
-quantized_model = torch.quantization.quantize_dynamic(
-    model_bt, {torch.nn.Linear,}, dtype=torch.qint8
-)
-quantized_model = torch.quantization.quantize_dynamic(
-    quantized_model, {torch.nn.Embedding,}, dtype=torch.quint8
-)
 
+# # model.qconfig = torch.quantization.get_default_qconfig(backend)
+# # model.
+# # torch.backends.quantized.engine = backend
+# # model_static_quantized = torch.quantization.prepare(model, inplace=False)
+# # quantized_model = torch.quantization.convert(model_static_quantized, inplace=False)
+
+# quantized_model = torch.quantization.quantize_dynamic(
+#     model_bt, {torch.nn.Linear,}, dtype=torch.qint8
+# )
+# quantized_model = torch.quantization.quantize_dynamic(
+#     quantized_model, {torch.nn.Embedding,}, dtype=torch.quint8
+# )
+
+print_size_of_model(model)
 print_size_of_model(model_bt)
-print_size_of_model(quantized_model)
 
 
 tokenizer = AutoTokenizer.from_pretrained("model/best_model", use_fast=True)
 
-example = 'Flitto is the best company in Korea'
+example = ['Flitto is the best company in Korea', '플리토는 한국 최고의 회사이다.']
 
-encoding = tokenizer.encode_plus(
+encoding = tokenizer(
     example,
     add_special_tokens=True,
     max_length=512,
@@ -66,5 +66,5 @@ encoding = tokenizer.encode_plus(
     return_tensors='pt',
 ).to(device)
 
-traced_model = torch.jit.trace(quantized_model,  [encoding["input_ids"], encoding["attention_mask"]], strict=False)
+traced_model = torch.jit.trace(model_bt,  [encoding["input_ids"], encoding["attention_mask"]], strict=False)
 torch.jit.save(traced_model, SAVE_PATH / MODEL_FILENAME)

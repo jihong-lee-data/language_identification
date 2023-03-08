@@ -1,14 +1,10 @@
 from app.tool import load_json
-import os
-import sys
+import platform
+import torch
 import torch.nn as nn
 from transformers import AutoTokenizer
-import torch
-import time
-import platform
-
-device = torch.device('cpu')
-print("Device: ", device)
+from typing import List, Union
+import numpy as np
 
 processor = platform.processor().lower()
 if 'arm' in  processor:
@@ -16,65 +12,51 @@ if 'arm' in  processor:
 else:
     backend= 'fbgemm'
 
-
-torch.backends.quantized.engine = backend
-
 torch._C._set_graph_executor_optimize(False)
 
 config= load_json('model/config.json')
 label_dict = dict(zip(config['label2id'].values(), config['label2id'].keys()))
 
-torch.cuda.empty_cache()
-
-MODEL_PATH = f'model/lang_id_{processor}_{device.type}.pt'
-
 class Inference(nn.Module):
-    def __init__(self):
+    def __init__(self, device='cpu'):
         super().__init__()
-        self.model = torch.jit.load(MODEL_PATH, map_location=device).eval()
+        self.device= torch.device(device)
+        MODEL_PATH = f'model/lang_id_{processor}_{self.device.type}.pt'
+        self.model = torch.jit.load(MODEL_PATH, map_location=self.device).eval()
         self.tokenizer = AutoTokenizer.from_pretrained("model", use_fast=True)
 
-    def _forward(self, x):
-        x= self.tokenizer(x, add_special_tokens=True,
+    def _encode(self, text: Union[str, List[str]]) -> dict[torch.Tensor]:
+        encoding= self.tokenizer(text, add_special_tokens=True,
             max_length=512,
             return_token_type_ids=False,
             padding="max_length",
             truncation=True,
             return_attention_mask=True,
-            return_tensors='pt').to(device)
-        output =self.model(x['input_ids'], attention_mask=x['attention_mask'])['logits']
+            return_tensors='pt').to(self.device)
+        return encoding
+
+    def forward(self, text: Union[str, List[str]]) -> dict[torch.Tensor]:
+        encoding= self._encode(text)
+        output =self.model(encoding['input_ids'], attention_mask=encoding['attention_mask'])['logits']
+        torch.cuda.empty_cache()
         return output        
     
-    def predict(self, text, n = 3):
-        logits= self._forward(text).squeeze()
+    def predict(self,
+                text: Union[str, List[str]],
+                n: int= 3):
+        logits= self(text)
+        probabilities= logits.softmax(dim=-1)
         
-        indice_n = (-logits).argsort()[:n].detach().cpu().numpy().tolist()
-
-        preds= [label_dict.get(idx) for idx in indice_n]
-        probs= logits.softmax(dim=-1)[indice_n].detach().cpu().numpy().tolist()
-        return dict(zip(preds, probs))
+        col_id = (-logits).argsort(dim=-1)[:, :n].detach().cpu().numpy().tolist()
+        row_id = np.repeat(np.arange(len(col_id)), n).reshape(len(col_id), n)
         
         
-        
+        # [{label_dict.get(idx): logits.softmax(dim=-1)} for idx in indice] for indice in indice_n]
 
-
-def main():
-    
-    clf = Inference()
-    
-    while True:
-        try:
-            text= input('Enter text: ')
-            start = time.time()
-            pred = clf.predict(text)
-            end = time.time()
-            print(pred)
-            print(f"Inference time: ({end - start:.5f} sec)", end = '\n'*2)
-            torch.cuda.empty_cache()
-        except EOFError:
-            print('Bye!')
-            break
-
-if __name__ == '__main__':
-    
-    main()
+        return [{label_dict.get(idx): prob for idx, prob in zip(indice, probs)} for indice, probs in zip(col_id, probabilities[row_id, col_id].detach().cpu().numpy().tolist())]
+            # probs= logits.softmax(dim=-1)[:, indice_n].detach().cpu().numpy().tolist()
+        #     return dict(zip(preds, probs))
+        # elif isinstance(text, list):
+        #     return [{label_dict.get(idx): logits.softmax(dim=-1)} for idx in indice] for indice in indice_n]
+            
+            

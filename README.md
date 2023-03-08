@@ -694,3 +694,39 @@
 
 * api load test 및 dockerize
 
+## 2023.03.09
+
+* request form 변경
+    
+    `/api/langid`
+    
+    request form: `JSON`
+    ```python
+        {
+            "text" : Union[str, List[str]]
+            "n" : Optional[int]
+        }
+    ```
+    
+    response form: `JSON`
+    ```python
+    # 텍스트가 1개일 때(n=3),
+        {
+            "lang1" : "prob1",
+            "lang2" : "prob2", 
+            "lang3" : "prob3" 
+        }
+    # 텍스트가 2개일 때(n=3),
+        [
+            {
+                "lang1" : "prob1",
+                "lang2" : "prob2", 
+                "lang3" : "prob3" 
+            },
+            {
+                "lang1" : "prob1",
+                "lang2" : "prob2", 
+                "lang3" : "prob3" 
+            }
+        ]
+    ```
