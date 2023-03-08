@@ -1,5 +1,5 @@
-from module.inference import Inference
-from module.tool import rm_spcl_char
+from app.inference import Inference
+from app.tool import rm_spcl_char
 
 from fastapi import FastAPI, Request, HTTPException
 import numpy as np

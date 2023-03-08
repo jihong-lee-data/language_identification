@@ -1,8 +1,8 @@
+from app.tool import load_json
 import os
 import sys
 import torch.nn as nn
 from transformers import AutoTokenizer
-from module.tool import load_json
 import torch
 import time
 import platform
@@ -11,10 +11,12 @@ device = torch.device('cpu')
 print("Device: ", device)
 
 processor = platform.processor().lower()
-if 'x86' in  processor:
-    backend= 'fbgemm'
-elif 'arm' in  processor:
+if 'arm' in  processor:
     backend= 'qnnpack'
+else:
+    backend= 'fbgemm'
+
+
 torch.backends.quantized.engine = backend
 
 torch._C._set_graph_executor_optimize(False)

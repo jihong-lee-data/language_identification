@@ -40,7 +40,7 @@ class Classifier(pl.LightningModule):
             return_attention_mask=True,
             return_tensors='pt',
         ).to(device)
-        logits = self.model(encoding["input_ids"], attention_mask=encoding["attention_mask"])[0]
+        logits = self.model(encoding["input_ids"], attention_mask=encoding["attention_mask"])['logits']
         torch.cuda.empty_cache()
         return logits.detach().cpu().numpy()
         # return self.get_max_n(logits.detach().cpu().numpy())
