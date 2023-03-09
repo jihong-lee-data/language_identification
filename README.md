@@ -712,21 +712,28 @@
     ```python
     # 텍스트가 1개일 때(n=3),
         {
-            "lang1" : "prob1",
-            "lang2" : "prob2", 
-            "lang3" : "prob3" 
+            "result": [
+                {
+                    "lang1" : "prob1",
+                    "lang2" : "prob2", 
+                    "lang3" : "prob3" 
+                
+                }
+            ]
         }
     # 텍스트가 2개일 때(n=3),
-        [
-            {
-                "lang1" : "prob1",
-                "lang2" : "prob2", 
-                "lang3" : "prob3" 
-            },
-            {
-                "lang1" : "prob1",
-                "lang2" : "prob2", 
-                "lang3" : "prob3" 
-            }
-        ]
+       {
+            "result": [
+                {
+                    "lang2" : "prob2", 
+                    "lang1" : "prob1",
+                    "lang3" : "prob3" 
+                },
+                {
+                    "lang1" : "prob1",
+                    "lang2" : "prob2", 
+                    "lang3" : "prob3" 
+                }
+            ]
+        }
     ```

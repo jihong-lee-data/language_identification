@@ -10,6 +10,8 @@ COPY ./model /langid/model
 
 COPY ./app /langid/app
 
+COPY ./run_server.sh /langid/run_server.sh
+
 RUN pip install --no-cache-dir --upgrade -r /langid/requirements.txt
 
 EXPOSE 11000

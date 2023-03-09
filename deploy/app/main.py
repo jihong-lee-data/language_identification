@@ -29,7 +29,7 @@ async def root():
 async def predict(request: Request):
     request_json = jsonable_encoder(request)
     text = request_json['text']
-    n = request_json['n']
+    n = np.clip(request_json['n'], a_min=1, a_max=len(app.model.label_dict))
 
     if isinstance(text, str):
         text = [text]
