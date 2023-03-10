@@ -675,14 +675,14 @@
     `/api/langid`
     
     request form: `JSON`
-    ```
+    ```python
         {
             "text" : "string" 
         }
     ```
     
     response form: `JSON`
-    ```
+    ```python
         {
             "lang1" : "prob1",
             "lang2" : "prob2", 
@@ -711,22 +711,19 @@
     response form: `JSON`
     ```python
     # 텍스트가 1개일 때(n=3),
-        {
-            "result": [
-                {
-                    "lang1" : "prob1",
-                    "lang2" : "prob2", 
-                    "lang3" : "prob3" 
-                
-                }
-            ]
+        {  
+            {
+                "lang1" : "prob1",
+                "lang2" : "prob2", 
+                "lang3" : "prob3" 
+            }   
         }
     # 텍스트가 2개일 때(n=3),
        {
             "result": [
                 {
-                    "lang2" : "prob2", 
                     "lang1" : "prob1",
+                    "lang2" : "prob2", 
                     "lang3" : "prob3" 
                 },
                 {
@@ -736,4 +733,32 @@
                 }
             ]
         }
+
+    # 텍스트가 1000개를 초과할 때
+       {
+            "result": []
+       }
+
+    # 빈 문자열 혹은 특수문자나 숫자만 들어왔을 때(텍스트가 1개),
+       {}
+
+    # 빈 문자열 혹은 특수문자나 숫자만 들어왔을 때(여러개의 문자열 중),
+        {
+            "result": [
+                {
+                    "lang1" : "prob1",
+                    "lang2" : "prob2", 
+                    "lang3" : "prob3" 
+                },
+                {}
+            ]
+        }
     ```
+    --- 
+    ## 2023.03.10
+
+    * fastapi method 추가
+        - 기존
+        - batch 전용 inference(new format)
+        - ISO conversion(English/Korean/ISO 639-1/ISO 639-2)
+        
