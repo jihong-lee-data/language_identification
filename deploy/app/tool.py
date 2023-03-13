@@ -51,7 +51,9 @@ def rm_spcl_char(text):
     Returns:
     - string - The text with all special characters removed
     """
-    text = re.sub(r'[!@#$(),，\\n"%^*?？:;~`0-9&\\[\\]\\。\\/\\.\\=\\-]', " ", text)
+    text = re.sub(
+        r'[!@#$(),，\\n"%^*?？:;~`0-9&\\[\\]\\。\\/\\.\\=\\-]', " ", text
+    )
     text = re.sub(r"[\\s]{2,}", " ", text.strip())
     text = text.lower().strip()
     return text
@@ -62,23 +64,15 @@ class ISO:
     ISO Language Code Search and Conversion Tool
 
     This class provides a tool for searching and converting language codes from ISO 639-1 and 639-2 standards.
-    It uses a JSON file of language codes that is downloaded from a GitHub repository if it is not found locally.
 
     """
 
     def __init__(self):
         """
-        Initializes the ISO class by downloading the language code dictionary if it is not found locally,
-        loading the JSON file into a dictionary, and creating a dictionary to map letters to language attributes.
+        Initializes the ISO class by loading the JSON file into a dictionary,
+        and creating a dictionary to map letters to language attributes.
         """
         self.dict_path = Path("resource/iso.json")
-        if not self.dict_path.exists():
-            self.dict_path.parent.mkdir(parents=True, exist_ok=True)
-            print("Downloading 'ISO dictionary'..")
-            os.system(
-                f"curl <https://raw.githubusercontent.com/jihong-lee-data/gadgetbox/main/{str(self.dict_path)}> > {str(self.dict_path)}"
-            )
-            print(f"{'---'*10}\\\\n'ISO dictionary' is saved to {str(self.dict_path)}")
         self.iso_dict = load_json(str(self.dict_path))
         self.code_dict = dict(
             zip(
@@ -150,7 +144,9 @@ class ISO:
 
         if dst_code:
             if len(dst_code) > 1:
-                return [result.get(self.code_dict.get(d)) for d in list(dst_code)]
+                return [
+                    result.get(self.code_dict.get(d)) for d in list(dst_code)
+                ]
             return result.get(self.code_dict.get(dst_code))
         return result.values()
 

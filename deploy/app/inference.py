@@ -81,12 +81,15 @@ class Inference(nn.Module):
         logits = self(text)
         probabilities = logits.softmax(dim=-1)
 
-        col_id = (-logits).argsort(dim=-1)[:, :n].detach().cpu().numpy().tolist()
+        col_id = (
+            (-logits).argsort(dim=-1)[:, :n].detach().cpu().numpy().tolist()
+        )
         row_id = np.repeat(np.arange(len(col_id)), n).reshape(len(col_id), n)
 
         return [
             {self.label_dict.get(idx): prob for idx, prob in zip(indice, probs)}
             for indice, probs in zip(
-                col_id, probabilities[row_id, col_id].detach().cpu().numpy().tolist()
+                col_id,
+                probabilities[row_id, col_id].detach().cpu().numpy().tolist(),
             )
         ]

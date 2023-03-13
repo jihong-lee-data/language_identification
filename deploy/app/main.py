@@ -1,5 +1,5 @@
 import numpy as np
-from typing import List, Union
+from typing import List, Union, Dict, Any
 from fastapi import FastAPI
 from fastapi.encoders import jsonable_encoder
 from pydantic import BaseModel
@@ -29,7 +29,7 @@ class LangIdBatchRequest(BaseModel):
 
 
 class LangIdBatchResponse(BaseModel):
-    result: List[List[dict]]
+    result: List[List[Dict[str, Any]]]
 
 
 class ISOSearchRequest(BaseModel):
@@ -38,10 +38,18 @@ class ISOSearchRequest(BaseModel):
     code: str = ""
 
 
+class ISOSearchResponse(BaseModel):
+    result: List[Dict[str, Any]]
+
+
 class ISOConvertRequest(BaseModel):
     src: str
     src_code: str = ""
     dst_code: str = "1"
+
+
+class ISOConvertResponse(BaseModel):
+    result: str
 
 
 @app.get("/")
@@ -49,7 +57,7 @@ async def root():
     return "Language Identification API"
 
 
-@app.post("/api/langid")
+@app.post("/api/langid/predict", response_model=LangIdResponse)
 async def predict(request: LangIdRequest):
     """Predicts the language of a given text.
 
@@ -77,7 +85,7 @@ async def predict(request: LangIdRequest):
     return jsonable_encoder(lang_pred)
 
 
-@app.post("/api/langidb")
+@app.post("/api/langid/predictb", response_model=LangIdBatchResponse)
 async def predict_batch(request: LangIdBatchRequest):
     """Predicts the language of a batch of texts.
 
@@ -119,7 +127,7 @@ async def predict_batch(request: LangIdBatchRequest):
     )
 
     text_for_model = (
-        np.array(text)[(lang_pred is None).squeeze()].squeeze().tolist()
+        np.array(text)[(lang_pred == None).squeeze()].squeeze().tolist()
     )
 
     if text_for_model:
@@ -145,17 +153,19 @@ async def predict_batch(request: LangIdBatchRequest):
             ]
         ).tolist()
 
-    result = {
-        "result": [
-            model_result.pop(0) if row == [None] else row.tolist()
-            for row in lang_pred
-        ]
-    }
+        result = {
+            "result": [
+                model_result.pop(0) if row == [None] else row.tolist()
+                for row in lang_pred
+            ]
+        }
+    else:
+        result = {"result": lang_pred.tolist()}
 
     return jsonable_encoder(result)
 
 
-@app.post("/api/iso/search")
+@app.post("/api/iso/search", response_model=ISOSearchResponse)
 async def search(request: ISOSearchRequest):
     """Searches for a given query within a given ISO code table.
 
@@ -175,7 +185,7 @@ async def search(request: ISOSearchRequest):
     )
 
 
-@app.post("/api/iso/convert")
+@app.post("/api/iso/convert", response_model=ISOConvertResponse)
 async def convert(request: ISOConvertRequest):
     """Converts a given text from one language code to another.
 

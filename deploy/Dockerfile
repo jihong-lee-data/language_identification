@@ -8,6 +8,8 @@ COPY ./requirements.txt /langid/requirements.txt
 
 COPY ./model /langid/model
 
+COPY ./resource /langid/resource
+
 COPY ./app /langid/app
 
 COPY ./run_server.sh /langid/run_server.sh
