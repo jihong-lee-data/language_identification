@@ -19,10 +19,6 @@ class LangIdRequest(BaseModel):
     n: int = 3
 
 
-class LangIdResponse(BaseModel):
-    pred: float
-
-
 class LangIdBatchRequest(BaseModel):
     text: Union[str, List[str]]
     n: int = 1
@@ -57,7 +53,7 @@ async def root():
     return "Language Identification API"
 
 
-@app.post("/api/langid/predict", response_model=LangIdResponse)
+@app.post("/api/langid/predict")
 async def predict(request: LangIdRequest):
     """Predicts the language of a given text.
 
@@ -80,12 +76,12 @@ async def predict(request: LangIdRequest):
     )
 
     if not isinstance(lang_pred, dict):
-        lang_pred = app.model.predict(text_prepped, n=n)
+        lang_pred = app.model.predict(text_prepped, n=n).pop(0)
 
     return jsonable_encoder(lang_pred)
 
 
-@app.post("/api/langid/predictb", response_model=LangIdBatchResponse)
+@app.post("/api/langid/predictb")
 async def predict_batch(request: LangIdBatchRequest):
     """Predicts the language of a batch of texts.
 
@@ -165,7 +161,7 @@ async def predict_batch(request: LangIdBatchRequest):
     return jsonable_encoder(result)
 
 
-@app.post("/api/iso/search", response_model=ISOSearchResponse)
+@app.post("/api/iso/search")
 async def search(request: ISOSearchRequest):
     """Searches for a given query within a given ISO code table.
 
@@ -185,7 +181,7 @@ async def search(request: ISOSearchRequest):
     )
 
 
-@app.post("/api/iso/convert", response_model=ISOConvertResponse)
+@app.post("/api/iso/convert")
 async def convert(request: ISOConvertRequest):
     """Converts a given text from one language code to another.
 
@@ -199,6 +195,10 @@ async def convert(request: ISOConvertRequest):
     src = request_json["src"]
     src_code = request_json["src_code"]
     dst_code = request_json["dst_code"]
+
+    if dst_code:
+        dst_code = dst_code[0]
+
     try:
         result = jsonable_encoder(
             {
