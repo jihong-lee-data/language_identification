@@ -18,9 +18,19 @@ class LangIdRequest(BaseModel):
     text: str
     n: int= 3
 
-# class LangIdRequest(BaseModel):
-#     text: Union[str, List[str]]
-#     n: int = 1
+
+class LangIdResponse(BaseModel):
+    pred: float
+
+
+class LangIdBatchRequest(BaseModel):
+    text: Union[str, List[str]]
+    n: int = 1
+
+
+class LangIdBatchResponse(BaseModel):
+    result: List[List[dict]]
+
 
 class ISOSearchRequest(BaseModel):
     query: str
@@ -44,8 +54,7 @@ async def predict(request: LangIdRequest):
     request_json = jsonable_encoder(request)
     text = request_json['text']
     n = request_json['n']
-    
-    
+        
     text_prepped= rm_spcl_char(text)
     
     lang_pred = {} if not text_prepped else ({'en': 1.00} if text_prepped.strip() in wordnet.words() else None)
@@ -54,37 +63,45 @@ async def predict(request: LangIdRequest):
         lang_pred= app.model.predict(text_prepped, n= n)
 
     return jsonable_encoder(lang_pred) 
-    
-# ToDo - batch inference & new response formatting
+
+
 @app.post('/api/langidb')
-async def predict_b(request: LangIdRequest):
+async def predict_batch(request: LangIdBatchRequest):
     request_json = jsonable_encoder(request)
     text = request_json['text']
     n = np.clip(request_json['n'], a_min=1, a_max=len(app.model.label_dict))
-    dst_code = request_json['type']
-
+    
     if isinstance(text, str):
-        text = [text]
-
+        text= [text]
+    
     if len(text) > 1000:
         return jsonable_encoder(dict(result=[]))
+    
+    text_prepped = [rm_spcl_char(sample) for sample in text]
 
-    lang_pred = np.array([
-        {} if not rm_spcl_char(tmp_text) else ({'en': 1.00} if tmp_text.strip() in wordnet.words() else None)
-        for tmp_text in text
-    ])
+    lang_pred= np.array([[{}] if not tmp_text else [dict(predicion= 'en',
+                                                        probability= 1.00,
+                                                        rank= 1,
+                                                        english= 'English',
+                                                        korean= '영어')] if tmp_text.strip() in wordnet.words()
+                                                                        else [None] for tmp_text in text_prepped])
 
-    text_for_model = np.array(text)[lang_pred == None].tolist()
-
+    text_for_model = np.array(text)[(lang_pred == None).squeeze()].squeeze().tolist()
+    
     if text_for_model:
         model_pred = app.model.predict(text=text_for_model, n=n)
-        lang_pred[lang_pred == None] = model_pred
+        
+        model_result= np.array([[dict(prediction= pred,
+                                      probability= prob,
+                                      rank= idx+1,
+                                      english= app.iso.convert(src= pred, src_code= '1', dst_code= 'e'),
+                                      korean= app.iso.convert(src= pred, src_code= '1', dst_code='k')
+                                     ) for idx, (pred, prob) in enumerate(row.items())] for row in model_pred]
+        ).tolist()
 
-    result = dict(result=lang_pred.tolist()) if len(text) > 1 else lang_pred[0]
-
-    if dst_code:
-        dst_code = dst_code[0]
-
+    result= dict(result= [model_result.pop(0) if row == [None] else row.tolist() for row in lang_pred])
+    
+    return jsonable_encoder(result)
 
 @app.post('/api/iso/search')
 async def search(request: ISOSearchRequest):
