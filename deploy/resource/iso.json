@@ -1,1 +1,3080 @@
-[{"English": "Afar", "Korean": "\uc544\ud30c\ub974\uc5b4", "ISO 639-1 Code": "aa", "ISO 639-2 Code": "aar"}, {"English": "Abkhazian", "Korean": "\uc555\uce74\uc988\uc5b4", "ISO 639-1 Code": "ab", "ISO 639-2 Code": "abk"}, {"English": "Achinese", "Korean": "\uc544\uccb4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "ace"}, {"English": "Acoli", "Korean": "\uc544\ucf5c\ub9ac\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "ach"}, {"English": "Adangme", "Korean": "\uc544\ub2f9\uba54\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "ada"}, {"English": "Adyghe; Adygei", "Korean": "\uc544\ub514\uac8c\uc5b4; \uc544\ub514\uac8c\uc774\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "ady"}, {"English": "Afro-Asiatic languages", "Korean": "\uc544\ud504\ub85c \uc544\uc2dc\uc544\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "afa"}, {"English": "Afrihili", "Korean": "\uc544\ud504\ub9ac\ud790\ub9ac\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "afh"}, {"English": "Afrikaans", "Korean": "\uc544\ud504\ub9ac\uce78\uc2a4\uc5b4", "ISO 639-1 Code": "af", "ISO 639-2 Code": "afr"}, {"English": "Ainu", "Korean": "\uc544\uc774\ub204\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "ain"}, {"English": "Akan", "Korean": "\uc544\uce78\uc5b4", "ISO 639-1 Code": "ak", "ISO 639-2 Code": "aka"}, {"English": "Akkadian", "Korean": "\uc544\uce74\ub4dc\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "akk"}, {"English": "Albanian", "Korean": "\uc54c\ubc14\ub2c8\uc544\uc5b4", "ISO 639-1 Code": "sq", "ISO 639-2 Code": "alb (B) sqi (T)"}, {"English": "Aleut", "Korean": "\uc54c\ub958\ud2b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "ale"}, {"English": "Algonquian languages", "Korean": "\uc54c\uace4\ud038\uc5b4\uc871 \uc5b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "alg"}, {"English": "Southern Altai", "Korean": "\ub0a8\ubd80 \uc54c\ud0c0\uc774\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "alt"}, {"English": "Amharic", "Korean": "\uc554\ud558\ub77c\uc5b4", "ISO 639-1 Code": "am", "ISO 639-2 Code": "amh"}, {"English": "English, Old (ca.450-1100)", "Korean": "\uc601\uc5b4, \uace0\ub300 (\uc57d 450-1100)", "ISO 639-1 Code": "", "ISO 639-2 Code": "ang"}, {"English": "Angika", "Korean": "\uc559\uae30\uce74\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "anp"}, {"English": "Apache languages", "Korean": "\uc544\ud30c\uce58\uc5b4\uc871 \uc5b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "apa"}, {"English": "Arabic", "Korean": "\uc544\ub78d\uc5b4", "ISO 639-1 Code": "ar", "ISO 639-2 Code": "ara"}, {"English": "Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)", "Korean": "\uacf5\uc2dd \uc544\ub78c\uc5b4 (\uae30\uc6d0\uc804 700-300\ub144); \uc81c\uad6d \uc544\ub78c\uc5b4 (\uae30\uc6d0\uc804 700-300\ub144)", "ISO 639-1 Code": "", "ISO 639-2 Code": "arc"}, {"English": "Aragonese", "Korean": "\uc544\ub77c\uace4\uc5b4", "ISO 639-1 Code": "an", "ISO 639-2 Code": "arg"}, {"English": "Armenian", "Korean": "\uc544\ub974\uba54\ub2c8\uc544\uc5b4", "ISO 639-1 Code": "hy", "ISO 639-2 Code": "arm (B) hye (T)"}, {"English": "Mapudungun; Mapuche", "Korean": "\ub9c8\ud478\ub465\uad70\uc5b4; \ub9c8\ud478\uccb4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "arn"}, {"English": "Arapaho", "Korean": "\uc544\ub77c\ud30c\ud638\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "arp"}, {"English": "Artificial languages", "Korean": "\uc778\uacf5\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "art"}, {"English": "Arawak", "Korean": "\uc544\ub77c\uc640\ud06c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "arw"}, {"English": "Assamese", "Korean": "\uc544\uc0ac\uba54\uc5b4", "ISO 639-1 Code": "as", "ISO 639-2 Code": "asm"}, {"English": "Asturian; Bable; Leonese; Asturleonese", "Korean": "\uc544\uc2a4\ud22c\ub9ac\uc544\uc5b4; \ubc14\ube14\uc5b4; \ub808\uc624\ub124\uc81c\uc5b4; \uc544\uc2a4\ud22c\ub974\ub808\uc624\ub124\uc81c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "ast"}, {"English": "Athapascan languages", "Korean": "\uc544\ud0c0\ud30c\uc2a4\uce78\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "ath"}, {"English": "Australian languages", "Korean": "\uc624\uc2a4\ud2b8\ub808\uc77c\ub9ac\uc544\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "aus"}, {"English": "Avaric", "Korean": "\uc544\ubc14\ub9ad\uc5b4", "ISO 639-1 Code": "av", "ISO 639-2 Code": "ava"}, {"English": "Avestan", "Korean": "\uc544\ubca0\uc2a4\ud0c4\uc5b4", "ISO 639-1 Code": "ae", "ISO 639-2 Code": "ave"}, {"English": "Awadhi", "Korean": "\uc544\uc640\ub4dc\ud788\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "awa"}, {"English": "Aymara", "Korean": "\uc544\uc774\ub9c8\ub77c\uc5b4", "ISO 639-1 Code": "ay", "ISO 639-2 Code": "aym"}, {"English": "Azerbaijani", "Korean": "\uc544\uc81c\ub974\ubc14\uc774\uc794\uc5b4", "ISO 639-1 Code": "az", "ISO 639-2 Code": "aze"}, {"English": "Banda languages", "Korean": "\ubc18\ub2e4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "bad"}, {"English": "Bamileke languages", "Korean": "\ubc14\ubc00\ub808\ucf00\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "bai"}, {"English": "Bashkir", "Korean": "\ubc14\uc2dc\ud0a4\ub974\uc5b4", "ISO 639-1 Code": "ba", "ISO 639-2 Code": "bak"}, {"English": "Baluchi", "Korean": "\ubc1c\ub8e8\uce58\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "bal"}, {"English": "Bambara", "Korean": "\ubc24\ubc14\ub77c\uc5b4", "ISO 639-1 Code": "bm", "ISO 639-2 Code": "bam"}, {"English": "Balinese", "Korean": "\ubc1c\ub9ac\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "ban"}, {"English": "Basque", "Korean": "\ubc14\uc2a4\ud06c\uc5b4", "ISO 639-1 Code": "eu", "ISO 639-2 Code": "baq (B) eus (T)"}, {"English": "Basa", "Korean": "\ubc14\uc0ac\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "bas"}, {"English": "Baltic languages", "Korean": "\ubc1c\ud2b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "bat"}, {"English": "Beja; Bedawiyet", "Korean": "\ubca0\uc790\uc5b4; \ubca0\ub2e4\uc704\uc608\ud2b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "bej"}, {"English": "Belarusian", "Korean": "\ubca8\ub77c\ub8e8\uc2a4\uc5b4", "ISO 639-1 Code": "be", "ISO 639-2 Code": "bel"}, {"English": "Bemba", "Korean": "\ubcb0\ubc14\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "bem"}, {"English": "Bengali", "Korean": "\ubcb5\uace8\uc5b4", "ISO 639-1 Code": "bn", "ISO 639-2 Code": "ben"}, {"English": "Berber languages", "Korean": "\ubca0\ub974\ubca0\ub974\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "ber"}, {"English": "Bhojpuri", "Korean": "\ubcf4\uc988\ud478\ub9ac\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "bho"}, {"English": "Bihari languages", "Korean": "\ube44\ud558\ub9ac\uc5b4", "ISO 639-1 Code": "bh", "ISO 639-2 Code": "bih"}, {"English": "Bikol", "Korean": "\ube44\ucf5c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "bik"}, {"English": "Bini; Edo", "Korean": "\ube44\ub2c8\uc5b4; \uc5d0\ub3c4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "bin"}, {"English": "Bislama", "Korean": "\ube44\uc2ac\ub77c\ub9c8\uc5b4", "ISO 639-1 Code": "bi", "ISO 639-2 Code": "bis"}, {"English": "Siksika", "Korean": "\uc2dc\ud06c\uc2dc\uce74\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "bla"}, {"English": "Bantu languages", "Korean": "\ubc18\ud22c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "bnt"}, {"English": "Tibetan", "Korean": "\ud2f0\ubca0\ud2b8\uc5b4", "ISO 639-1 Code": "bo", "ISO 639-2 Code": "tib (B) bod (T)"}, {"English": "Bosnian", "Korean": "\ubcf4\uc2a4\ub2c8\uc544\uc5b4", "ISO 639-1 Code": "bs", "ISO 639-2 Code": "bos"}, {"English": "Braj", "Korean": "\ube0c\ub77c\uc9c0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "bra"}, {"English": "Breton", "Korean": "\ube0c\ub974\ud0c0\ub274\uc5b4", "ISO 639-1 Code": "br", "ISO 639-2 Code": "bre"}, {"English": "Batak languages", "Korean": "\ubc14\ud0c0\ud06c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "btk"}, {"English": "Buriat", "Korean": "\ubd80\ub9ac\uc544\ud2b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "bua"}, {"English": "Buginese", "Korean": "\ubd80\uae30\ub124\uc81c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "bug"}, {"English": "Bulgarian", "Korean": "\ubd88\uac00\ub9ac\uc544\uc5b4", "ISO 639-1 Code": "bg", "ISO 639-2 Code": "bul"}, {"English": "Burmese", "Korean": "\ubc84\ub9c8\uc5b4", "ISO 639-1 Code": "my", "ISO 639-2 Code": "bur (B) mya (T)"}, {"English": "Blin; Bilin", "Korean": "\ube14\ub9b0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "byn"}, {"English": "Caddo", "Korean": "\uce74\ub3c4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "cad"}, {"English": "Central American Indian languages", "Korean": "\uc911\uc559 \uc544\uba54\ub9ac\uce74 \uc778\ub514\uc5b8 \uc5b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "cai"}, {"English": "Galibi Carib", "Korean": "\uce74\ub9ac\ube0c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "car"}, {"English": "Catalan; Valencian", "Korean": "\uce74\ud0c8\ub85c\ub2c8\uc544\uc5b4; \ubc1c\ub80c\uc2dc\uc544\uc5b4", "ISO 639-1 Code": "ca", "ISO 639-2 Code": "cat"}, {"English": "Caucasian languages", "Korean": "\uce74\ud1a0\uce74\uc18c\uc774\ub4dc\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "cau"}, {"English": "Cebuano", "Korean": "\uc138\ubd80\uc544\ub178\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "ceb"}, {"English": "Celtic languages", "Korean": "\ucf08\ud2b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "cel"}, {"English": "Czech", "Korean": "\uccb4\ucf54\uc5b4", "ISO 639-1 Code": "cs", "ISO 639-2 Code": "cze (B) ces (T)"}, {"English": "Chamorro", "Korean": "\ucc28\ubaa8\ub85c\uc5b4", "ISO 639-1 Code": "ch", "ISO 639-2 Code": "cha"}, {"English": "Chibcha", "Korean": "\uce58\ube0c\ucc28\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "chb"}, {"English": "Chechen", "Korean": "\uccb4\uccb8\uc5b4", "ISO 639-1 Code": "ce", "ISO 639-2 Code": "che"}, {"English": "Chagatai", "Korean": "\ucc28\uac00\ud0c0\uc774\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "chg"}, {"English": "Chinese", "Korean": "\uc911\uad6d\uc5b4", "ISO 639-1 Code": "zh", "ISO 639-2 Code": "chi (B) zho (T)"}, {"English": "Chuukese", "Korean": "\ucd94\ud06c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "chk"}, {"English": "Mari", "Korean": "\ub9c8\ub9ac\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "chm"}, {"English": "Chinook jargon", "Korean": "\uce5c\ub204\ud06c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "chn"}, {"English": "Choctaw", "Korean": "\ucd09\ud1a0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "cho"}, {"English": "Chipewyan; Dene Suline", "Korean": "\uce69\uc640\uc774\uc5b8\uc5b4; \ub374 \uc2ac\ub77c\uc778\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "chp"}, {"English": "Cherokee", "Korean": "\uccb4\ub85c\ud0a4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "chr"}, {"English": "Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic", "Korean": "\uad50\ud68c \uc2ac\ub77c\ube0c\uc5b4; \uace0\ub300 \uc2ac\ub77c\ube0c\uc5b4; \uad50\ud68c \uc2ac\ub77c\ube0c\uc5b4; \uace0\ub300 \ubd88\uac00\ub9ac\uc544\uc5b4; \uace0\ub300 \uad50\ud68c \uc2ac\ub77c\ube0c\uc5b4", "ISO 639-1 Code": "cu", "ISO 639-2 Code": "chu"}, {"English": "Chuvash", "Korean": "\ucd94\ubc14\uc2dc\uc5b4", "ISO 639-1 Code": "cv", "ISO 639-2 Code": "chv"}, {"English": "Cheyenne", "Korean": "\uccb4\uc60c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "chy"}, {"English": "Chamic languages", "Korean": "\ucc38\uc7a0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "cmc"}, {"English": "Montenegrin", "Korean": "\ubaac\ud14c\ub124\uadf8\ub85c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "cnr"}, {"English": "Coptic", "Korean": "\ucf65\ud2b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "cop"}, {"English": "Cornish", "Korean": "\ucf54\ub2c8\uc2dc\uc5b4", "ISO 639-1 Code": "kw", "ISO 639-2 Code": "cor"}, {"English": "Corsican", "Korean": "\ucf54\ub974\uc2dc\uce74\uc5b4", "ISO 639-1 Code": "co", "ISO 639-2 Code": "cos"}, {"English": "Creoles and pidgins, English based", "Korean": "\ud06c\ub9ac\uc62c\uc5b4\uc640 \ud53c\uc9c4, \uc601\uc5b4 \uae30\ubc18", "ISO 639-1 Code": "", "ISO 639-2 Code": "cpe"}, {"English": "Creoles and pidgins, French-based", "Korean": "\ud06c\ub9ac\uc62c\uc5b4\uc640 \ud53c\uc9c4, \ud504\ub791\uc2a4\uc5b4 \uae30\ubc18", "ISO 639-1 Code": "", "ISO 639-2 Code": "cpf"}, {"English": "Creoles and pidgins, Portuguese-based", "Korean": "\ud06c\ub9ac\uc62c\uc5b4\uc640 \ud53c\uc9c4, \ud3ec\ub974\ud22c\uac08\uc5b4 \uae30\ubc18", "ISO 639-1 Code": "", "ISO 639-2 Code": "cpp"}, {"English": "Cree", "Korean": "\ud06c\ub9ac\uc5b4\uc5b4", "ISO 639-1 Code": "cr", "ISO 639-2 Code": "cre"}, {"English": "Crimean Tatar; Crimean Turkish", "Korean": "\ud06c\ub9ac\ubbfc\ud0c0\ud0c0\ub974\uc5b4; \ud06c\ub9ac\ubbfc \ud130\ud0a4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "crh"}, {"English": "Creoles and pidgins", "Korean": "\ud06c\ub9ac\uc62c\uc5b4\uc640 \ud53c\uc9c4", "ISO 639-1 Code": "", "ISO 639-2 Code": "crp"}, {"English": "Kashubian", "Korean": "\uce74\uc288\ube44\uc544\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "csb"}, {"English": "Cushitic languages", "Korean": "\ucfe0\uc2dc\ud2b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "cus"}, {"English": "Welsh", "Korean": "\uc6e8\uc77c\uc2a4\uc5b4", "ISO 639-1 Code": "cy", "ISO 639-2 Code": "wel (B) cym (T)"}, {"English": "Czech", "Korean": "\uccb4\ucf54\uc5b4", "ISO 639-1 Code": "cs", "ISO 639-2 Code": "cze (B) ces (T)"}, {"English": "Dakota", "Korean": "\ub2e4\ucf54\ud0c0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "dak"}, {"English": "Danish", "Korean": "\ub374\ub9c8\ud06c\uc5b4", "ISO 639-1 Code": "da", "ISO 639-2 Code": "dan"}, {"English": "Dargwa", "Korean": "\ub2e4\ub974\uadf8\uc640\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "dar"}, {"English": "Land Dayak languages", "Korean": "\ub79c\ub4dc \ub370\uc774\uc545\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "day"}, {"English": "Delaware", "Korean": "\ub378\ub77c\uc6e8\uc5b4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "del"}, {"English": "Slave (Athapascan)", "Korean": "\uc2ac\ub808\uc774\ube0c (\uc544\ud0c0\ud30c\uc2a4\uce78)", "ISO 639-1 Code": "", "ISO 639-2 Code": "den"}, {"English": "German", "Korean": "\ub3c5\uc77c\uc5b4", "ISO 639-1 Code": "de", "ISO 639-2 Code": "ger (B) deu (T)"}, {"English": "Dogrib", "Korean": "\ub3c4\uadf8\ub9ac\ube0c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "dgr"}, {"English": "Dinka", "Korean": "\ub518\uce74\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "din"}, {"English": "Divehi; Dhivehi; Maldivian", "Korean": "\ub514\ubca0\ud788\uc5b4; \ub514\ube44\ud788\uc5b4; \ubab0\ub514\ube0c\uc5b4", "ISO 639-1 Code": "dv", "ISO 639-2 Code": "div"}, {"English": "Dogri", "Korean": "\ub3c4\uadf8\ub9ac\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "doi"}, {"English": "Dravidian languages", "Korean": "\ub4dc\ub77c\ube44\ub2e4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "dra"}, {"English": "Lower Sorbian", "Korean": "\ud558\uc704 \uc18c\ub974\ube44\uc544\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "dsb"}, {"English": "Duala", "Korean": "\ub4c0\uc54c\ub77c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "dua"}, {"English": "Dutch, Middle (ca.1050-1350)", "Korean": "\uc911\uc138 \ub124\ub35c\ub780\ub4dc\uc5b4 (\uc57d 1050-1350)", "ISO 639-1 Code": "", "ISO 639-2 Code": "dum"}, {"English": "Dutch; Flemish", "Korean": "\ub124\ub35c\ub780\ub4dc\uc5b4; \ud50c\ub808\ubc0d\uc5b4", "ISO 639-1 Code": "nl", "ISO 639-2 Code": "dut (B) nld (T)"}, {"English": "Dyula", "Korean": "\uc958\ub77c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "dyu"}, {"English": "Dzongkha", "Korean": "\uc885\uce74\uc5b4", "ISO 639-1 Code": "dz", "ISO 639-2 Code": "dzo"}, {"English": "Efik", "Korean": "\uc5d0\ud53d\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "efi"}, {"English": "Egyptian (Ancient)", "Korean": "\uace0\ub300 \uc774\uc9d1\ud2b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "egy"}, {"English": "Ekajuk", "Korean": "\uc5d0\uce74\uc951\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "eka"}, {"English": "Greek, Modern (1453-)", "Korean": "\ud604\ub300 \uadf8\ub9ac\uc2a4\uc5b4 (1453-)", "ISO 639-1 Code": "el", "ISO 639-2 Code": "gre (B) ell (T)"}, {"English": "Elamite", "Korean": "\uc5d8\ub78c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "elx"}, {"English": "English", "Korean": "\uc601\uc5b4", "ISO 639-1 Code": "en", "ISO 639-2 Code": "eng"}, {"English": "English, Middle (1100-1500)", "Korean": "\uc911\uc138 \uc601\uc5b4 (1100-1500)", "ISO 639-1 Code": "", "ISO 639-2 Code": "enm"}, {"English": "Esperanto", "Korean": "\uc5d0\uc2a4\ud398\ub780\ud1a0\uc5b4", "ISO 639-1 Code": "eo", "ISO 639-2 Code": "epo"}, {"English": "Estonian", "Korean": "\uc5d0\uc2a4\ud1a0\ub2c8\uc544\uc5b4", "ISO 639-1 Code": "et", "ISO 639-2 Code": "est"}, {"English": "Basque", "Korean": "\ubc14\uc2a4\ud06c\uc5b4", "ISO 639-1 Code": "eu", "ISO 639-2 Code": "baq (B) eus (T)"}, {"English": "Ewe", "Korean": "\uc5d0\uc6e8\uc5b4", "ISO 639-1 Code": "ee", "ISO 639-2 Code": "ewe"}, {"English": "Ewondo", "Korean": "\uc5d0\uc6cc\ub178\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "ewo"}, {"English": "Fang", "Korean": "\ud321\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "fan"}, {"English": "Faroese", "Korean": "\ud398\ub85c\uc5b4", "ISO 639-1 Code": "fo", "ISO 639-2 Code": "fao"}, {"English": "Persian", "Korean": "\ud398\ub974\uc2dc\uc544\uc5b4", "ISO 639-1 Code": "fa", "ISO 639-2 Code": "per (B) fas (T)"}, {"English": "Fanti", "Korean": "\ud310\ud2f0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "fat"}, {"English": "Fijian", "Korean": "\ud53c\uc9c0\uc5b4", "ISO 639-1 Code": "fj", "ISO 639-2 Code": "fij"}, {"English": "Filipino; Pilipino", "Korean": "\ud544\ub9ac\ud540\uc5b4; \ud544\ub9ac\ud540\uc2dd \uc2a4\ud398\uc778\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "fil"}, {"English": "Finnish", "Korean": "\ud540\ub780\ub4dc\uc5b4", "ISO 639-1 Code": "fi", "ISO 639-2 Code": "fin"}, {"English": "Finno-Ugrian languages", "Korean": "\ud540\ub780\uc6b0\uadf8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "fiu"}, {"English": "Fon", "Korean": "\ud3f0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "fon"}, {"English": "French", "Korean": "\ud504\ub791\uc2a4\uc5b4", "ISO 639-1 Code": "fr", "ISO 639-2 Code": "fre (B) fra (T)"}, {"English": "French", "Korean": "\ud504\ub791\uc2a4\uc5b4", "ISO 639-1 Code": "fr", "ISO 639-2 Code": "fre (B) fra (T)"}, {"English": "French, Middle (ca.1400-1600)", "Korean": "\uc911\uc138 \ud504\ub791\uc2a4\uc5b4 (\uc57d 1400-1600)", "ISO 639-1 Code": "", "ISO 639-2 Code": "frm"}, {"English": "French, Old (842-ca.1400)", "Korean": "\uace0\ub300 \ud504\ub791\uc2a4\uc5b4 (842-\uc57d 1400)", "ISO 639-1 Code": "", "ISO 639-2 Code": "fro"}, {"English": "Northern Frisian", "Korean": "\ubd81\ubd80 \ud504\ub9ac\uc9c0\uc544\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "frr"}, {"English": "Eastern Frisian", "Korean": "\ub3d9\ubd80 \ud504\ub9ac\uc9c0\uc544\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "frs"}, {"English": "Western Frisian", "Korean": "\uc11c\ubd80 \ud504\ub9ac\uc9c0\uc544\uc5b4", "ISO 639-1 Code": "fy", "ISO 639-2 Code": "fry"}, {"English": "Fulah", "Korean": "\ud480\ub77c\uc5b4", "ISO 639-1 Code": "ff", "ISO 639-2 Code": "ful"}, {"English": "Friulian", "Korean": "\ud504\ub9ac\uc6b8\ub9ac\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "fur"}, {"English": "Ga", "Korean": "\uac00\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "gaa"}, {"English": "Gayo", "Korean": "\uac00\uc694\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "gay"}, {"English": "Gbaya", "Korean": "\uadf8\ubc14\uc57c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "gba"}, {"English": "Germanic languages", "Korean": "\uac8c\ub974\ub9cc\uc5b4\uc871 \uc5b8\uc5b4\ub4e4", "ISO 639-1 Code": "", "ISO 639-2 Code": "gem"}, {"English": "Georgian", "Korean": "\uc870\ub974\uc9c0\uc544\uc5b4", "ISO 639-1 Code": "ka", "ISO 639-2 Code": "geo (B) kat (T)"}, {"English": "German", "Korean": "\ub3c5\uc77c\uc5b4", "ISO 639-1 Code": "de", "ISO 639-2 Code": "ger (B) deu (T)"}, {"English": "Geez", "Korean": "\uae30\uc988\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "gez"}, {"English": "Gilbertese", "Korean": "\uae38\ubc84\ud2b8\uc81c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "gil"}, {"English": "Gaelic; Scottish Gaelic", "Korean": "\uac8c\uc77c\uc5b4; \uc2a4\ucf54\ud2c0\ub79c\ub4dc \uac8c\uc77c\uc5b4", "ISO 639-1 Code": "gd", "ISO 639-2 Code": "gla"}, {"English": "Irish", "Korean": "\uc544\uc77c\ub79c\ub4dc\uc5b4", "ISO 639-1 Code": "ga", "ISO 639-2 Code": "gle"}, {"English": "Galician", "Korean": "\uac08\ub9ac\uc2dc\uc544\uc5b4", "ISO 639-1 Code": "gl", "ISO 639-2 Code": "glg"}, {"English": "Manx", "Korean": "\ub9e8\uc12c\uc5b4", "ISO 639-1 Code": "gv", "ISO 639-2 Code": "glv"}, {"English": "German, Middle High (ca.1050-1500)", "Korean": "\uc911\uace0 \ub3c5\uc77c\uc5b4 (\uc57d 1050-1500)", "ISO 639-1 Code": "", "ISO 639-2 Code": "gmh"}, {"English": "German, Old High (ca.750-1050)", "Korean": "\uace0\ub300 \ub3c5\uc77c\uc5b4 (\uc57d 750-1050)", "ISO 639-1 Code": "", "ISO 639-2 Code": "goh"}, {"English": "Gondi", "Korean": "\uace4\ub514\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "gon"}, {"English": "Gorontalo", "Korean": "\uace0\ub860\ud0c8\ub85c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "gor"}, {"English": "Gothic", "Korean": "\uace0\ub515\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "got"}, {"English": "Grebo", "Korean": "\uadf8\ub808\ubcf4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "grb"}, {"English": "Greek, Ancient (to 1453)", "Korean": "\uace0\ub300 \uadf8\ub9ac\uc2a4\uc5b4 (1453\ub144 \uc774\uc804)", "ISO 639-1 Code": "", "ISO 639-2 Code": "grc"}, {"English": "Greek, Modern (1453-)", "Korean": "\ud604\ub300 \uadf8\ub9ac\uc2a4\uc5b4 (1453\ub144 \uc774\ud6c4)", "ISO 639-1 Code": "el", "ISO 639-2 Code": "gre (B) ell (T)"}, {"English": "Guarani", "Korean": "\uacfc\ub77c\ub2c8\uc5b4", "ISO 639-1 Code": "gn", "ISO 639-2 Code": "grn"}, {"English": "Swiss German; Alemannic; Alsatian", "Korean": "\uc2a4\uc704\uc2a4 \ub3c5\uc77c\uc5b4; \uc54c\ub808\ub9cc\uc5b4; \uc54c\uc790\uc2dc\uc548\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "gsw"}, {"English": "Gujarati", "Korean": "\uad6c\uc790\ub77c\ud2b8\uc5b4", "ISO 639-1 Code": "gu", "ISO 639-2 Code": "guj"}, {"English": "Gwich'in", "Korean": "\uadf8\uc704\uce5c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "gwi"}, {"English": "Haida", "Korean": "\ud558\uc774\ub2e4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "hai"}, {"English": "Haitian; Haitian Creole", "Korean": "\uc544\uc774\ud2f0\uc5b4; \uc544\uc774\ud2f0\ud06c\ub9ac\uc62c\uc5b4", "ISO 639-1 Code": "ht", "ISO 639-2 Code": "hat"}, {"English": "Hausa", "Korean": "\ud558\uc6b0\uc0ac\uc5b4", "ISO 639-1 Code": "ha", "ISO 639-2 Code": "hau"}, {"English": "Hawaiian", "Korean": "\ud558\uc640\uc774\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "haw"}, {"English": "Hebrew", "Korean": "\ud788\ube0c\ub9ac\uc5b4", "ISO 639-1 Code": "he", "ISO 639-2 Code": "heb"}, {"English": "Herero", "Korean": "\ud5e4\ub808\ub85c\uc5b4", "ISO 639-1 Code": "hz", "ISO 639-2 Code": "her"}, {"English": "Hiligaynon", "Korean": "\ud790\ub9ac\uac00\uc774\ub18d\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "hil"}, {"English": "Himachali languages; Western Pahari languages", "Korean": "\ud788\ub9c8\ucc30\ub9ac\uc5b4; \uc11c\ubd80 \ud30c\ud558\ub9ac\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "him"}, {"English": "Hindi", "Korean": "\ud78c\ub514\uc5b4", "ISO 639-1 Code": "hi", "ISO 639-2 Code": "hin"}, {"English": "Hittite", "Korean": "\ud788\ud0c0\uc774\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "hit"}, {"English": "Hmong; Mong", "Korean": "\ubabd\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "hmn"}, {"English": "Hiri Motu", "Korean": "\ud788\ub9ac \ubaa8\ud22c\uc5b4", "ISO 639-1 Code": "ho", "ISO 639-2 Code": "hmo"}, {"English": "Croatian", "Korean": "\ud06c\ub85c\uc544\ud2f0\uc544\uc5b4", "ISO 639-1 Code": "hr", "ISO 639-2 Code": "hrv"}, {"English": "Upper Sorbian", "Korean": "\uace0\uc704 \uc18c\ub974\ube44\uc544\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "hsb"}, {"English": "Hungarian", "Korean": "\ud5dd\uac00\ub9ac\uc5b4", "ISO 639-1 Code": "hu", "ISO 639-2 Code": "hun"}, {"English": "Hupa", "Korean": "\ud6c4\ud30c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "hup"}, {"English": "Armenian", "Korean": "\uc544\ub974\uba54\ub2c8\uc544\uc5b4", "ISO 639-1 Code": "hy", "ISO 639-2 Code": "arm (B) hye (T)"}, {"English": "Iban", "Korean": "\uc774\ubc18\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "iba"}, {"English": "Igbo", "Korean": "\uc774\uadf8\ubcf4\uc5b4", "ISO 639-1 Code": "ig", "ISO 639-2 Code": "ibo"}, {"English": "Icelandic", "Korean": "\uc544\uc774\uc2ac\ub780\ub4dc\uc5b4", "ISO 639-1 Code": "is", "ISO 639-2 Code": "ice (B) isl (T)"}, {"English": "Ido", "Korean": "\uc774\ub3c4\uc5b4", "ISO 639-1 Code": "io", "ISO 639-2 Code": "ido"}, {"English": "Sichuan Yi; Nuosu", "Korean": "\uc2dc\ucd28 \uc774\uc5b4; \ub204\uc624\uc218\uc5b4", "ISO 639-1 Code": "ii", "ISO 639-2 Code": "iii"}, {"English": "Ijo languages", "Korean": "\uc774\uc870\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "ijo"}, {"English": "Inuktitut", "Korean": "\uc774\ub205\ud2f0\ud22c\ud2b8\uc5b4", "ISO 639-1 Code": "iu", "ISO 639-2 Code": "iku"}, {"English": "Interlingue; Occidental", "Korean": "\uc778\ud130\ub9c1\uad6c\uc5d0; \uc624\ud0a4\ub374\ud0c8\uc5b4", "ISO 639-1 Code": "ie", "ISO 639-2 Code": "ile"}, {"English": "Iloko", "Korean": "\uc77c\ub85c\ucf54\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "ilo"}, {"English": "Interlingua (International Auxiliary Language Association)", "Korean": "\uc778\ud130\ub9c1\uad6c\uc544 (\uad6d\uc81c \ubcf4\uc870 \uc5b8\uc5b4 \ud611\ud68c)", "ISO 639-1 Code": "ia", "ISO 639-2 Code": "ina"}, {"English": "Indic languages", "Korean": "\uc778\ub4dc\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "inc"}, {"English": "Indonesian", "Korean": "\uc778\ub3c4\ub124\uc2dc\uc544\uc5b4", "ISO 639-1 Code": "id", "ISO 639-2 Code": "ind"}, {"English": "Indo-European languages", "Korean": "\uc778\ub3c4\uc720\ub7fd\uc5b4\uc871", "ISO 639-1 Code": "", "ISO 639-2 Code": "ine"}, {"English": "Ingush", "Korean": "\uc789\uad6c\uc2dc\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "inh"}, {"English": "Inupiaq", "Korean": "\uc774\ub204\ud53c\uc544\ud06c\uc5b4", "ISO 639-1 Code": "ik", "ISO 639-2 Code": "ipk"}, {"English": "Iranian languages", "Korean": "\uc774\ub780\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "ira"}, {"English": "Iroquoian languages", "Korean": "\uc774\ub85c\ucfe0\uc544\uc5b4\uc871", "ISO 639-1 Code": "", "ISO 639-2 Code": "iro"}, {"English": "Icelandic", "Korean": "\uc544\uc774\uc2ac\ub780\ub4dc\uc5b4", "ISO 639-1 Code": "is", "ISO 639-2 Code": "ice (B) isl (T)"}, {"English": "Italian", "Korean": "\uc774\ud0c8\ub9ac\uc544\uc5b4", "ISO 639-1 Code": "it", "ISO 639-2 Code": "ita"}, {"English": "Javanese", "Korean": "\uc790\ubc14\uc5b4", "ISO 639-1 Code": "jv", "ISO 639-2 Code": "jav"}, {"English": "Lojban", "Korean": "\ub85c\uc988\ubc18\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "jbo"}, {"English": "Japanese", "Korean": "\uc77c\ubcf8\uc5b4", "ISO 639-1 Code": "ja", "ISO 639-2 Code": "jpn"}, {"English": "Judeo-Persian", "Korean": "\uc720\ub300-\ud398\ub974\uc2dc\uc544\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "jpr"}, {"English": "Judeo-Arabic", "Korean": "\uc720\ub300\uc5b4-\uc544\ub77c\ube44\uc544\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "jrb"}, {"English": "Kara-Kalpak", "Korean": "\uce74\ub77c\uce7c\ud30c\ud06c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "kaa"}, {"English": "Kabyle", "Korean": "\uce74\ube4c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "kab"}, {"English": "Kachin; Jingpho", "Korean": "\uce74\uce5c\uc5b4; \uc9d5\ud3ec\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "kac"}, {"English": "Kalaallisut; Greenlandic", "Korean": "\uce7c\ub77c\ub9ac\uc288\ud2b8\uc5b4; \uadf8\ub9b0\ub780\ub4dc\uc5b4", "ISO 639-1 Code": "kl", "ISO 639-2 Code": "kal"}, {"English": "Kamba", "Korean": "\uce84\ubc14\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "kam"}, {"English": "Kannada", "Korean": "\uce78\ub098\ub2e4\uc5b4", "ISO 639-1 Code": "kn", "ISO 639-2 Code": "kan"}, {"English": "Karen languages", "Korean": "\uce74\ub80c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "kar"}, {"English": "Kashmiri", "Korean": "\uce74\uc288\ubbf8\ub9ac\uc5b4", "ISO 639-1 Code": "ks", "ISO 639-2 Code": "kas"}, {"English": "Georgian", "Korean": "\uc870\ub974\uc9c0\uc544\uc5b4", "ISO 639-1 Code": "ka", "ISO 639-2 Code": "geo (B) kat (T)"}, {"English": "Kanuri", "Korean": "\uce74\ub204\ub9ac\uc5b4", "ISO 639-1 Code": "kr", "ISO 639-2 Code": "kau"}, {"English": "Kawi", "Korean": "\uce74\uc704\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "kaw"}, {"English": "Kazakh", "Korean": "\uce74\uc790\ud750\uc5b4", "ISO 639-1 Code": "kk", "ISO 639-2 Code": "kaz"}, {"English": "Kabardian", "Korean": "\uce74\ubc14\ub974\ub514\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "kbd"}, {"English": "Khasi", "Korean": "\uce74\uc2dc\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "kha"}, {"English": "Khoisan languages", "Korean": "\ucf54\uc774\uc0b0\uc5b4\uc871", "ISO 639-1 Code": "", "ISO 639-2 Code": "khi"}, {"English": "Central Khmer", "Korean": "\uc911\ubd80 \uce84\ubcf4\ub514\uc544\uc5b4", "ISO 639-1 Code": "km", "ISO 639-2 Code": "khm"}, {"English": "Khotanese; Sakan", "Korean": "\ud638\ud0c0\ub124\uc2a4\uc5b4; \uc0ac\uce78\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "kho"}, {"English": "Kikuyu; Gikuyu", "Korean": "\ud0a4\ucfe0\uc720\uc5b4; \uae30\ucfe0\uc720\uc5b4", "ISO 639-1 Code": "ki", "ISO 639-2 Code": "kik"}, {"English": "Kinyarwanda", "Korean": "\ud0a8\uc57c\ub8e8\uc644\ub2e4\uc5b4", "ISO 639-1 Code": "rw", "ISO 639-2 Code": "kin"}, {"English": "Kirghiz; Kyrgyz", "Korean": "\ud0a4\ub974\uae30\uc988\uc5b4", "ISO 639-1 Code": "ky", "ISO 639-2 Code": "kir"}, {"English": "Kimbundu", "Korean": "\ud0b4\ubd84\ub450\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "kmb"}, {"English": "Konkani", "Korean": "\ucf58\uce74\ub2c8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "kok"}, {"English": "Komi", "Korean": "\ucf54\ubbf8\uc5b4", "ISO 639-1 Code": "kv", "ISO 639-2 Code": "kom"}, {"English": "Kongo", "Korean": "\ucf69\uace0\uc5b4", "ISO 639-1 Code": "kg", "ISO 639-2 Code": "kon"}, {"English": "Korean", "Korean": "\ud55c\uad6d\uc5b4", "ISO 639-1 Code": "ko", "ISO 639-2 Code": "kor"}, {"English": "Kosraean", "Korean": "\ucf54\uc2a4\ub77c\uc5d0\uc548\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "kos"}, {"English": "Kpelle", "Korean": "\ucf00\ud3a0\ub808\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "kpe"}, {"English": "Karachay-Balkar", "Korean": "\uce74\ub77c\ucc28\uc774-\ubc1c\uce74\ub974\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "krc"}, {"English": "Karelian", "Korean": "\uce74\ub810\ub9ac\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "krl"}, {"English": "Kru languages", "Korean": "\ud06c\ub8e8\uc5b4\uc871", "ISO 639-1 Code": "", "ISO 639-2 Code": "kro"}, {"English": "Kurukh", "Korean": "\ucfe0\ub8e8\ud06c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "kru"}, {"English": "Kuanyama; Kwanyama", "Korean": "\ucfe0\uc548\uc57c\ub9c8\uc5b4; \ucf70\ub0d0\ub9c8\uc5b4", "ISO 639-1 Code": "kj", "ISO 639-2 Code": "kua"}, {"English": "Kumyk", "Korean": "\ucfe0\ubbf9\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "kum"}, {"English": "Kurdish", "Korean": "\ucfe0\ub974\ub4dc\uc5b4", "ISO 639-1 Code": "ku", "ISO 639-2 Code": "kur"}, {"English": "Kutenai", "Korean": "\ucfe0\ud14c\ub124\uc774\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "kut"}, {"English": "Ladino", "Korean": "\ub77c\ub514\ub178\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "lad"}, {"English": "Lahnda", "Korean": "\ub77c\ud750\ub2e4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "lah"}, {"English": "Lamba", "Korean": "\ub78c\ubc14\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "lam"}, {"English": "Lao", "Korean": "\ub77c\uc624\uc5b4", "ISO 639-1 Code": "lo", "ISO 639-2 Code": "lao"}, {"English": "Latin", "Korean": "\ub77c\ud2f4\uc5b4", "ISO 639-1 Code": "la", "ISO 639-2 Code": "lat"}, {"English": "Latvian", "Korean": "\ub77c\ud2b8\ube44\uc544\uc5b4", "ISO 639-1 Code": "lv", "ISO 639-2 Code": "lav"}, {"English": "Lezghian", "Korean": "\ub808\uc988\uae30\uc548\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "lez"}, {"English": "Limburgan; Limburger; Limburgish", "Korean": "\ub9bc\ubc84\uac04\uc5b4", "ISO 639-1 Code": "li", "ISO 639-2 Code": "lim"}, {"English": "Lingala", "Korean": "\ub9c1\uac08\ub77c\uc5b4", "ISO 639-1 Code": "ln", "ISO 639-2 Code": "lin"}, {"English": "Lithuanian", "Korean": "\ub9ac\ud22c\uc544\ub2c8\uc544\uc5b4", "ISO 639-1 Code": "lt", "ISO 639-2 Code": "lit"}, {"English": "Mongo", "Korean": "\ubabd\uace0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "lol"}, {"English": "Lozi", "Korean": "\ub85c\uc9c0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "loz"}, {"English": "Luxembourgish; Letzeburgesch", "Korean": "\ub8e9\uc148\ubd80\ub974\ud06c\uc5b4", "ISO 639-1 Code": "lb", "ISO 639-2 Code": "ltz"}, {"English": "Luba-Lulua", "Korean": "\ub8e8\ubc14-\ub8f0\ub8e8\uc544\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "lua"}, {"English": "Luba-Katanga", "Korean": "\ub8e8\ubc14-\uce74\ud0d5\uac00\uc5b4", "ISO 639-1 Code": "lu", "ISO 639-2 Code": "lub"}, {"English": "Ganda", "Korean": "\uac04\ub2e4\uc5b4", "ISO 639-1 Code": "lg", "ISO 639-2 Code": "lug"}, {"English": "Luiseno", "Korean": "\ub8e8\uc774\uc138\ub178\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "lui"}, {"English": "Lunda", "Korean": "\ub8ec\ub2e4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "lun"}, {"English": "Luo (Kenya and Tanzania)", "Korean": "\ub8e8\uc624\uc5b4 (\ucf00\ub0d0 \ubc0f \ud0c4\uc790\ub2c8\uc544)", "ISO 639-1 Code": "", "ISO 639-2 Code": "luo"}, {"English": "Lushai", "Korean": "\ub8e8\uc0e4\uc774\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "lus"}, {"English": "Macedonian", "Korean": "\ub9c8\ucf00\ub3c4\ub2c8\uc544\uc5b4", "ISO 639-1 Code": "mk", "ISO 639-2 Code": "mac (B) mkd (T)"}, {"English": "Madurese", "Korean": "\ub9c8\ub450\ub77c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "mad"}, {"English": "Magahi", "Korean": "\ub9c8\uac00\ud788\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "mag"}, {"English": "Marshallese", "Korean": "\ub9c8\uc15c\uc5b4", "ISO 639-1 Code": "mh", "ISO 639-2 Code": "mah"}, {"English": "Maithili", "Korean": "\ub9c8\uc774\ud2f8\ub9ac\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "mai"}, {"English": "Makasar", "Korean": "\ub9c8\uce74\uc0ac\ub974\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "mak"}, {"English": "Malayalam", "Korean": "\ub9d0\ub77c\uc584\ub78c\uc5b4", "ISO 639-1 Code": "ml", "ISO 639-2 Code": "mal"}, {"English": "Mandingo", "Korean": "\ub9cc\ub529\uace0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "man"}, {"English": "Maori", "Korean": "\ub9c8\uc624\ub9ac\uc5b4", "ISO 639-1 Code": "mi", "ISO 639-2 Code": "mao (B) mri (T)"}, {"English": "Austronesian languages", "Korean": "\uc624\uc2a4\ud2b8\ub85c\ub124\uc2dc\uc544\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "map"}, {"English": "Marathi", "Korean": "\ub9c8\ub77c\ud2f0\uc5b4", "ISO 639-1 Code": "mr", "ISO 639-2 Code": "mar"}, {"English": "Masai", "Korean": "\ub9c8\uc0ac\uc774\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "mas"}, {"English": "Malay", "Korean": "\ub9d0\ub808\uc774\uc5b4", "ISO 639-1 Code": "ms", "ISO 639-2 Code": "may (B) msa (T)"}, {"English": "Moksha", "Korean": "\ubaa8\ud06c\uc0e4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "mdf"}, {"English": "Mandar", "Korean": "\ub9cc\ub2e4\ub974\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "mdr"}, {"English": "Mende", "Korean": "\uba58\ub370\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "men"}, {"English": "Irish, Middle (900-1200)", "Korean": "\uc544\uc77c\ub79c\ub4dc\uc5b4, \uc911\uc138 (900-1200)", "ISO 639-1 Code": "", "ISO 639-2 Code": "mga"}, {"English": "Mi'kmaq; Micmac", "Korean": "\ubbf8\ud06c\ub9c8\ud06c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "mic"}, {"English": "Minangkabau", "Korean": "\ubbf8\ub0ad\uce74\ubc14\uc6b0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "min"}, {"English": "Uncoded languages", "Korean": "\ubd80\ud638\ud654\ub418\uc9c0 \uc54a\uc740 \uc5b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "mis"}, {"English": "Macedonian", "Korean": "\ub9c8\ucf00\ub3c4\ub2c8\uc544\uc5b4", "ISO 639-1 Code": "mk", "ISO 639-2 Code": "mac (B) mkd (T)"}, {"English": "Mon-Khmer languages", "Korean": "\ubaac-\ud06c\uba54\ub974\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "mkh"}, {"English": "Malagasy", "Korean": "\ub9c8\ub2e4\uac00\uc2a4\uce74\ub974\uc5b4", "ISO 639-1 Code": "mg", "ISO 639-2 Code": "mlg"}, {"English": "Maltese", "Korean": "\ubab0\ud0c0\uc5b4", "ISO 639-1 Code": "mt", "ISO 639-2 Code": "mlt"}, {"English": "Manchu", "Korean": "\ub9cc\uc8fc\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "mnc"}, {"English": "Manipuri", "Korean": "\ub9c8\ub2c8\ud478\ub9ac\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "mni"}, {"English": "Manobo languages", "Korean": "\ub9c8\ub178\ubcf4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "mno"}, {"English": "Mohawk", "Korean": "\ubaa8\ud638\ud06c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "moh"}, {"English": "Mongolian", "Korean": "\ubabd\uace8\uc5b4", "ISO 639-1 Code": "mn", "ISO 639-2 Code": "mon"}, {"English": "Mossi", "Korean": "\ubaa8\uc2dc\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "mos"}, {"English": "Maori", "Korean": "\ub9c8\uc624\ub9ac\uc5b4", "ISO 639-1 Code": "mi", "ISO 639-2 Code": "mao (B) mri (T)"}, {"English": "Malay", "Korean": "\ub9d0\ub808\uc774\uc5b4", "ISO 639-1 Code": "ms", "ISO 639-2 Code": "may (B) msa (T)"}, {"English": "Multiple languages", "Korean": "\ub2e4\uc591\ud55c \uc5b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "mul"}, {"English": "Munda languages", "Korean": "\ubb38\ub2e4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "mun"}, {"English": "Creek", "Korean": "\ud06c\ub9ad\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "mus"}, {"English": "Mirandese", "Korean": "\ubbf8\ub780\ub514\uc988\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "mwl"}, {"English": "Marwari", "Korean": "\ub9c8\ub974\uc640\ub9ac\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "mwr"}, {"English": "Burmese", "Korean": "\ubc84\ub9c8\uc5b4", "ISO 639-1 Code": "my", "ISO 639-2 Code": "bur (B) mya (T)"}, {"English": "Mayan languages", "Korean": "\ub9c8\uc57c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "myn"}, {"English": "Erzya", "Korean": "\uc5d0\ub974\uc9c0\uc544\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "myv"}, {"English": "Nahuatl languages", "Korean": "\ub098\uc640\ud2c0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "nah"}, {"English": "North American Indian languages", "Korean": "\ubd81\uc544\uba54\ub9ac\uce74 \uc778\ub514\uc5b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "nai"}, {"English": "Neapolitan", "Korean": "\ub098\ud3f4\ub9ac\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "nap"}, {"English": "Nauru", "Korean": "\ub098\uc6b0\ub8e8\uc5b4", "ISO 639-1 Code": "na", "ISO 639-2 Code": "nau"}, {"English": "Navajo; Navaho", "Korean": "\ub098\ubc14\ud638\uc5b4", "ISO 639-1 Code": "nv", "ISO 639-2 Code": "nav"}, {"English": "Ndebele, South; South Ndebele", "Korean": "\ub0a8\ubd80 \uc740\ub370\ubca8\ub808\uc5b4", "ISO 639-1 Code": "nr", "ISO 639-2 Code": "nbl"}, {"English": "Ndebele, North; North Ndebele", "Korean": "\ubd81\ubd80 \uc740\ub370\ubca8\ub808\uc5b4", "ISO 639-1 Code": "nd", "ISO 639-2 Code": "nde"}, {"English": "Ndonga", "Korean": "\ub3d9\uac00 \uc5b4", "ISO 639-1 Code": "ng", "ISO 639-2 Code": "ndo"}, {"English": "Low German; Low Saxon; German, Low; Saxon, Low", "Korean": "\uc800\uc9c0 \ub3c5\uc77c\uc5b4; \ub85c\uc6b0 \uc0ad\uc2a8\uc5b4; \ub3c5\uc77c\uc5b4, \ub85c\uc6b0; \uc0ad\uc2a8\uc5b4, \ub85c\uc6b0", "ISO 639-1 Code": "", "ISO 639-2 Code": "nds"}, {"English": "Nepali", "Korean": "\ub124\ud314\uc5b4", "ISO 639-1 Code": "ne", "ISO 639-2 Code": "nep"}, {"English": "Nepal Bhasa; Newari", "Korean": "\ub124\ud314 \ubc14\uc0ac; \ub124\uc640\ub9ac\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "new"}, {"English": "Nias", "Korean": "\ub2c8\uc544\uc2a4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "nia"}, {"English": "Niger-Kordofanian languages", "Korean": "\ub2c8\uc81c\ub974-\ucf54\ub974\ub3c4\ud30c\ub2c8\uc548\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "nic"}, {"English": "Niuean", "Korean": "\ub2c8\uc6b0\uc5d0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "niu"}, {"English": "Dutch; Flemish", "Korean": "\ub124\ub35c\ub780\ub4dc\uc5b4; \ud50c\ub808\ubc0d\uc5b4", "ISO 639-1 Code": "nl", "ISO 639-2 Code": "dut (B) nld (T)"}, {"English": "Norwegian Nynorsk; Nynorsk, Norwegian", "Korean": "\ub178\ub974\uc6e8\uc774\uc5b4 \ub258\ub178\ub974\uc2a4\ud06c; \ub178\ub974\uc6e8\uc774\uc5b4 \ub258\ub178\ub974\uc2a4\ud06c", "ISO 639-1 Code": "nn", "ISO 639-2 Code": "nno"}, {"English": "Bokm\u00e5l, Norwegian; Norwegian Bokm\u00e5l", "Korean": "\ub178\ub974\uc6e8\uc774\uc5b4 \ubcf4\ud06c\ubab0; \ub178\ub974\uc6e8\uc774\uc5b4 \ubcf4\ud06c\ubab0", "ISO 639-1 Code": "nb", "ISO 639-2 Code": "nob"}, {"English": "Nogai", "Korean": "\ub178\uac00\uc774\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "nog"}, {"English": "Norse, Old", "Korean": "\ub178\ub974\uc2a4, \uace0\ub300\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "non"}, {"English": "Norwegian", "Korean": "\ub178\ub974\uc6e8\uc774\uc5b4", "ISO 639-1 Code": "no", "ISO 639-2 Code": "nor"}, {"English": "N'Ko", "Korean": "\uc5d4\ucf54\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "nqo"}, {"English": "Pedi; Sepedi; Northern Sotho", "Korean": "\ud398\ub514\uc5b4; \uc138\ud398\ub514\uc5b4; \ubd81\ubd80 \uc18c\ud1a0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "nso"}, {"English": "Nubian languages", "Korean": "\ub204\ube44\uc544\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "nub"}, {"English": "Classical Newari; Old Newari; Classical Nepal Bhasa", "Korean": "\uace0\uc804 \ub124\uc640\ub9ac\uc5b4; \uc624\ub798\ub41c \ub124\uc640\ub9ac\uc5b4; \uace0\uc804 \ub124\ud314 \ubc14\uc0ac", "ISO 639-1 Code": "", "ISO 639-2 Code": "nwc"}, {"English": "Chichewa; Chewa; Nyanja", "Korean": "\uce58\uccb4\uc640\uc5b4; \uce58\uc640\uc5b4; \ub0e5\uc790\uc5b4", "ISO 639-1 Code": "ny", "ISO 639-2 Code": "nya"}, {"English": "Nyamwezi", "Korean": "\ub2c8\uc554\uc6e8\uc9c0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "nym"}, {"English": "Nyankole", "Korean": "\ub2c8\uc548\ucf5c\ub808\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "nyn"}, {"English": "Nyoro", "Korean": "\ub2c8\uc624\ub85c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "nyo"}, {"English": "Nzima", "Korean": "\uc740\uc81c\ub9c8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "nzi"}, {"English": "Occitan (post 1500)", "Korean": "\uc624\ud0a4\ud0c4\uc5b4 (1500\ub144 \uc774\ud6c4)", "ISO 639-1 Code": "oc", "ISO 639-2 Code": "oci"}, {"English": "Ojibwa", "Korean": "\uc624\uc9c0\ube0c\uc640\uc5b4", "ISO 639-1 Code": "oj", "ISO 639-2 Code": "oji"}, {"English": "Oriya", "Korean": "\uc624\ub9ac\uc57c\uc5b4", "ISO 639-1 Code": "or", "ISO 639-2 Code": "ori"}, {"English": "Oromo", "Korean": "\uc624\ub85c\ubaa8\uc5b4", "ISO 639-1 Code": "om", "ISO 639-2 Code": "orm"}, {"English": "Osage", "Korean": "\uc624\uc138\uc774\uc9c0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "osa"}, {"English": "Ossetian; Ossetic", "Korean": "\uc624\uc138\ud2f1\uc5b4", "ISO 639-1 Code": "os", "ISO 639-2 Code": "oss"}, {"English": "Turkish, Ottoman (1500-1928)", "Korean": "\ud130\ud0a4\uc5b4, \uc624\ud1a0\ub9cc (1500-1928)", "ISO 639-1 Code": "", "ISO 639-2 Code": "ota"}, {"English": "Otomian languages", "Korean": "\uc624\ud1a0\ubbf8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "oto"}, {"English": "Papuan languages", "Korean": "\ud30c\ud478\uc544\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "paa"}, {"English": "Pangasinan", "Korean": "\ud321\uac00\uc2dc\ub09c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "pag"}, {"English": "Pahlavi", "Korean": "\ud314\ub77c\ube44\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "pal"}, {"English": "Pampanga; Kapampangan", "Korean": "\ud31c\ud321\uac00\uc5b4; \uce74\ud31c\ud321\uac00\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "pam"}, {"English": "Panjabi; Punjabi", "Korean": "\ud380\uc7a1\uc5b4; \ud380\uc7a1\ube44\uc5b4", "ISO 639-1 Code": "pa", "ISO 639-2 Code": "pan"}, {"English": "Papiamento", "Korean": "\ud30c\ud53c\uc544\uba58\ud1a0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "pap"}, {"English": "Palauan", "Korean": "\ud314\ub77c\uc6b0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "pau"}, {"English": "Persian, Old (ca.600-400 B.C.)", "Korean": "\uace0\ub300 \ud398\ub974\uc2dc\uc544\uc5b4 (\uc57d 600-400 B.C.)", "ISO 639-1 Code": "", "ISO 639-2 Code": "peo"}, {"English": "Persian", "Korean": "\ud398\ub974\uc2dc\uc544\uc5b4", "ISO 639-1 Code": "fa", "ISO 639-2 Code": "per (B) fas (T)"}, {"English": "Philippine languages", "Korean": "\ud544\ub9ac\ud540\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "phi"}, {"English": "Phoenician", "Korean": "\ud3ec\uc5d0\ub2c8\uc158\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "phn"}, {"English": "Pali", "Korean": "\ud314\ub9ac\uc5b4", "ISO 639-1 Code": "pi", "ISO 639-2 Code": "pli"}, {"English": "Polish", "Korean": "\ud3f4\ub780\ub4dc\uc5b4", "ISO 639-1 Code": "pl", "ISO 639-2 Code": "pol"}, {"English": "Pohnpeian", "Korean": "\ud3ec\ub098\ud398\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "pon"}, {"English": "Portuguese", "Korean": "\ud3ec\ub974\ud22c\uac08\uc5b4", "ISO 639-1 Code": "pt", "ISO 639-2 Code": "por"}, {"English": "Prakrit languages", "Korean": "\ud504\ub77c\ud06c\ub9ac\ud2b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "pra"}, {"English": "Proven\u00e7al, Old (to 1500); Occitan, Old (to 1500)", "Korean": "\ud504\ub85c\ubc29\uc2a4\uc5b4, \uace0\ub300 (1500\ub144 \uc774\uc804); \uc624\ud06c\uc5b4, \uace0\ub300 (1500\ub144 \uc774\uc804)", "ISO 639-1 Code": "", "ISO 639-2 Code": "pro"}, {"English": "Pushto; Pashto", "Korean": "\ud478\uc2dc\ud1a0; \ud30c\uc288\ud1a0\uc5b4", "ISO 639-1 Code": "ps", "ISO 639-2 Code": "pus"}, {"English": "Reserved for local use", "Korean": "\uc9c0\uc5ed \uc0ac\uc6a9 \uc6a9\ub3c4\ub85c \uc608\uc57d\ub428", "ISO 639-1 Code": "", "ISO 639-2 Code": "qaa-qtz"}, {"English": "Quechua", "Korean": "\ucf00\ucd94\uc544\uc5b4", "ISO 639-1 Code": "qu", "ISO 639-2 Code": "que"}, {"English": "Rajasthani", "Korean": "\ub77c\uc790\uc2a4\ud0c4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "raj"}, {"English": "Rapanui", "Korean": "\ub77c\ud30c\ub204\uc774\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "rap"}, {"English": "Rarotongan; Cook Islands Maori", "Korean": "\ub77c\ub85c\ud1a0\uac04\uc5b4; \ucfe1 \uc81c\ub3c4 \ub9c8\uc624\ub9ac\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "rar"}, {"English": "Romance languages", "Korean": "\ub85c\ub9e8\uc2a4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "roa"}, {"English": "Romansh", "Korean": "\ub85c\ub9cc\uc288\uc5b4", "ISO 639-1 Code": "rm", "ISO 639-2 Code": "roh"}, {"English": "Romany", "Korean": "\ub85c\ub9c8\ub2c8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "rom"}, {"English": "Romanian; Moldavian; Moldovan", "Korean": "\ub85c\ub9c8\ub2c8\uc5b4; \ubaa8\ub974\ub3c4\ubc14\uc5b4; \ubaa8\ub974\ub3c4\ubc18\uc5b4", "ISO 639-1 Code": "ro", "ISO 639-2 Code": "rum (B) ron (T)"}, {"English": "Romanian; Moldavian; Moldovan", "Korean": "\ub85c\ub9c8\ub2c8\uc5b4; \ubaa8\ub974\ub3c4\ubc14\uc5b4; \ubaa8\ub974\ub3c4\ubc18\uc5b4", "ISO 639-1 Code": "ro", "ISO 639-2 Code": "rum (B) ron (T)"}, {"English": "Rundi", "Korean": "\ub8ec\ub514\uc5b4", "ISO 639-1 Code": "rn", "ISO 639-2 Code": "run"}, {"English": "Aromanian; Arumanian; Macedo-Romanian", "Korean": "\uc544\ub85c\ub9c8\ub2c8\uc544\uc5b4; \uc544\ub8e8\ub9c8\ub2c8\uc544\uc5b4; \ub9c8\ucf00\ub3c4-\ub85c\ub9c8\ub2c8\uc544\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "rup"}, {"English": "Russian", "Korean": "\ub7ec\uc2dc\uc544\uc5b4", "ISO 639-1 Code": "ru", "ISO 639-2 Code": "rus"}, {"English": "Sandawe", "Korean": "\uc0b0\ub2e4\uc6e8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sad"}, {"English": "Sango", "Korean": "\uc0c1\uace0\uc5b4", "ISO 639-1 Code": "sg", "ISO 639-2 Code": "sag"}, {"English": "Yakut", "Korean": "\uc57c\ucfe0\ud2b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sah"}, {"English": "South American Indian languages", "Korean": "\ub0a8\ubbf8 \uc778\ub514\uc5b8 \uc5b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sai"}, {"English": "Salishan languages", "Korean": "\uc0d0\ub9ac\uc288\uc5b4 \uc5b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sal"}, {"English": "Samaritan Aramaic", "Korean": "\uc0ac\ub9c8\ub9ac\uc544 \uc544\ub78c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sam"}, {"English": "Sanskrit", "Korean": "\uc0b0\uc2a4\ud06c\ub9ac\ud2b8\uc5b4", "ISO 639-1 Code": "sa", "ISO 639-2 Code": "san"}, {"English": "Sasak", "Korean": "\uc0ac\uc0ac\ud06c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sas"}, {"English": "Santali", "Korean": "\uc0b0\ud0c8\ub9ac\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sat"}, {"English": "Sicilian", "Korean": "\uc2dc\uce60\ub9ac\uc544\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "scn"}, {"English": "Scots", "Korean": "\uc2a4\ucf54\ud2b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sco"}, {"English": "Selkup", "Korean": "\uc140\ucfe0\ud504\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sel"}, {"English": "Semitic languages", "Korean": "\uc138\ubbf8\ud2f1\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sem"}, {"English": "Irish, Old (to 900)", "Korean": "\uc544\uc77c\ub79c\ub4dc\uc5b4, \uace0\ub300 (900\ub144 \uc804\uae4c\uc9c0)", "ISO 639-1 Code": "", "ISO 639-2 Code": "sga"}, {"English": "Sign Languages", "Korean": "\uc218\ud654 \uc5b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sgn"}, {"English": "Shan", "Korean": "\uc0e8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "shn"}, {"English": "Sidamo", "Korean": "\uc2dc\ub2e4\ubaa8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sid"}, {"English": "Sinhala; Sinhalese", "Korean": "\uc2e0\ud560\ub77c\uc5b4; \uc2e0\ud560\ub77c\ub808\uc5b4", "ISO 639-1 Code": "si", "ISO 639-2 Code": "sin"}, {"English": "Siouan languages", "Korean": "\uc2dc\uc628\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sio"}, {"English": "Sino-Tibetan languages", "Korean": "\uc911\uad6d-\ud2f0\ubca0\ud2b8\uc5b4 \uc5b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sit"}, {"English": "Slavic languages", "Korean": "\uc2ac\ub77c\ube0c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sla"}, {"English": "Slovak", "Korean": "\uc2ac\ub85c\ubc14\ud0a4\uc544\uc5b4", "ISO 639-1 Code": "sk", "ISO 639-2 Code": "slo (B) slk (T)"}, {"English": "Slovak", "Korean": "\uc2ac\ub85c\ubc14\ud0a4\uc544\uc5b4", "ISO 639-1 Code": "sk", "ISO 639-2 Code": "slo (B) slk (T)"}, {"English": "Slovenian", "Korean": "\uc2ac\ub85c\ubca0\ub2c8\uc544\uc5b4", "ISO 639-1 Code": "sl", "ISO 639-2 Code": "slv"}, {"English": "Southern Sami", "Korean": "\ub0a8\ubd80 \uc0ac\ubbf8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sma"}, {"English": "Northern Sami", "Korean": "\ubd81\ubd80 \uc0ac\ubbf8\uc5b4", "ISO 639-1 Code": "se", "ISO 639-2 Code": "sme"}, {"English": "Sami languages", "Korean": "\uc0ac\ubbf8\uc5b4 \uc5b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "smi"}, {"English": "Lule Sami", "Korean": "\ub8f0\ub808 \uc0ac\ubbf8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "smj"}, {"English": "Inari Sami", "Korean": "\uc774\ub098\ub9ac \uc0ac\ubbf8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "smn"}, {"English": "Samoan", "Korean": "\uc0ac\ubaa8\uc544\uc5b4", "ISO 639-1 Code": "sm", "ISO 639-2 Code": "smo"}, {"English": "Skolt Sami", "Korean": "\uc2a4\ucf5c\ud2b8 \uc0ac\ubbf8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sms"}, {"English": "Shona", "Korean": "\uc1fc\ub098\uc5b4", "ISO 639-1 Code": "sn", "ISO 639-2 Code": "sna"}, {"English": "Sindhi", "Korean": "\uc2e0\ub514\uc5b4", "ISO 639-1 Code": "sd", "ISO 639-2 Code": "snd"}, {"English": "Soninke", "Korean": "\uc18c\ub2cc\ucf00\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "snk"}, {"English": "Sogdian", "Korean": "\uc18c\uadf8\ub514\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sog"}, {"English": "Somali", "Korean": "\uc18c\ub9d0\ub9ac\uc5b4", "ISO 639-1 Code": "so", "ISO 639-2 Code": "som"}, {"English": "Songhai languages", "Korean": "\uc1a1\ud558\uc774\uc5b4 \uc5b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "son"}, {"English": "Sotho, Southern", "Korean": "\uc18c\ud1a0\uc5b4, \ub0a8\ubd80", "ISO 639-1 Code": "st", "ISO 639-2 Code": "sot"}, {"English": "Spanish; Castilian", "Korean": "\uc2a4\ud398\uc778\uc5b4; \uce74\uc2a4\ud2f0\uc57c\uc5b4", "ISO 639-1 Code": "es", "ISO 639-2 Code": "spa"}, {"English": "Albanian", "Korean": "\uc54c\ubc14\ub2c8\uc544\uc5b4", "ISO 639-1 Code": "sq", "ISO 639-2 Code": "alb (B) sqi (T)"}, {"English": "Sardinian", "Korean": "\uc0ac\ub974\ub514\ub2c8\uc544\uc5b4", "ISO 639-1 Code": "sc", "ISO 639-2 Code": "srd"}, {"English": "Sranan Tongo", "Korean": "\uc2a4\ub77c\ub09c \ud1b5\uace0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "srn"}, {"English": "Serbian", "Korean": "\uc138\ub974\ube44\uc544\uc5b4", "ISO 639-1 Code": "sr", "ISO 639-2 Code": "srp"}, {"English": "Serer", "Korean": "\uc138\ub808\ub974\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "srr"}, {"English": "Nilo-Saharan languages", "Korean": "\ub2c8\ub85c-\uc0ac\ud558\ub77c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "ssa"}, {"English": "Swati", "Korean": "\uc2a4\uc640\ud2f0\uc5b4", "ISO 639-1 Code": "ss", "ISO 639-2 Code": "ssw"}, {"English": "Sukuma", "Korean": "\uc218\ucfe0\ub9c8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "suk"}, {"English": "Sundanese", "Korean": "\uc21c\ub2e4\ub124\uc5b4", "ISO 639-1 Code": "su", "ISO 639-2 Code": "sun"}, {"English": "Susu", "Korean": "\uc218\uc218\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sus"}, {"English": "Sumerian", "Korean": "\uc218\uba54\ub974\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "sux"}, {"English": "Swahili", "Korean": "\uc2a4\uc640\ud790\ub9ac\uc5b4", "ISO 639-1 Code": "sw", "ISO 639-2 Code": "swa"}, {"English": "Swedish", "Korean": "\uc2a4\uc6e8\ub374\uc5b4", "ISO 639-1 Code": "sv", "ISO 639-2 Code": "swe"}, {"English": "Classical Syriac", "Korean": "\uace0\ub300 \uc2dc\ub9ac\uc544\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "syc"}, {"English": "Syriac", "Korean": "\uc2dc\ub9ac\uc544\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "syr"}, {"English": "Tahitian", "Korean": "\ud0c0\ud788\ud2f0\uc5b4", "ISO 639-1 Code": "ty", "ISO 639-2 Code": "tah"}, {"English": "Tai languages", "Korean": "\ud0dc\uc774\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "tai"}, {"English": "Tamil", "Korean": "\ud0c0\ubc00\uc5b4", "ISO 639-1 Code": "ta", "ISO 639-2 Code": "tam"}, {"English": "Tatar", "Korean": "\ud0c0\ud0c0\ub974\uc5b4", "ISO 639-1 Code": "tt", "ISO 639-2 Code": "tat"}, {"English": "Telugu", "Korean": "\ud154\ub8e8\uad6c\uc5b4", "ISO 639-1 Code": "te", "ISO 639-2 Code": "tel"}, {"English": "Timne", "Korean": "\ud300\ub124\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "tem"}, {"English": "Tereno", "Korean": "\ud14c\ub808\ub178\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "ter"}, {"English": "Tetum", "Korean": "\ud14c\ud23c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "tet"}, {"English": "Tajik", "Korean": "\ud0c0\uc9c0\ud06c\uc5b4", "ISO 639-1 Code": "tg", "ISO 639-2 Code": "tgk"}, {"English": "Tagalog", "Korean": "\ud0c0\uac08\ub85c\uadf8\uc5b4", "ISO 639-1 Code": "tl", "ISO 639-2 Code": "tgl"}, {"English": "Thai", "Korean": "\ud0dc\uad6d\uc5b4", "ISO 639-1 Code": "th", "ISO 639-2 Code": "tha"}, {"English": "Tibetan", "Korean": "\ud2f0\ubca0\ud2b8\uc5b4", "ISO 639-1 Code": "bo", "ISO 639-2 Code": "tib (B) bod (T)"}, {"English": "Tigre", "Korean": "\ud2f0\uadf8\ub808\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "tig"}, {"English": "Tigrinya", "Korean": "\ud2f0\uadf8\ub9ac\ub0d0\uc5b4", "ISO 639-1 Code": "ti", "ISO 639-2 Code": "tir"}, {"English": "Tiv", "Korean": "\ud2f0\ube0c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "tiv"}, {"English": "Tokelau", "Korean": "\ud1a0\ucf08\ub77c\uc6b0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "tkl"}, {"English": "Klingon; tlhIngan-Hol", "Korean": "\ud074\ub9c1\uace4\uc5b4; \ud2f8\ub9c1\uac04-\ud640\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "tlh"}, {"English": "Tlingit", "Korean": "\ud2b8\ub9c1\uac13\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "tli"}, {"English": "Tamashek", "Korean": "\ud0c0\ub9c8\uc170\ud06c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "tmh"}, {"English": "Tonga (Nyasa)", "Korean": "\ud1b5\uac00\uc5b4 (\ub098\uc774\uc544\uc0ac)", "ISO 639-1 Code": "", "ISO 639-2 Code": "tog"}, {"English": "Tonga (Tonga Islands)", "Korean": "\ud1b5\uac00\uc5b4 (\ud1b5\uac00 \uc81c\ub3c4)", "ISO 639-1 Code": "to", "ISO 639-2 Code": "ton"}, {"English": "Tok Pisin", "Korean": "\ud1a0\ud06c \ud53c\uc2e0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "tpi"}, {"English": "Tsimshian", "Korean": "\uce68\uc2dc\uc548\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "tsi"}, {"English": "Tswana", "Korean": "\uce20\uc640\ub098\uc5b4", "ISO 639-1 Code": "tn", "ISO 639-2 Code": "tsn"}, {"English": "Tsonga", "Korean": "\ucd1d\uac00\uc5b4", "ISO 639-1 Code": "ts", "ISO 639-2 Code": "tso"}, {"English": "Turkmen", "Korean": "\ud22c\ub974\ud06c\uba58\uc5b4", "ISO 639-1 Code": "tk", "ISO 639-2 Code": "tuk"}, {"English": "Tumbuka", "Korean": "\ud23c\ubd80\uce74\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "tum"}, {"English": "Tupi languages", "Korean": "\ud22c\ud53c\uc5b4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "tup"}, {"English": "Turkish", "Korean": "\ud130\ud0a4\uc5b4", "ISO 639-1 Code": "tr", "ISO 639-2 Code": "tur"}, {"English": "Altaic languages", "Korean": "\uc54c\ud0c0\uc774\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "tut"}, {"English": "Tuvalu", "Korean": "\ud22c\ubc1c\ub8e8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "tvl"}, {"English": "Twi", "Korean": "\ud2b8\uc704\uc5b4", "ISO 639-1 Code": "tw", "ISO 639-2 Code": "twi"}, {"English": "Tuvinian", "Korean": "\ud22c\ube44\ub2c8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "tyv"}, {"English": "Udmurt", "Korean": "\uc6b0\ub4dc\ubb38\ud2b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "udm"}, {"English": "Ugaritic", "Korean": "\uc6b0\uac00\ub9ac\ud2f1\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "uga"}, {"English": "Uighur; Uyghur", "Korean": "\uc704\uad6c\ub974\uc5b4; \uc704\uad6c\ub974\uc5b4", "ISO 639-1 Code": "ug", "ISO 639-2 Code": "uig"}, {"English": "Ukrainian", "Korean": "\uc6b0\ud06c\ub77c\uc774\ub098\uc5b4", "ISO 639-1 Code": "uk", "ISO 639-2 Code": "ukr"}, {"English": "Umbundu", "Korean": "\uc6c0\ubd84\ub450\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "umb"}, {"English": "Undetermined", "Korean": "\ubbf8\ud655\uc778 \uc5b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "und"}, {"English": "Urdu", "Korean": "\uc6b0\ub974\ub450\uc5b4", "ISO 639-1 Code": "ur", "ISO 639-2 Code": "urd"}, {"English": "Uzbek", "Korean": "\uc6b0\uc988\ubca0\ud06c\uc5b4", "ISO 639-1 Code": "uz", "ISO 639-2 Code": "uzb"}, {"English": "Vai", "Korean": "\ubc14\uc774\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "vai"}, {"English": "Venda", "Korean": "\ubca4\ub2e4\uc5b4", "ISO 639-1 Code": "ve", "ISO 639-2 Code": "ven"}, {"English": "Vietnamese", "Korean": "\ubca0\ud2b8\ub0a8\uc5b4", "ISO 639-1 Code": "vi", "ISO 639-2 Code": "vie"}, {"English": "Volap\u00fck", "Korean": "\ubcfc\ub77c\ud4cc\ud06c\uc5b4", "ISO 639-1 Code": "vo", "ISO 639-2 Code": "vol"}, {"English": "Votic", "Korean": "\ubcf4\ud2f1\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "vot"}, {"English": "Wakashan languages", "Korean": "\uc640\uce74\uc0e8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "wak"}, {"English": "Wolaitta; Wolaytta", "Korean": "\uc6d4\ub77c\uc774\ud0c0\uc5b4; \uc6d4\ub77c\uc774\ud0c0\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "wal"}, {"English": "Waray", "Korean": "\uc640\ub77c\uc774\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "war"}, {"English": "Washo", "Korean": "\uc640\uc1fc\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "was"}, {"English": "Welsh", "Korean": "\uc6e8\uc77c\uc2a4\uc5b4", "ISO 639-1 Code": "cy", "ISO 639-2 Code": "wel (B) cym (T)"}, {"English": "Sorbian languages", "Korean": "\uc18c\ub974\ube44\uc544\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "wen"}, {"English": "Walloon", "Korean": "Walloon", "ISO 639-1 Code": "wa", "ISO 639-2 Code": "wln"}, {"English": "Wolof", "Korean": "Wolof", "ISO 639-1 Code": "wo", "ISO 639-2 Code": "wol"}, {"English": "Kalmyk; Oirat", "Korean": "\uce7c\ubbf8\ud06c\uc5b4; \uc624\uc774\ub77c\ud2b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "xal"}, {"English": "Xhosa", "Korean": "\ucf54\uc0ac\uc5b4", "ISO 639-1 Code": "xh", "ISO 639-2 Code": "xho"}, {"English": "Yao", "Korean": "\uc57c\uc624\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "yao"}, {"English": "Yapese", "Korean": "\uc57c\ud504\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "yap"}, {"English": "Yiddish", "Korean": "\uc774\ub514\uc2dc\uc5b4", "ISO 639-1 Code": "yi", "ISO 639-2 Code": "yid"}, {"English": "Yoruba", "Korean": "\uc694\ub8e8\ubc14\uc5b4", "ISO 639-1 Code": "yo", "ISO 639-2 Code": "yor"}, {"English": "Yupik languages", "Korean": "\uc720\ud53c\ud06c\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "ypk"}, {"English": "Zapotec", "Korean": "\uc790\ud3ec\ud14d\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "zap"}, {"English": "Blissymbols; Blissymbolics; Bliss", "Korean": "\ube14\ub9ac\uc2a4 \uc2ec\ubcfc; \ube14\ub9ac\uc2a4 \uc2ec\ubcfc\ub9ad; \ube14\ub9ac\uc2a4", "ISO 639-1 Code": "", "ISO 639-2 Code": "zbl"}, {"English": "Zenaga", "Korean": "\uc81c\ub098\uac00\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "zen"}, {"English": "Standard Moroccan Tamazight", "Korean": "\ubaa8\ub85c\ucf54 \ud0c0\ub9c8\uc9c0\ud2b8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "zgh"}, {"English": "Zhuang; Chuang", "Korean": "\uc8a1\uc5b4; \uce04\uc559\uc5b4", "ISO 639-1 Code": "za", "ISO 639-2 Code": "zha"}, {"English": "Chinese", "Korean": "\uc911\uad6d\uc5b4", "ISO 639-1 Code": "zh", "ISO 639-2 Code": "chi (B) zho (T)"}, {"English": "Zande languages", "Korean": "\uc794\ub370\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "znd"}, {"English": "Zulu", "Korean": "\uc904\ub8e8\uc5b4", "ISO 639-1 Code": "zu", "ISO 639-2 Code": "zul"}, {"English": "Zuni", "Korean": "\uc900\ub2c8\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "zun"}, {"English": "No linguistic content; Not applicable", "Korean": "\uc5b8\uc5b4\uc801 \ub0b4\uc6a9 \uc5c6\uc74c; \ud574\ub2f9 \uc5c6\uc74c", "ISO 639-1 Code": "", "ISO 639-2 Code": "zxx"}, {"English": "Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki", "Korean": "\uc790\uc790\uc5b4; \ub514\ubc00\ub9ac\uc5b4; \ub514\ubbc8\ub9ac\uc5b4; \ud0a4\ub974\ub4dc\ud0a4\uc5b4; \ud0a4\ub974\ub9cc\uc9c0\ud0a4\uc5b4; \uc790\uc790\ud0a4\uc5b4", "ISO 639-1 Code": "", "ISO 639-2 Code": "zza"}, {"English": "Chinese (Simplified)", "Korean": "\uc911\uad6d\uc5b4 \uac04\uccb4", "ISO 639-1 Code": "zh-Hans", "ISO 639-2 Code": ""}, {"English": "Chinese (Simplified)", "Korean": "\uc911\uad6d\uc5b4 \uac04\uccb4", "ISO 639-1 Code": "zh_cn", "ISO 639-2 Code": ""}, {"English": "Chinese (Simplified)", "Korean": "\uc911\uad6d\uc5b4 \uac04\uccb4", "ISO 639-1 Code": "zh-CN", "ISO 639-2 Code": ""}, {"English": "Chinese (Traditional)", "Korean": "\uc911\uad6d\uc5b4 \ubc88\uccb4", "ISO 639-1 Code": "zh-Hant", "ISO 639-2 Code": ""}, {"English": "Chinese (Traditional)", "Korean": "\uc911\uad6d\uc5b4 \ubc88\uccb4", "ISO 639-1 Code": "zh_tw", "ISO 639-2 Code": ""}, {"English": "Chinese (Traditional)", "Korean": "\uc911\uad6d\uc5b4 \ubc88\uccb4", "ISO 639-1 Code": "zh-TW", "ISO 639-2 Code": ""}]
+[
+    {
+        "English": "Afar",
+        "Korean": "\uc544\ud30c\ub974\uc5b4",
+        "ISO 639-1 Code": "aa",
+        "ISO 639-2 Code": "aar"
+    },
+    {
+        "English": "Abkhazian",
+        "Korean": "\uc555\uce74\uc988\uc5b4",
+        "ISO 639-1 Code": "ab",
+        "ISO 639-2 Code": "abk"
+    },
+    {
+        "English": "Achinese",
+        "Korean": "\uc544\uccb4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ace"
+    },
+    {
+        "English": "Acoli",
+        "Korean": "\uc544\ucf5c\ub9ac\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ach"
+    },
+    {
+        "English": "Adangme",
+        "Korean": "\uc544\ub2f9\uba54\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ada"
+    },
+    {
+        "English": "Adyghe; Adygei",
+        "Korean": "\uc544\ub514\uac8c\uc5b4; \uc544\ub514\uac8c\uc774\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ady"
+    },
+    {
+        "English": "Afro-Asiatic languages",
+        "Korean": "\uc544\ud504\ub85c \uc544\uc2dc\uc544\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "afa"
+    },
+    {
+        "English": "Afrihili",
+        "Korean": "\uc544\ud504\ub9ac\ud790\ub9ac\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "afh"
+    },
+    {
+        "English": "Afrikaans",
+        "Korean": "\uc544\ud504\ub9ac\uce78\uc2a4\uc5b4",
+        "ISO 639-1 Code": "af",
+        "ISO 639-2 Code": "afr"
+    },
+    {
+        "English": "Ainu",
+        "Korean": "\uc544\uc774\ub204\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ain"
+    },
+    {
+        "English": "Akan",
+        "Korean": "\uc544\uce78\uc5b4",
+        "ISO 639-1 Code": "ak",
+        "ISO 639-2 Code": "aka"
+    },
+    {
+        "English": "Akkadian",
+        "Korean": "\uc544\uce74\ub4dc\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "akk"
+    },
+    {
+        "English": "Albanian",
+        "Korean": "\uc54c\ubc14\ub2c8\uc544\uc5b4",
+        "ISO 639-1 Code": "sq",
+        "ISO 639-2 Code": "alb (B) sqi (T)"
+    },
+    {
+        "English": "Aleut",
+        "Korean": "\uc54c\ub958\ud2b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ale"
+    },
+    {
+        "English": "Algonquian languages",
+        "Korean": "\uc54c\uace4\ud038\uc5b4\uc871 \uc5b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "alg"
+    },
+    {
+        "English": "Southern Altai",
+        "Korean": "\ub0a8\ubd80 \uc54c\ud0c0\uc774\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "alt"
+    },
+    {
+        "English": "Amharic",
+        "Korean": "\uc554\ud558\ub77c\uc5b4",
+        "ISO 639-1 Code": "am",
+        "ISO 639-2 Code": "amh"
+    },
+    {
+        "English": "English, Old (ca.450-1100)",
+        "Korean": "\uc601\uc5b4, \uace0\ub300 (\uc57d 450-1100)",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ang"
+    },
+    {
+        "English": "Angika",
+        "Korean": "\uc559\uae30\uce74\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "anp"
+    },
+    {
+        "English": "Apache languages",
+        "Korean": "\uc544\ud30c\uce58\uc5b4\uc871 \uc5b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "apa"
+    },
+    {
+        "English": "Arabic",
+        "Korean": "\uc544\ub78d\uc5b4",
+        "ISO 639-1 Code": "ar",
+        "ISO 639-2 Code": "ara"
+    },
+    {
+        "English": "Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)",
+        "Korean": "\uacf5\uc2dd \uc544\ub78c\uc5b4 (\uae30\uc6d0\uc804 700-300\ub144); \uc81c\uad6d \uc544\ub78c\uc5b4 (\uae30\uc6d0\uc804 700-300\ub144)",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "arc"
+    },
+    {
+        "English": "Aragonese",
+        "Korean": "\uc544\ub77c\uace4\uc5b4",
+        "ISO 639-1 Code": "an",
+        "ISO 639-2 Code": "arg"
+    },
+    {
+        "English": "Armenian",
+        "Korean": "\uc544\ub974\uba54\ub2c8\uc544\uc5b4",
+        "ISO 639-1 Code": "hy",
+        "ISO 639-2 Code": "arm (B) hye (T)"
+    },
+    {
+        "English": "Mapudungun; Mapuche",
+        "Korean": "\ub9c8\ud478\ub465\uad70\uc5b4; \ub9c8\ud478\uccb4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "arn"
+    },
+    {
+        "English": "Arapaho",
+        "Korean": "\uc544\ub77c\ud30c\ud638\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "arp"
+    },
+    {
+        "English": "Artificial languages",
+        "Korean": "\uc778\uacf5\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "art"
+    },
+    {
+        "English": "Arawak",
+        "Korean": "\uc544\ub77c\uc640\ud06c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "arw"
+    },
+    {
+        "English": "Assamese",
+        "Korean": "\uc544\uc0ac\uba54\uc5b4",
+        "ISO 639-1 Code": "as",
+        "ISO 639-2 Code": "asm"
+    },
+    {
+        "English": "Asturian; Bable; Leonese; Asturleonese",
+        "Korean": "\uc544\uc2a4\ud22c\ub9ac\uc544\uc5b4; \ubc14\ube14\uc5b4; \ub808\uc624\ub124\uc81c\uc5b4; \uc544\uc2a4\ud22c\ub974\ub808\uc624\ub124\uc81c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ast"
+    },
+    {
+        "English": "Athapascan languages",
+        "Korean": "\uc544\ud0c0\ud30c\uc2a4\uce78\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ath"
+    },
+    {
+        "English": "Australian languages",
+        "Korean": "\uc624\uc2a4\ud2b8\ub808\uc77c\ub9ac\uc544\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "aus"
+    },
+    {
+        "English": "Avaric",
+        "Korean": "\uc544\ubc14\ub9ad\uc5b4",
+        "ISO 639-1 Code": "av",
+        "ISO 639-2 Code": "ava"
+    },
+    {
+        "English": "Avestan",
+        "Korean": "\uc544\ubca0\uc2a4\ud0c4\uc5b4",
+        "ISO 639-1 Code": "ae",
+        "ISO 639-2 Code": "ave"
+    },
+    {
+        "English": "Awadhi",
+        "Korean": "\uc544\uc640\ub4dc\ud788\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "awa"
+    },
+    {
+        "English": "Aymara",
+        "Korean": "\uc544\uc774\ub9c8\ub77c\uc5b4",
+        "ISO 639-1 Code": "ay",
+        "ISO 639-2 Code": "aym"
+    },
+    {
+        "English": "Azerbaijani",
+        "Korean": "\uc544\uc81c\ub974\ubc14\uc774\uc794\uc5b4",
+        "ISO 639-1 Code": "az",
+        "ISO 639-2 Code": "aze"
+    },
+    {
+        "English": "Banda languages",
+        "Korean": "\ubc18\ub2e4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "bad"
+    },
+    {
+        "English": "Bamileke languages",
+        "Korean": "\ubc14\ubc00\ub808\ucf00\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "bai"
+    },
+    {
+        "English": "Bashkir",
+        "Korean": "\ubc14\uc2dc\ud0a4\ub974\uc5b4",
+        "ISO 639-1 Code": "ba",
+        "ISO 639-2 Code": "bak"
+    },
+    {
+        "English": "Baluchi",
+        "Korean": "\ubc1c\ub8e8\uce58\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "bal"
+    },
+    {
+        "English": "Bambara",
+        "Korean": "\ubc24\ubc14\ub77c\uc5b4",
+        "ISO 639-1 Code": "bm",
+        "ISO 639-2 Code": "bam"
+    },
+    {
+        "English": "Balinese",
+        "Korean": "\ubc1c\ub9ac\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ban"
+    },
+    {
+        "English": "Basque",
+        "Korean": "\ubc14\uc2a4\ud06c\uc5b4",
+        "ISO 639-1 Code": "eu",
+        "ISO 639-2 Code": "baq (B) eus (T)"
+    },
+    {
+        "English": "Basa",
+        "Korean": "\ubc14\uc0ac\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "bas"
+    },
+    {
+        "English": "Baltic languages",
+        "Korean": "\ubc1c\ud2b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "bat"
+    },
+    {
+        "English": "Beja; Bedawiyet",
+        "Korean": "\ubca0\uc790\uc5b4; \ubca0\ub2e4\uc704\uc608\ud2b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "bej"
+    },
+    {
+        "English": "Belarusian",
+        "Korean": "\ubca8\ub77c\ub8e8\uc2a4\uc5b4",
+        "ISO 639-1 Code": "be",
+        "ISO 639-2 Code": "bel"
+    },
+    {
+        "English": "Bemba",
+        "Korean": "\ubcb0\ubc14\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "bem"
+    },
+    {
+        "English": "Bengali",
+        "Korean": "\ubcb5\uace8\uc5b4",
+        "ISO 639-1 Code": "bn",
+        "ISO 639-2 Code": "ben"
+    },
+    {
+        "English": "Berber languages",
+        "Korean": "\ubca0\ub974\ubca0\ub974\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ber"
+    },
+    {
+        "English": "Bhojpuri",
+        "Korean": "\ubcf4\uc988\ud478\ub9ac\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "bho"
+    },
+    {
+        "English": "Bihari languages",
+        "Korean": "\ube44\ud558\ub9ac\uc5b4",
+        "ISO 639-1 Code": "bh",
+        "ISO 639-2 Code": "bih"
+    },
+    {
+        "English": "Bikol",
+        "Korean": "\ube44\ucf5c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "bik"
+    },
+    {
+        "English": "Bini; Edo",
+        "Korean": "\ube44\ub2c8\uc5b4; \uc5d0\ub3c4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "bin"
+    },
+    {
+        "English": "Bislama",
+        "Korean": "\ube44\uc2ac\ub77c\ub9c8\uc5b4",
+        "ISO 639-1 Code": "bi",
+        "ISO 639-2 Code": "bis"
+    },
+    {
+        "English": "Siksika",
+        "Korean": "\uc2dc\ud06c\uc2dc\uce74\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "bla"
+    },
+    {
+        "English": "Bantu languages",
+        "Korean": "\ubc18\ud22c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "bnt"
+    },
+    {
+        "English": "Tibetan",
+        "Korean": "\ud2f0\ubca0\ud2b8\uc5b4",
+        "ISO 639-1 Code": "bo",
+        "ISO 639-2 Code": "tib (B) bod (T)"
+    },
+    {
+        "English": "Bosnian",
+        "Korean": "\ubcf4\uc2a4\ub2c8\uc544\uc5b4",
+        "ISO 639-1 Code": "bs",
+        "ISO 639-2 Code": "bos"
+    },
+    {
+        "English": "Braj",
+        "Korean": "\ube0c\ub77c\uc9c0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "bra"
+    },
+    {
+        "English": "Breton",
+        "Korean": "\ube0c\ub974\ud0c0\ub274\uc5b4",
+        "ISO 639-1 Code": "br",
+        "ISO 639-2 Code": "bre"
+    },
+    {
+        "English": "Batak languages",
+        "Korean": "\ubc14\ud0c0\ud06c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "btk"
+    },
+    {
+        "English": "Buriat",
+        "Korean": "\ubd80\ub9ac\uc544\ud2b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "bua"
+    },
+    {
+        "English": "Buginese",
+        "Korean": "\ubd80\uae30\ub124\uc81c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "bug"
+    },
+    {
+        "English": "Bulgarian",
+        "Korean": "\ubd88\uac00\ub9ac\uc544\uc5b4",
+        "ISO 639-1 Code": "bg",
+        "ISO 639-2 Code": "bul"
+    },
+    {
+        "English": "Burmese",
+        "Korean": "\ubc84\ub9c8\uc5b4",
+        "ISO 639-1 Code": "my",
+        "ISO 639-2 Code": "bur (B) mya (T)"
+    },
+    {
+        "English": "Blin; Bilin",
+        "Korean": "\ube14\ub9b0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "byn"
+    },
+    {
+        "English": "Caddo",
+        "Korean": "\uce74\ub3c4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "cad"
+    },
+    {
+        "English": "Central American Indian languages",
+        "Korean": "\uc911\uc559 \uc544\uba54\ub9ac\uce74 \uc778\ub514\uc5b8 \uc5b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "cai"
+    },
+    {
+        "English": "Galibi Carib",
+        "Korean": "\uce74\ub9ac\ube0c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "car"
+    },
+    {
+        "English": "Catalan; Valencian",
+        "Korean": "\uce74\ud0c8\ub85c\ub2c8\uc544\uc5b4; \ubc1c\ub80c\uc2dc\uc544\uc5b4",
+        "ISO 639-1 Code": "ca",
+        "ISO 639-2 Code": "cat"
+    },
+    {
+        "English": "Caucasian languages",
+        "Korean": "\uce74\ud1a0\uce74\uc18c\uc774\ub4dc\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "cau"
+    },
+    {
+        "English": "Cebuano",
+        "Korean": "\uc138\ubd80\uc544\ub178\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ceb"
+    },
+    {
+        "English": "Celtic languages",
+        "Korean": "\ucf08\ud2b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "cel"
+    },
+    {
+        "English": "Czech",
+        "Korean": "\uccb4\ucf54\uc5b4",
+        "ISO 639-1 Code": "cs",
+        "ISO 639-2 Code": "cze (B) ces (T)"
+    },
+    {
+        "English": "Chamorro",
+        "Korean": "\ucc28\ubaa8\ub85c\uc5b4",
+        "ISO 639-1 Code": "ch",
+        "ISO 639-2 Code": "cha"
+    },
+    {
+        "English": "Chibcha",
+        "Korean": "\uce58\ube0c\ucc28\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "chb"
+    },
+    {
+        "English": "Chechen",
+        "Korean": "\uccb4\uccb8\uc5b4",
+        "ISO 639-1 Code": "ce",
+        "ISO 639-2 Code": "che"
+    },
+    {
+        "English": "Chagatai",
+        "Korean": "\ucc28\uac00\ud0c0\uc774\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "chg"
+    },
+    {
+        "English": "Chinese",
+        "Korean": "\uc911\uad6d\uc5b4",
+        "ISO 639-1 Code": "zh",
+        "ISO 639-2 Code": "chi (B) zho (T)"
+    },
+    {
+        "English": "Chuukese",
+        "Korean": "\ucd94\ud06c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "chk"
+    },
+    {
+        "English": "Mari",
+        "Korean": "\ub9c8\ub9ac\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "chm"
+    },
+    {
+        "English": "Chinook jargon",
+        "Korean": "\uce5c\ub204\ud06c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "chn"
+    },
+    {
+        "English": "Choctaw",
+        "Korean": "\ucd09\ud1a0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "cho"
+    },
+    {
+        "English": "Chipewyan; Dene Suline",
+        "Korean": "\uce69\uc640\uc774\uc5b8\uc5b4; \ub374 \uc2ac\ub77c\uc778\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "chp"
+    },
+    {
+        "English": "Cherokee",
+        "Korean": "\uccb4\ub85c\ud0a4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "chr"
+    },
+    {
+        "English": "Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic",
+        "Korean": "\uad50\ud68c \uc2ac\ub77c\ube0c\uc5b4; \uace0\ub300 \uc2ac\ub77c\ube0c\uc5b4; \uad50\ud68c \uc2ac\ub77c\ube0c\uc5b4; \uace0\ub300 \ubd88\uac00\ub9ac\uc544\uc5b4; \uace0\ub300 \uad50\ud68c \uc2ac\ub77c\ube0c\uc5b4",
+        "ISO 639-1 Code": "cu",
+        "ISO 639-2 Code": "chu"
+    },
+    {
+        "English": "Chuvash",
+        "Korean": "\ucd94\ubc14\uc2dc\uc5b4",
+        "ISO 639-1 Code": "cv",
+        "ISO 639-2 Code": "chv"
+    },
+    {
+        "English": "Cheyenne",
+        "Korean": "\uccb4\uc60c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "chy"
+    },
+    {
+        "English": "Chamic languages",
+        "Korean": "\ucc38\uc7a0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "cmc"
+    },
+    {
+        "English": "Montenegrin",
+        "Korean": "\ubaac\ud14c\ub124\uadf8\ub85c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "cnr"
+    },
+    {
+        "English": "Coptic",
+        "Korean": "\ucf65\ud2b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "cop"
+    },
+    {
+        "English": "Cornish",
+        "Korean": "\ucf54\ub2c8\uc2dc\uc5b4",
+        "ISO 639-1 Code": "kw",
+        "ISO 639-2 Code": "cor"
+    },
+    {
+        "English": "Corsican",
+        "Korean": "\ucf54\ub974\uc2dc\uce74\uc5b4",
+        "ISO 639-1 Code": "co",
+        "ISO 639-2 Code": "cos"
+    },
+    {
+        "English": "Creoles and pidgins, English based",
+        "Korean": "\ud06c\ub9ac\uc62c\uc5b4\uc640 \ud53c\uc9c4, \uc601\uc5b4 \uae30\ubc18",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "cpe"
+    },
+    {
+        "English": "Creoles and pidgins, French-based",
+        "Korean": "\ud06c\ub9ac\uc62c\uc5b4\uc640 \ud53c\uc9c4, \ud504\ub791\uc2a4\uc5b4 \uae30\ubc18",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "cpf"
+    },
+    {
+        "English": "Creoles and pidgins, Portuguese-based",
+        "Korean": "\ud06c\ub9ac\uc62c\uc5b4\uc640 \ud53c\uc9c4, \ud3ec\ub974\ud22c\uac08\uc5b4 \uae30\ubc18",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "cpp"
+    },
+    {
+        "English": "Cree",
+        "Korean": "\ud06c\ub9ac\uc5b4\uc5b4",
+        "ISO 639-1 Code": "cr",
+        "ISO 639-2 Code": "cre"
+    },
+    {
+        "English": "Crimean Tatar; Crimean Turkish",
+        "Korean": "\ud06c\ub9ac\ubbfc\ud0c0\ud0c0\ub974\uc5b4; \ud06c\ub9ac\ubbfc \ud130\ud0a4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "crh"
+    },
+    {
+        "English": "Creoles and pidgins",
+        "Korean": "\ud06c\ub9ac\uc62c\uc5b4\uc640 \ud53c\uc9c4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "crp"
+    },
+    {
+        "English": "Kashubian",
+        "Korean": "\uce74\uc288\ube44\uc544\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "csb"
+    },
+    {
+        "English": "Cushitic languages",
+        "Korean": "\ucfe0\uc2dc\ud2b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "cus"
+    },
+    {
+        "English": "Welsh",
+        "Korean": "\uc6e8\uc77c\uc2a4\uc5b4",
+        "ISO 639-1 Code": "cy",
+        "ISO 639-2 Code": "wel (B) cym (T)"
+    },
+    {
+        "English": "Czech",
+        "Korean": "\uccb4\ucf54\uc5b4",
+        "ISO 639-1 Code": "cs",
+        "ISO 639-2 Code": "cze (B) ces (T)"
+    },
+    {
+        "English": "Dakota",
+        "Korean": "\ub2e4\ucf54\ud0c0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "dak"
+    },
+    {
+        "English": "Danish",
+        "Korean": "\ub374\ub9c8\ud06c\uc5b4",
+        "ISO 639-1 Code": "da",
+        "ISO 639-2 Code": "dan"
+    },
+    {
+        "English": "Dargwa",
+        "Korean": "\ub2e4\ub974\uadf8\uc640\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "dar"
+    },
+    {
+        "English": "Land Dayak languages",
+        "Korean": "\ub79c\ub4dc \ub370\uc774\uc545\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "day"
+    },
+    {
+        "English": "Delaware",
+        "Korean": "\ub378\ub77c\uc6e8\uc5b4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "del"
+    },
+    {
+        "English": "Slave (Athapascan)",
+        "Korean": "\uc2ac\ub808\uc774\ube0c (\uc544\ud0c0\ud30c\uc2a4\uce78)",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "den"
+    },
+    {
+        "English": "German",
+        "Korean": "\ub3c5\uc77c\uc5b4",
+        "ISO 639-1 Code": "de",
+        "ISO 639-2 Code": "ger (B) deu (T)"
+    },
+    {
+        "English": "Dogrib",
+        "Korean": "\ub3c4\uadf8\ub9ac\ube0c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "dgr"
+    },
+    {
+        "English": "Dinka",
+        "Korean": "\ub518\uce74\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "din"
+    },
+    {
+        "English": "Divehi; Dhivehi; Maldivian",
+        "Korean": "\ub514\ubca0\ud788\uc5b4; \ub514\ube44\ud788\uc5b4; \ubab0\ub514\ube0c\uc5b4",
+        "ISO 639-1 Code": "dv",
+        "ISO 639-2 Code": "div"
+    },
+    {
+        "English": "Dogri",
+        "Korean": "\ub3c4\uadf8\ub9ac\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "doi"
+    },
+    {
+        "English": "Dravidian languages",
+        "Korean": "\ub4dc\ub77c\ube44\ub2e4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "dra"
+    },
+    {
+        "English": "Lower Sorbian",
+        "Korean": "\ud558\uc704 \uc18c\ub974\ube44\uc544\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "dsb"
+    },
+    {
+        "English": "Duala",
+        "Korean": "\ub4c0\uc54c\ub77c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "dua"
+    },
+    {
+        "English": "Dutch, Middle (ca.1050-1350)",
+        "Korean": "\uc911\uc138 \ub124\ub35c\ub780\ub4dc\uc5b4 (\uc57d 1050-1350)",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "dum"
+    },
+    {
+        "English": "Dutch; Flemish",
+        "Korean": "\ub124\ub35c\ub780\ub4dc\uc5b4; \ud50c\ub808\ubc0d\uc5b4",
+        "ISO 639-1 Code": "nl",
+        "ISO 639-2 Code": "dut (B) nld (T)"
+    },
+    {
+        "English": "Dyula",
+        "Korean": "\uc958\ub77c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "dyu"
+    },
+    {
+        "English": "Dzongkha",
+        "Korean": "\uc885\uce74\uc5b4",
+        "ISO 639-1 Code": "dz",
+        "ISO 639-2 Code": "dzo"
+    },
+    {
+        "English": "Efik",
+        "Korean": "\uc5d0\ud53d\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "efi"
+    },
+    {
+        "English": "Egyptian (Ancient)",
+        "Korean": "\uace0\ub300 \uc774\uc9d1\ud2b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "egy"
+    },
+    {
+        "English": "Ekajuk",
+        "Korean": "\uc5d0\uce74\uc951\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "eka"
+    },
+    {
+        "English": "Greek, Modern (1453-)",
+        "Korean": "\ud604\ub300 \uadf8\ub9ac\uc2a4\uc5b4 (1453-)",
+        "ISO 639-1 Code": "el",
+        "ISO 639-2 Code": "gre (B) ell (T)"
+    },
+    {
+        "English": "Elamite",
+        "Korean": "\uc5d8\ub78c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "elx"
+    },
+    {
+        "English": "English",
+        "Korean": "\uc601\uc5b4",
+        "ISO 639-1 Code": "en",
+        "ISO 639-2 Code": "eng"
+    },
+    {
+        "English": "English, Middle (1100-1500)",
+        "Korean": "\uc911\uc138 \uc601\uc5b4 (1100-1500)",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "enm"
+    },
+    {
+        "English": "Esperanto",
+        "Korean": "\uc5d0\uc2a4\ud398\ub780\ud1a0\uc5b4",
+        "ISO 639-1 Code": "eo",
+        "ISO 639-2 Code": "epo"
+    },
+    {
+        "English": "Estonian",
+        "Korean": "\uc5d0\uc2a4\ud1a0\ub2c8\uc544\uc5b4",
+        "ISO 639-1 Code": "et",
+        "ISO 639-2 Code": "est"
+    },
+    {
+        "English": "Basque",
+        "Korean": "\ubc14\uc2a4\ud06c\uc5b4",
+        "ISO 639-1 Code": "eu",
+        "ISO 639-2 Code": "baq (B) eus (T)"
+    },
+    {
+        "English": "Ewe",
+        "Korean": "\uc5d0\uc6e8\uc5b4",
+        "ISO 639-1 Code": "ee",
+        "ISO 639-2 Code": "ewe"
+    },
+    {
+        "English": "Ewondo",
+        "Korean": "\uc5d0\uc6cc\ub178\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ewo"
+    },
+    {
+        "English": "Fang",
+        "Korean": "\ud321\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "fan"
+    },
+    {
+        "English": "Faroese",
+        "Korean": "\ud398\ub85c\uc5b4",
+        "ISO 639-1 Code": "fo",
+        "ISO 639-2 Code": "fao"
+    },
+    {
+        "English": "Persian",
+        "Korean": "\ud398\ub974\uc2dc\uc544\uc5b4",
+        "ISO 639-1 Code": "fa",
+        "ISO 639-2 Code": "per (B) fas (T)"
+    },
+    {
+        "English": "Fanti",
+        "Korean": "\ud310\ud2f0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "fat"
+    },
+    {
+        "English": "Fijian",
+        "Korean": "\ud53c\uc9c0\uc5b4",
+        "ISO 639-1 Code": "fj",
+        "ISO 639-2 Code": "fij"
+    },
+    {
+        "English": "Filipino; Pilipino",
+        "Korean": "\ud544\ub9ac\ud540\uc5b4; \ud544\ub9ac\ud540\uc2dd \uc2a4\ud398\uc778\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "fil"
+    },
+    {
+        "English": "Finnish",
+        "Korean": "\ud540\ub780\ub4dc\uc5b4",
+        "ISO 639-1 Code": "fi",
+        "ISO 639-2 Code": "fin"
+    },
+    {
+        "English": "Finno-Ugrian languages",
+        "Korean": "\ud540\ub780\uc6b0\uadf8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "fiu"
+    },
+    {
+        "English": "Fon",
+        "Korean": "\ud3f0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "fon"
+    },
+    {
+        "English": "French",
+        "Korean": "\ud504\ub791\uc2a4\uc5b4",
+        "ISO 639-1 Code": "fr",
+        "ISO 639-2 Code": "fre (B) fra (T)"
+    },
+    {
+        "English": "French",
+        "Korean": "\ud504\ub791\uc2a4\uc5b4",
+        "ISO 639-1 Code": "fr",
+        "ISO 639-2 Code": "fre (B) fra (T)"
+    },
+    {
+        "English": "French, Middle (ca.1400-1600)",
+        "Korean": "\uc911\uc138 \ud504\ub791\uc2a4\uc5b4 (\uc57d 1400-1600)",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "frm"
+    },
+    {
+        "English": "French, Old (842-ca.1400)",
+        "Korean": "\uace0\ub300 \ud504\ub791\uc2a4\uc5b4 (842-\uc57d 1400)",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "fro"
+    },
+    {
+        "English": "Northern Frisian",
+        "Korean": "\ubd81\ubd80 \ud504\ub9ac\uc9c0\uc544\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "frr"
+    },
+    {
+        "English": "Eastern Frisian",
+        "Korean": "\ub3d9\ubd80 \ud504\ub9ac\uc9c0\uc544\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "frs"
+    },
+    {
+        "English": "Western Frisian",
+        "Korean": "\uc11c\ubd80 \ud504\ub9ac\uc9c0\uc544\uc5b4",
+        "ISO 639-1 Code": "fy",
+        "ISO 639-2 Code": "fry"
+    },
+    {
+        "English": "Fulah",
+        "Korean": "\ud480\ub77c\uc5b4",
+        "ISO 639-1 Code": "ff",
+        "ISO 639-2 Code": "ful"
+    },
+    {
+        "English": "Friulian",
+        "Korean": "\ud504\ub9ac\uc6b8\ub9ac\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "fur"
+    },
+    {
+        "English": "Ga",
+        "Korean": "\uac00\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "gaa"
+    },
+    {
+        "English": "Gayo",
+        "Korean": "\uac00\uc694\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "gay"
+    },
+    {
+        "English": "Gbaya",
+        "Korean": "\uadf8\ubc14\uc57c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "gba"
+    },
+    {
+        "English": "Germanic languages",
+        "Korean": "\uac8c\ub974\ub9cc\uc5b4\uc871 \uc5b8\uc5b4\ub4e4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "gem"
+    },
+    {
+        "English": "Georgian",
+        "Korean": "\uc870\ub974\uc9c0\uc544\uc5b4",
+        "ISO 639-1 Code": "ka",
+        "ISO 639-2 Code": "geo (B) kat (T)"
+    },
+    {
+        "English": "German",
+        "Korean": "\ub3c5\uc77c\uc5b4",
+        "ISO 639-1 Code": "de",
+        "ISO 639-2 Code": "ger (B) deu (T)"
+    },
+    {
+        "English": "Geez",
+        "Korean": "\uae30\uc988\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "gez"
+    },
+    {
+        "English": "Gilbertese",
+        "Korean": "\uae38\ubc84\ud2b8\uc81c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "gil"
+    },
+    {
+        "English": "Gaelic; Scottish Gaelic",
+        "Korean": "\uac8c\uc77c\uc5b4; \uc2a4\ucf54\ud2c0\ub79c\ub4dc \uac8c\uc77c\uc5b4",
+        "ISO 639-1 Code": "gd",
+        "ISO 639-2 Code": "gla"
+    },
+    {
+        "English": "Irish",
+        "Korean": "\uc544\uc77c\ub79c\ub4dc\uc5b4",
+        "ISO 639-1 Code": "ga",
+        "ISO 639-2 Code": "gle"
+    },
+    {
+        "English": "Galician",
+        "Korean": "\uac08\ub9ac\uc2dc\uc544\uc5b4",
+        "ISO 639-1 Code": "gl",
+        "ISO 639-2 Code": "glg"
+    },
+    {
+        "English": "Manx",
+        "Korean": "\ub9e8\uc12c\uc5b4",
+        "ISO 639-1 Code": "gv",
+        "ISO 639-2 Code": "glv"
+    },
+    {
+        "English": "German, Middle High (ca.1050-1500)",
+        "Korean": "\uc911\uace0 \ub3c5\uc77c\uc5b4 (\uc57d 1050-1500)",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "gmh"
+    },
+    {
+        "English": "German, Old High (ca.750-1050)",
+        "Korean": "\uace0\ub300 \ub3c5\uc77c\uc5b4 (\uc57d 750-1050)",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "goh"
+    },
+    {
+        "English": "Gondi",
+        "Korean": "\uace4\ub514\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "gon"
+    },
+    {
+        "English": "Gorontalo",
+        "Korean": "\uace0\ub860\ud0c8\ub85c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "gor"
+    },
+    {
+        "English": "Gothic",
+        "Korean": "\uace0\ub515\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "got"
+    },
+    {
+        "English": "Grebo",
+        "Korean": "\uadf8\ub808\ubcf4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "grb"
+    },
+    {
+        "English": "Greek, Ancient (to 1453)",
+        "Korean": "\uace0\ub300 \uadf8\ub9ac\uc2a4\uc5b4 (1453\ub144 \uc774\uc804)",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "grc"
+    },
+    {
+        "English": "Greek, Modern (1453-)",
+        "Korean": "\ud604\ub300 \uadf8\ub9ac\uc2a4\uc5b4 (1453\ub144 \uc774\ud6c4)",
+        "ISO 639-1 Code": "el",
+        "ISO 639-2 Code": "gre (B) ell (T)"
+    },
+    {
+        "English": "Guarani",
+        "Korean": "\uacfc\ub77c\ub2c8\uc5b4",
+        "ISO 639-1 Code": "gn",
+        "ISO 639-2 Code": "grn"
+    },
+    {
+        "English": "Swiss German; Alemannic; Alsatian",
+        "Korean": "\uc2a4\uc704\uc2a4 \ub3c5\uc77c\uc5b4; \uc54c\ub808\ub9cc\uc5b4; \uc54c\uc790\uc2dc\uc548\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "gsw"
+    },
+    {
+        "English": "Gujarati",
+        "Korean": "\uad6c\uc790\ub77c\ud2b8\uc5b4",
+        "ISO 639-1 Code": "gu",
+        "ISO 639-2 Code": "guj"
+    },
+    {
+        "English": "Gwich'in",
+        "Korean": "\uadf8\uc704\uce5c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "gwi"
+    },
+    {
+        "English": "Haida",
+        "Korean": "\ud558\uc774\ub2e4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "hai"
+    },
+    {
+        "English": "Haitian; Haitian Creole",
+        "Korean": "\uc544\uc774\ud2f0\uc5b4; \uc544\uc774\ud2f0\ud06c\ub9ac\uc62c\uc5b4",
+        "ISO 639-1 Code": "ht",
+        "ISO 639-2 Code": "hat"
+    },
+    {
+        "English": "Hausa",
+        "Korean": "\ud558\uc6b0\uc0ac\uc5b4",
+        "ISO 639-1 Code": "ha",
+        "ISO 639-2 Code": "hau"
+    },
+    {
+        "English": "Hawaiian",
+        "Korean": "\ud558\uc640\uc774\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "haw"
+    },
+    {
+        "English": "Hebrew",
+        "Korean": "\ud788\ube0c\ub9ac\uc5b4",
+        "ISO 639-1 Code": "he",
+        "ISO 639-2 Code": "heb"
+    },
+    {
+        "English": "Herero",
+        "Korean": "\ud5e4\ub808\ub85c\uc5b4",
+        "ISO 639-1 Code": "hz",
+        "ISO 639-2 Code": "her"
+    },
+    {
+        "English": "Hiligaynon",
+        "Korean": "\ud790\ub9ac\uac00\uc774\ub18d\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "hil"
+    },
+    {
+        "English": "Himachali languages; Western Pahari languages",
+        "Korean": "\ud788\ub9c8\ucc30\ub9ac\uc5b4; \uc11c\ubd80 \ud30c\ud558\ub9ac\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "him"
+    },
+    {
+        "English": "Hindi",
+        "Korean": "\ud78c\ub514\uc5b4",
+        "ISO 639-1 Code": "hi",
+        "ISO 639-2 Code": "hin"
+    },
+    {
+        "English": "Hittite",
+        "Korean": "\ud788\ud0c0\uc774\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "hit"
+    },
+    {
+        "English": "Hmong; Mong",
+        "Korean": "\ubabd\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "hmn"
+    },
+    {
+        "English": "Hiri Motu",
+        "Korean": "\ud788\ub9ac \ubaa8\ud22c\uc5b4",
+        "ISO 639-1 Code": "ho",
+        "ISO 639-2 Code": "hmo"
+    },
+    {
+        "English": "Croatian",
+        "Korean": "\ud06c\ub85c\uc544\ud2f0\uc544\uc5b4",
+        "ISO 639-1 Code": "hr",
+        "ISO 639-2 Code": "hrv"
+    },
+    {
+        "English": "Upper Sorbian",
+        "Korean": "\uace0\uc704 \uc18c\ub974\ube44\uc544\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "hsb"
+    },
+    {
+        "English": "Hungarian",
+        "Korean": "\ud5dd\uac00\ub9ac\uc5b4",
+        "ISO 639-1 Code": "hu",
+        "ISO 639-2 Code": "hun"
+    },
+    {
+        "English": "Hupa",
+        "Korean": "\ud6c4\ud30c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "hup"
+    },
+    {
+        "English": "Armenian",
+        "Korean": "\uc544\ub974\uba54\ub2c8\uc544\uc5b4",
+        "ISO 639-1 Code": "hy",
+        "ISO 639-2 Code": "arm (B) hye (T)"
+    },
+    {
+        "English": "Iban",
+        "Korean": "\uc774\ubc18\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "iba"
+    },
+    {
+        "English": "Igbo",
+        "Korean": "\uc774\uadf8\ubcf4\uc5b4",
+        "ISO 639-1 Code": "ig",
+        "ISO 639-2 Code": "ibo"
+    },
+    {
+        "English": "Icelandic",
+        "Korean": "\uc544\uc774\uc2ac\ub780\ub4dc\uc5b4",
+        "ISO 639-1 Code": "is",
+        "ISO 639-2 Code": "ice (B) isl (T)"
+    },
+    {
+        "English": "Ido",
+        "Korean": "\uc774\ub3c4\uc5b4",
+        "ISO 639-1 Code": "io",
+        "ISO 639-2 Code": "ido"
+    },
+    {
+        "English": "Sichuan Yi; Nuosu",
+        "Korean": "\uc2dc\ucd28 \uc774\uc5b4; \ub204\uc624\uc218\uc5b4",
+        "ISO 639-1 Code": "ii",
+        "ISO 639-2 Code": "iii"
+    },
+    {
+        "English": "Ijo languages",
+        "Korean": "\uc774\uc870\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ijo"
+    },
+    {
+        "English": "Inuktitut",
+        "Korean": "\uc774\ub205\ud2f0\ud22c\ud2b8\uc5b4",
+        "ISO 639-1 Code": "iu",
+        "ISO 639-2 Code": "iku"
+    },
+    {
+        "English": "Interlingue; Occidental",
+        "Korean": "\uc778\ud130\ub9c1\uad6c\uc5d0; \uc624\ud0a4\ub374\ud0c8\uc5b4",
+        "ISO 639-1 Code": "ie",
+        "ISO 639-2 Code": "ile"
+    },
+    {
+        "English": "Iloko",
+        "Korean": "\uc77c\ub85c\ucf54\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ilo"
+    },
+    {
+        "English": "Interlingua (International Auxiliary Language Association)",
+        "Korean": "\uc778\ud130\ub9c1\uad6c\uc544 (\uad6d\uc81c \ubcf4\uc870 \uc5b8\uc5b4 \ud611\ud68c)",
+        "ISO 639-1 Code": "ia",
+        "ISO 639-2 Code": "ina"
+    },
+    {
+        "English": "Indic languages",
+        "Korean": "\uc778\ub4dc\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "inc"
+    },
+    {
+        "English": "Indonesian",
+        "Korean": "\uc778\ub3c4\ub124\uc2dc\uc544\uc5b4",
+        "ISO 639-1 Code": "id",
+        "ISO 639-2 Code": "ind"
+    },
+    {
+        "English": "Indo-European languages",
+        "Korean": "\uc778\ub3c4\uc720\ub7fd\uc5b4\uc871",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ine"
+    },
+    {
+        "English": "Ingush",
+        "Korean": "\uc789\uad6c\uc2dc\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "inh"
+    },
+    {
+        "English": "Inupiaq",
+        "Korean": "\uc774\ub204\ud53c\uc544\ud06c\uc5b4",
+        "ISO 639-1 Code": "ik",
+        "ISO 639-2 Code": "ipk"
+    },
+    {
+        "English": "Iranian languages",
+        "Korean": "\uc774\ub780\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ira"
+    },
+    {
+        "English": "Iroquoian languages",
+        "Korean": "\uc774\ub85c\ucfe0\uc544\uc5b4\uc871",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "iro"
+    },
+    {
+        "English": "Icelandic",
+        "Korean": "\uc544\uc774\uc2ac\ub780\ub4dc\uc5b4",
+        "ISO 639-1 Code": "is",
+        "ISO 639-2 Code": "ice (B) isl (T)"
+    },
+    {
+        "English": "Italian",
+        "Korean": "\uc774\ud0c8\ub9ac\uc544\uc5b4",
+        "ISO 639-1 Code": "it",
+        "ISO 639-2 Code": "ita"
+    },
+    {
+        "English": "Javanese",
+        "Korean": "\uc790\ubc14\uc5b4",
+        "ISO 639-1 Code": "jv",
+        "ISO 639-2 Code": "jav"
+    },
+    {
+        "English": "Lojban",
+        "Korean": "\ub85c\uc988\ubc18\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "jbo"
+    },
+    {
+        "English": "Japanese",
+        "Korean": "\uc77c\ubcf8\uc5b4",
+        "ISO 639-1 Code": "ja",
+        "ISO 639-2 Code": "jpn"
+    },
+    {
+        "English": "Judeo-Persian",
+        "Korean": "\uc720\ub300-\ud398\ub974\uc2dc\uc544\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "jpr"
+    },
+    {
+        "English": "Judeo-Arabic",
+        "Korean": "\uc720\ub300\uc5b4-\uc544\ub77c\ube44\uc544\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "jrb"
+    },
+    {
+        "English": "Kara-Kalpak",
+        "Korean": "\uce74\ub77c\uce7c\ud30c\ud06c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "kaa"
+    },
+    {
+        "English": "Kabyle",
+        "Korean": "\uce74\ube4c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "kab"
+    },
+    {
+        "English": "Kachin; Jingpho",
+        "Korean": "\uce74\uce5c\uc5b4; \uc9d5\ud3ec\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "kac"
+    },
+    {
+        "English": "Kalaallisut; Greenlandic",
+        "Korean": "\uce7c\ub77c\ub9ac\uc288\ud2b8\uc5b4; \uadf8\ub9b0\ub780\ub4dc\uc5b4",
+        "ISO 639-1 Code": "kl",
+        "ISO 639-2 Code": "kal"
+    },
+    {
+        "English": "Kamba",
+        "Korean": "\uce84\ubc14\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "kam"
+    },
+    {
+        "English": "Kannada",
+        "Korean": "\uce78\ub098\ub2e4\uc5b4",
+        "ISO 639-1 Code": "kn",
+        "ISO 639-2 Code": "kan"
+    },
+    {
+        "English": "Karen languages",
+        "Korean": "\uce74\ub80c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "kar"
+    },
+    {
+        "English": "Kashmiri",
+        "Korean": "\uce74\uc288\ubbf8\ub9ac\uc5b4",
+        "ISO 639-1 Code": "ks",
+        "ISO 639-2 Code": "kas"
+    },
+    {
+        "English": "Georgian",
+        "Korean": "\uc870\ub974\uc9c0\uc544\uc5b4",
+        "ISO 639-1 Code": "ka",
+        "ISO 639-2 Code": "geo (B) kat (T)"
+    },
+    {
+        "English": "Kanuri",
+        "Korean": "\uce74\ub204\ub9ac\uc5b4",
+        "ISO 639-1 Code": "kr",
+        "ISO 639-2 Code": "kau"
+    },
+    {
+        "English": "Kawi",
+        "Korean": "\uce74\uc704\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "kaw"
+    },
+    {
+        "English": "Kazakh",
+        "Korean": "\uce74\uc790\ud750\uc5b4",
+        "ISO 639-1 Code": "kk",
+        "ISO 639-2 Code": "kaz"
+    },
+    {
+        "English": "Kabardian",
+        "Korean": "\uce74\ubc14\ub974\ub514\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "kbd"
+    },
+    {
+        "English": "Khasi",
+        "Korean": "\uce74\uc2dc\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "kha"
+    },
+    {
+        "English": "Khoisan languages",
+        "Korean": "\ucf54\uc774\uc0b0\uc5b4\uc871",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "khi"
+    },
+    {
+        "English": "Central Khmer",
+        "Korean": "\uc911\ubd80 \uce84\ubcf4\ub514\uc544\uc5b4",
+        "ISO 639-1 Code": "km",
+        "ISO 639-2 Code": "khm"
+    },
+    {
+        "English": "Khotanese; Sakan",
+        "Korean": "\ud638\ud0c0\ub124\uc2a4\uc5b4; \uc0ac\uce78\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "kho"
+    },
+    {
+        "English": "Kikuyu; Gikuyu",
+        "Korean": "\ud0a4\ucfe0\uc720\uc5b4; \uae30\ucfe0\uc720\uc5b4",
+        "ISO 639-1 Code": "ki",
+        "ISO 639-2 Code": "kik"
+    },
+    {
+        "English": "Kinyarwanda",
+        "Korean": "\ud0a8\uc57c\ub8e8\uc644\ub2e4\uc5b4",
+        "ISO 639-1 Code": "rw",
+        "ISO 639-2 Code": "kin"
+    },
+    {
+        "English": "Kirghiz; Kyrgyz",
+        "Korean": "\ud0a4\ub974\uae30\uc988\uc5b4",
+        "ISO 639-1 Code": "ky",
+        "ISO 639-2 Code": "kir"
+    },
+    {
+        "English": "Kimbundu",
+        "Korean": "\ud0b4\ubd84\ub450\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "kmb"
+    },
+    {
+        "English": "Konkani",
+        "Korean": "\ucf58\uce74\ub2c8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "kok"
+    },
+    {
+        "English": "Komi",
+        "Korean": "\ucf54\ubbf8\uc5b4",
+        "ISO 639-1 Code": "kv",
+        "ISO 639-2 Code": "kom"
+    },
+    {
+        "English": "Kongo",
+        "Korean": "\ucf69\uace0\uc5b4",
+        "ISO 639-1 Code": "kg",
+        "ISO 639-2 Code": "kon"
+    },
+    {
+        "English": "Korean",
+        "Korean": "\ud55c\uad6d\uc5b4",
+        "ISO 639-1 Code": "ko",
+        "ISO 639-2 Code": "kor"
+    },
+    {
+        "English": "Kosraean",
+        "Korean": "\ucf54\uc2a4\ub77c\uc5d0\uc548\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "kos"
+    },
+    {
+        "English": "Kpelle",
+        "Korean": "\ucf00\ud3a0\ub808\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "kpe"
+    },
+    {
+        "English": "Karachay-Balkar",
+        "Korean": "\uce74\ub77c\ucc28\uc774-\ubc1c\uce74\ub974\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "krc"
+    },
+    {
+        "English": "Karelian",
+        "Korean": "\uce74\ub810\ub9ac\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "krl"
+    },
+    {
+        "English": "Kru languages",
+        "Korean": "\ud06c\ub8e8\uc5b4\uc871",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "kro"
+    },
+    {
+        "English": "Kurukh",
+        "Korean": "\ucfe0\ub8e8\ud06c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "kru"
+    },
+    {
+        "English": "Kuanyama; Kwanyama",
+        "Korean": "\ucfe0\uc548\uc57c\ub9c8\uc5b4; \ucf70\ub0d0\ub9c8\uc5b4",
+        "ISO 639-1 Code": "kj",
+        "ISO 639-2 Code": "kua"
+    },
+    {
+        "English": "Kumyk",
+        "Korean": "\ucfe0\ubbf9\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "kum"
+    },
+    {
+        "English": "Kurdish",
+        "Korean": "\ucfe0\ub974\ub4dc\uc5b4",
+        "ISO 639-1 Code": "ku",
+        "ISO 639-2 Code": "kur"
+    },
+    {
+        "English": "Kutenai",
+        "Korean": "\ucfe0\ud14c\ub124\uc774\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "kut"
+    },
+    {
+        "English": "Ladino",
+        "Korean": "\ub77c\ub514\ub178\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "lad"
+    },
+    {
+        "English": "Lahnda",
+        "Korean": "\ub77c\ud750\ub2e4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "lah"
+    },
+    {
+        "English": "Lamba",
+        "Korean": "\ub78c\ubc14\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "lam"
+    },
+    {
+        "English": "Lao",
+        "Korean": "\ub77c\uc624\uc5b4",
+        "ISO 639-1 Code": "lo",
+        "ISO 639-2 Code": "lao"
+    },
+    {
+        "English": "Latin",
+        "Korean": "\ub77c\ud2f4\uc5b4",
+        "ISO 639-1 Code": "la",
+        "ISO 639-2 Code": "lat"
+    },
+    {
+        "English": "Latvian",
+        "Korean": "\ub77c\ud2b8\ube44\uc544\uc5b4",
+        "ISO 639-1 Code": "lv",
+        "ISO 639-2 Code": "lav"
+    },
+    {
+        "English": "Lezghian",
+        "Korean": "\ub808\uc988\uae30\uc548\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "lez"
+    },
+    {
+        "English": "Limburgan; Limburger; Limburgish",
+        "Korean": "\ub9bc\ubc84\uac04\uc5b4",
+        "ISO 639-1 Code": "li",
+        "ISO 639-2 Code": "lim"
+    },
+    {
+        "English": "Lingala",
+        "Korean": "\ub9c1\uac08\ub77c\uc5b4",
+        "ISO 639-1 Code": "ln",
+        "ISO 639-2 Code": "lin"
+    },
+    {
+        "English": "Lithuanian",
+        "Korean": "\ub9ac\ud22c\uc544\ub2c8\uc544\uc5b4",
+        "ISO 639-1 Code": "lt",
+        "ISO 639-2 Code": "lit"
+    },
+    {
+        "English": "Mongo",
+        "Korean": "\ubabd\uace0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "lol"
+    },
+    {
+        "English": "Lozi",
+        "Korean": "\ub85c\uc9c0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "loz"
+    },
+    {
+        "English": "Luxembourgish; Letzeburgesch",
+        "Korean": "\ub8e9\uc148\ubd80\ub974\ud06c\uc5b4",
+        "ISO 639-1 Code": "lb",
+        "ISO 639-2 Code": "ltz"
+    },
+    {
+        "English": "Luba-Lulua",
+        "Korean": "\ub8e8\ubc14-\ub8f0\ub8e8\uc544\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "lua"
+    },
+    {
+        "English": "Luba-Katanga",
+        "Korean": "\ub8e8\ubc14-\uce74\ud0d5\uac00\uc5b4",
+        "ISO 639-1 Code": "lu",
+        "ISO 639-2 Code": "lub"
+    },
+    {
+        "English": "Ganda",
+        "Korean": "\uac04\ub2e4\uc5b4",
+        "ISO 639-1 Code": "lg",
+        "ISO 639-2 Code": "lug"
+    },
+    {
+        "English": "Luiseno",
+        "Korean": "\ub8e8\uc774\uc138\ub178\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "lui"
+    },
+    {
+        "English": "Lunda",
+        "Korean": "\ub8ec\ub2e4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "lun"
+    },
+    {
+        "English": "Luo (Kenya and Tanzania)",
+        "Korean": "\ub8e8\uc624\uc5b4 (\ucf00\ub0d0 \ubc0f \ud0c4\uc790\ub2c8\uc544)",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "luo"
+    },
+    {
+        "English": "Lushai",
+        "Korean": "\ub8e8\uc0e4\uc774\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "lus"
+    },
+    {
+        "English": "Macedonian",
+        "Korean": "\ub9c8\ucf00\ub3c4\ub2c8\uc544\uc5b4",
+        "ISO 639-1 Code": "mk",
+        "ISO 639-2 Code": "mac (B) mkd (T)"
+    },
+    {
+        "English": "Madurese",
+        "Korean": "\ub9c8\ub450\ub77c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mad"
+    },
+    {
+        "English": "Magahi",
+        "Korean": "\ub9c8\uac00\ud788\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mag"
+    },
+    {
+        "English": "Marshallese",
+        "Korean": "\ub9c8\uc15c\uc5b4",
+        "ISO 639-1 Code": "mh",
+        "ISO 639-2 Code": "mah"
+    },
+    {
+        "English": "Maithili",
+        "Korean": "\ub9c8\uc774\ud2f8\ub9ac\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mai"
+    },
+    {
+        "English": "Makasar",
+        "Korean": "\ub9c8\uce74\uc0ac\ub974\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mak"
+    },
+    {
+        "English": "Malayalam",
+        "Korean": "\ub9d0\ub77c\uc584\ub78c\uc5b4",
+        "ISO 639-1 Code": "ml",
+        "ISO 639-2 Code": "mal"
+    },
+    {
+        "English": "Mandingo",
+        "Korean": "\ub9cc\ub529\uace0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "man"
+    },
+    {
+        "English": "Maori",
+        "Korean": "\ub9c8\uc624\ub9ac\uc5b4",
+        "ISO 639-1 Code": "mi",
+        "ISO 639-2 Code": "mao (B) mri (T)"
+    },
+    {
+        "English": "Austronesian languages",
+        "Korean": "\uc624\uc2a4\ud2b8\ub85c\ub124\uc2dc\uc544\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "map"
+    },
+    {
+        "English": "Marathi",
+        "Korean": "\ub9c8\ub77c\ud2f0\uc5b4",
+        "ISO 639-1 Code": "mr",
+        "ISO 639-2 Code": "mar"
+    },
+    {
+        "English": "Masai",
+        "Korean": "\ub9c8\uc0ac\uc774\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mas"
+    },
+    {
+        "English": "Malay",
+        "Korean": "\ub9d0\ub808\uc774\uc5b4",
+        "ISO 639-1 Code": "ms",
+        "ISO 639-2 Code": "may (B) msa (T)"
+    },
+    {
+        "English": "Moksha",
+        "Korean": "\ubaa8\ud06c\uc0e4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mdf"
+    },
+    {
+        "English": "Mandar",
+        "Korean": "\ub9cc\ub2e4\ub974\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mdr"
+    },
+    {
+        "English": "Mende",
+        "Korean": "\uba58\ub370\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "men"
+    },
+    {
+        "English": "Irish, Middle (900-1200)",
+        "Korean": "\uc544\uc77c\ub79c\ub4dc\uc5b4, \uc911\uc138 (900-1200)",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mga"
+    },
+    {
+        "English": "Mi'kmaq; Micmac",
+        "Korean": "\ubbf8\ud06c\ub9c8\ud06c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mic"
+    },
+    {
+        "English": "Minangkabau",
+        "Korean": "\ubbf8\ub0ad\uce74\ubc14\uc6b0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "min"
+    },
+    {
+        "English": "Uncoded languages",
+        "Korean": "\ubd80\ud638\ud654\ub418\uc9c0 \uc54a\uc740 \uc5b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mis"
+    },
+    {
+        "English": "Macedonian",
+        "Korean": "\ub9c8\ucf00\ub3c4\ub2c8\uc544\uc5b4",
+        "ISO 639-1 Code": "mk",
+        "ISO 639-2 Code": "mac (B) mkd (T)"
+    },
+    {
+        "English": "Mon-Khmer languages",
+        "Korean": "\ubaac-\ud06c\uba54\ub974\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mkh"
+    },
+    {
+        "English": "Malagasy",
+        "Korean": "\ub9c8\ub2e4\uac00\uc2a4\uce74\ub974\uc5b4",
+        "ISO 639-1 Code": "mg",
+        "ISO 639-2 Code": "mlg"
+    },
+    {
+        "English": "Maltese",
+        "Korean": "\ubab0\ud0c0\uc5b4",
+        "ISO 639-1 Code": "mt",
+        "ISO 639-2 Code": "mlt"
+    },
+    {
+        "English": "Manchu",
+        "Korean": "\ub9cc\uc8fc\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mnc"
+    },
+    {
+        "English": "Manipuri",
+        "Korean": "\ub9c8\ub2c8\ud478\ub9ac\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mni"
+    },
+    {
+        "English": "Manobo languages",
+        "Korean": "\ub9c8\ub178\ubcf4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mno"
+    },
+    {
+        "English": "Mohawk",
+        "Korean": "\ubaa8\ud638\ud06c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "moh"
+    },
+    {
+        "English": "Mongolian",
+        "Korean": "\ubabd\uace8\uc5b4",
+        "ISO 639-1 Code": "mn",
+        "ISO 639-2 Code": "mon"
+    },
+    {
+        "English": "Mossi",
+        "Korean": "\ubaa8\uc2dc\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mos"
+    },
+    {
+        "English": "Maori",
+        "Korean": "\ub9c8\uc624\ub9ac\uc5b4",
+        "ISO 639-1 Code": "mi",
+        "ISO 639-2 Code": "mao (B) mri (T)"
+    },
+    {
+        "English": "Malay",
+        "Korean": "\ub9d0\ub808\uc774\uc5b4",
+        "ISO 639-1 Code": "ms",
+        "ISO 639-2 Code": "may (B) msa (T)"
+    },
+    {
+        "English": "Multiple languages",
+        "Korean": "\ub2e4\uc591\ud55c \uc5b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mul"
+    },
+    {
+        "English": "Munda languages",
+        "Korean": "\ubb38\ub2e4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mun"
+    },
+    {
+        "English": "Creek",
+        "Korean": "\ud06c\ub9ad\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mus"
+    },
+    {
+        "English": "Mirandese",
+        "Korean": "\ubbf8\ub780\ub514\uc988\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mwl"
+    },
+    {
+        "English": "Marwari",
+        "Korean": "\ub9c8\ub974\uc640\ub9ac\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "mwr"
+    },
+    {
+        "English": "Burmese",
+        "Korean": "\ubc84\ub9c8\uc5b4",
+        "ISO 639-1 Code": "my",
+        "ISO 639-2 Code": "bur (B) mya (T)"
+    },
+    {
+        "English": "Mayan languages",
+        "Korean": "\ub9c8\uc57c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "myn"
+    },
+    {
+        "English": "Erzya",
+        "Korean": "\uc5d0\ub974\uc9c0\uc544\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "myv"
+    },
+    {
+        "English": "Nahuatl languages",
+        "Korean": "\ub098\uc640\ud2c0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "nah"
+    },
+    {
+        "English": "North American Indian languages",
+        "Korean": "\ubd81\uc544\uba54\ub9ac\uce74 \uc778\ub514\uc5b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "nai"
+    },
+    {
+        "English": "Neapolitan",
+        "Korean": "\ub098\ud3f4\ub9ac\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "nap"
+    },
+    {
+        "English": "Nauru",
+        "Korean": "\ub098\uc6b0\ub8e8\uc5b4",
+        "ISO 639-1 Code": "na",
+        "ISO 639-2 Code": "nau"
+    },
+    {
+        "English": "Navajo; Navaho",
+        "Korean": "\ub098\ubc14\ud638\uc5b4",
+        "ISO 639-1 Code": "nv",
+        "ISO 639-2 Code": "nav"
+    },
+    {
+        "English": "Ndebele, South; South Ndebele",
+        "Korean": "\ub0a8\ubd80 \uc740\ub370\ubca8\ub808\uc5b4",
+        "ISO 639-1 Code": "nr",
+        "ISO 639-2 Code": "nbl"
+    },
+    {
+        "English": "Ndebele, North; North Ndebele",
+        "Korean": "\ubd81\ubd80 \uc740\ub370\ubca8\ub808\uc5b4",
+        "ISO 639-1 Code": "nd",
+        "ISO 639-2 Code": "nde"
+    },
+    {
+        "English": "Ndonga",
+        "Korean": "\ub3d9\uac00 \uc5b4",
+        "ISO 639-1 Code": "ng",
+        "ISO 639-2 Code": "ndo"
+    },
+    {
+        "English": "Low German; Low Saxon; German, Low; Saxon, Low",
+        "Korean": "\uc800\uc9c0 \ub3c5\uc77c\uc5b4; \ub85c\uc6b0 \uc0ad\uc2a8\uc5b4; \ub3c5\uc77c\uc5b4, \ub85c\uc6b0; \uc0ad\uc2a8\uc5b4, \ub85c\uc6b0",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "nds"
+    },
+    {
+        "English": "Nepali",
+        "Korean": "\ub124\ud314\uc5b4",
+        "ISO 639-1 Code": "ne",
+        "ISO 639-2 Code": "nep"
+    },
+    {
+        "English": "Nepal Bhasa; Newari",
+        "Korean": "\ub124\ud314 \ubc14\uc0ac; \ub124\uc640\ub9ac\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "new"
+    },
+    {
+        "English": "Nias",
+        "Korean": "\ub2c8\uc544\uc2a4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "nia"
+    },
+    {
+        "English": "Niger-Kordofanian languages",
+        "Korean": "\ub2c8\uc81c\ub974-\ucf54\ub974\ub3c4\ud30c\ub2c8\uc548\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "nic"
+    },
+    {
+        "English": "Niuean",
+        "Korean": "\ub2c8\uc6b0\uc5d0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "niu"
+    },
+    {
+        "English": "Dutch; Flemish",
+        "Korean": "\ub124\ub35c\ub780\ub4dc\uc5b4; \ud50c\ub808\ubc0d\uc5b4",
+        "ISO 639-1 Code": "nl",
+        "ISO 639-2 Code": "dut (B) nld (T)"
+    },
+    {
+        "English": "Norwegian Nynorsk; Nynorsk, Norwegian",
+        "Korean": "\ub178\ub974\uc6e8\uc774\uc5b4 \ub258\ub178\ub974\uc2a4\ud06c; \ub178\ub974\uc6e8\uc774\uc5b4 \ub258\ub178\ub974\uc2a4\ud06c",
+        "ISO 639-1 Code": "nn",
+        "ISO 639-2 Code": "nno"
+    },
+    {
+        "English": "Bokm\u00e5l, Norwegian; Norwegian Bokm\u00e5l",
+        "Korean": "\ub178\ub974\uc6e8\uc774\uc5b4 \ubcf4\ud06c\ubab0; \ub178\ub974\uc6e8\uc774\uc5b4 \ubcf4\ud06c\ubab0",
+        "ISO 639-1 Code": "nb",
+        "ISO 639-2 Code": "nob"
+    },
+    {
+        "English": "Nogai",
+        "Korean": "\ub178\uac00\uc774\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "nog"
+    },
+    {
+        "English": "Norse, Old",
+        "Korean": "\ub178\ub974\uc2a4, \uace0\ub300\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "non"
+    },
+    {
+        "English": "Norwegian",
+        "Korean": "\ub178\ub974\uc6e8\uc774\uc5b4",
+        "ISO 639-1 Code": "no",
+        "ISO 639-2 Code": "nor"
+    },
+    {
+        "English": "N'Ko",
+        "Korean": "\uc5d4\ucf54\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "nqo"
+    },
+    {
+        "English": "Pedi; Sepedi; Northern Sotho",
+        "Korean": "\ud398\ub514\uc5b4; \uc138\ud398\ub514\uc5b4; \ubd81\ubd80 \uc18c\ud1a0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "nso"
+    },
+    {
+        "English": "Nubian languages",
+        "Korean": "\ub204\ube44\uc544\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "nub"
+    },
+    {
+        "English": "Classical Newari; Old Newari; Classical Nepal Bhasa",
+        "Korean": "\uace0\uc804 \ub124\uc640\ub9ac\uc5b4; \uc624\ub798\ub41c \ub124\uc640\ub9ac\uc5b4; \uace0\uc804 \ub124\ud314 \ubc14\uc0ac",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "nwc"
+    },
+    {
+        "English": "Chichewa; Chewa; Nyanja",
+        "Korean": "\uce58\uccb4\uc640\uc5b4; \uce58\uc640\uc5b4; \ub0e5\uc790\uc5b4",
+        "ISO 639-1 Code": "ny",
+        "ISO 639-2 Code": "nya"
+    },
+    {
+        "English": "Nyamwezi",
+        "Korean": "\ub2c8\uc554\uc6e8\uc9c0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "nym"
+    },
+    {
+        "English": "Nyankole",
+        "Korean": "\ub2c8\uc548\ucf5c\ub808\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "nyn"
+    },
+    {
+        "English": "Nyoro",
+        "Korean": "\ub2c8\uc624\ub85c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "nyo"
+    },
+    {
+        "English": "Nzima",
+        "Korean": "\uc740\uc81c\ub9c8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "nzi"
+    },
+    {
+        "English": "Occitan (post 1500)",
+        "Korean": "\uc624\ud0a4\ud0c4\uc5b4 (1500\ub144 \uc774\ud6c4)",
+        "ISO 639-1 Code": "oc",
+        "ISO 639-2 Code": "oci"
+    },
+    {
+        "English": "Ojibwa",
+        "Korean": "\uc624\uc9c0\ube0c\uc640\uc5b4",
+        "ISO 639-1 Code": "oj",
+        "ISO 639-2 Code": "oji"
+    },
+    {
+        "English": "Oriya",
+        "Korean": "\uc624\ub9ac\uc57c\uc5b4",
+        "ISO 639-1 Code": "or",
+        "ISO 639-2 Code": "ori"
+    },
+    {
+        "English": "Oromo",
+        "Korean": "\uc624\ub85c\ubaa8\uc5b4",
+        "ISO 639-1 Code": "om",
+        "ISO 639-2 Code": "orm"
+    },
+    {
+        "English": "Osage",
+        "Korean": "\uc624\uc138\uc774\uc9c0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "osa"
+    },
+    {
+        "English": "Ossetian; Ossetic",
+        "Korean": "\uc624\uc138\ud2f1\uc5b4",
+        "ISO 639-1 Code": "os",
+        "ISO 639-2 Code": "oss"
+    },
+    {
+        "English": "Turkish, Ottoman (1500-1928)",
+        "Korean": "\ud130\ud0a4\uc5b4, \uc624\ud1a0\ub9cc (1500-1928)",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ota"
+    },
+    {
+        "English": "Otomian languages",
+        "Korean": "\uc624\ud1a0\ubbf8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "oto"
+    },
+    {
+        "English": "Papuan languages",
+        "Korean": "\ud30c\ud478\uc544\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "paa"
+    },
+    {
+        "English": "Pangasinan",
+        "Korean": "\ud321\uac00\uc2dc\ub09c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "pag"
+    },
+    {
+        "English": "Pahlavi",
+        "Korean": "\ud314\ub77c\ube44\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "pal"
+    },
+    {
+        "English": "Pampanga; Kapampangan",
+        "Korean": "\ud31c\ud321\uac00\uc5b4; \uce74\ud31c\ud321\uac00\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "pam"
+    },
+    {
+        "English": "Panjabi; Punjabi",
+        "Korean": "\ud380\uc7a1\uc5b4; \ud380\uc7a1\ube44\uc5b4",
+        "ISO 639-1 Code": "pa",
+        "ISO 639-2 Code": "pan"
+    },
+    {
+        "English": "Papiamento",
+        "Korean": "\ud30c\ud53c\uc544\uba58\ud1a0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "pap"
+    },
+    {
+        "English": "Palauan",
+        "Korean": "\ud314\ub77c\uc6b0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "pau"
+    },
+    {
+        "English": "Persian, Old (ca.600-400 B.C.)",
+        "Korean": "\uace0\ub300 \ud398\ub974\uc2dc\uc544\uc5b4 (\uc57d 600-400 B.C.)",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "peo"
+    },
+    {
+        "English": "Persian",
+        "Korean": "\ud398\ub974\uc2dc\uc544\uc5b4",
+        "ISO 639-1 Code": "fa",
+        "ISO 639-2 Code": "per (B) fas (T)"
+    },
+    {
+        "English": "Philippine languages",
+        "Korean": "\ud544\ub9ac\ud540\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "phi"
+    },
+    {
+        "English": "Phoenician",
+        "Korean": "\ud3ec\uc5d0\ub2c8\uc158\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "phn"
+    },
+    {
+        "English": "Pali",
+        "Korean": "\ud314\ub9ac\uc5b4",
+        "ISO 639-1 Code": "pi",
+        "ISO 639-2 Code": "pli"
+    },
+    {
+        "English": "Polish",
+        "Korean": "\ud3f4\ub780\ub4dc\uc5b4",
+        "ISO 639-1 Code": "pl",
+        "ISO 639-2 Code": "pol"
+    },
+    {
+        "English": "Pohnpeian",
+        "Korean": "\ud3ec\ub098\ud398\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "pon"
+    },
+    {
+        "English": "Portuguese",
+        "Korean": "\ud3ec\ub974\ud22c\uac08\uc5b4",
+        "ISO 639-1 Code": "pt",
+        "ISO 639-2 Code": "por"
+    },
+    {
+        "English": "Prakrit languages",
+        "Korean": "\ud504\ub77c\ud06c\ub9ac\ud2b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "pra"
+    },
+    {
+        "English": "Proven\u00e7al, Old (to 1500); Occitan, Old (to 1500)",
+        "Korean": "\ud504\ub85c\ubc29\uc2a4\uc5b4, \uace0\ub300 (1500\ub144 \uc774\uc804); \uc624\ud06c\uc5b4, \uace0\ub300 (1500\ub144 \uc774\uc804)",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "pro"
+    },
+    {
+        "English": "Pushto; Pashto",
+        "Korean": "\ud478\uc2dc\ud1a0; \ud30c\uc288\ud1a0\uc5b4",
+        "ISO 639-1 Code": "ps",
+        "ISO 639-2 Code": "pus"
+    },
+    {
+        "English": "Reserved for local use",
+        "Korean": "\uc9c0\uc5ed \uc0ac\uc6a9 \uc6a9\ub3c4\ub85c \uc608\uc57d\ub428",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "qaa-qtz"
+    },
+    {
+        "English": "Quechua",
+        "Korean": "\ucf00\ucd94\uc544\uc5b4",
+        "ISO 639-1 Code": "qu",
+        "ISO 639-2 Code": "que"
+    },
+    {
+        "English": "Rajasthani",
+        "Korean": "\ub77c\uc790\uc2a4\ud0c4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "raj"
+    },
+    {
+        "English": "Rapanui",
+        "Korean": "\ub77c\ud30c\ub204\uc774\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "rap"
+    },
+    {
+        "English": "Rarotongan; Cook Islands Maori",
+        "Korean": "\ub77c\ub85c\ud1a0\uac04\uc5b4; \ucfe1 \uc81c\ub3c4 \ub9c8\uc624\ub9ac\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "rar"
+    },
+    {
+        "English": "Romance languages",
+        "Korean": "\ub85c\ub9e8\uc2a4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "roa"
+    },
+    {
+        "English": "Romansh",
+        "Korean": "\ub85c\ub9cc\uc288\uc5b4",
+        "ISO 639-1 Code": "rm",
+        "ISO 639-2 Code": "roh"
+    },
+    {
+        "English": "Romany",
+        "Korean": "\ub85c\ub9c8\ub2c8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "rom"
+    },
+    {
+        "English": "Romanian; Moldavian; Moldovan",
+        "Korean": "\ub85c\ub9c8\ub2c8\uc5b4; \ubaa8\ub974\ub3c4\ubc14\uc5b4; \ubaa8\ub974\ub3c4\ubc18\uc5b4",
+        "ISO 639-1 Code": "ro",
+        "ISO 639-2 Code": "rum (B) ron (T)"
+    },
+    {
+        "English": "Romanian; Moldavian; Moldovan",
+        "Korean": "\ub85c\ub9c8\ub2c8\uc5b4; \ubaa8\ub974\ub3c4\ubc14\uc5b4; \ubaa8\ub974\ub3c4\ubc18\uc5b4",
+        "ISO 639-1 Code": "ro",
+        "ISO 639-2 Code": "rum (B) ron (T)"
+    },
+    {
+        "English": "Rundi",
+        "Korean": "\ub8ec\ub514\uc5b4",
+        "ISO 639-1 Code": "rn",
+        "ISO 639-2 Code": "run"
+    },
+    {
+        "English": "Aromanian; Arumanian; Macedo-Romanian",
+        "Korean": "\uc544\ub85c\ub9c8\ub2c8\uc544\uc5b4; \uc544\ub8e8\ub9c8\ub2c8\uc544\uc5b4; \ub9c8\ucf00\ub3c4-\ub85c\ub9c8\ub2c8\uc544\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "rup"
+    },
+    {
+        "English": "Russian",
+        "Korean": "\ub7ec\uc2dc\uc544\uc5b4",
+        "ISO 639-1 Code": "ru",
+        "ISO 639-2 Code": "rus"
+    },
+    {
+        "English": "Sandawe",
+        "Korean": "\uc0b0\ub2e4\uc6e8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sad"
+    },
+    {
+        "English": "Sango",
+        "Korean": "\uc0c1\uace0\uc5b4",
+        "ISO 639-1 Code": "sg",
+        "ISO 639-2 Code": "sag"
+    },
+    {
+        "English": "Yakut",
+        "Korean": "\uc57c\ucfe0\ud2b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sah"
+    },
+    {
+        "English": "South American Indian languages",
+        "Korean": "\ub0a8\ubbf8 \uc778\ub514\uc5b8 \uc5b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sai"
+    },
+    {
+        "English": "Salishan languages",
+        "Korean": "\uc0d0\ub9ac\uc288\uc5b4 \uc5b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sal"
+    },
+    {
+        "English": "Samaritan Aramaic",
+        "Korean": "\uc0ac\ub9c8\ub9ac\uc544 \uc544\ub78c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sam"
+    },
+    {
+        "English": "Sanskrit",
+        "Korean": "\uc0b0\uc2a4\ud06c\ub9ac\ud2b8\uc5b4",
+        "ISO 639-1 Code": "sa",
+        "ISO 639-2 Code": "san"
+    },
+    {
+        "English": "Sasak",
+        "Korean": "\uc0ac\uc0ac\ud06c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sas"
+    },
+    {
+        "English": "Santali",
+        "Korean": "\uc0b0\ud0c8\ub9ac\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sat"
+    },
+    {
+        "English": "Sicilian",
+        "Korean": "\uc2dc\uce60\ub9ac\uc544\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "scn"
+    },
+    {
+        "English": "Scots",
+        "Korean": "\uc2a4\ucf54\ud2b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sco"
+    },
+    {
+        "English": "Selkup",
+        "Korean": "\uc140\ucfe0\ud504\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sel"
+    },
+    {
+        "English": "Semitic languages",
+        "Korean": "\uc138\ubbf8\ud2f1\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sem"
+    },
+    {
+        "English": "Irish, Old (to 900)",
+        "Korean": "\uc544\uc77c\ub79c\ub4dc\uc5b4, \uace0\ub300 (900\ub144 \uc804\uae4c\uc9c0)",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sga"
+    },
+    {
+        "English": "Sign Languages",
+        "Korean": "\uc218\ud654 \uc5b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sgn"
+    },
+    {
+        "English": "Shan",
+        "Korean": "\uc0e8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "shn"
+    },
+    {
+        "English": "Sidamo",
+        "Korean": "\uc2dc\ub2e4\ubaa8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sid"
+    },
+    {
+        "English": "Sinhala; Sinhalese",
+        "Korean": "\uc2e0\ud560\ub77c\uc5b4; \uc2e0\ud560\ub77c\ub808\uc5b4",
+        "ISO 639-1 Code": "si",
+        "ISO 639-2 Code": "sin"
+    },
+    {
+        "English": "Siouan languages",
+        "Korean": "\uc2dc\uc628\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sio"
+    },
+    {
+        "English": "Sino-Tibetan languages",
+        "Korean": "\uc911\uad6d-\ud2f0\ubca0\ud2b8\uc5b4 \uc5b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sit"
+    },
+    {
+        "English": "Slavic languages",
+        "Korean": "\uc2ac\ub77c\ube0c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sla"
+    },
+    {
+        "English": "Slovak",
+        "Korean": "\uc2ac\ub85c\ubc14\ud0a4\uc544\uc5b4",
+        "ISO 639-1 Code": "sk",
+        "ISO 639-2 Code": "slo (B) slk (T)"
+    },
+    {
+        "English": "Slovak",
+        "Korean": "\uc2ac\ub85c\ubc14\ud0a4\uc544\uc5b4",
+        "ISO 639-1 Code": "sk",
+        "ISO 639-2 Code": "slo (B) slk (T)"
+    },
+    {
+        "English": "Slovenian",
+        "Korean": "\uc2ac\ub85c\ubca0\ub2c8\uc544\uc5b4",
+        "ISO 639-1 Code": "sl",
+        "ISO 639-2 Code": "slv"
+    },
+    {
+        "English": "Southern Sami",
+        "Korean": "\ub0a8\ubd80 \uc0ac\ubbf8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sma"
+    },
+    {
+        "English": "Northern Sami",
+        "Korean": "\ubd81\ubd80 \uc0ac\ubbf8\uc5b4",
+        "ISO 639-1 Code": "se",
+        "ISO 639-2 Code": "sme"
+    },
+    {
+        "English": "Sami languages",
+        "Korean": "\uc0ac\ubbf8\uc5b4 \uc5b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "smi"
+    },
+    {
+        "English": "Lule Sami",
+        "Korean": "\ub8f0\ub808 \uc0ac\ubbf8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "smj"
+    },
+    {
+        "English": "Inari Sami",
+        "Korean": "\uc774\ub098\ub9ac \uc0ac\ubbf8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "smn"
+    },
+    {
+        "English": "Samoan",
+        "Korean": "\uc0ac\ubaa8\uc544\uc5b4",
+        "ISO 639-1 Code": "sm",
+        "ISO 639-2 Code": "smo"
+    },
+    {
+        "English": "Skolt Sami",
+        "Korean": "\uc2a4\ucf5c\ud2b8 \uc0ac\ubbf8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sms"
+    },
+    {
+        "English": "Shona",
+        "Korean": "\uc1fc\ub098\uc5b4",
+        "ISO 639-1 Code": "sn",
+        "ISO 639-2 Code": "sna"
+    },
+    {
+        "English": "Sindhi",
+        "Korean": "\uc2e0\ub514\uc5b4",
+        "ISO 639-1 Code": "sd",
+        "ISO 639-2 Code": "snd"
+    },
+    {
+        "English": "Soninke",
+        "Korean": "\uc18c\ub2cc\ucf00\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "snk"
+    },
+    {
+        "English": "Sogdian",
+        "Korean": "\uc18c\uadf8\ub514\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sog"
+    },
+    {
+        "English": "Somali",
+        "Korean": "\uc18c\ub9d0\ub9ac\uc5b4",
+        "ISO 639-1 Code": "so",
+        "ISO 639-2 Code": "som"
+    },
+    {
+        "English": "Songhai languages",
+        "Korean": "\uc1a1\ud558\uc774\uc5b4 \uc5b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "son"
+    },
+    {
+        "English": "Sotho, Southern",
+        "Korean": "\uc18c\ud1a0\uc5b4, \ub0a8\ubd80",
+        "ISO 639-1 Code": "st",
+        "ISO 639-2 Code": "sot"
+    },
+    {
+        "English": "Spanish; Castilian",
+        "Korean": "\uc2a4\ud398\uc778\uc5b4; \uce74\uc2a4\ud2f0\uc57c\uc5b4",
+        "ISO 639-1 Code": "es",
+        "ISO 639-2 Code": "spa"
+    },
+    {
+        "English": "Albanian",
+        "Korean": "\uc54c\ubc14\ub2c8\uc544\uc5b4",
+        "ISO 639-1 Code": "sq",
+        "ISO 639-2 Code": "alb (B) sqi (T)"
+    },
+    {
+        "English": "Sardinian",
+        "Korean": "\uc0ac\ub974\ub514\ub2c8\uc544\uc5b4",
+        "ISO 639-1 Code": "sc",
+        "ISO 639-2 Code": "srd"
+    },
+    {
+        "English": "Sranan Tongo",
+        "Korean": "\uc2a4\ub77c\ub09c \ud1b5\uace0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "srn"
+    },
+    {
+        "English": "Serbian",
+        "Korean": "\uc138\ub974\ube44\uc544\uc5b4",
+        "ISO 639-1 Code": "sr",
+        "ISO 639-2 Code": "srp"
+    },
+    {
+        "English": "Serer",
+        "Korean": "\uc138\ub808\ub974\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "srr"
+    },
+    {
+        "English": "Nilo-Saharan languages",
+        "Korean": "\ub2c8\ub85c-\uc0ac\ud558\ub77c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ssa"
+    },
+    {
+        "English": "Swati",
+        "Korean": "\uc2a4\uc640\ud2f0\uc5b4",
+        "ISO 639-1 Code": "ss",
+        "ISO 639-2 Code": "ssw"
+    },
+    {
+        "English": "Sukuma",
+        "Korean": "\uc218\ucfe0\ub9c8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "suk"
+    },
+    {
+        "English": "Sundanese",
+        "Korean": "\uc21c\ub2e4\ub124\uc5b4",
+        "ISO 639-1 Code": "su",
+        "ISO 639-2 Code": "sun"
+    },
+    {
+        "English": "Susu",
+        "Korean": "\uc218\uc218\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sus"
+    },
+    {
+        "English": "Sumerian",
+        "Korean": "\uc218\uba54\ub974\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "sux"
+    },
+    {
+        "English": "Swahili",
+        "Korean": "\uc2a4\uc640\ud790\ub9ac\uc5b4",
+        "ISO 639-1 Code": "sw",
+        "ISO 639-2 Code": "swa"
+    },
+    {
+        "English": "Swedish",
+        "Korean": "\uc2a4\uc6e8\ub374\uc5b4",
+        "ISO 639-1 Code": "sv",
+        "ISO 639-2 Code": "swe"
+    },
+    {
+        "English": "Classical Syriac",
+        "Korean": "\uace0\ub300 \uc2dc\ub9ac\uc544\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "syc"
+    },
+    {
+        "English": "Syriac",
+        "Korean": "\uc2dc\ub9ac\uc544\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "syr"
+    },
+    {
+        "English": "Tahitian",
+        "Korean": "\ud0c0\ud788\ud2f0\uc5b4",
+        "ISO 639-1 Code": "ty",
+        "ISO 639-2 Code": "tah"
+    },
+    {
+        "English": "Tai languages",
+        "Korean": "\ud0dc\uc774\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "tai"
+    },
+    {
+        "English": "Tamil",
+        "Korean": "\ud0c0\ubc00\uc5b4",
+        "ISO 639-1 Code": "ta",
+        "ISO 639-2 Code": "tam"
+    },
+    {
+        "English": "Tatar",
+        "Korean": "\ud0c0\ud0c0\ub974\uc5b4",
+        "ISO 639-1 Code": "tt",
+        "ISO 639-2 Code": "tat"
+    },
+    {
+        "English": "Telugu",
+        "Korean": "\ud154\ub8e8\uad6c\uc5b4",
+        "ISO 639-1 Code": "te",
+        "ISO 639-2 Code": "tel"
+    },
+    {
+        "English": "Timne",
+        "Korean": "\ud300\ub124\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "tem"
+    },
+    {
+        "English": "Tereno",
+        "Korean": "\ud14c\ub808\ub178\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ter"
+    },
+    {
+        "English": "Tetum",
+        "Korean": "\ud14c\ud23c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "tet"
+    },
+    {
+        "English": "Tajik",
+        "Korean": "\ud0c0\uc9c0\ud06c\uc5b4",
+        "ISO 639-1 Code": "tg",
+        "ISO 639-2 Code": "tgk"
+    },
+    {
+        "English": "Tagalog",
+        "Korean": "\ud0c0\uac08\ub85c\uadf8\uc5b4",
+        "ISO 639-1 Code": "tl",
+        "ISO 639-2 Code": "tgl"
+    },
+    {
+        "English": "Thai",
+        "Korean": "\ud0dc\uad6d\uc5b4",
+        "ISO 639-1 Code": "th",
+        "ISO 639-2 Code": "tha"
+    },
+    {
+        "English": "Tibetan",
+        "Korean": "\ud2f0\ubca0\ud2b8\uc5b4",
+        "ISO 639-1 Code": "bo",
+        "ISO 639-2 Code": "tib (B) bod (T)"
+    },
+    {
+        "English": "Tigre",
+        "Korean": "\ud2f0\uadf8\ub808\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "tig"
+    },
+    {
+        "English": "Tigrinya",
+        "Korean": "\ud2f0\uadf8\ub9ac\ub0d0\uc5b4",
+        "ISO 639-1 Code": "ti",
+        "ISO 639-2 Code": "tir"
+    },
+    {
+        "English": "Tiv",
+        "Korean": "\ud2f0\ube0c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "tiv"
+    },
+    {
+        "English": "Tokelau",
+        "Korean": "\ud1a0\ucf08\ub77c\uc6b0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "tkl"
+    },
+    {
+        "English": "Klingon; tlhIngan-Hol",
+        "Korean": "\ud074\ub9c1\uace4\uc5b4; \ud2f8\ub9c1\uac04-\ud640\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "tlh"
+    },
+    {
+        "English": "Tlingit",
+        "Korean": "\ud2b8\ub9c1\uac13\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "tli"
+    },
+    {
+        "English": "Tamashek",
+        "Korean": "\ud0c0\ub9c8\uc170\ud06c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "tmh"
+    },
+    {
+        "English": "Tonga (Nyasa)",
+        "Korean": "\ud1b5\uac00\uc5b4 (\ub098\uc774\uc544\uc0ac)",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "tog"
+    },
+    {
+        "English": "Tonga (Tonga Islands)",
+        "Korean": "\ud1b5\uac00\uc5b4 (\ud1b5\uac00 \uc81c\ub3c4)",
+        "ISO 639-1 Code": "to",
+        "ISO 639-2 Code": "ton"
+    },
+    {
+        "English": "Tok Pisin",
+        "Korean": "\ud1a0\ud06c \ud53c\uc2e0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "tpi"
+    },
+    {
+        "English": "Tsimshian",
+        "Korean": "\uce68\uc2dc\uc548\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "tsi"
+    },
+    {
+        "English": "Tswana",
+        "Korean": "\uce20\uc640\ub098\uc5b4",
+        "ISO 639-1 Code": "tn",
+        "ISO 639-2 Code": "tsn"
+    },
+    {
+        "English": "Tsonga",
+        "Korean": "\ucd1d\uac00\uc5b4",
+        "ISO 639-1 Code": "ts",
+        "ISO 639-2 Code": "tso"
+    },
+    {
+        "English": "Turkmen",
+        "Korean": "\ud22c\ub974\ud06c\uba58\uc5b4",
+        "ISO 639-1 Code": "tk",
+        "ISO 639-2 Code": "tuk"
+    },
+    {
+        "English": "Tumbuka",
+        "Korean": "\ud23c\ubd80\uce74\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "tum"
+    },
+    {
+        "English": "Tupi languages",
+        "Korean": "\ud22c\ud53c\uc5b4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "tup"
+    },
+    {
+        "English": "Turkish",
+        "Korean": "\ud130\ud0a4\uc5b4",
+        "ISO 639-1 Code": "tr",
+        "ISO 639-2 Code": "tur"
+    },
+    {
+        "English": "Altaic languages",
+        "Korean": "\uc54c\ud0c0\uc774\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "tut"
+    },
+    {
+        "English": "Tuvalu",
+        "Korean": "\ud22c\ubc1c\ub8e8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "tvl"
+    },
+    {
+        "English": "Twi",
+        "Korean": "\ud2b8\uc704\uc5b4",
+        "ISO 639-1 Code": "tw",
+        "ISO 639-2 Code": "twi"
+    },
+    {
+        "English": "Tuvinian",
+        "Korean": "\ud22c\ube44\ub2c8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "tyv"
+    },
+    {
+        "English": "Udmurt",
+        "Korean": "\uc6b0\ub4dc\ubb38\ud2b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "udm"
+    },
+    {
+        "English": "Ugaritic",
+        "Korean": "\uc6b0\uac00\ub9ac\ud2f1\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "uga"
+    },
+    {
+        "English": "Uighur; Uyghur",
+        "Korean": "\uc704\uad6c\ub974\uc5b4; \uc704\uad6c\ub974\uc5b4",
+        "ISO 639-1 Code": "ug",
+        "ISO 639-2 Code": "uig"
+    },
+    {
+        "English": "Ukrainian",
+        "Korean": "\uc6b0\ud06c\ub77c\uc774\ub098\uc5b4",
+        "ISO 639-1 Code": "uk",
+        "ISO 639-2 Code": "ukr"
+    },
+    {
+        "English": "Umbundu",
+        "Korean": "\uc6c0\ubd84\ub450\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "umb"
+    },
+    {
+        "English": "Undetermined",
+        "Korean": "\ubbf8\ud655\uc778 \uc5b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "und"
+    },
+    {
+        "English": "Urdu",
+        "Korean": "\uc6b0\ub974\ub450\uc5b4",
+        "ISO 639-1 Code": "ur",
+        "ISO 639-2 Code": "urd"
+    },
+    {
+        "English": "Uzbek",
+        "Korean": "\uc6b0\uc988\ubca0\ud06c\uc5b4",
+        "ISO 639-1 Code": "uz",
+        "ISO 639-2 Code": "uzb"
+    },
+    {
+        "English": "Vai",
+        "Korean": "\ubc14\uc774\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "vai"
+    },
+    {
+        "English": "Venda",
+        "Korean": "\ubca4\ub2e4\uc5b4",
+        "ISO 639-1 Code": "ve",
+        "ISO 639-2 Code": "ven"
+    },
+    {
+        "English": "Vietnamese",
+        "Korean": "\ubca0\ud2b8\ub0a8\uc5b4",
+        "ISO 639-1 Code": "vi",
+        "ISO 639-2 Code": "vie"
+    },
+    {
+        "English": "Volap\u00fck",
+        "Korean": "\ubcfc\ub77c\ud4cc\ud06c\uc5b4",
+        "ISO 639-1 Code": "vo",
+        "ISO 639-2 Code": "vol"
+    },
+    {
+        "English": "Votic",
+        "Korean": "\ubcf4\ud2f1\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "vot"
+    },
+    {
+        "English": "Wakashan languages",
+        "Korean": "\uc640\uce74\uc0e8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "wak"
+    },
+    {
+        "English": "Wolaitta; Wolaytta",
+        "Korean": "\uc6d4\ub77c\uc774\ud0c0\uc5b4; \uc6d4\ub77c\uc774\ud0c0\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "wal"
+    },
+    {
+        "English": "Waray",
+        "Korean": "\uc640\ub77c\uc774\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "war"
+    },
+    {
+        "English": "Washo",
+        "Korean": "\uc640\uc1fc\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "was"
+    },
+    {
+        "English": "Welsh",
+        "Korean": "\uc6e8\uc77c\uc2a4\uc5b4",
+        "ISO 639-1 Code": "cy",
+        "ISO 639-2 Code": "wel (B) cym (T)"
+    },
+    {
+        "English": "Sorbian languages",
+        "Korean": "\uc18c\ub974\ube44\uc544\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "wen"
+    },
+    {
+        "English": "Walloon",
+        "Korean": "Walloon",
+        "ISO 639-1 Code": "wa",
+        "ISO 639-2 Code": "wln"
+    },
+    {
+        "English": "Wolof",
+        "Korean": "Wolof",
+        "ISO 639-1 Code": "wo",
+        "ISO 639-2 Code": "wol"
+    },
+    {
+        "English": "Kalmyk; Oirat",
+        "Korean": "\uce7c\ubbf8\ud06c\uc5b4; \uc624\uc774\ub77c\ud2b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "xal"
+    },
+    {
+        "English": "Xhosa",
+        "Korean": "\ucf54\uc0ac\uc5b4",
+        "ISO 639-1 Code": "xh",
+        "ISO 639-2 Code": "xho"
+    },
+    {
+        "English": "Yao",
+        "Korean": "\uc57c\uc624\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "yao"
+    },
+    {
+        "English": "Yapese",
+        "Korean": "\uc57c\ud504\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "yap"
+    },
+    {
+        "English": "Yiddish",
+        "Korean": "\uc774\ub514\uc2dc\uc5b4",
+        "ISO 639-1 Code": "yi",
+        "ISO 639-2 Code": "yid"
+    },
+    {
+        "English": "Yoruba",
+        "Korean": "\uc694\ub8e8\ubc14\uc5b4",
+        "ISO 639-1 Code": "yo",
+        "ISO 639-2 Code": "yor"
+    },
+    {
+        "English": "Yupik languages",
+        "Korean": "\uc720\ud53c\ud06c\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "ypk"
+    },
+    {
+        "English": "Zapotec",
+        "Korean": "\uc790\ud3ec\ud14d\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "zap"
+    },
+    {
+        "English": "Blissymbols; Blissymbolics; Bliss",
+        "Korean": "\ube14\ub9ac\uc2a4 \uc2ec\ubcfc; \ube14\ub9ac\uc2a4 \uc2ec\ubcfc\ub9ad; \ube14\ub9ac\uc2a4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "zbl"
+    },
+    {
+        "English": "Zenaga",
+        "Korean": "\uc81c\ub098\uac00\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "zen"
+    },
+    {
+        "English": "Standard Moroccan Tamazight",
+        "Korean": "\ubaa8\ub85c\ucf54 \ud0c0\ub9c8\uc9c0\ud2b8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "zgh"
+    },
+    {
+        "English": "Zhuang; Chuang",
+        "Korean": "\uc8a1\uc5b4; \uce04\uc559\uc5b4",
+        "ISO 639-1 Code": "za",
+        "ISO 639-2 Code": "zha"
+    },
+    {
+        "English": "Chinese",
+        "Korean": "\uc911\uad6d\uc5b4",
+        "ISO 639-1 Code": "zh",
+        "ISO 639-2 Code": "chi (B) zho (T)"
+    },
+    {
+        "English": "Zande languages",
+        "Korean": "\uc794\ub370\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "znd"
+    },
+    {
+        "English": "Zulu",
+        "Korean": "\uc904\ub8e8\uc5b4",
+        "ISO 639-1 Code": "zu",
+        "ISO 639-2 Code": "zul"
+    },
+    {
+        "English": "Zuni",
+        "Korean": "\uc900\ub2c8\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "zun"
+    },
+    {
+        "English": "No linguistic content; Not applicable",
+        "Korean": "\uc5b8\uc5b4\uc801 \ub0b4\uc6a9 \uc5c6\uc74c; \ud574\ub2f9 \uc5c6\uc74c",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "zxx"
+    },
+    {
+        "English": "Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki",
+        "Korean": "\uc790\uc790\uc5b4; \ub514\ubc00\ub9ac\uc5b4; \ub514\ubbc8\ub9ac\uc5b4; \ud0a4\ub974\ub4dc\ud0a4\uc5b4; \ud0a4\ub974\ub9cc\uc9c0\ud0a4\uc5b4; \uc790\uc790\ud0a4\uc5b4",
+        "ISO 639-1 Code": "",
+        "ISO 639-2 Code": "zza"
+    },
+    {
+        "English": "Chinese (Simplified)",
+        "Korean": "\uc911\uad6d\uc5b4 \uac04\uccb4",
+        "ISO 639-1 Code": "zh-Hans",
+        "ISO 639-2 Code": ""
+    },
+    {
+        "English": "Chinese (Simplified)",
+        "Korean": "\uc911\uad6d\uc5b4 \uac04\uccb4",
+        "ISO 639-1 Code": "zh_cn",
+        "ISO 639-2 Code": ""
+    },
+    {
+        "English": "Chinese (Simplified)",
+        "Korean": "\uc911\uad6d\uc5b4 \uac04\uccb4",
+        "ISO 639-1 Code": "zh-CN",
+        "ISO 639-2 Code": ""
+    },
+    {
+        "English": "Chinese (Traditional)",
+        "Korean": "\uc911\uad6d\uc5b4 \ubc88\uccb4",
+        "ISO 639-1 Code": "zh-Hant",
+        "ISO 639-2 Code": ""
+    },
+    {
+        "English": "Chinese (Traditional)",
+        "Korean": "\uc911\uad6d\uc5b4 \ubc88\uccb4",
+        "ISO 639-1 Code": "zh_tw",
+        "ISO 639-2 Code": ""
+    },
+    {
+        "English": "Chinese (Traditional)",
+        "Korean": "\uc911\uad6d\uc5b4 \ubc88\uccb4",
+        "ISO 639-1 Code": "zh-TW",
+        "ISO 639-2 Code": ""
+    }
+]
