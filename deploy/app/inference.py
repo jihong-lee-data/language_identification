@@ -1,22 +1,24 @@
+from typing import List, Union, Dict
 from app.tool import load_json
 import platform
 import torch
 import torch.nn as nn
 from transformers import AutoTokenizer
-from typing import List, Union, Dict
 import numpy as np
 
 processor = platform.processor().lower()
-if "arm" in processor:
-    backend = "qnnpack"
-else:
-    backend = "fbgemm"
 
 config = load_json("model/config.json")
 
 
 class Inference(nn.Module):
     def __init__(self, device="cpu"):
+        """
+        Initialize the Inference class.
+
+        Args:
+        - device (str): the device where the model will run (default: "cpu")
+        """
         super().__init__()
         self.device = torch.device(device)
         MODEL_PATH = f"model/lang_id_{processor}_{self.device.type}.pt"
@@ -27,6 +29,15 @@ class Inference(nn.Module):
         )
 
     def _encode(self, text: Union[str, List[str]]) -> Dict[str, torch.Tensor]:
+        """
+        Encode the input text.
+
+        Args:
+        - text (Union[str, List[str]]): the input text
+
+        Returns:
+        - encoding (Dict[str, torch.Tensor]): the encoding of the input text
+        """
         encoding = self.tokenizer(
             text,
             add_special_tokens=True,
@@ -40,6 +51,15 @@ class Inference(nn.Module):
         return encoding
 
     def forward(self, text: Union[str, List[str]]) -> Dict[str, torch.Tensor]:
+        """
+        Compute the output of the model.
+
+        Args:
+        - text (Union[str, List[str]]): the input text
+
+        Returns:
+        - output (Dict[str, torch.Tensor]): the output of the model
+        """
         encoding = self._encode(text)
         output = self.model(
             encoding["input_ids"], attention_mask=encoding["attention_mask"]
@@ -48,6 +68,16 @@ class Inference(nn.Module):
         return output
 
     def predict(self, text: Union[str, List[str]], n: int = 1) -> Dict:
+        """
+        Make a prediction based on the input text.
+
+        Args:
+        - text (Union[str, List[str]]): the input text
+        - n (int): the number of predictions to return (default: 1)
+
+        Returns:
+        - predictions (Dict): the predicted labels and their corresponding probabilities
+        """
         logits = self(text)
         probabilities = logits.softmax(dim=-1)
 

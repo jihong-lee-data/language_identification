@@ -3,23 +3,59 @@ import os
 import re
 from pathlib import Path
 
-def load_json(path): 
-    return json.load(open(path, "r"))
 
-def save_json(file, path): 
-    json.dump(file, open(path, "w"))
+def load_json(path):
+    """
+    Load a JSON file from a given path.
+
+    Args:
+    - path: string - The path of the JSON file to load
+
+    Returns:
+    - dict - The dictionary of the loaded JSON file
+    """
+    with open(path, "r") as f:
+        return json.load(f)
+
+
+def save_json(file, path):
+    """
+    Save a dictionary as a JSON file to a given path.
+
+    Args:
+    - file: dict - The dictionary to save as a JSON file
+    - path: string - The path of the JSON file to save
+    """
+    with open(path, "w") as f:
+        json.dump(file, f)
+
 
 def mk_dir(path):
+    """
+    Create a directory if it does not already exist.
+
+    Args:
+    - path: string - The path of the directory to create
+    """
     if not os.path.isdir(path):
         os.makedirs(path)
 
-    
+
 def rm_spcl_char(text):
-    # remove special characters
-    text = re.sub(r'[!@#$(),，\n"%^*?？:;~`0-9&\[\]\。\/\.\=\-]', ' ', text)
-    text = re.sub(r'[\s]{2,}', ' ', text.strip())
+    """
+    Remove special characters from a given text.
+
+    Args:
+    - text: string - The text from which to remove special characters
+
+    Returns:
+    - string - The text with all special characters removed
+    """
+    text = re.sub(r'[!@#$(),，\\n"%^*?？:;~`0-9&\\[\\]\\。\\/\\.\\=\\-]', " ", text)
+    text = re.sub(r"[\\s]{2,}", " ", text.strip())
     text = text.lower().strip()
     return text
+
 
 class ISO:
     """
@@ -29,19 +65,27 @@ class ISO:
     It uses a JSON file of language codes that is downloaded from a GitHub repository if it is not found locally.
 
     """
+
     def __init__(self):
         """
         Initializes the ISO class by downloading the language code dictionary if it is not found locally,
         loading the JSON file into a dictionary, and creating a dictionary to map letters to language attributes.
         """
-        self.dict_path = Path('resource/iso.json')
+        self.dict_path = Path("resource/iso.json")
         if not self.dict_path.exists():
             self.dict_path.parent.mkdir(parents=True, exist_ok=True)
-            print(f"Downloading 'ISO dictionary'..")
-            os.system(f"curl <https://raw.githubusercontent.com/jihong-lee-data/gadgetbox/main/{str(self.dict_path)}> > {str(self.dict_path)}")
-            print(f"{'---'*10}\\n'ISO dictionary' is saved to {str(self.dict_path)}")
+            print("Downloading 'ISO dictionary'..")
+            os.system(
+                f"curl <https://raw.githubusercontent.com/jihong-lee-data/gadgetbox/main/{str(self.dict_path)}> > {str(self.dict_path)}"
+            )
+            print(f"{'---'*10}\\\\n'ISO dictionary' is saved to {str(self.dict_path)}")
         self.iso_dict = load_json(str(self.dict_path))
-        self.code_dict = dict(zip(['e', 'k', '1', '2'], ['English', 'Korean', 'ISO 639-1 Code', 'ISO 639-2 Code']))
+        self.code_dict = dict(
+            zip(
+                ["e", "k", "1", "2"],
+                ["English", "Korean", "ISO 639-1 Code", "ISO 639-2 Code"],
+            )
+        )
 
     def __call__(self, query, code=None, tol=2):
         """
@@ -72,9 +116,15 @@ class ISO:
         results = []
         for row in self.iso_dict:
             if code:
-                target = '%'.join([row.get(i) for i in row if i in [self.code_dict.get(c) for c in list(code)]])
+                target = "%".join(
+                    [
+                        row.get(i)
+                        for i in row
+                        if i in [self.code_dict.get(c) for c in list(code)]
+                    ]
+                )
             else:
-                target = '%'.join(row.values())
+                target = "%".join(row.values())
             if self._word_validation(query, target, tol):
                 results.append(row)
         return results
@@ -85,7 +135,7 @@ class ISO:
 
         Args:
         - src: string - A source to convert
-        - src_code(Optional): string - A letter code representing an attribute of the source (e.g. 'e' for English)
+        - src_code: string - A letter code representing an attribute of the source (e.g. 'e' for English)
         - dst_code: string - A letter code representing the destination language to which the source convert (e.g. '1' for ISO 639-1)
 
         Returns:
@@ -93,19 +143,18 @@ class ISO:
         """
         search_result = self._search(src, code=src_code, tol=1)
         if not search_result:
-            raise ValueError('An input query can be case-insensitive but must be matched to a target completely.')
-        else:
-            result = search_result.pop(0)
+            raise ValueError(
+                "An input query can be case-insensitive but must be matched to a target completely."
+            )
+        result = search_result.pop(0)
 
         if dst_code:
             if len(dst_code) > 1:
                 return [result.get(self.code_dict.get(d)) for d in list(dst_code)]
-            else:
-                return result.get(self.code_dict.get(dst_code))
-        else:
-            return result.values()
+            return result.get(self.code_dict.get(dst_code))
+        return result.values()
 
-    def _word_validation(self, test:str, target:str, tol=2):
+    def _word_validation(self, test: str, target: str, tol=2):
         """
         Helper function to validate matches based on the tolerance level.
 
@@ -117,13 +166,11 @@ class ISO:
         Returns:
         - bool - True if the search query matches the target string based on the tolerance level, False otherwise
         """
-        if tol == 0: # exact matches
-            target_list = target.split('%')
+        if tol == 0:  # exact matches
+            target_list = target.split("%")
             return test in target_list
-        elif tol == 1: # case-insensitive
-            target_list = target.lower().split('%')
+        elif tol == 1:  # case-insensitive
+            target_list = target.lower().split("%")
             return test.lower() in target_list
-        elif tol == 2: # partial matches
+        elif tol == 2:  # partial matches
             return test.lower() in target.lower()
-            
-        
