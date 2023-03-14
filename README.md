@@ -786,7 +786,7 @@
                 {
                     "lang1" : "prob1",
                     "lang2" : "prob2", 
-                    "lang3" : "prob3" 
+                    "lang3" : "prob3" V
                 },
                 {}
             ]
@@ -808,5 +808,13 @@
 
 * fastapi method 구현 완료
   * [deploy/README.md](deploy/README.md) 추가
+* Test 케이스 작성 예정
+* slack error log alarm 구현 예정
+
+---
+
+## 2023.03.12
+
+* emoji 제거 추가
 * Test 케이스 작성 예정
 * slack error log alarm 구현 예정

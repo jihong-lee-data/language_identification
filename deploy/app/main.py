@@ -6,7 +6,7 @@ from pydantic import BaseModel
 import nltk
 from nltk.corpus import wordnet
 from app.inference import Inference
-from app.tool import rm_spcl_char, ISO
+from app.tool import remove_character, ISO
 
 app = FastAPI()
 app.model = Inference(device="cpu")
@@ -67,7 +67,7 @@ async def predict(request: LangIdRequest):
     text = request_json["text"]
     n = request_json["n"]
 
-    text_prepped = rm_spcl_char(text)
+    text_prepped = remove_character(text, target="sde")
 
     lang_pred = (
         {}
@@ -101,7 +101,7 @@ async def predict_batch(request: LangIdBatchRequest):
     if len(text) > 1000:
         return jsonable_encoder({"result": []})
 
-    text_prepped = [rm_spcl_char(sample) for sample in text]
+    text_prepped = [remove_character(sample, target="sde") for sample in text]
 
     lang_pred = np.array(
         [

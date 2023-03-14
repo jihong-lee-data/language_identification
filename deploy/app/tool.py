@@ -2,6 +2,7 @@ import json
 import os
 import re
 from pathlib import Path
+from emoji import replace_emoji
 
 
 def load_json(path):
@@ -41,20 +42,34 @@ def mk_dir(path):
         os.makedirs(path)
 
 
-def rm_spcl_char(text):
+def remove_character(text, target="s"):
     """
-    Remove special characters from a given text.
+    Removes special characters from a given text.
 
     Args:
-    - text: string - The text from which to remove special characters
+        text (str): The text from which to remove special characters
+        target (str): A string containing characters to remove.
+        Default is 's' which removes non-alphanumeric and non-whitespace characters.
+        'd' and 'e' remove digits and emojis respectively.
 
     Returns:
-    - string - The text with all special characters removed
+        str: The text with target characters removed
     """
-    text = re.sub(
-        r'[!@#$(),，\\n"%^*?？:;~`0-9&\\[\\]\\。\\/\\.\\=\\-]', " ", text
-    )
-    text = re.sub(r"[\\s]{2,}", " ", text.strip())
+    target_dict = {
+        "d": r"\d",
+        "s": r'!@#$(),，"%^*?？:;~`&[\]。/.-=',
+    }
+    pattern = r""
+    for t in target_dict:
+        pattern += target_dict.get(t) if t in target else ""
+
+    if pattern:
+        pattern = rf"[{pattern}]"
+        text = re.sub(pattern, " ", text)
+    if "e" in target:
+        text = replace_emoji(text, " ")
+
+    text = re.sub(r"[\s]{2,}", " ", text.strip())
     text = text.lower().strip()
     return text
 
